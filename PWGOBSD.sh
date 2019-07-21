@@ -24,15 +24,16 @@ clear
 cd /home/$USER
 mkdir /home/$USER/Games
 case $CHOICE in
+
         1)
 mkdir /home/$USER/Games/Steam
 curl -O https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
 WINEPREFIX=/home/$USER/Games/Steam winetricks winxp # Fixes Steam-Chat problems & and some audio problems in UE games.
 WINEPREFIX=/home/$USER/Games/Steam wine SteamSetup.exe
             ;;
-2)
+            
+        2)
 mkdir /home/$USER/Games/Blizzard
-curl -O https://eu.battle.net/download/getInstaller?os=win&installer=Battle.net-Setup.exe
-WINEPREFIX=/home/$USER/Games/Blizzard wine Battle.net-Setup.exe
-
+curl -O http://dist.blizzard.com/downloads/bna-installers/322d5bb9ae0318de3d4cde7641c96425/retail.1/Battle.net-Setup-enUS.exe
+WINEPREFIX=/home/$USER/Games/Blizzard wine Battle.net-Setup-enUS.exe
 esac
