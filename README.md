@@ -1,6 +1,6 @@
 # Description
 
-Install your favorite windows games launcher & games easily!
+Install your favorite windows games & launcher easily!
 
 # Dependencies
 
