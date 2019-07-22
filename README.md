@@ -2,10 +2,16 @@
 
 Install your favorite windows games launcher & games easily!
 
+# Dependencies
+
+- dialog
+- winetricks
+- wine
+
 # States:
 
-- Steam: Works, but uses winxp with an older steam client
-- Origin: Borked: the legacy client updates to a newer version that dont works.
+- Steam: Works, but uses winxp with an older steam client.
+- Origin: Borked: The legacy client updates to a newer version that dont works at this time.
 - Uplay: Works.
 
 # Installation/Uninstallation
