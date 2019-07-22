@@ -11,6 +11,7 @@ Install your favorite windows games & launcher easily!
 # States:
 
 - Steam: Works, but uses winxp with an older steam client.
+- Blizzard: Works.
 - Origin: Borked: The legacy client updates to a newer version that dont works at this time.
 - Uplay: Works.
 
