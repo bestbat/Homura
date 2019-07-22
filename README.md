@@ -1,5 +1,6 @@
-# PWGOBSD
-Play Windows Games On BSD
+# Description
+
+Install your favorite windows games launcher & games easily!
 
 # States:
 
