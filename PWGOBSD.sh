@@ -38,12 +38,14 @@ curl -O http://dist.blizzard.com/downloads/bna-installers/322d5bb9ae0318de3d4cde
 WINEPREFIX=/home/$USER/Games/Blizzard wine /home/$USER/Battle.net-Setup-enUS.exe
             ;;
         3)
-mkdir /home/$USER/Games/Origin
-curl -O https://origin-a.akamaihd.net/Origin-Client-Download/origin/live/OriginThinSetup.exe
-WINEPREFIX=/home/$USER/Games/Origin wine /home/$USER/OriginThinSetup.exe
+echo sorry currently borked
+#mkdir /home/$USER/Games/Origin
+#curl -O https://origin-a.akamaihd.net/Origin-Client-Download/origin/live/OriginThinSetup.exe
+#WINEPREFIX=/home/$USER/Games/Origin wine /home/$USER/OriginThinSetup.exe
             ;;
         4)
-mkdir /home/$USER/Games/Uplay        
+mkdir /home/$USER/Games/Uplay
+WINEPREFIX=/home/$USER/Games/Uplay winetricks corefonts # Fixes the blank window at start.       
 curl -O https://ubistatic3-a.akamaihd.net/orbit/launcher_installer/UplayInstaller.exe
 WINEPREFIX=/home/$USER/Games/Uplay wine /home/$USER/UplayInstaller.exe
 
