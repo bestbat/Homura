@@ -7,7 +7,7 @@ TITLE="Welcome $USER :)"
 MENU="What do you want to do?:"
 
 OPTIONS=(1 "Installation"
-         2 "Start")
+         2 "Launcher")
          
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -25,10 +25,10 @@ case $CHOICE in
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=4
+CHOICE_HEIGHT=5
 BACKTITLE="PWGOBSD"
-TITLE="Welcome $USER :)"
-MENU="What do you want to do?:"
+TITLE="Installation"
+MENU="What do you want to install?:"
 
 OPTIONS=(1 "Install Steam"
          2 "Install Blizzard"
@@ -84,5 +84,43 @@ rm download
 esac
             ;;
         2)
-echo WIP
+#!/bin/bash
+HEIGHT=15
+WIDTH=40
+CHOICE_HEIGHT=5
+BACKTITLE="PWGOBSD"
+TITLE="Launcher"
+MENU="What do you want to launch?:"
+
+OPTIONS=(1 "Steam"
+         2 "Blizzard"
+         3 "Origin"
+         4 "Uplay"
+         5 "Teamspeak")
+         
+CHOICE=$(dialog --clear \
+                --backtitle "$BACKTITLE" \
+                --title "$TITLE" \
+                --menu "$MENU" \
+                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                "${OPTIONS[@]}" \
+                2>&1 >/dev/tty)
+
+clear
+cd /home/$USER
+case $CHOICE in
+
+        1)
+WINEPREFIX='/home/$USER/Games/Steam' wine '/home/$USER/Games/Steam/drive_c/Program Files/Steam/Steam.exe'
+            ;;
+        2)
+echo test            
+            ;;
+        3)  
+            
+            ;;
+        4)  
+            
+            ;;
+        5)
 esac
