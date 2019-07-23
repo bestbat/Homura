@@ -19,8 +19,6 @@ CHOICE=$(dialog --clear \
 
 clear
 cd /home/$USER
-mkdir /home/$USER/Games
-mkdir /home/$USER/Programs
 case $CHOICE in
 
         1)
