@@ -24,4 +24,4 @@ To start this script use the follwing command in the folder:
 bash PWGOBSD.sh
 ```
 
-To uninstall that script just delete that and the Games folder in the home directory.
+To uninstall that script just delete that and the Games & Programs folder in the home directory.
