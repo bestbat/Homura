@@ -14,6 +14,7 @@ Install your favorite windows games & launcher easily!
 - Blizzard: Works.
 - Origin: Borked: The legacy client updates to a newer version that dont works at this time.
 - Uplay: Works.
+- Teamspeak: Works.
 
 # Installation/Uninstallation
 
