@@ -34,3 +34,6 @@ Then the graphics should be set to the worst, this is also correct because the g
 
 Enable "Windowed Mode" at the start and change the graphic settings to very low so that you stwy under 4GB ram usage.
 
+# PAYDAY 2
+
+Depth of field must be switched off in graphic settings to avoid graphic errors.
