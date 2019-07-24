@@ -16,7 +16,9 @@ Here i guess steam picks the wrong exe, because SUPERHOT.exe crashs but SH.exe n
 
 # Anno 1404
 
-The game stays black with sounds because it dont know how to render something because it cannot detect the directx version.So we'll have to set it ourselves.
+The game stays black with sounds because it dont know how to render something because it cannot detect the directx version.
+
+So we'll have to set it ourselves.
 
 open the file '/home/$USER/Games/Steam/drive_c/users/$USER/Application Data/Ubisoft/Anno1404/Config/Engine.ini'
 
