@@ -16,6 +16,10 @@ Install your favorite windows games & launcher easily!
 - Uplay: Works.
 - Teamspeak: Works.
 
+# Tweaks
+
+Tweaks are [here](Tweaks.md)
+
 # Installation/Uninstallation
 
 Download the latest stable release from [here](https://github.com/Alexander88207/PWGOBSD/releases)
