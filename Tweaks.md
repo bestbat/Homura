@@ -20,7 +20,7 @@ The game stays black with sounds because it dont know how to render something be
 
 open the file '/home/$USER/Games/Steam/drive_c/users/$USER/Application Data/Ubisoft/Anno1404/Config/Engine.ini'
 
-and change <DirectXVersion>0</DirectXVersion> to <DirectXVersion>9</DirectXVersion>
+and change '<DirectXVersion>0</DirectXVersion> to <DirectXVersion>9</DirectXVersion>'
 
 # FarCry
 
