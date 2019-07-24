@@ -32,7 +32,7 @@ Then the graphics should be set to the worst, this is also correct because the g
 
 # The Elder Scrolls V: Skyrim
 
-Enable "Windowed Mode" at the start and change the graphic settings to very low so that you stwy under 4GB ram usage.
+Enable "Windowed Mode" at the start and change the graphic settings to very low so that you stay under 4GB ram usage.
 
 # PAYDAY 2
 
