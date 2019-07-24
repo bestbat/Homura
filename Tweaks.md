@@ -30,3 +30,7 @@ Disable "Fullscreen" in the "FarCry Config" tool and let automatically detect th
 
 Then the graphics should be set to the worst, this is also correct because the game does not start with higher graphics settings.
 
+# The Elder Scrolls V: Skyrim
+
+Enable "Windowed Mode" at the start and change the graphic settings to very low so that you stwy under 4GB ram usage.
+
