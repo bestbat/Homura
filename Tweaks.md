@@ -37,3 +37,7 @@ Enable "Windowed Mode" at the start and change the graphic settings to very low 
 # PAYDAY 2
 
 Depth of field must be switched off in graphic settings to avoid graphic errors.
+
+# Unity mouse problem
+
+Tab out and in.
