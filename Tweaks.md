@@ -12,7 +12,7 @@ The game dont start if this game gets started over steam, but works if you start
 
 Here i guess steam picks the wrong exe, because SUPERHOT.exe crashs but SH.exe not.
 
-`WINEPREFIX='/home/$USER/Games/Steam' wine '/home/$USER/Games/Steam/drive_c/Program Files/Steam/steamapps/common/SUPERHOT/SH.exe'`
+`WINEPREFIX='/home/$USER/Games/Steam' wine '/home/$USER/Games/Steam/drive_c/Program Files/Steam/steamapps/common/SUPERHOT/SH.exe'
 
 # Anno 1404
 
@@ -22,7 +22,7 @@ So we'll have to set it ourselves.
 
 open the file '/home/$USER/Games/Steam/drive_c/users/$USER/Application Data/Ubisoft/Anno1404/Config/Engine.ini'
 
-and change the setting "DirectXVersion" from 0 to 9
+and change the setting `DirectXVersion` from 0 to 9
 
 # FarCry
 
