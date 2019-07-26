@@ -155,7 +155,9 @@ cd /home/$USER
 case $CHOICE in
 
         1)
-echo hi
+rm -d -r /home/$USER/Games/Steam
+rm -d -r /home/$USER/.local/share/applications/wine/Programs/Steam
+echo done!
             ;;
         2)
 rm -d -r /home/$USER/Games/Blizzard
@@ -173,5 +175,6 @@ echo done!
         5)
 rm -d -r /home/$USER/Programs/Teamspeak
 echo done!
+
 esac
 esac
