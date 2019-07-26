@@ -1,6 +1,6 @@
 # Borked
 
-A list of games that dont work.
+A list of games that dont work or are unplayable.
 
 - Terraria (Start & stop)
 - Stardew Valley (Start & stop)
