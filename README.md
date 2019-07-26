@@ -11,7 +11,7 @@ Install your favorite windows games & launcher easily!
 
 # States:
 
-- Steam: Works, but uses winxp with an older steam client.
+- Steam: Works, but uses winxp with an older steam client to get some online features. (Doesn't affect performance)
 - Blizzard: Works.
 - Origin: Borked: The legacy client updates to a newer version that dont works at this time.
 - Uplay: Works, but crashes to often.
@@ -20,6 +20,10 @@ Install your favorite windows games & launcher easily!
 # Tweaks
 
 Tweaks are [here](Tweaks.md)
+
+# Limitations
+
+Only 32-Bit Games and Applications working currently.
 
 # Installation/Uninstallation
 
