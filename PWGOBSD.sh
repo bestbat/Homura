@@ -63,10 +63,9 @@ curl -O http://dist.blizzard.com/downloads/bna-installers/322d5bb9ae0318de3d4cde
 WINEPREFIX=/home/$USER/Games/Blizzard wine /home/$USER/Battle.net-Setup-enUS.exe
             ;;
         3)
-echo sorry currently borked
-#mkdir /home/$USER/Games/Origin
-#curl -O https://origin-a.akamaihd.net/Origin-Client-Download/origin/live/OriginThinSetup.exe
-#WINEPREFIX=/home/$USER/Games/Origin wine /home/$USER/OriginThinSetup.exe
+mkdir /home/$USER/Games/Origin
+curl -O https://origin-a.akamaihd.net/Origin-Client-Download/origin/live/OriginThinSetup.exe
+WINEPREFIX=/home/$USER/Games/Origin wine /home/$USER/OriginThinSetup.exe
             ;;
         4)
 mkdir /home/$USER/Games/Uplay      
