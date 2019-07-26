@@ -7,7 +7,8 @@ TITLE="Welcome $USER :)"
 MENU="What do you want to do?:"
 
 OPTIONS=(1 "Installation"
-         2 "Launcher")
+         2 "Launcher"
+         3 "Uninstallation")
          
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -78,6 +79,8 @@ cd /home/$USER/Programs/Teamspeak
 curl -O https://oc.magzu.net/owncloud/index.php/s/C5BmsWkNiedJNzV/download
 unzip download
 rm download
+echo Done!
+
 esac
             ;;
         2)
@@ -108,17 +111,67 @@ cd /home/$USER
 case $CHOICE in
 
         1)
-WINEPREFIX='/home/$USER/Games/Steam' wine '/home/$USER/Games/Steam/drive_c/Program Files/Steam/Steam.exe'
+WINEPREFIX=/home/$USER/Games/Steam wine /home/$USER/Games/Steam/drive_c/Program Files/Steam/Steam.exe
             ;;
         2)
-echo test            
+WINEPREFIX=/home/$USER/Games/Blizzard wine /home/alexander/Games/Blizzard/drive_c/Program Files/Battle.net/Battle.net.exe          
             ;;
         3)  
-            
+echo origin is not working! should this invaild let me now            
             ;;
         4)  
-            
+WINEPREFIX=/home/$USER/Games/Uplay wine /home/$USER/Games/Uplay/drive_c/Program Files/Ubisoft/Ubisoft Game Launcher/Uplay.exe            
             ;;
         5)
+WINEPREFIX=/home/$USER/Programs/Teamspeak wine /home/$USER/Programs/Teamspeak/TeamSpeak 3 Client/ts3client_win32.exe
+
+esac
+            ;;
+        3)
+#!/bin/bash
+HEIGHT=15
+WIDTH=40
+CHOICE_HEIGHT=5
+BACKTITLE="PWGOBSD - Play Windows Games On BSD"
+TITLE="Uninstallation"
+MENU="What do you want to uninstall?:"
+
+OPTIONS=(1 "Steam"
+         2 "Blizzard"
+         3 "Origin"
+         4 "Uplay"
+         5 "Teamspeak")
+         
+CHOICE=$(dialog --clear \
+                --backtitle "$BACKTITLE" \
+                --title "$TITLE" \
+                --menu "$MENU" \
+                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                "${OPTIONS[@]}" \
+                2>&1 >/dev/tty)
+
+clear
+cd /home/$USER
+case $CHOICE in
+
+        1)
+echo hi
+            ;;
+        2)
+rm -d -r /home/$USER/Games/Blizzard
+rm -d -r /home/$USER/.local/share/applications/wine/Programs/Battle.net
+echo done!    
+            ;;
+        3)  
+echo origin is not working! should this invaild let me now!         
+            ;;
+        4)  
+rm -d -r /home/$USER/Games/Uplay
+rm -d -r /home/$USER/.local/share/applications/wine/Programs/Ubisoft   
+echo done!           
+            ;;
+        5)
+rm -d -r /home/$USER/Programs/Teamspeak
+echo done!
 esac
 esac
