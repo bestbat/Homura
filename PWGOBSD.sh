@@ -2,7 +2,7 @@
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=4
-BACKTITLE="PWGOBSD"
+BACKTITLE="PWGOBSD - Play Windows Games On BSD"
 TITLE="Welcome $USER :)"
 MENU="What do you want to do?:"
 
@@ -26,7 +26,7 @@ case $CHOICE in
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=5
-BACKTITLE="PWGOBSD"
+BACKTITLE="PWGOBSD - Play Windows Games On BSD"
 TITLE="Installation"
 MENU="What do you want to install?:"
 
@@ -85,7 +85,7 @@ esac
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=5
-BACKTITLE="PWGOBSD"
+BACKTITLE="PWGOBSD - Play Windows Games On BSD"
 TITLE="Launcher"
 MENU="What do you want to launch?:"
 
