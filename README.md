@@ -6,7 +6,7 @@ Install your favorite windows games & launcher easily!
 
 - dialog
 - winetricks
-- wine
+- i386-wine-devel
 - webfonts
 
 # States:
