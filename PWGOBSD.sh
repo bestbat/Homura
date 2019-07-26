@@ -54,7 +54,6 @@ case $CHOICE in
 mkdir /home/$USER/Games/Steam
 curl -O https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
 WINEPREFIX=/home/$USER/Games/Steam winetricks winxp  # Fixes Steam-Chat problems & and some audio problems in UE games.
-WINEPREFIX=/home/$USER/Games/Steam winetricks corefonts # Better fonts.
 WINEPREFIX=/home/$USER/Games/Steam wine SteamSetup.exe
             ;;
             
@@ -70,8 +69,7 @@ echo sorry currently borked
 #WINEPREFIX=/home/$USER/Games/Origin wine /home/$USER/OriginThinSetup.exe
             ;;
         4)
-mkdir /home/$USER/Games/Uplay
-WINEPREFIX=/home/$USER/Games/Uplay winetricks corefonts # Fixes the blank window at start.       
+mkdir /home/$USER/Games/Uplay      
 curl -O https://ubistatic3-a.akamaihd.net/orbit/launcher_installer/UplayInstaller.exe
 WINEPREFIX=/home/$USER/Games/Uplay wine /home/$USER/UplayInstaller.exe
             ;;
