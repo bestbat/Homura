@@ -13,7 +13,7 @@ Install your favorite windows games & launcher easily!
 
 - Steam: Works, but uses winxp with an older steam client to get some online features. (Doesn't affect performance)
 - Blizzard: Works.
-- Origin: Borked: The legacy client updates to a newer version that dont works at this time.
+- Origin: Borked: Crashs at start.
 - Uplay: Works, but crashes to often.
 - Teamspeak: Works.
 
