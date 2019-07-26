@@ -31,11 +31,11 @@ BACKTITLE="PWGOBSD - Play Windows Games On BSD"
 TITLE="Installation"
 MENU="What do you want to install?:"
 
-OPTIONS=(1 "Install Steam"
-         2 "Install Blizzard"
-         3 "Install Origin"
-         4 "Install Uplay"
-         5 "Install Teamspeak")
+OPTIONS=(1 "Steam"
+         2 "Blizzard"
+         3 "Origin"
+         4 "Uplay"
+         5 "Teamspeak")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
