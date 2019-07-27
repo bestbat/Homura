@@ -41,3 +41,7 @@ Depth of field must be switched off in graphic settings to avoid graphic errors.
 # Unity mouse problem
 
 Tab out and in.
+
+# World of Warcraft 1.12.1 no sound
+
+Start the game in a new wine preifx.
