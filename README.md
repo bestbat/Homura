@@ -14,7 +14,7 @@ Install your favorite windows games & launcher easily!
 - webfonts
 - p7zip
 
-# States: :fire:
+# States :fire:
 
 - Steam: Works, but uses winxp with an older steam client to get some online features. (Doesn't affect performance)
 - Blizzard: Works.
