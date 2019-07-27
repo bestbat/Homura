@@ -26,7 +26,8 @@ Tweaks are [here](Tweaks.md)
 
 # Limitations
 
-Only 32-Bit Games and Applications working currently.
+- Only 32-Bit Games and Applications working currently.
+- No vulkan support on amd64 systems.
 
 # Installation/Uninstallation
 
