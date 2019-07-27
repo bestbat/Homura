@@ -87,6 +87,7 @@ mkdir /home/$USER/Games/Clone-Hero
 cd /home/$USER/Games/Clone-Hero
 curl -O http://dl.clonehero.net/clonehero-v.22.5/clonehero-win32.7z
 7z x clonehero-win32.7z
+echo Done!
 
 esac
             ;;
