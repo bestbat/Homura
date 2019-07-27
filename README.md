@@ -4,6 +4,7 @@ Install your favorite windows games & launcher easily!
 
 # Dependencies
 
+- curl
 - dialog
 - winetricks
 - i386-wine-devel on amd64 or wine-devel on i386
