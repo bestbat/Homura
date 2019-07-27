@@ -8,6 +8,7 @@ Install your favorite windows games & launcher easily!
 - winetricks
 - i386-wine-devel on amd64 or wine-devel on i386
 - webfonts
+- p7zip
 
 # States:
 
@@ -16,6 +17,7 @@ Install your favorite windows games & launcher easily!
 - Origin: Borked: Crashs at start.
 - Uplay: Works, but crashes to often.
 - Teamspeak: Works.
+- Clone Hero: Crashs at start. WARNING: The game can also hang up and cause a very, very loud sound error!
 
 # Tweaks
 
