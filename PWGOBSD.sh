@@ -1,7 +1,7 @@
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=4
+CHOICE_HEIGHT=3
 BACKTITLE="PWGOBSD - Play Windows Games On BSD"
 TITLE="Welcome $USER :)"
 MENU="What do you want to do?:"
@@ -26,7 +26,7 @@ case $CHOICE in
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=5
+CHOICE_HEIGHT=6
 BACKTITLE="PWGOBSD - Play Windows Games On BSD"
 TITLE="Installation"
 MENU="What do you want to install?:"
@@ -35,7 +35,8 @@ OPTIONS=(1 "Steam"
          2 "Blizzard"
          3 "Origin"
          4 "Uplay"
-         5 "Teamspeak")
+         5 "Teamspeak"
+         6 "Clone Hero")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -80,6 +81,12 @@ curl -O https://oc.magzu.net/owncloud/index.php/s/C5BmsWkNiedJNzV/download
 unzip download
 rm download
 echo Done!
+            ;;
+        6)
+mkdir /home/$USER/Games/Clone-Hero
+cd /home/$USER/Games/Clone-Hero
+curl -O http://dl.clonehero.net/clonehero-v.22.5/clonehero-win32.7z
+7z x clonehero-win32.7z
 
 esac
             ;;
@@ -87,7 +94,7 @@ esac
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=5
+CHOICE_HEIGHT=6
 BACKTITLE="PWGOBSD - Play Windows Games On BSD"
 TITLE="Launcher"
 MENU="What do you want to launch?:"
@@ -96,7 +103,8 @@ OPTIONS=(1 "Steam"
          2 "Blizzard"
          3 "Origin"
          4 "Uplay"
-         5 "Teamspeak")
+         5 "Teamspeak"
+         6 "Clone Hero")
          
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -124,6 +132,9 @@ WINEPREFIX=/home/$USER/Games/Uplay wine /home/$USER/Games/Uplay/drive_c/Program 
             ;;
         5)
 WINEPREFIX=/home/$USER/Programs/Teamspeak wine /home/$USER/Programs/Teamspeak/TeamSpeak 3 Client/ts3client_win32.exe
+            ;;
+        6)
+WINEPREFIX=/home/$USER/Games/Clone-Hero wine /home/$USER/Games/Clone-Hero/clonehero-win32/Clone Hero.exe
 
 esac
             ;;
@@ -131,7 +142,7 @@ esac
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=5
+CHOICE_HEIGHT=6
 BACKTITLE="PWGOBSD - Play Windows Games On BSD"
 TITLE="Uninstallation"
 MENU="What do you want to uninstall?:"
@@ -140,7 +151,8 @@ OPTIONS=(1 "Steam"
          2 "Blizzard"
          3 "Origin"
          4 "Uplay"
-         5 "Teamspeak")
+         5 "Teamspeak"
+         6 "Clone Hero")
          
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -174,6 +186,10 @@ echo done!
             ;;
         5)
 rm -d -r /home/$USER/Programs/Teamspeak
+echo done!
+            ;;
+        6)
+rm -d -r /home/$USER/Games/Clone-Hero
 echo done!
 
 esac
