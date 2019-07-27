@@ -1,8 +1,11 @@
-# Description
+# PWGOBSD - Play Windows Games On BSD
+[![CodeFactor](https://www.codefactor.io/repository/github/alexander88207/pwgobsd/badge)](https://www.codefactor.io/repository/github/alexander88207/pwgobsd) ![GitHub release](https://img.shields.io/github/release/Alexander88207/PWGOBSD)
+
+# Description &#x1F4D8;
 
 Install your favorite windows games & launcher easily!
 
-# Dependencies
+# Dependencies :syringe:
 
 - curl
 - dialog
@@ -11,7 +14,7 @@ Install your favorite windows games & launcher easily!
 - webfonts
 - p7zip
 
-# States:
+# States: :fire:
 
 - Steam: Works, but uses winxp with an older steam client to get some online features. (Doesn't affect performance)
 - Blizzard: Works.
@@ -20,16 +23,18 @@ Install your favorite windows games & launcher easily!
 - Teamspeak: Works.
 - Clone Hero: Crashs at start. WARNING: The game can also hang up and cause a very, very loud sound error!
 
-# Tweaks
+If you want a special game then create an issue :)
+
+# Tweaks :wrench:
 
 Tweaks are [here](Tweaks.md)
 
-# Limitations
+# Limitations :x:
 
 - Only 32-Bit Games and Applications working currently.
 - No vulkan support on amd64 systems.
 
-# Installation/Uninstallation
+# Installation/Uninstallation :cd:
 
 Download the latest stable release from [here](https://github.com/Alexander88207/PWGOBSD/releases)
 
@@ -39,3 +44,6 @@ bash PWGOBSD.sh
 ```
 
 To uninstall that script just delete that and the Games & Programs folder in the home directory.
+
+## Contribute :pencil2:
+if you want to contribute to this repo then just send a pull request or issues :)
