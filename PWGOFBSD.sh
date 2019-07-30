@@ -132,7 +132,7 @@ echo origin is not working! should this invaild let me now
 WINEPREFIX=/home/$USER/Games/Uplay wine /home/$USER/Games/Uplay/drive_c/Program Files/Ubisoft/Ubisoft Game Launcher/Uplay.exe            
             ;;
         5)
-WINEPREFIX=/home/$USER/Programs/Teamspeak wine /home/$USER/Programs/Teamspeak/TeamSpeak 3 Client/ts3client_win32.exe
+WINEPREFIX=/home/$USER/Programs/Teamspeak wine "/home/$USER/Programs/Teamspeak/TeamSpeak 3 Client/ts3client_win32.exe"
             ;;
         6)
 WINEPREFIX=/home/$USER/Games/Clone-Hero wine /home/$USER/Games/Clone-Hero/clonehero-win32/Clone Hero.exe
