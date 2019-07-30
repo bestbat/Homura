@@ -1,4 +1,4 @@
-# PWGOBSD - Play Windows Games On BSD
+# PWGOBSD - Play Windows Games On FreeBSD
 [![CodeFactor](https://www.codefactor.io/repository/github/alexander88207/pwgobsd/badge)](https://www.codefactor.io/repository/github/alexander88207/pwgobsd) ![GitHub release](https://img.shields.io/github/release/Alexander88207/PWGOBSD)
 
 # Description &#x1F4D8;
