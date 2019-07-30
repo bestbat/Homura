@@ -2,7 +2,7 @@
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=3
-BACKTITLE="PWGOBSD - Play Windows Games On BSD"
+BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Welcome $USER :)"
 MENU="What do you want to do?:"
 
@@ -27,7 +27,7 @@ case $CHOICE in
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=6
-BACKTITLE="PWGOBSD - Play Windows Games On BSD"
+BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Installation"
 MENU="What do you want to install?:"
 
@@ -96,7 +96,7 @@ esac
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=6
-BACKTITLE="PWGOBSD - Play Windows Games On BSD"
+BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Launcher"
 MENU="What do you want to launch?:"
 
@@ -144,7 +144,7 @@ esac
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=6
-BACKTITLE="PWGOBSD - Play Windows Games On BSD"
+BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Uninstallation"
 MENU="What do you want to uninstall?:"
 
