@@ -40,7 +40,7 @@ Download the latest stable release from [here](https://github.com/Alexander88207
 
 To start this script use the follwing command in the folder:
 ```
-bash PWGOBSD.sh
+bash PWGOFBSD.sh
 ```
 
 To uninstall that script just delete that and the Games & Programs folder in the home directory.
