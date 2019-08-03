@@ -1,14 +1,15 @@
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=3
+CHOICE_HEIGHT=4
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Welcome $USER :)"
 MENU="What do you want to do?:"
 
 OPTIONS=(1 "Installation"
          2 "Launcher"
-         3 "Uninstallation")
+         3 "Uninstallation"
+         4 "Winetricks")
          
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -193,5 +194,51 @@ echo done!
 rm -d -r /home/$USER/Games/Clone-Hero
 echo done!
 
+esac
+;;
+        4)
+#!/bin/bash
+HEIGHT=15
+WIDTH=40
+CHOICE_HEIGHT=6
+BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
+TITLE="Winetricks"
+MENU="In what prefix do you want to open winetricks?:"
+
+OPTIONS=(1 "Steam"
+         2 "Blizzard"
+         3 "Origin"
+         4 "Uplay"
+         5 "Teamspeak"
+         6 "Clone Hero")
+
+CHOICE=$(dialog --clear \
+                --backtitle "$BACKTITLE" \
+                --title "$TITLE" \
+                --menu "$MENU" \
+                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                "${OPTIONS[@]}" \
+                2>&1 >/dev/tty)
+
+clear
+case $CHOICE in
+
+        1)
+WINEPREFIX=/home/$USER/Games/Steam winetricks
+            ;;
+        2)
+WINEPREFIX=/home/$USER/Games/Blizzard winetricks
+            ;;
+3)
+WINEPREFIX=/home/$USER/Games/Origin winetricks
+            ;;
+4)
+WINEPREFIX=/home/$USER/Games/Uplay winetricks
+            ;;
+5)
+WINEPREFIX=/home/$USER/Games/Teamspeak winetricks
+            ;;
+6)
+WINEPREFIX=/home/$USER/Games/Clone-Hero winetricks
 esac
 esac
