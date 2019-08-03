@@ -5,6 +5,8 @@
 
 Install your favorite windows games & launcher easily!
 
+![](https://github.com/Alexander88207/PWGOFBSD/raw/master/Screenshot.png "Screenshot")
+
 # Dependencies :syringe:
 
 - curl
