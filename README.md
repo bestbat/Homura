@@ -18,12 +18,15 @@ Install your favorite windows games & launcher easily!
 
 # States :fire:
 
+This list will be refreshed on every update of [i386-wine-devel](https://www.freshports.org/emulators/i386-wine-devel)
+
 - Steam: Works, but uses winxp with an older steam client to get some online features. (Doesn't affect performance)
 - Blizzard: Works.
-- Origin: Borked: Crashs at start.
+- Origin: Borked: Crashes at start.
 - Uplay: Works, but crashes to often.
 - Teamspeak: Works.
-- Clone Hero: Crashs at start. WARNING: The game can also hang up and cause a very, very loud sound error!
+- Clone Hero: Crashes at start. WARNING: The game can also hang up and cause a very, very loud sound error!
+- Drakensang Online: Crashes at start.
 
 If you want a special game then create an issue :)
 
