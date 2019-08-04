@@ -84,8 +84,8 @@ rm download
 echo Done!
             ;;
         6)
-mkdir /home/$USER/Games/Clone-Hero
-cd /home/$USER/Games/Clone-Hero
+mkdir "/home/$USER/Games/Clone Hero"
+cd "/home/$USER/Games/Clone Hero"
 curl -O http://dl.clonehero.net/clonehero-v.22.5/clonehero-win32.7z
 7z x clonehero-win32.7z
 rm clonehero-win32.7z
@@ -131,7 +131,7 @@ WINEPREFIX=/home/$USER/Games/Blizzard wine /home/alexander/Games/Blizzard/drive_
 echo origin is not working! should this invaild let me now            
             ;;
         4)  
-WINEPREFIX=/home/$USER/Games/Uplay wine /home/$USER/Games/Uplay/drive_c/Program Files/Ubisoft/Ubisoft Game Launcher/Uplay.exe            
+WINEPREFIX=/home/$USER/Games/Uplay wine "/home/$USER/Games/Uplay/drive_c/Program Files/Ubisoft/Ubisoft Game Launcher/Uplay.exe"            
             ;;
         5)
 WINEPREFIX=/home/$USER/Programs/Teamspeak wine "/home/$USER/Programs/Teamspeak/TeamSpeak 3 Client/ts3client_win32.exe"
@@ -192,7 +192,7 @@ rm -d -r /home/$USER/Programs/Teamspeak
 echo done!
             ;;
         6)
-rm -d -r /home/$USER/Games/Clone-Hero
+rm -d -r "/home/$USER/Games/Clone Hero"
 echo done!
 
 esac
@@ -240,6 +240,6 @@ WINEPREFIX=/home/$USER/Games/Uplay winetricks
 WINEPREFIX=/home/$USER/Games/Teamspeak winetricks
             ;;
 6)
-WINEPREFIX=/home/$USER/Games/Clone-Hero winetricks
+WINEPREFIX="/home/$USER/Games/Clone Hero" winetricks
 esac
 esac
