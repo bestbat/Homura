@@ -4,7 +4,7 @@ WIDTH=40
 CHOICE_HEIGHT=4
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Welcome $USER :)"
-MENU="What do you want to do?:"
+MENU="What do you want to do?"
 
 OPTIONS=(1 "Installation"
          2 "Launcher"
@@ -113,7 +113,7 @@ WIDTH=40
 CHOICE_HEIGHT=6
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Launcher"
-MENU="What do you want to launch?:"
+MENU="What do you want to launch?"
 
 OPTIONS=(1 "Steam"
          2 "Blizzard"
@@ -161,7 +161,7 @@ WIDTH=40
 CHOICE_HEIGHT=6
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Uninstallation"
-MENU="What do you want to uninstall?:"
+MENU="What do you want to uninstall?"
 
 OPTIONS=(1 "Steam"
          2 "Blizzard"
@@ -217,7 +217,7 @@ WIDTH=40
 CHOICE_HEIGHT=6
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Winetricks"
-MENU="In what prefix do you want to open winetricks?:"
+MENU="In what prefix do you want to open winetricks?"
 
 OPTIONS=(1 "Steam"
          2 "Blizzard"
