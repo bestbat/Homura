@@ -55,30 +55,41 @@ case $CHOICE in
 
         1)
 mkdir /home/$USER/Games/Steam
+echo -e "\e[40;38;5;82mDownloading Steam\e[30;48;5;82m\e[0m"
 curl -O https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
+echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/Games/Steam winetricks winxp  # Fixes Steam-Chat problems & and some audio problems in UE games.
+echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/Games/Steam wine SteamSetup.exe
             ;;
             
         2)
 mkdir /home/$USER/Games/Blizzard
+echo -e "\e[40;38;5;82mDownloading Blizzard\e[30;48;5;82m\e[0m"
 curl -O http://dist.blizzard.com/downloads/bna-installers/322d5bb9ae0318de3d4cde7641c96425/retail.1/Battle.net-Setup-enUS.exe
+echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/Games/Blizzard wine /home/$USER/Battle.net-Setup-enUS.exe
             ;;
         3)
 mkdir /home/$USER/Games/Origin
+echo -e "\e[40;38;5;82mDownloading Origin\e[30;48;5;82m\e[0m"
 curl -O https://origin-a.akamaihd.net/Origin-Client-Download/origin/live/OriginThinSetup.exe
+echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/Games/Origin wine /home/$USER/OriginThinSetup.exe
             ;;
         4)
-mkdir /home/$USER/Games/Uplay      
+mkdir /home/$USER/Games/Uplay
+echo -e "\e[40;38;5;82mDownloading Uplay\e[30;48;5;82m\e[0m"
 curl -O https://ubistatic3-a.akamaihd.net/orbit/launcher_installer/UplayInstaller.exe
+echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/Games/Uplay wine /home/$USER/UplayInstaller.exe
             ;;
         5)
 mkdir /home/$USER/Programs/Teamspeak
 cd /home/$USER/Programs/Teamspeak
+echo -e "\e[40;38;5;82mDownloading Teamspeak\e[30;48;5;82m\e[0m"
 curl -O https://oc.magzu.net/owncloud/index.php/s/C5BmsWkNiedJNzV/download
+echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 unzip download
 rm download
 echo Done!
@@ -86,7 +97,9 @@ echo Done!
         6)
 mkdir "/home/$USER/Games/Clone Hero"
 cd "/home/$USER/Games/Clone Hero"
+echo -e "\e[40;38;5;82mDownloading Clone Hero\e[30;48;5;82m\e[0m"
 curl -O http://dl.clonehero.net/clonehero-v.22.5/clonehero-win32.7z
+echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 7z x clonehero-win32.7z
 rm clonehero-win32.7z
 echo Done!
