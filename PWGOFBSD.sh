@@ -27,17 +27,18 @@ case $CHOICE in
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=6
+CHOICE_HEIGHT=7
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Installation"
-MENU="What do you want to install?:"
+MENU="What do you want to install?"
 
 OPTIONS=(1 "Steam"
          2 "Blizzard"
          3 "Origin"
          4 "Uplay"
          5 "Teamspeak"
-         6 "Clone Hero")
+         6 "Clone Hero"
+         7 "Drakensang Online")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -103,6 +104,14 @@ echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 7z x clonehero-win32.7z
 rm clonehero-win32.7z
 echo Done!
+            ;;
+        7)
+mkdir "/home/$USER/Games/Drakensang Online"
+cd "/home/$USER/Games/Drakensang Online"
+echo -e "\e[40;38;5;82mDownloading Drakensang Online\e[30;48;5;82m\e[0m"
+curl -O https://drasaonline-481-dwl.bpsecure.com/applet/dro_setup.exe
+echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+WINEPREFIX="/home/$USER/Games/Drakensang Online" wine "/home/$USER/Games/Drakensang Online/dro_setup.exe"
 
 esac
             ;;
@@ -110,7 +119,7 @@ esac
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=6
+CHOICE_HEIGHT=7
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Launcher"
 MENU="What do you want to launch?"
@@ -120,8 +129,9 @@ OPTIONS=(1 "Steam"
          3 "Origin"
          4 "Uplay"
          5 "Teamspeak"
-         6 "Clone Hero")
-         
+         6 "Clone Hero"
+         7 "Drakensang Online")
+
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
                 --title "$TITLE" \
@@ -151,6 +161,9 @@ WINEPREFIX=/home/$USER/Programs/Teamspeak wine "/home/$USER/Programs/Teamspeak/T
             ;;
         6)
 WINEPREFIX=/home/$USER/Games/Clone-Hero wine "/home/$USER/Games/Clone-Hero/clonehero-win32/Clone Hero.exe"
+            ;;
+        7)
+WINEPREFIX="/home/$USER/Games/Drakensang Online/" wine "/home/$USER/Games/Drakensang Online/drive_c/Program Files/Drakensang Online/thinclient.exe"  
 
 esac
             ;;
@@ -158,7 +171,7 @@ esac
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=6
+CHOICE_HEIGHT=7
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Uninstallation"
 MENU="What do you want to uninstall?"
@@ -168,7 +181,8 @@ OPTIONS=(1 "Steam"
          3 "Origin"
          4 "Uplay"
          5 "Teamspeak"
-         6 "Clone Hero")
+         6 "Clone Hero"
+         7 "Drakensang Online")
          
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -208,13 +222,19 @@ echo done!
 rm -d -r "/home/$USER/Games/Clone Hero"
 echo done!
 
+            ;;
+        7)
+rm -d -r "/home/alexander/Games/Drakensang Online"
+rm -d -r "home/alexander/.local/share/applications/wine/Programs/Drakensang Online"
+echo done!
+
 esac
 ;;
         4)
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=6
+CHOICE_HEIGHT=7
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Winetricks"
 MENU="In what prefix do you want to open winetricks?"
@@ -224,7 +244,8 @@ OPTIONS=(1 "Steam"
          3 "Origin"
          4 "Uplay"
          5 "Teamspeak"
-         6 "Clone Hero")
+         6 "Clone Hero"
+         7 "Drakensang Online")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -243,16 +264,20 @@ WINEPREFIX=/home/$USER/Games/Steam winetricks
         2)
 WINEPREFIX=/home/$USER/Games/Blizzard winetricks
             ;;
-3)
+        3)
 WINEPREFIX=/home/$USER/Games/Origin winetricks
             ;;
-4)
+        4)
 WINEPREFIX=/home/$USER/Games/Uplay winetricks
             ;;
-5)
+        5)
 WINEPREFIX=/home/$USER/Games/Teamspeak winetricks
             ;;
-6)
+        6)
 WINEPREFIX="/home/$USER/Games/Clone Hero" winetricks
+            ;;
+        7)
+WINEPREFIX="/home/$USER/Games/Drakensang Online" winetricks
+
 esac
 esac
