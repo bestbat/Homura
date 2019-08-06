@@ -45,3 +45,7 @@ Tab out and in.
 # World of Warcraft 1.12.1 no sound
 
 Start the game in a new wine preifx.
+
+# Origin
+
+Turn off the in-game overlay.
