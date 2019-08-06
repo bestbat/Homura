@@ -145,10 +145,10 @@ cd /home/$USER
 case $CHOICE in
 
         1)
-WINEPREFIX=/home/$USER/Games/Steam wine /home/$USER/Games/Steam/drive_c/Program Files/Steam/Steam.exe
+WINEPREFIX=/home/$USER/Games/Steam wine "/home/$USER/Games/Steam/drive_c/Program Files/Steam/Steam.exe"
             ;;
         2)
-WINEPREFIX=/home/$USER/Games/Blizzard wine /home/alexander/Games/Blizzard/drive_c/Program Files/Battle.net/Battle.net.exe          
+WINEPREFIX=/home/$USER/Games/Blizzard wine "/home/alexander/Games/Blizzard/drive_c/Program Files/Battle.net/Battle.net.exe"          
             ;;
         3)  
 echo origin is not working! should this invaild let me now            
