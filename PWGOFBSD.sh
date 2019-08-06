@@ -59,7 +59,7 @@ mkdir /home/$USER/Games/Steam
 echo -e "\e[40;38;5;82mDownloading Steam\e[30;48;5;82m\e[0m"
 curl -O https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
-WINEPREFIX=/home/$USER/Games/Steam winetricks winxp  # Fixes Steam-Chat problems & and some audio problems in UE games.
+WINEPREFIX=/home/$USER/Games/Steam winetricks winxp dotnet40
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/Games/Steam wine SteamSetup.exe
             ;;
@@ -74,7 +74,9 @@ WINEPREFIX=/home/$USER/Games/Blizzard wine /home/$USER/Battle.net-Setup-enUS.exe
         3)
 mkdir /home/$USER/Games/Origin
 echo -e "\e[40;38;5;82mDownloading Origin\e[30;48;5;82m\e[0m"
-curl -O https://origin-a.akamaihd.net/Origin-Client-Download/origin/live/OriginThinSetup.exe
+curl -O https://origin-a.akamaihd.net/Origin-Client-Download/origin/legacy/OriginThinSetup.exe
+echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+WINEPREFIX=/home/$USER/Games/Origin winetricks winxp
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/Games/Origin wine /home/$USER/OriginThinSetup.exe
             ;;
@@ -151,7 +153,7 @@ WINEPREFIX=/home/$USER/Games/Steam wine "/home/$USER/Games/Steam/drive_c/Program
 WINEPREFIX=/home/$USER/Games/Blizzard wine "/home/alexander/Games/Blizzard/drive_c/Program Files/Battle.net/Battle.net.exe"          
             ;;
         3)  
-echo origin is not working! should this invaild let me now            
+WINEPREFIX=/home/$USER/Games/Origin wine "/home/$USER/Games/Origin/drive_c/Program Files/Origin/Origin.exe"             
             ;;
         4)  
 WINEPREFIX=/home/$USER/Games/Uplay wine "/home/$USER/Games/Uplay/drive_c/Program Files/Ubisoft/Ubisoft Game Launcher/Uplay.exe"            
@@ -199,19 +201,26 @@ case $CHOICE in
         1)
 rm -d -r /home/$USER/Games/Steam
 rm -d -r /home/$USER/.local/share/applications/wine/Programs/Steam
+rm /home/$USER/Desktop/Steam.desktop
 echo done!
             ;;
         2)
 rm -d -r /home/$USER/Games/Blizzard
 rm -d -r /home/$USER/.local/share/applications/wine/Programs/Battle.net
+rm -d -r /home/$USER/Desktop/Battle.net.desktop
 echo done!    
             ;;
         3)  
-echo origin is not working! should this invaild let me now!         
+rm -d -r /home/$USER/Games/Origin
+rm -d -r /home/$USER/.local/share/applications/wine/Programs/Origin
+rm /home/$USER/Desktop/Origin.desktop
+echo done!            
             ;;
         4)  
 rm -d -r /home/$USER/Games/Uplay
-rm -d -r /home/$USER/.local/share/applications/wine/Programs/Ubisoft   
+rm -d -r /home/$USER/.local/share/applications/wine/Programs/Ubisoft
+rm /home/$USER/Desktop/Uplay.desktop
+rm /home/$USER/Desktop/Uplay.lnk    
 echo done!           
             ;;
         5)
@@ -226,6 +235,8 @@ echo done!
         7)
 rm -d -r "/home/alexander/Games/Drakensang Online"
 rm -d -r "home/alexander/.local/share/applications/wine/Programs/Drakensang Online"
+rm "/home/$USER/Desktop/Drakensang Online.desktop"
+rm "/home/$USER/Desktop/Drakensang Online.lnk"
 echo done!
 
 esac
