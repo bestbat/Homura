@@ -22,7 +22,7 @@ This list will be refreshed on every update of [i386-wine-devel](https://www.fre
 
 - Steam: Works, but uses winxp with an older steam client to get some online features. (Doesn't affect performance)
 - Blizzard: Works.
-- Origin: Borked: Crashes at start.
+- Origin: Wokrs, but uses winxp with an older origin client. (Doesn't affect performance)
 - Uplay: Works, but crashes to often.
 - Teamspeak: Works.
 - Clone Hero: Crashes at start. WARNING: The game can also hang up and cause a very, very loud sound error!
