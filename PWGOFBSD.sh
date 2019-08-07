@@ -57,12 +57,13 @@ case $CHOICE in
 
         1)
 mkdir /home/$USER/Games/Steam
+cd /home/$USER/Games/Steam
 echo -e "\e[40;38;5;82mDownloading Steam\e[30;48;5;82m\e[0m"
 curl -O https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/Games/Steam winetricks winxp dotnet40
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
-WINEPREFIX=/home/$USER/Games/Steam wine /home/$USER/SteamSetup.exe
+WINEPREFIX=/home/$USER/Games/Steam wine /home/$USER/Games/Steam/SteamSetup.exe
             ;;
             
         2)
