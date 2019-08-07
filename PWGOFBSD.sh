@@ -27,7 +27,7 @@ case $CHOICE in
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=7
+CHOICE_HEIGHT=8
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Installation"
 MENU="What do you want to install?"
@@ -38,7 +38,8 @@ OPTIONS=(1 "Steam"
          4 "Uplay"
          5 "Teamspeak"
          6 "Clone Hero"
-         7 "Drakensang Online")
+         7 "Drakensang Online"
+         8 "Anarchy Online")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -61,31 +62,34 @@ curl -O https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/Games/Steam winetricks winxp dotnet40
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
-WINEPREFIX=/home/$USER/Games/Steam wine SteamSetup.exe
+WINEPREFIX=/home/$USER/Games/Steam wine /home/$USER/SteamSetup.exe
             ;;
             
         2)
 mkdir /home/$USER/Games/Blizzard
+cd /home/$USER/Games/Blizzard
 echo -e "\e[40;38;5;82mDownloading Blizzard\e[30;48;5;82m\e[0m"
 curl -O http://dist.blizzard.com/downloads/bna-installers/322d5bb9ae0318de3d4cde7641c96425/retail.1/Battle.net-Setup-enUS.exe
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
-WINEPREFIX=/home/$USER/Games/Blizzard wine /home/$USER/Battle.net-Setup-enUS.exe
+WINEPREFIX=/home/$USER/Games/Blizzard wine /home/$USER/Games/Blizzard/Battle.net-Setup-enUS.exe
             ;;
         3)
 mkdir /home/$USER/Games/Origin
+cd /home/$USER/Games/Origin
 echo -e "\e[40;38;5;82mDownloading Origin\e[30;48;5;82m\e[0m"
 curl -O https://origin-a.akamaihd.net/Origin-Client-Download/origin/legacy/OriginThinSetup.exe
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/Games/Origin winetricks winxp
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
-WINEPREFIX=/home/$USER/Games/Origin wine /home/$USER/OriginThinSetup.exe
+WINEPREFIX=/home/$USER/Games/Origin wine /home/$USER/Games/Origin/OriginThinSetup.exe
             ;;
         4)
 mkdir /home/$USER/Games/Uplay
+cd /home/$USER/Games/Uplay
 echo -e "\e[40;38;5;82mDownloading Uplay\e[30;48;5;82m\e[0m"
 curl -O https://ubistatic3-a.akamaihd.net/orbit/launcher_installer/UplayInstaller.exe
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
-WINEPREFIX=/home/$USER/Games/Uplay wine /home/$USER/UplayInstaller.exe
+WINEPREFIX=/home/$USER/Games/Uplay wine /home/$USER/Games/Uplay/UplayInstaller.exe
             ;;
         5)
 mkdir /home/$USER/Programs/Teamspeak
@@ -114,6 +118,16 @@ echo -e "\e[40;38;5;82mDownloading Drakensang Online\e[30;48;5;82m\e[0m"
 curl -O https://drasaonline-481-dwl.bpsecure.com/applet/dro_setup.exe
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX="/home/$USER/Games/Drakensang Online" wine "/home/$USER/Games/Drakensang Online/dro_setup.exe"
+            ;;
+        8)
+mkdir "/home/$USER/Games/Anarchy Online"
+cd "/home/$USER/Games/Anarchy Online"
+echo -e "\e[40;38;5;82mDownloading Anarchy Online\e[30;48;5;82m\e[0m"
+curl -O http://update.anarchy-online.com/download/AO/AnarchyOnline_EP1.exe
+echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+WINEPREFIX="/home/$USER/Games/Anarchy Online" winetricks winxp
+echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+WINEPREFIX="/home/$USER/Games/Anarchy Online" wine "/home/$USER/Games/Anarchy Online/AnarchyOnline_EP1.exe"
 
 esac
             ;;
@@ -121,7 +135,7 @@ esac
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=7
+CHOICE_HEIGHT=8
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Launcher"
 MENU="What do you want to launch?"
@@ -132,7 +146,8 @@ OPTIONS=(1 "Steam"
          4 "Uplay"
          5 "Teamspeak"
          6 "Clone Hero"
-         7 "Drakensang Online")
+         7 "Drakensang Online"
+         8 "Anarchy Online")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -166,6 +181,9 @@ WINEPREFIX=/home/$USER/Games/Clone-Hero wine "/home/$USER/Games/Clone-Hero/clone
             ;;
         7)
 WINEPREFIX="/home/$USER/Games/Drakensang Online/" wine "/home/$USER/Games/Drakensang Online/drive_c/Program Files/Drakensang Online/thinclient.exe"  
+            ;;
+        8)
+env WINEPREFIX="/home/$USER/Games/Anarchy Online" wine C:\\windows\\command\\start.exe /Unix "/home/$USER/Games/Anarchy Online/dosdevices/c:/users/Public/Desktop/Anarchy\ Online.lnk"
 
 esac
             ;;
@@ -173,7 +191,7 @@ esac
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=7
+CHOICE_HEIGHT=8
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Uninstallation"
 MENU="What do you want to uninstall?"
@@ -184,7 +202,8 @@ OPTIONS=(1 "Steam"
          4 "Uplay"
          5 "Teamspeak"
          6 "Clone Hero"
-         7 "Drakensang Online")
+         7 "Drakensang Online"
+         8 "Anarchy Online")
          
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -233,19 +252,26 @@ echo done!
 
             ;;
         7)
-rm -d -r "/home/alexander/Games/Drakensang Online"
-rm -d -r "home/alexander/.local/share/applications/wine/Programs/Drakensang Online"
+rm -d -r "/home/$USER/Games/Drakensang Online"
+rm -d -r "/home/$USER/.local/share/applications/wine/Programs/Drakensang Online"
 rm "/home/$USER/Desktop/Drakensang Online.desktop"
 rm "/home/$USER/Desktop/Drakensang Online.lnk"
 echo done!
 
+            ;;
+        8)
+rm -d -r "/home/$USER/Games/Anarchy Online"
+rm -d -r "/home/$USER/.local/share/applications/wine/Programs/Anarchy Online"
+rm "/home/$USER/Desktop/Anarchy Online.desktop"
+echo done!
+
 esac
-;;
+            ;;
         4)
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=7
+CHOICE_HEIGHT=8
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Winetricks"
 MENU="In what prefix do you want to open winetricks?"
@@ -256,7 +282,8 @@ OPTIONS=(1 "Steam"
          4 "Uplay"
          5 "Teamspeak"
          6 "Clone Hero"
-         7 "Drakensang Online")
+         7 "Drakensang Online"
+         8 "Anarchy Online")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -289,6 +316,9 @@ WINEPREFIX="/home/$USER/Games/Clone Hero" winetricks
             ;;
         7)
 WINEPREFIX="/home/$USER/Games/Drakensang Online" winetricks
+            ;;
+        8)
+WINEPREFIX="/home/$USER/Games/Anarchy Online" winetricks
 
 esac
 esac
