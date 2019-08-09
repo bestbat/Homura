@@ -109,6 +109,7 @@ echo -e "\e[40;38;5;82mDownloading Clone Hero\e[30;48;5;82m\e[0m"
 curl -O http://dl.clonehero.net/clonehero-v.22.5/clonehero-win32.7z
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 7z x clonehero-win32.7z
+rm clonehero-win32.7z
 echo -e "\e[40;38;5;82mApplying fix\e[30;48;5;82m\e[0m"
 cd clonehero-win32
 curl -O http://alt.magzu.net/dl/settings.ini
