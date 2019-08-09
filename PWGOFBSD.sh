@@ -110,6 +110,9 @@ curl -O http://dl.clonehero.net/clonehero-v.22.5/clonehero-win32.7z
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 7z x clonehero-win32.7z
 rm clonehero-win32.7z
+cd clonehero-win32
+rm settings.ini
+curl -O http://alt.magzu.net/dl/settings.ini
 echo Done!
             ;;
         7)
