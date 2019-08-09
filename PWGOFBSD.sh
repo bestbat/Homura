@@ -180,7 +180,7 @@ WINEPREFIX=/home/$USER/Games/Uplay wine "/home/$USER/Games/Uplay/drive_c/Program
 WINEPREFIX=/home/$USER/Programs/Teamspeak wine "/home/$USER/Programs/Teamspeak/TeamSpeak 3 Client/ts3client_win32.exe"
             ;;
         6)
-WINEPREFIX=/home/$USER/Games/Clone-Hero wine "/home/$USER/Games/Clone Hero/clonehero-win32/Clone Hero.exe"
+WINEPREFIX="/home/$USER/Games/Clone Hero" wine "/home/$USER/Games/Clone Hero/clonehero-win32/Clone Hero.exe"
             ;;
         7)
 WINEPREFIX="/home/$USER/Games/Drakensang Online/" wine "/home/$USER/Games/Drakensang Online/drive_c/Program Files/Drakensang Online/thinclient.exe"  
