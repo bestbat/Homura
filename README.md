@@ -27,7 +27,7 @@ This list will be refreshed on every update of [i386-wine-devel](https://www.fre
 - Teamspeak: Works.
 - Clone Hero: Works, WARNING: The game can also cause a very, very loud sound error! To fix it restart the system.
 - Drakensang Online: Crashes at start.
-- Anarchy Online: Works
+- Anarchy Online: Works.
 
 If you want a special game then create an issue :)
 
