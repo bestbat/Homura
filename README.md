@@ -20,14 +20,16 @@ Install your favorite windows games & launcher easily!
 
 This list will be refreshed on every update of [i386-wine-devel](https://www.freshports.org/emulators/i386-wine-devel)
 
-- Steam: Works, but uses winxp with an older steam client to get some online features. (Doesn't affect performance)
-- Blizzard: Works.
-- Origin: Works, but uses winxp with an older origin client. (Doesn't affect performance)
-- Uplay: Works, but crashes to often.
-- Teamspeak: Works.
-- Clone Hero: Works, WARNING: The game can also cause a very, very loud sound error! To fix it restart the system.
-- Drakensang Online: Crashes at start.
-- Anarchy Online: Works.
+Application | Works?
+------------ | -------------
+ Steam | Uses winxp with an older steam client to get some online features. (Doesn't affect performance)
+ Blizzard | Runs out of the box.
+ Origin | Uses winxp with an older origin client. (Doesn't affect performance)
+ Uplay | Runs out of the box, but crashes to often.
+ Teamspeak | Runs out of the box.
+ Clone Hero | Runs out of the box. WARNING: The game can also cause a very, very loud sound error! To fix it restart the system.
+ Drakensang Online |  Crashes at start.
+ Anarchy Online | Runs out of the box.
 
 If you want a special game then create an issue :)
 
