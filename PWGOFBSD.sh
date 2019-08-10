@@ -197,7 +197,7 @@ WINEPREFIX="/home/$USER/Games/Clone Hero" wine "/home/$USER/Games/Clone Hero/clo
 WINEPREFIX="/home/$USER/Games/Drakensang Online/" wine "/home/$USER/Games/Drakensang Online/drive_c/Program Files/Drakensang Online/thinclient.exe"  
             ;;
         8)
-env WINEPREFIX="/home/$USER/Games/Anarchy Online" wine C:\\windows\\command\\start.exe /Unix "/home/$USER/Games/Anarchy Online/dosdevices/c:/users/Public/Desktop/Anarchy\ Online.lnk"
+env WINEPREFIX="/home/$USER/Games/Anarchy Online" wine C:\\windows\\command\\start.exe /Unix /home/$USER/Games/Anarchy\ Online/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Anarchy\ Online/Anarchy\ Online.lnk
             ;;
         9)
 VERSION=25.4.0
