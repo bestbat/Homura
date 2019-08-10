@@ -27,7 +27,7 @@ case $CHOICE in
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=8
+CHOICE_HEIGHT=9
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Installation"
 MENU="What do you want to install?"
@@ -39,7 +39,8 @@ OPTIONS=(1 "Steam"
          5 "Teamspeak"
          6 "Clone Hero"
          7 "Drakensang Online"
-         8 "Anarchy Online")
+         8 "Anarchy Online"
+         9 "itch")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -132,6 +133,14 @@ echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 WINEPREFIX="/home/$USER/Games/Anarchy Online" winetricks winxp
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX="/home/$USER/Games/Anarchy Online" wine "/home/$USER/Games/Anarchy Online/AnarchyOnline_EP1.exe"
+            ;;
+        9)
+mkdir /home/$USER/Games/itch
+cd /home/$USER/Games/itch
+echo -e "\e[40;38;5;82mDownloading itch\e[30;48;5;82m\e[0m"
+curl -L -O http://nuts.itch.zone/download/windows
+echo -e "\e[40;38;5;82mInstalling itch\e[30;48;5;82m\e[0m"
+WINEPREFIX=/home/$USER/Games/itch wine /home/$USER/Games/itch/windows
 
 esac
             ;;
@@ -139,7 +148,7 @@ esac
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=8
+CHOICE_HEIGHT=9
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Launcher"
 MENU="What do you want to launch?"
@@ -151,7 +160,8 @@ OPTIONS=(1 "Steam"
          5 "Teamspeak"
          6 "Clone Hero"
          7 "Drakensang Online"
-         8 "Anarchy Online")
+         8 "Anarchy Online"
+         9 "itch")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -188,14 +198,17 @@ WINEPREFIX="/home/$USER/Games/Drakensang Online/" wine "/home/$USER/Games/Draken
             ;;
         8)
 env WINEPREFIX="/home/$USER/Games/Anarchy Online" wine C:\\windows\\command\\start.exe /Unix "/home/$USER/Games/Anarchy Online/dosdevices/c:/users/Public/Desktop/Anarchy\ Online.lnk"
-
+            ;;
+        9)
+VERSION=25.4.0
+WINEPREFIX=/home/$USER/Games/itch wine "/home/$USER/.wine/drive_c/users/$USER/Local Settings/Application Data/itch/app-$VERSION/itch.exe"
 esac
             ;;
         3)
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=8
+CHOICE_HEIGHT=9
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Uninstallation"
 MENU="What do you want to uninstall?"
@@ -207,7 +220,8 @@ OPTIONS=(1 "Steam"
          5 "Teamspeak"
          6 "Clone Hero"
          7 "Drakensang Online"
-         8 "Anarchy Online")
+         8 "Anarchy Online"
+         9 "itch")
          
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -268,14 +282,18 @@ rm -d -r "/home/$USER/Games/Anarchy Online"
 rm -d -r "/home/$USER/.local/share/applications/wine/Programs/Anarchy Online"
 rm "/home/$USER/Desktop/Anarchy Online.desktop"
 echo done!
-
+            ;;
+        9)
+rm -d -r /home/$USER/Games/itch
+rm -d -r "/home/$USER/.local/share/applications/wine/Programs/Itch Corp"
+echo done!
 esac
             ;;
         4)
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=8
+CHOICE_HEIGHT=9
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Winetricks"
 MENU="In what prefix do you want to open winetricks?"
@@ -287,7 +305,8 @@ OPTIONS=(1 "Steam"
          5 "Teamspeak"
          6 "Clone Hero"
          7 "Drakensang Online"
-         8 "Anarchy Online")
+         8 "Anarchy Online"
+         9 "itch")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -323,6 +342,9 @@ WINEPREFIX="/home/$USER/Games/Drakensang Online" winetricks
             ;;
         8)
 WINEPREFIX="/home/$USER/Games/Anarchy Online" winetricks
+            ;;
+        9)
+WINEPREFIX=/home/$USER/Games/itch winetricks
 
 esac
 esac
