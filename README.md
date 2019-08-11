@@ -10,11 +10,11 @@ Install your favorite windows games & launcher easily!
 # Dependencies :syringe:
 
 - curl
+- p7zip
 - dialog
+- webfonts
 - winetricks
 - i386-wine-devel on amd64 or wine-devel on i386
-- webfonts
-- p7zip
 
 # States :fire:
 
