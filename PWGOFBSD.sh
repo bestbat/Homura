@@ -101,7 +101,7 @@ curl -O https://oc.magzu.net/owncloud/index.php/s/C5BmsWkNiedJNzV/download
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 unzip download
 rm download
-echo Done!
+echo -e "\e[40;38;5;82mDone!\e[30;48;5;82m\e[0m"
             ;;
         6)
 mkdir "/home/$USER/Games/Clone Hero"
@@ -114,7 +114,7 @@ rm clonehero-win32.7z
 echo -e "\e[40;38;5;82mApplying fix\e[30;48;5;82m\e[0m"
 cd clonehero-win32
 curl -O http://alt.magzu.net/dl/settings.ini
-echo Done!
+echo -e "\e[40;38;5;82mDone!\e[30;48;5;82m\e[0m"
             ;;
         7)
 mkdir "/home/$USER/Games/Drakensang Online"
@@ -239,34 +239,34 @@ case $CHOICE in
 rm -d -r /home/$USER/Games/Steam
 rm -d -r /home/$USER/.local/share/applications/wine/Programs/Steam
 rm /home/$USER/Desktop/Steam.desktop
-echo done!
+echo -e "\e[40;38;5;82mDone!\e[30;48;5;82m\e[0m"
             ;;
         2)
 rm -d -r /home/$USER/Games/Blizzard
 rm -d -r /home/$USER/.local/share/applications/wine/Programs/Battle.net
 rm -d -r /home/$USER/Desktop/Battle.net.desktop
-echo done!    
+echo -e "\e[40;38;5;82mDone!\e[30;48;5;82m\e[0m"    
             ;;
         3)  
 rm -d -r /home/$USER/Games/Origin
 rm -d -r /home/$USER/.local/share/applications/wine/Programs/Origin
 rm /home/$USER/Desktop/Origin.desktop
-echo done!            
+echo -e "\e[40;38;5;82mDone!\e[30;48;5;82m\e[0m"            
             ;;
         4)  
 rm -d -r /home/$USER/Games/Uplay
 rm -d -r /home/$USER/.local/share/applications/wine/Programs/Ubisoft
 rm /home/$USER/Desktop/Uplay.desktop
 rm /home/$USER/Desktop/Uplay.lnk    
-echo done!           
+echo -e "\e[40;38;5;82mDone!\e[30;48;5;82m\e[0m"           
             ;;
         5)
 rm -d -r /home/$USER/Programs/Teamspeak
-echo done!
+echo -e "\e[40;38;5;82mDone!\e[30;48;5;82m\e[0m"
             ;;
         6)
 rm -d -r "/home/$USER/Games/Clone Hero"
-echo done!
+echo -e "\e[40;38;5;82mDone!\e[30;48;5;82m\e[0m"
 
             ;;
         7)
@@ -274,19 +274,19 @@ rm -d -r "/home/$USER/Games/Drakensang Online"
 rm -d -r "/home/$USER/.local/share/applications/wine/Programs/Drakensang Online"
 rm "/home/$USER/Desktop/Drakensang Online.desktop"
 rm "/home/$USER/Desktop/Drakensang Online.lnk"
-echo done!
+echo -e "\e[40;38;5;82mDone!\e[30;48;5;82m\e[0m"
 
             ;;
         8)
 rm -d -r "/home/$USER/Games/Anarchy Online"
 rm -d -r "/home/$USER/.local/share/applications/wine/Programs/Anarchy Online"
 rm "/home/$USER/Desktop/Anarchy Online.desktop"
-echo done!
+echo -e "\e[40;38;5;82mDone!\e[30;48;5;82m\e[0m"
             ;;
         9)
 rm -d -r /home/$USER/Games/itch
 rm -d -r "/home/$USER/.local/share/applications/wine/Programs/Itch Corp"
-echo done!
+echo -e "\e[40;38;5;82mDone!\e[30;48;5;82m\e[0m"
 esac
             ;;
         4)
