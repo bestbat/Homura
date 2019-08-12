@@ -1,4 +1,5 @@
 #!/bin/bash
+sd=$(pwd)
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=4
@@ -143,6 +144,8 @@ echo -e "\e[40;38;5;82mInstalling itch\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/Games/itch wine /home/$USER/Games/itch/windows
 
 esac
+cd $sd
+bash PWGOFBSD.sh
             ;;
         2)
 #!/bin/bash
@@ -212,6 +215,8 @@ echo $'\033]30;itch\007'
 VERSION=25.4.0
 WINEPREFIX=/home/$USER/Games/itch wine "/home/$USER/.wine/drive_c/users/$USER/Local Settings/Application Data/itch/app-$VERSION/itch.exe"
 esac
+cd $sd
+bash PWGOFBSD.sh
             ;;
         3)
 #!/bin/bash
@@ -356,4 +361,6 @@ WINEPREFIX="/home/$USER/Games/Anarchy Online" winetricks
 WINEPREFIX=/home/$USER/Games/itch winetricks
 
 esac
+cd $sd
+bash PWGOFBSD.sh
 esac
