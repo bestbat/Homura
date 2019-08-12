@@ -1,6 +1,10 @@
 # PWGOFBSD - Play Windows Games On FreeBSD
 [![CodeFactor](https://www.codefactor.io/repository/github/alexander88207/pwgofbsd/badge)](https://www.codefactor.io/repository/github/alexander88207/pwgofbsd) ![GitHub release](https://img.shields.io/github/release/Alexander88207/PWGOBSD)
 
+# Introduction
+
+Inspired by lutris, we would like to provide a game launcher to play windows games on FreeBSD.
+
 # Description &#x1F4D8;
 
 Install your favorite windows games & launcher easily!
