@@ -1,8 +1,4 @@
 #!/bin/bash
-# MESA [AMD] [INTEL]
-#OPT=mesa_glthread=true
-# NVIDIA
-#OPT=__GL_THREADED_OPTIMIZATIONS=1
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=4
@@ -181,32 +177,40 @@ case $CHOICE in
 
         1)
 echo $'\033]30;Steam\007'        
-WINEPREFIX=/home/$USER/Games/Steam $OPT wine "/home/$USER/Games/Steam/drive_c/Program Files/Steam/Steam.exe" -no-cef-sandbox
+WINEPREFIX=/home/$USER/Games/Steam wine "/home/$USER/Games/Steam/drive_c/Program Files/Steam/Steam.exe" -no-cef-sandbox
             ;;
         2)
-WINEPREFIX=/home/$USER/Games/Blizzard $OPT wine "/home/alexander/Games/Blizzard/drive_c/Program Files/Battle.net/Battle.net.exe"          
+echo $'\033]30;Blizzard\007'        
+WINEPREFIX=/home/$USER/Games/Blizzard wine "/home/alexander/Games/Blizzard/drive_c/Program Files/Battle.net/Battle.net.exe"          
             ;;
-        3)  
-WINEPREFIX=/home/$USER/Games/Origin $OPT wine "/home/$USER/Games/Origin/drive_c/Program Files/Origin/Origin.exe"             
+        3)
+echo $'\033]30;Origin\007'        
+WINEPREFIX=/home/$USER/Games/Origin wine "/home/$USER/Games/Origin/drive_c/Program Files/Origin/Origin.exe"             
             ;;
         4)  
-WINEPREFIX=/home/$USER/Games/Uplay $OPT wine "/home/$USER/Games/Uplay/drive_c/Program Files/Ubisoft/Ubisoft Game Launcher/Uplay.exe"            
+echo $'\033]30;Uplay\007' 
+WINEPREFIX=/home/$USER/Games/Uplay wine "/home/$USER/Games/Uplay/drive_c/Program Files/Ubisoft/Ubisoft Game Launcher/Uplay.exe"            
             ;;
         5)
-WINEPREFIX=/home/$USER/Programs/Teamspeak $OPT wine "/home/$USER/Programs/Teamspeak/TeamSpeak 3 Client/ts3client_win32.exe"
+echo $'\033]30;Teamspeak\007' 
+WINEPREFIX=/home/$USER/Programs/Teamspeak wine "/home/$USER/Programs/Teamspeak/TeamSpeak 3 Client/ts3client_win32.exe"
             ;;
         6)
-WINEPREFIX="/home/$USER/Games/Clone Hero" $OPT wine "/home/$USER/Games/Clone Hero/clonehero-win32/Clone Hero.exe"
+echo $'\033]30;Clone Hero\007' 
+WINEPREFIX="/home/$USER/Games/Clone Hero" wine "/home/$USER/Games/Clone Hero/clonehero-win32/Clone Hero.exe"
             ;;
         7)
-WINEPREFIX="/home/$USER/Games/Drakensang Online/" $OPT wine "/home/$USER/Games/Drakensang Online/drive_c/Program Files/Drakensang Online/thinclient.exe"  
+echo $'\033]30;Drakensang Online\007' 
+WINEPREFIX="/home/$USER/Games/Drakensang Online/" wine "/home/$USER/Games/Drakensang Online/drive_c/Program Files/Drakensang Online/thinclient.exe"  
             ;;
         8)
-env WINEPREFIX="/home/$USER/Games/Anarchy Online" $OPT wine C:\\windows\\command\\start.exe /Unix /home/$USER/Games/Anarchy\ Online/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Anarchy\ Online/Anarchy\ Online.lnk
+echo $'\033]30;Anarchy Online\007' 
+env WINEPREFIX="/home/$USER/Games/Anarchy Online" wine C:\\windows\\command\\start.exe /Unix /home/$USER/Games/Anarchy\ Online/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Anarchy\ Online/Anarchy\ Online.lnk
             ;;
         9)
+echo $'\033]30;itch\007' 
 VERSION=25.4.0
-WINEPREFIX=/home/$USER/Games/itch $OPT wine "/home/$USER/.wine/drive_c/users/$USER/Local Settings/Application Data/itch/app-$VERSION/itch.exe"
+WINEPREFIX=/home/$USER/Games/itch wine "/home/$USER/.wine/drive_c/users/$USER/Local Settings/Application Data/itch/app-$VERSION/itch.exe"
 esac
             ;;
         3)
