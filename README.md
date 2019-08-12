@@ -54,6 +54,7 @@ To start this script use the follwing command in the folder:
 ```
 bash PWGOFBSD.sh
 ```
+To get a better design copy the file `.dialogrc` to `/home/$USER`
 
 To uninstall that script just delete that and the Games & Programs folder in the home directory.
 
