@@ -1,4 +1,5 @@
 #!/bin/bash
+echo $'\033]30;PWGOFBSD - Play Windows Games On FreeBSD\007' 
 SD=$(pwd)
 HEIGHT=15
 WIDTH=40
