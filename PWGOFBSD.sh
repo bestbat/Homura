@@ -317,7 +317,7 @@ rm -d -r "/home/$USER/.local/share/applications/wine/Programs/Itch Corp"
             ;;
        10)
 rm -d -r "/home/$USER/Games/GOG Galaxy"
-rm -d -r "/home/$USER/.local/share/applications/wine/Programs/GOG.com"
+rm -d -r /home/$USER/.local/share/applications/wine/Programs/GOG.com
 rm -d -r "/home/$USER/Desktop/GOG Galaxy.desktop"
 
 esac
