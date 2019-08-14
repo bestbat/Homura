@@ -34,6 +34,7 @@ Application | Works?
  Clone Hero | Runs out of the box. WARNING: The game can also cause a very, very loud sound error! To fix it restart the system.
  Drakensang Online |  Crashes at start.
  Anarchy Online | Runs out of the box. Please let the installer create a shortcut or you are unable to start the launcher!
+ itch | Runs out of the box.
 
 If you want a special game then create an issue :)
 
