@@ -28,9 +28,9 @@ case $CHOICE in
 
         1)
 #!/bin/bash
-HEIGHT=15
+HEIGHT=17
 WIDTH=40
-CHOICE_HEIGHT=9
+CHOICE_HEIGHT=10
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Installation"
 MENU="What do you want to install?"
@@ -43,7 +43,8 @@ OPTIONS=(1 "Steam"
          6 "Clone Hero"
          7 "Drakensang Online"
          8 "Anarchy Online"
-         9 "itch")
+         9 "itch"
+        10 "GOG Galaxy")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -146,9 +147,18 @@ mkdir /home/$USER/Games/itch
 cd /home/$USER/Games/itch
 echo -e "\e[40;38;5;82mDownloading itch\e[30;48;5;82m\e[0m"
 curl -L -O http://nuts.itch.zone/download/windows
-echo -e "\e[40;38;5;82mInstalling itch\e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/Games/itch wine /home/$USER/Games/itch/windows
 rm /home/$USER/Games/itch/windows
+            ;;
+        10)
+mkdir "/home/$USER/Games/GOG Galaxy"
+cd "/home/$USER/Games/GOG Galaxy"
+echo -e "\e[40;38;5;82mDownloading GOG Galaxy\e[30;48;5;82m\e[0m"
+curl -O -L https://content-system.gog.com/open_link/download?path=/open/galaxy/client/setup_galaxy_1.2.57.74.exe
+echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+WINEPREFIX="/home/$USER/Games/GOG Galaxy" wine "/home/$USER/Games/GOG Galaxy/setup_galaxy_1.2.57.74.exe"
+rm "/home/$USER/Games/GOG Galaxy/setup_galaxy_1.2.57.74.exe"
 
 esac
 notify-send Done!
@@ -157,9 +167,9 @@ bash PWGOFBSD.sh
             ;;
         2)
 #!/bin/bash
-HEIGHT=15
+HEIGHT=17
 WIDTH=40
-CHOICE_HEIGHT=9
+CHOICE_HEIGHT=10
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Launcher"
 MENU="What do you want to launch?"
@@ -172,7 +182,8 @@ OPTIONS=(1 "Steam"
          6 "Clone Hero"
          7 "Drakensang Online"
          8 "Anarchy Online"
-         9 "itch")
+         9 "itch"
+        10 "GOG Galaxy")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -222,15 +233,19 @@ env WINEPREFIX="/home/$USER/Games/Anarchy Online" wine C:\\windows\\command\\sta
 echo $'\033]30;itch\007' 
 VERSION=25.4.0
 WINEPREFIX=/home/$USER/Games/itch wine "/home/$USER/.wine/drive_c/users/$USER/Local Settings/Application Data/itch/app-$VERSION/itch.exe"
+            ;;
+        10)
+WINEPREFIX="/home/$USER/Games/GOG Galaxy" wine "/home/$USER/Games/GOG Galaxy/drive_c/Program Files/GOG Galaxy/GalaxyClient.exe" /runWithoutUpdating /deelevated   
+
 esac
 cd $SD
 bash PWGOFBSD.sh
             ;;
         3)
 #!/bin/bash
-HEIGHT=15
+HEIGHT=17
 WIDTH=40
-CHOICE_HEIGHT=9
+CHOICE_HEIGHT=10
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Uninstallation"
 MENU="What do you want to uninstall?"
@@ -243,7 +258,8 @@ OPTIONS=(1 "Steam"
          6 "Clone Hero"
          7 "Drakensang Online"
          8 "Anarchy Online"
-         9 "itch")
+         9 "itch"
+        10 "GOG Galaxy")
          
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -298,6 +314,11 @@ rm "/home/$USER/Desktop/Anarchy Online.desktop"
         9)
 rm -d -r /home/$USER/Games/itch
 rm -d -r "/home/$USER/.local/share/applications/wine/Programs/Itch Corp"
+            ;;
+       10)
+rm -d -r "/home/$USER/Games/GOG Galaxy"
+rm -d -r "/home/$USER/.local/share/applications/wine/Programs/GOG.com"
+rm -d -r "/home/$USER/Desktop/GOG Galaxy.desktop"
 
 esac
 notify-send Done!
@@ -306,9 +327,9 @@ bash PWGOFBSD.sh
             ;;
         4)
 #!/bin/bash
-HEIGHT=15
-WIDTH=40
-CHOICE_HEIGHT=9
+HEIGHT=17
+WIDTH=50
+CHOICE_HEIGHT=10
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Winetricks"
 MENU="In what prefix do you want to open winetricks?"
@@ -321,7 +342,8 @@ OPTIONS=(1 "Steam"
          6 "Clone Hero"
          7 "Drakensang Online"
          8 "Anarchy Online"
-         9 "itch")
+         9 "itch"
+        10 "GOG Galaxy")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -360,6 +382,9 @@ WINEPREFIX="/home/$USER/Games/Anarchy Online" winetricks
             ;;
         9)
 WINEPREFIX=/home/$USER/Games/itch winetricks
+            ;;
+       10)
+WINEPREFIX="/home/$USER/Games/GOG Galaxy" winetricks
 
 esac
 cd $SD
@@ -367,9 +392,9 @@ bash PWGOFBSD.sh
             ;;
         5)
 #!/bin/bash
-HEIGHT=15
-WIDTH=40
-CHOICE_HEIGHT=9
+HEIGHT=17
+WIDTH=55
+CHOICE_HEIGHT=10
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Run a executable in prefix"
 MENU="In what prefix do you want to open your executable?"
@@ -382,7 +407,8 @@ OPTIONS=(1 "Steam"
          6 "Clone Hero"
          7 "Drakensang Online"
          8 "Anarchy Online"
-         9 "itch")
+         9 "itch"
+        10 "GOG Galaxy")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -422,6 +448,9 @@ WINEPREFIX="/home/$USER/Games/Anarchy Online" wine $EXECUTABLE
             ;;
         9)
 WINEPREFIX=/home/$USER/Games/itch wine $EXECUTABLE
+            ;;
+       10)
+WINEPREFIX="/home/$USER/Games/GOG Galaxy" wine $EXECUTABLE
 
 esac
 cd $SD
