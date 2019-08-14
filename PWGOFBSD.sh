@@ -3,7 +3,7 @@ echo $'\033]30;PWGOFBSD - Play Windows Games On FreeBSD\007'
 SD=$(pwd)
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=4
+CHOICE_HEIGHT=5
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Welcome $USER :)"
 MENU="What do you want to do?"
@@ -11,7 +11,8 @@ MENU="What do you want to do?"
 OPTIONS=(1 "Installation"
          2 "Launcher"
          3 "Uninstallation"
-         4 "Winetricks")
+         4 "Winetricks"
+         5 "Run a executable in prefix")
          
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -359,6 +360,68 @@ WINEPREFIX="/home/$USER/Games/Anarchy Online" winetricks
             ;;
         9)
 WINEPREFIX=/home/$USER/Games/itch winetricks
+
+esac
+cd $SD
+bash PWGOFBSD.sh
+            ;;
+        5)
+#!/bin/bash
+HEIGHT=15
+WIDTH=40
+CHOICE_HEIGHT=9
+BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
+TITLE="Run a executable in prefix"
+MENU="In what prefix do you want to open your executable?"
+
+OPTIONS=(1 "Steam"
+         2 "Blizzard"
+         3 "Origin"
+         4 "Uplay"
+         5 "Teamspeak"
+         6 "Clone Hero"
+         7 "Drakensang Online"
+         8 "Anarchy Online"
+         9 "itch")
+
+CHOICE=$(dialog --clear \
+                --backtitle "$BACKTITLE" \
+                --title "$TITLE" \
+                --menu "$MENU" \
+                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                "${OPTIONS[@]}" \
+                2>&1 >/dev/tty)
+
+clear
+EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
+case $CHOICE in
+
+        1)
+WINEPREFIX=/home/$USER/Games/Steam wine $EXECUTABLE
+            ;;
+        2)
+WINEPREFIX=/home/$USER/Games/Blizzard wine $EXECUTABLE
+            ;;
+        3)
+WINEPREFIX=/home/$USER/Games/Origin wine $EXECUTABLE
+            ;;
+        4)
+WINEPREFIX=/home/$USER/Games/Uplay wine $EXECUTABLE
+            ;;
+        5)
+WINEPREFIX=/home/$USER/Games/Teamspeak wine $EXECUTABLE
+            ;;
+        6)
+WINEPREFIX="/home/$USER/Games/Clone Hero" wine $EXECUTABLE
+            ;;
+        7)
+WINEPREFIX="/home/$USER/Games/Drakensang Online" wine $EXECUTABLE
+            ;;
+        8)
+WINEPREFIX="/home/$USER/Games/Anarchy Online" wine $EXECUTABLE
+            ;;
+        9)
+WINEPREFIX=/home/$USER/Games/itch wine $EXECUTABLE
 
 esac
 cd $SD
