@@ -67,6 +67,7 @@ echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/Games/Steam winetricks winxp dotnet40
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/Games/Steam wine /home/$USER/Games/Steam/SteamSetup.exe
+rm /home/$USER/Games/Steam/SteamSetup.exe
             ;;
             
         2)
@@ -76,6 +77,7 @@ echo -e "\e[40;38;5;82mDownloading Blizzard\e[30;48;5;82m\e[0m"
 curl -O http://dist.blizzard.com/downloads/bna-installers/322d5bb9ae0318de3d4cde7641c96425/retail.1/Battle.net-Setup-enUS.exe
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/Games/Blizzard wine /home/$USER/Games/Blizzard/Battle.net-Setup-enUS.exe
+rm /home/$USER/Games/Blizzard/Battle.net-Setup-enUS.exe
             ;;
         3)
 mkdir /home/$USER/Games/Origin
@@ -86,6 +88,7 @@ echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/Games/Origin winetricks winxp
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/Games/Origin wine /home/$USER/Games/Origin/OriginThinSetup.exe
+rm /home/$USER/Games/Origin/OriginThinSetup.exe
             ;;
         4)
 mkdir /home/$USER/Games/Uplay
@@ -94,6 +97,7 @@ echo -e "\e[40;38;5;82mDownloading Uplay\e[30;48;5;82m\e[0m"
 curl -O https://ubistatic3-a.akamaihd.net/orbit/launcher_installer/UplayInstaller.exe
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/Games/Uplay wine /home/$USER/Games/Uplay/UplayInstaller.exe
+rm /home/$USER/Games/Uplay/UplayInstaller.exe
             ;;
         5)
 mkdir /home/$USER/Programs/Teamspeak
@@ -123,6 +127,7 @@ echo -e "\e[40;38;5;82mDownloading Drakensang Online\e[30;48;5;82m\e[0m"
 curl -O https://drasaonline-481-dwl.bpsecure.com/applet/dro_setup.exe
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX="/home/$USER/Games/Drakensang Online" wine "/home/$USER/Games/Drakensang Online/dro_setup.exe"
+rm "/home/$USER/Games/Drakensang Online/dro_setup.exe"
             ;;
         8)
 mkdir "/home/$USER/Games/Anarchy Online"
@@ -133,6 +138,7 @@ echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 WINEPREFIX="/home/$USER/Games/Anarchy Online" winetricks winxp
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX="/home/$USER/Games/Anarchy Online" wine "/home/$USER/Games/Anarchy Online/AnarchyOnline_EP1.exe"
+rm "/home/$USER/Games/Anarchy Online/AnarchyOnline_EP1.exe"
             ;;
         9)
 mkdir /home/$USER/Games/itch
@@ -141,6 +147,7 @@ echo -e "\e[40;38;5;82mDownloading itch\e[30;48;5;82m\e[0m"
 curl -L -O http://nuts.itch.zone/download/windows
 echo -e "\e[40;38;5;82mInstalling itch\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/Games/itch wine /home/$USER/Games/itch/windows
+rm /home/$USER/Games/itch/windows
 
 esac
 notify-send Done!
