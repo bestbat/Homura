@@ -423,34 +423,34 @@ EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
 case $CHOICE in
 
         1)
-WINEPREFIX=/home/$USER/Games/Steam wine $EXECUTABLE
+WINEPREFIX=/home/$USER/Games/Steam wine "$EXECUTABLE"
             ;;
         2)
-WINEPREFIX=/home/$USER/Games/Blizzard wine $EXECUTABLE
+WINEPREFIX=/home/$USER/Games/Blizzard wine "$EXECUTABLE"
             ;;
         3)
-WINEPREFIX=/home/$USER/Games/Origin wine $EXECUTABLE
+WINEPREFIX=/home/$USER/Games/Origin wine "$EXECUTABLE"
             ;;
         4)
-WINEPREFIX=/home/$USER/Games/Uplay wine $EXECUTABLE
+WINEPREFIX=/home/$USER/Games/Uplay wine "$EXECUTABLE"
             ;;
         5)
-WINEPREFIX=/home/$USER/Games/Teamspeak wine $EXECUTABLE
+WINEPREFIX=/home/$USER/Games/Teamspeak wine "$EXECUTABLE"
             ;;
         6)
-WINEPREFIX="/home/$USER/Games/Clone Hero" wine $EXECUTABLE
+WINEPREFIX="/home/$USER/Games/Clone Hero" wine "$EXECUTABLE"
             ;;
         7)
-WINEPREFIX="/home/$USER/Games/Drakensang Online" wine $EXECUTABLE
+WINEPREFIX="/home/$USER/Games/Drakensang Online" wine "$EXECUTABLE"
             ;;
         8)
-WINEPREFIX="/home/$USER/Games/Anarchy Online" wine $EXECUTABLE
+WINEPREFIX="/home/$USER/Games/Anarchy Online" wine "$EXECUTABLE"
             ;;
         9)
-WINEPREFIX=/home/$USER/Games/itch wine $EXECUTABLE
+WINEPREFIX=/home/$USER/Games/itch wine "$EXECUTABLE"
             ;;
        10)
-WINEPREFIX="/home/$USER/Games/GOG Galaxy" wine $EXECUTABLE
+WINEPREFIX="/home/$USER/Games/GOG Galaxy" wine "$EXECUTABLE"
 
 esac
 cd $SD
