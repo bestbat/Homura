@@ -184,7 +184,7 @@ WINEPREFIX=/home/$USER/Games/Steam wine "/home/$USER/Games/Steam/drive_c/Program
             ;;
         2)
 echo $'\033]30;Blizzard\007'        
-WINEPREFIX=/home/$USER/Games/Blizzard wine "/home/alexander/Games/Blizzard/drive_c/Program Files/Battle.net/Battle.net.exe"          
+WINEPREFIX=/home/$USER/Games/Blizzard wine "/home/$USER/Games/Blizzard/drive_c/Program Files/Battle.net/Battle.net.exe"          
             ;;
         3)
 echo $'\033]30;Origin\007'        
