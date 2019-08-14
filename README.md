@@ -16,6 +16,7 @@ Install your favorite windows games & launcher easily!
 - curl
 - p7zip
 - dialog
+- zenity
 - webfonts
 - winetricks
 - i386-wine-devel on amd64 or wine-devel on i386
