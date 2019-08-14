@@ -1,7 +1,7 @@
 # Tweaks
 
-This is the tweaks site here i store tweaks for some games.
 
+# List
 Application | Tweak
 ------------ | -------------
  Borderlands 2 (Steam) | The game dont start if this game gets started over steam, but works if you start the "Borderlands2.exe" with steam in the background. The game dont start if this game gets started over steam, but works if you start the "Borderlands2.exe" with steam in the background.`WINEPREFIX=/home/$USER/Games/Steam wine "/home/$USER/Games/Steam/drive_c/Program Files/Steam/steamapps/common/Borderlands 2/Binaries/Win32/Borderlands2.exe"`
@@ -13,3 +13,17 @@ PAYDAY 2 (Steam) | Depth of field must be switched off in graphic settings to av
 Unity mouse problems | Tab out and in.
 World of Warcraft 1.12.1 no sound | Start the game in a new wine preifx.
 Origin | Turn off the in-game overlay.
+
+# FAQ
+
+# What i can do if i have sound problems?
+
+Open winetricks in the gameprefix and install xact. At this faudio can not be applayed because the newest version of winetricks have been not ported yet and i dont recommend anyone to use selfupdate.
+
+# Use more than 60hz!
+
+Some games are locked to 60hz in fullscreen, this may cause image tearing or even poor performance, to workaround that lock use fullscrene-windowed or windowed. Btw you can see if your default Hz gets changed if you go ingame and the screen is longer black and usually.
+
+# I want to use Directx 9/10/11 only!
+
+Open winetricks in the game prefix then select open in winecfg and go to libraries. Now add d3d9/d3d10/d3d11 and set them to disabled and appy the settings.
