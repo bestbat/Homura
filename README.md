@@ -27,7 +27,7 @@ This list will be refreshed on every update of [i386-wine-devel](https://www.fre
 
 Application | Works?
 ------------ | -------------
- Steam | Uses winxp with an older steam client to get some online features. (Doesn't affect performance)
+ [Steam](https://www.youtube.com/watch?v=a2z0nbWOarc) | Uses winxp with an older steam client to get some online features. (Doesn't affect performance)
  Blizzard | Runs out of the box.
  Origin | Uses winxp with an older origin client. (Doesn't affect performance)
  Uplay | Runs out of the box, but crashes to often.
