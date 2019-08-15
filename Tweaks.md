@@ -22,7 +22,7 @@ Open winetricks in the gameprefix and install xact. At this faudio can not be ap
 
 # Use more than 60hz!
 
-Some games are locked to 60hz in fullscreen, this may cause image tearing or even poor performance, to workaround that lock use fullscrene-windowed or windowed. Btw you can see if your default Hz gets changed if you go ingame and the screen is longer black and usually.
+Some games are locked to 60hz in fullscreen, this may cause image tearing or even poor performance, to workaround that lock use fullscreen-windowed or windowed. Btw you can see if your default Hz gets changed if you go ingame and the screen is longer black and usually.
 
 # I want to use Directx 9/10/11 only!
 
