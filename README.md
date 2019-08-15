@@ -32,7 +32,7 @@ Application | Works?
  Origin | Uses winxp with an older origin client. (Doesn't affect performance)
  Uplay | Runs out of the box, but crashes to often.
  Teamspeak | Runs out of the box.
- Clone Hero | Runs out of the box. WARNING: The game can also cause a very, very loud sound error! To fix it restart the system.
+ [Clone Hero](https://www.youtube.com/watch?v=qch3_bt4rGo) | Runs out of the box. WARNING: The game can also cause a very, very loud sound error! To fix it restart the system.
  Drakensang Online |  Crashes at start.
  Anarchy Online | Runs out of the box. Please let the installer create a shortcut or you are unable to start the launcher!
  itch | Runs out of the box.
