@@ -35,7 +35,7 @@ Application | Works?
  [Clone Hero](https://www.youtube.com/watch?v=qch3_bt4rGo) | Runs out of the box. WARNING: The game can also cause a very, very loud sound error! To fix it restart the system.
  Drakensang Online |  Crashes at start.
  Anarchy Online | Runs out of the box. Please let the installer create a shortcut or you are unable to start the launcher!
- itch | Runs out of the box.
+ [itch](https://www.youtube.com/watch?v=lp-3g08w70A) | Runs out of the box.
  GOG Galaxy | Runs out of the box.
  
 If you want a special game or launcher then create an issue :)
