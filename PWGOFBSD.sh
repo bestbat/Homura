@@ -165,12 +165,12 @@ curl -O -L https://content-system.gog.com/open_link/download?path=/open/galaxy/c
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX="/home/$USER/Games/GOG Galaxy" wine "/home/$USER/Games/GOG Galaxy/setup_galaxy_1.2.57.74.exe"
 rm "/home/$USER/Games/GOG Galaxy/setup_galaxy_1.2.57.74.exe"
-killall wine
 echo -e "\e[40;38;5;82mApplying fix\e[30;48;5;82m\e[0m"
 rm "/home/alexander/.local/share/applications/wine/Programs/GOG.com/GOG Galaxy/GOG Galaxy.desktop"
 cd "/home/alexander/.local/share/applications/wine/Programs/GOG.com/GOG Galaxy"
 curl -O http://alt.magzu.net/dl/GOG_Galaxy.desktop
 mv GOG_Galaxy.desktop "GOG Galaxy.desktop"
+killall wine
 
 esac
 notify-send Done!
