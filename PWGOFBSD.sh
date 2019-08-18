@@ -166,8 +166,9 @@ mkdir "/home/$USER/Games/League of Legends"
 cd "/home/$USER/Games/League of Legends"
 echo -e "\e[40;38;5;82mDownloading League of Legends\e[30;48;5;82m\e[0m"
 curl -O https://riotgamespatcher-a.akamaihd.net/releases/live/installer/deploy/League%20of%20Legends%20installer%20EUW.exe
-WINEPREFIX="/home/$USER/Games/League of Legends" wine "/home/$USER/Games/League%20of%20Legends%20installer%20EUW.exe"
-rm /home/$USER/Games/League%20of%20Legends%20installer%20EUW.exe
+echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+WINEPREFIX="/home/$USER/Games/League of Legends" wine "/home/$USER/Games/League of Legends/League%20of%20Legends%20installer%20EUW.exe"
+rm "/home/$USER/Games/League of Legends/League%20of%20Legends%20installer%20EUW.exe"
 
 esac
 notify-send Done!
@@ -339,7 +340,7 @@ rm -d -r "/home/$USER/Desktop/GOG Galaxy.desktop"
        11)
 rm -d -r "/home/$USER/Games/League of Legends"
 rm -d -r "/home/$USER/.local/share/applications/wine/Programs/League of Legends"
-
+rm "/home/$USER/Desktop/League of Legends.desktop"
 
 esac
 notify-send Done!
