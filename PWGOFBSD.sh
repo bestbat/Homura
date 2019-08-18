@@ -167,6 +167,7 @@ cd "/home/$USER/Games/League of Legends"
 echo -e "\e[40;38;5;82mDownloading League of Legends\e[30;48;5;82m\e[0m"
 curl -O https://riotgamespatcher-a.akamaihd.net/releases/live/installer/deploy/League%20of%20Legends%20installer%20EUW.exe
 WINEPREFIX="/home/$USER/Games/League of Legends" wine "/home/$USER/Games/League%20of%20Legends%20installer%20EUW.exe"
+rm /home/$USER/Games/League%20of%20Legends%20installer%20EUW.exe
 
 esac
 notify-send Done!
