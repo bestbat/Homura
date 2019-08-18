@@ -165,10 +165,10 @@ rm "/home/$USER/Games/GOG Galaxy/setup_galaxy_1.2.57.74.exe"
 mkdir "/home/$USER/Games/League of Legends"
 cd "/home/$USER/Games/League of Legends"
 echo -e "\e[40;38;5;82mDownloading League of Legends\e[30;48;5;82m\e[0m"
-curl -O https://riotgamespatcher-a.akamaihd.net/releases/live/installer/deploy/League%20of%20Legends%20installer%20EUW.exe
+curl -O http://alt.magzu.net/damn/dl/League%20of%20Legends.tar.xz
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
-WINEPREFIX="/home/$USER/Games/League of Legends" wine "/home/$USER/Games/League of Legends/League%20of%20Legends%20installer%20EUW.exe"
-rm "/home/$USER/Games/League of Legends/League%20of%20Legends%20installer%20EUW.exe"
+tar -xf League%20of%20Legends.tar.xz
+rm League%20of%20Legends.tar.xz
 
 esac
 notify-send Done!
@@ -251,7 +251,7 @@ WINEPREFIX="/home/$USER/Games/GOG Galaxy" wine "/home/$USER/Games/GOG Galaxy/dri
 ;;
         11)
 echo $'\033]30;League of Legends\007' 
-WINEPREFIX="/home/$USER/Games/League of Legends" wine "/home/$USER/Games/League of Legends/drive_c/Riot Games/League of Legends/LeagueClient.exe"
+WINEPREFIX="/home/$USER/Games/League of Legends" wine "/home/$USER/Games/League of Legends/League of Legends/LeagueClient.exe"
 
 esac
 cd $SD
@@ -339,8 +339,6 @@ rm -d -r "/home/$USER/Desktop/GOG Galaxy.desktop"
 ;;
        11)
 rm -d -r "/home/$USER/Games/League of Legends"
-rm -d -r "/home/$USER/.local/share/applications/wine/Programs/League of Legends"
-rm "/home/$USER/Desktop/League of Legends.desktop"
 
 esac
 notify-send Done!
