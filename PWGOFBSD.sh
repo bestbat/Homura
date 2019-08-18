@@ -28,9 +28,9 @@ case $CHOICE in
 
         1)
 #!/bin/bash
-HEIGHT=17
+HEIGHT=18
 WIDTH=40
-CHOICE_HEIGHT=10
+CHOICE_HEIGHT=11
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Installation"
 MENU="What do you want to install?"
@@ -44,7 +44,8 @@ OPTIONS=(1 "Steam"
          7 "Drakensang Online"
          8 "Anarchy Online"
          9 "itch"
-        10 "GOG Galaxy")
+        10 "GOG Galaxy"
+        11 "League of Legends")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -159,6 +160,13 @@ curl -O -L https://content-system.gog.com/open_link/download?path=/open/galaxy/c
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX="/home/$USER/Games/GOG Galaxy" wine "/home/$USER/Games/GOG Galaxy/setup_galaxy_1.2.57.74.exe"
 rm "/home/$USER/Games/GOG Galaxy/setup_galaxy_1.2.57.74.exe"
+            ;;
+        11)
+mkdir "/home/$USER/Games/League of Legends"
+cd "/home/$USER/Games/League of Legends"
+echo -e "\e[40;38;5;82mDownloading League of Legends\e[30;48;5;82m\e[0m"
+curl -O https://riotgamespatcher-a.akamaihd.net/releases/live/installer/deploy/League%20of%20Legends%20installer%20EUW.exe
+WINEPREFIX="/home/$USER/Games/League of Legends" wine "/home/$USER/Games/League%20of%20Legends%20installer%20EUW.exe"
 
 esac
 notify-send Done!
@@ -167,9 +175,9 @@ bash PWGOFBSD.sh
             ;;
         2)
 #!/bin/bash
-HEIGHT=17
+HEIGHT=18
 WIDTH=40
-CHOICE_HEIGHT=10
+CHOICE_HEIGHT=11
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Launcher"
 MENU="What do you want to launch?"
@@ -183,7 +191,8 @@ OPTIONS=(1 "Steam"
          7 "Drakensang Online"
          8 "Anarchy Online"
          9 "itch"
-        10 "GOG Galaxy")
+        10 "GOG Galaxy"
+        11 "League of Legends")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -237,6 +246,10 @@ WINEPREFIX=/home/$USER/Games/itch wine "/home/$USER/.wine/drive_c/users/$USER/Lo
         10)
 echo $'\033]30;GOG Galaxy\007' 
 WINEPREFIX="/home/$USER/Games/GOG Galaxy" wine "/home/$USER/Games/GOG Galaxy/drive_c/Program Files/GOG Galaxy/GalaxyClient.exe" /runWithoutUpdating /deelevated   
+;;
+        11)
+echo $'\033]30;League of Legends\007' 
+WINEPREFIX="/home/$USER/Games/League of Legends" wine "/home/$USER/Games/League of Legends/drive_c/Riot Games/League of Legends/LeagueClient.exe"
 
 esac
 cd $SD
@@ -244,9 +257,9 @@ bash PWGOFBSD.sh
             ;;
         3)
 #!/bin/bash
-HEIGHT=17
+HEIGHT=18
 WIDTH=40
-CHOICE_HEIGHT=10
+CHOICE_HEIGHT=11
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Uninstallation"
 MENU="What do you want to uninstall?"
@@ -260,7 +273,8 @@ OPTIONS=(1 "Steam"
          7 "Drakensang Online"
          8 "Anarchy Online"
          9 "itch"
-        10 "GOG Galaxy")
+        10 "GOG Galaxy"
+        11 "League of Legends")
          
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -320,6 +334,11 @@ rm -d -r "/home/$USER/.local/share/applications/wine/Programs/Itch Corp"
 rm -d -r "/home/$USER/Games/GOG Galaxy"
 rm -d -r /home/$USER/.local/share/applications/wine/Programs/GOG.com
 rm -d -r "/home/$USER/Desktop/GOG Galaxy.desktop"
+;;
+       11)
+rm -d -r "/home/$USER/Games/League of Legends"
+rm -d -r "/home/$USER/.local/share/applications/wine/Programs/League of Legends"
+
 
 esac
 notify-send Done!
@@ -328,9 +347,9 @@ bash PWGOFBSD.sh
             ;;
         4)
 #!/bin/bash
-HEIGHT=17
+HEIGHT=18
 WIDTH=50
-CHOICE_HEIGHT=10
+CHOICE_HEIGHT=11
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Winetricks"
 MENU="In what prefix do you want to open winetricks?"
@@ -344,7 +363,8 @@ OPTIONS=(1 "Steam"
          7 "Drakensang Online"
          8 "Anarchy Online"
          9 "itch"
-        10 "GOG Galaxy")
+        10 "GOG Galaxy"
+        11 "League of Legends")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -386,6 +406,9 @@ WINEPREFIX=/home/$USER/Games/itch winetricks
             ;;
        10)
 WINEPREFIX="/home/$USER/Games/GOG Galaxy" winetricks
+            ;;
+       11)
+WINEPREFIX="/home/$USER/Games/League of Legends" winetricks
 
 esac
 cd $SD
@@ -393,9 +416,9 @@ bash PWGOFBSD.sh
             ;;
         5)
 #!/bin/bash
-HEIGHT=17
+HEIGHT=18
 WIDTH=55
-CHOICE_HEIGHT=10
+CHOICE_HEIGHT=11
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Run a executable in prefix"
 MENU="In what prefix do you want to open your executable?"
@@ -409,7 +432,8 @@ OPTIONS=(1 "Steam"
          7 "Drakensang Online"
          8 "Anarchy Online"
          9 "itch"
-        10 "GOG Galaxy")
+        10 "GOG Galaxy"
+        11 "League of Legends")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -452,6 +476,9 @@ WINEPREFIX=/home/$USER/Games/itch wine "$EXECUTABLE"
             ;;
        10)
 WINEPREFIX="/home/$USER/Games/GOG Galaxy" wine "$EXECUTABLE"
+            ;;
+       11)
+WINEPREFIX="/home/$USER/Games/League of Legends" wine "$EXECUTABLE"
 
 esac
 cd $SD
