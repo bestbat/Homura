@@ -33,7 +33,7 @@ Application | Works?
  Uplay | Runs out of the box, but crashes to often.
  Teamspeak | Runs out of the box.
  [Clone Hero](https://www.youtube.com/watch?v=qch3_bt4rGo) | Runs out of the box. WARNING: The game can also cause a very, very loud sound error! To fix it restart the system.
- Drakensang Online | Crashs at starting the game client
+ Drakensang Online | Crashs at starting the game client.
  Anarchy Online | Runs out of the box. Please let the installer create a shortcut or you are unable to start the launcher!
  [itch](https://www.youtube.com/watch?v=lp-3g08w70A) | Runs out of the box.
  [GOG Galaxy](https://www.youtube.com/watch?v=m4BMvvgeWFE) | Runs out of the box.
