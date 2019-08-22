@@ -11,6 +11,8 @@ Install your favorite windows games & launcher easily!
 
 ![](https://github.com/Alexander88207/PWGOFBSD/raw/master/Screenshot.png "Screenshot")
 
+ <img src="https://raw.githubusercontent.com/Alexander88207/PWGOFBSD/master/Screenshot2.png" alt="Monitor" height="500" width="700"> 
+
 # Dependencies :syringe:
 
 - curl
