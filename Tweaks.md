@@ -18,7 +18,7 @@ Origin | Turn off the in-game overlay.
 
 # What i can do if i have sound problems?
 
-Open winetricks in the gameprefix and install xact. At this faudio can not be applayed because the newest version of winetricks have been not ported yet and i dont recommend anyone to use selfupdate.
+Open winetricks in the gameprefix and install xact. At this time faudio can not be applayed because the newest version of winetricks have been not ported yet and i dont recommend anyone to use selfupdate.
 
 # Use more than 60hz!
 
