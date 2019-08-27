@@ -512,6 +512,7 @@ case $CHOICE in
         1)
 WINEPREFIX=/home/$USER/Programs/Teamspeak wine "/home/$USER/Programs/Teamspeak/TeamSpeak 3 Client/update.exe"
 killall wine
+
 esac
 notify-send Done!
 cd $SD
