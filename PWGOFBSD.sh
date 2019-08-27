@@ -106,10 +106,12 @@ rm /home/$USER/Games/Uplay/UplayInstaller.exe
 mkdir /home/$USER/Programs/Teamspeak
 cd /home/$USER/Programs/Teamspeak
 echo -e "\e[40;38;5;82mDownloading Teamspeak\e[30;48;5;82m\e[0m"
-curl -O https://oc.magzu.net/owncloud/index.php/s/C5BmsWkNiedJNzV/download
+curl -O http://alt.magzu.net/damn/dl/Teamspeak.zip
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
-unzip download
-rm download
+unzip Teamspeak.zip
+rm Teamspeak.zip
+echo -e "\e[40;38;5;82mUpdate to latest version\e[30;48;5;82m\e[0m"
+WINEPREFIX=/home/$USER/Programs/Teamspeak wine "/home/$USER/Programs/Teamspeak/TeamSpeak 3 Client/update.exe"
             ;;
         6)
 mkdir "/home/$USER/Games/Clone Hero"
@@ -390,7 +392,7 @@ WINEPREFIX=/home/$USER/Games/Origin winetricks
 WINEPREFIX=/home/$USER/Games/Uplay winetricks
             ;;
         5)
-WINEPREFIX=/home/$USER/Games/Teamspeak winetricks
+WINEPREFIX=/home/$USER/Programs/Teamspeak winetricks
             ;;
         6)
 WINEPREFIX="/home/$USER/Games/Clone Hero" winetricks
@@ -460,7 +462,7 @@ WINEPREFIX=/home/$USER/Games/Origin wine "$EXECUTABLE"
 WINEPREFIX=/home/$USER/Games/Uplay wine "$EXECUTABLE"
             ;;
         5)
-WINEPREFIX=/home/$USER/Games/Teamspeak wine "$EXECUTABLE"
+WINEPREFIX=/home/$USER/Programs/Teamspeak wine "$EXECUTABLE"
             ;;
         6)
 WINEPREFIX="/home/$USER/Games/Clone Hero" wine "$EXECUTABLE"
