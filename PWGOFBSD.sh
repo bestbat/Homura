@@ -3,7 +3,7 @@ echo $'\033]30;PWGOFBSD - Play Windows Games On FreeBSD\007'
 SD=$(pwd)
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=5
+CHOICE_HEIGHT=6
 BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
 TITLE="Welcome $USER :)"
 MENU="What do you want to do?"
@@ -12,7 +12,8 @@ OPTIONS=(1 "Installation"
          2 "Launcher"
          3 "Uninstallation"
          4 "Winetricks"
-         5 "Run a executable in prefix")
+         5 "Run a executable in prefix"
+         6 "Update")
          
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -483,6 +484,36 @@ WINEPREFIX="/home/$USER/Games/GOG Galaxy" wine "$EXECUTABLE"
 WINEPREFIX="/home/$USER/Games/League of Legends" wine "$EXECUTABLE"
 
 esac
+cd $SD
+bash PWGOFBSD.sh
+            ;;
+        6)
+HEIGHT=15
+WIDTH=40
+CHOICE_HEIGHT=1
+BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
+TITLE="Update"
+MENU="What do you want to update?"
+
+OPTIONS=(1 "Teamspeak")
+         
+CHOICE=$(dialog --clear \
+                --backtitle "$BACKTITLE" \
+                --title "$TITLE" \
+                --menu "$MENU" \
+                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                "${OPTIONS[@]}" \
+                2>&1 >/dev/tty)
+
+clear
+cd /home/$USER
+case $CHOICE in
+
+        1)
+WINEPREFIX=/home/$USER/Programs/Teamspeak wine "/home/$USER/Programs/Teamspeak/TeamSpeak 3 Client/update.exe"
+killall wine
+esac
+notify-send Done!
 cd $SD
 bash PWGOFBSD.sh
 esac
