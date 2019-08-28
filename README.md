@@ -18,6 +18,7 @@ Install your favorite windows games & launcher easily!
 - curl
 - p7zip
 - dialog
+- screen (Optional)
 - zenity
 - webfonts
 - winetricks
@@ -65,6 +66,12 @@ bash PWGOFBSD.sh
 To get a better design, copy the file `.dialogrc` to `/home/$USER`
 
 To uninstall that script just delete that and the Games & Programs folder in the home directory.
+
+# Hide terminal
+
+The only solution is to use screen.
+
+Start a screen session in your terminal with `screen -r steam` for example and then open PWGOFBSD after launching something press ctl+a+d then you can close the terminal. To re-open the session use `screen -r steam`.s
 
 ## Contribute :pencil2:
 if you want to contribute to this repo then just send a pull request or issues :)
