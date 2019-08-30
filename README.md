@@ -52,6 +52,7 @@ Tweaks are [here](Tweaks.md)
 
 - Only 32-Bit Games and Applications working currently.
 - No vulkan support on amd64 with 32bit.
+- Kwin is bad for gaming on freebsd.
 
 # Installation/Uninstallation :cd:
 
