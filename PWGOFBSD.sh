@@ -4,7 +4,7 @@ SD=$(pwd)
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=6
-BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
+BACKTITLE="Homura"
 TITLE="Welcome $USER :)"
 MENU="What do you want to do?"
 
@@ -32,7 +32,7 @@ case $CHOICE in
 HEIGHT=18
 WIDTH=40
 CHOICE_HEIGHT=11
-BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
+BACKTITLE="Homura"
 TITLE="Installation"
 MENU="What do you want to install?"
 
@@ -183,7 +183,7 @@ bash PWGOFBSD.sh
 HEIGHT=18
 WIDTH=40
 CHOICE_HEIGHT=11
-BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
+BACKTITLE="Homura"
 TITLE="Launcher"
 MENU="What do you want to launch?"
 
@@ -265,7 +265,7 @@ bash PWGOFBSD.sh
 HEIGHT=18
 WIDTH=40
 CHOICE_HEIGHT=11
-BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
+BACKTITLE="Homura"
 TITLE="Uninstallation"
 MENU="What do you want to uninstall?"
 
@@ -353,7 +353,7 @@ bash PWGOFBSD.sh
 HEIGHT=18
 WIDTH=50
 CHOICE_HEIGHT=11
-BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
+BACKTITLE="Homura"
 TITLE="Winetricks"
 MENU="In what prefix do you want to open winetricks?"
 
@@ -422,7 +422,7 @@ bash PWGOFBSD.sh
 HEIGHT=18
 WIDTH=55
 CHOICE_HEIGHT=11
-BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
+BACKTITLE="Homura"
 TITLE="Run a executable in prefix"
 MENU="In what prefix do you want to open your executable?"
 
@@ -491,7 +491,7 @@ bash PWGOFBSD.sh
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=1
-BACKTITLE="PWGOFBSD - Play Windows Games On FreeBSD"
+BACKTITLE="Homura"
 TITLE="Update"
 MENU="What do you want to update?"
 
