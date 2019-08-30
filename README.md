@@ -1,4 +1,4 @@
-# PWGOFBSD - Play Windows Games On FreeBSD
+# Homura
 [![CodeFactor](https://www.codefactor.io/repository/github/alexander88207/pwgofbsd/badge)](https://www.codefactor.io/repository/github/alexander88207/pwgofbsd) ![GitHub release](https://img.shields.io/github/release/Alexander88207/PWGOBSD)
 
 # Introduction
@@ -58,11 +58,11 @@ Tweaks are [here](Tweaks.md)
 
 This Script is designed for FreeBSD 12.0-RELEASE. All other versions are not supported!
 
-Download the latest stable release from [here](https://github.com/Alexander88207/PWGOBSD/releases)
+Download the latest stable release from [here](https://github.com/Alexander88207/Homura/releases)
 
 To start this script use the follwing command in the folder:
 ```
-bash PWGOFBSD.sh
+bash Homura.sh
 ```
 To get a better design, copy the file `.dialogrc` to `/home/$USER`
 
