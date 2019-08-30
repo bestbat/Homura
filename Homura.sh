@@ -1,5 +1,5 @@
 #!/bin/bash
-echo $'\033]30;PWGOFBSD - Play Windows Games On FreeBSD\007' 
+echo $'\033]30;Homura\007' 
 SD=$(pwd)
 HEIGHT=15
 WIDTH=40
@@ -176,7 +176,7 @@ rm League%20of%20Legends.tar.xz
 esac
 notify-send Done!
 cd $SD
-bash PWGOFBSD.sh
+bash Homura.sh
             ;;
         2)
 #!/bin/bash
@@ -258,7 +258,7 @@ WINEPREFIX="/home/$USER/Games/League of Legends" wine "/home/$USER/Games/League 
 
 esac
 cd $SD
-bash PWGOFBSD.sh
+bash Homura.sh
             ;;
         3)
 #!/bin/bash
@@ -346,7 +346,7 @@ rm -d -r "/home/$USER/Games/League of Legends"
 esac
 notify-send Done!
 cd $SD
-bash PWGOFBSD.sh
+bash Homura.sh
             ;;
         4)
 #!/bin/bash
@@ -415,7 +415,7 @@ WINEPREFIX="/home/$USER/Games/League of Legends" winetricks
 
 esac
 cd $SD
-bash PWGOFBSD.sh
+bash Homura.sh
             ;;
         5)
 #!/bin/bash
@@ -485,7 +485,7 @@ WINEPREFIX="/home/$USER/Games/League of Legends" wine "$EXECUTABLE"
 
 esac
 cd $SD
-bash PWGOFBSD.sh
+bash Homura.sh
             ;;
         6)
 HEIGHT=15
@@ -516,5 +516,5 @@ killall wine
 esac
 notify-send Done!
 cd $SD
-bash PWGOFBSD.sh
+bash Homura.sh
 esac
