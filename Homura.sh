@@ -1,10 +1,10 @@
 #!/bin/bash
-echo $'\033]30;Homura\007' 
+echo $'\033]30;Homura 1.3\007' 
 SD=$(pwd)
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=6
-BACKTITLE="Homura"
+BACKTITLE="Homura 1.3"
 TITLE="Welcome $USER :)"
 MENU="What do you want to do?"
 
@@ -32,7 +32,7 @@ case $CHOICE in
 HEIGHT=18
 WIDTH=40
 CHOICE_HEIGHT=11
-BACKTITLE="Homura"
+BACKTITLE="Homura 1.3"
 TITLE="Installation"
 MENU="What do you want to install?"
 
@@ -183,7 +183,7 @@ bash Homura.sh
 HEIGHT=18
 WIDTH=40
 CHOICE_HEIGHT=11
-BACKTITLE="Homura"
+BACKTITLE="Homura 1.3"
 TITLE="Launcher"
 MENU="What do you want to launch?"
 
@@ -265,7 +265,7 @@ bash Homura.sh
 HEIGHT=18
 WIDTH=40
 CHOICE_HEIGHT=11
-BACKTITLE="Homura"
+BACKTITLE="Homura 1.3"
 TITLE="Uninstallation"
 MENU="What do you want to uninstall?"
 
@@ -353,7 +353,7 @@ bash Homura.sh
 HEIGHT=18
 WIDTH=50
 CHOICE_HEIGHT=11
-BACKTITLE="Homura"
+BACKTITLE="Homura 1.3"
 TITLE="Winetricks"
 MENU="In what prefix do you want to open winetricks?"
 
@@ -422,7 +422,7 @@ bash Homura.sh
 HEIGHT=18
 WIDTH=55
 CHOICE_HEIGHT=11
-BACKTITLE="Homura"
+BACKTITLE="Homura 1.3"
 TITLE="Run a executable in prefix"
 MENU="In what prefix do you want to open your executable?"
 
@@ -491,7 +491,7 @@ bash Homura.sh
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=1
-BACKTITLE="Homura"
+BACKTITLE="Homura 1.3"
 TITLE="Update"
 MENU="What do you want to update?"
 
