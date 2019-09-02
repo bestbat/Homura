@@ -563,7 +563,6 @@ bash "$PREFIXNAME/start.sh"
 PREFIXNAME=$(zenity  --file-selection --title="Choose a prefix" --directory --filename=""/home/$USER/Homura/Custom Prefixes"")
 cd "/home/$USER/Homura/Custom Prefixes/$PREFIXNAME"
 zenity --info --width=260 --title="Change the launch executable of a custom prefix" --text="Now you need to select the executable that do you want to use in this prefix."
-zenity --info --width=260 --title="Change the launch executable of a custom prefix" --text="Note: If you gonna add an executable with a space in the name then you need to fix this later in /home/$USER/Homura/Custom Prefixes/$PREFIXNAME/start.sh"
 EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
 rm start.sh
 echo "WINEPREFIX='/home/$USER/Homura/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE'" >> start.sh
