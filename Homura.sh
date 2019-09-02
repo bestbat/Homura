@@ -536,7 +536,8 @@ BACKTITLE="Homura 1.4"
 TITLE="Update"
 MENU="What do you want to update?"
 
-OPTIONS=(1 "Teamspeak")
+OPTIONS=(1 "Teamspeak"
+         2 "Custom Prefix executable")
          
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -553,6 +554,15 @@ case $CHOICE in
         1)
 WINEPREFIX=/home/$USER/Homura/Programs/Teamspeak wine "/home/$USER/Homura/Programs/Teamspeak/TeamSpeak 3 Client/update.exe"
 killall wine
+           ;;
+        2)
+cd "/home/$USER/Homura/Custom Prefixes"
+FOLDERS=$(ls -a)
+PREFIXNAME=$(zenity --list --title="Select a custom prefix" --height=260 --width=300 --column="What prefix?" $FOLDERS)
+EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
+cd $PREFIXNAME
+rm start.sh
+echo "WINEPREFIX='/home/$USER/Homura/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE'" >> start.sh
 
 esac
 notify-send Done!
