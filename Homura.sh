@@ -556,12 +556,15 @@ EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
 echo "WINEPREFIX='/home/$USER/Homura/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE'" >> start.sh
             ;;
         2)
-PREFIXNAME=$(zenity  --file-selection --title="Choose a prefix" --directory --filename=""/home/$USER/Homura/Custom Prefixes"")
-bash "$PREFIXNAME/start.sh"
+cd "/home/$USER/Homura/Custom Prefixes"
+FOLDERS=$(ls -a)
+PREFIXNAME=$(zenity --list --title="Launch a custom prefix" --height=260 --width=300 --column="What do you want to start?" $FOLDERS)
+bash $PREFIXNAME/start.sh
             ;;
         3)
-PREFIXNAME=$(zenity  --file-selection --title="Choose a prefix" --directory --filename=""/home/$USER/Homura/Custom Prefixes"")
-cd "/home/$USER/Homura/Custom Prefixes/$PREFIXNAME"
+cd "/home/$USER/Homura/Custom Prefixes"
+FOLDERS=$(ls -a)
+PREFIXNAME=$(zenity --list --title="Launch a custom prefix" --height=260 --width=300 --column="What prefix?" $FOLDERS)
 zenity --info --width=260 --title="Change the launch executable of a custom prefix" --text="Now you need to select the executable that do you want to use in this prefix."
 EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
 rm start.sh
