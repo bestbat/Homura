@@ -13,8 +13,7 @@ OPTIONS=(1 "Installation"
          3 "Uninstallation"
          4 "Winetricks"
          5 "Run a executable in prefix"
-         6 "Update"
-         7 "Custom Prefixes")
+         6 "Update")
          
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -31,9 +30,9 @@ case $CHOICE in
 
         1)
 #!/bin/bash
-HEIGHT=18
+HEIGHT=19
 WIDTH=40
-CHOICE_HEIGHT=11
+CHOICE_HEIGHT=12
 BACKTITLE="Homura 1.4"
 TITLE="Installation"
 MENU="What do you want to install?"
@@ -48,7 +47,8 @@ OPTIONS=(1 "Steam"
          8 "Anarchy Online"
          9 "itch"
         10 "GOG Galaxy"
-        11 "League of Legends")
+        11 "League of Legends"
+        12 "Custom Prefix")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -175,6 +175,15 @@ curl -O http://alt.magzu.net/damn/dl/League%20of%20Legends.tar.xz
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 tar -xf League%20of%20Legends.tar.xz
 rm League%20of%20Legends.tar.xz
+            ;;
+       12)
+PREFIXNAME=$(zenity --title="Create a custom prefix" --text "How your prefix should be called?" --entry --width=260) 
+mkdir "/home/$USER/Homura/Custom Prefixes"
+mkdir "/home/$USER/Homura/Custom Prefixes/$PREFIXNAME"
+cd "/home/$USER/Homura/Custom Prefixes/$PREFIXNAME"
+zenity --info --width=260 --title="Create a custom prefix" --text="Now you need to select the executable that do you want to use in this prefix."
+EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
+echo "WINEPREFIX='/home/$USER/Homura/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE'" >> start.sh
 
 esac
 notify-send Done!
@@ -183,9 +192,9 @@ bash Homura.sh
             ;;
         2)
 #!/bin/bash
-HEIGHT=18
+HEIGHT=19
 WIDTH=40
-CHOICE_HEIGHT=11
+CHOICE_HEIGHT=12
 BACKTITLE="Homura 1.4"
 TITLE="Launcher"
 MENU="What do you want to launch?"
@@ -200,7 +209,8 @@ OPTIONS=(1 "Steam"
          8 "Anarchy Online"
          9 "itch"
         10 "GOG Galaxy"
-        11 "League of Legends")
+        11 "League of Legends"
+        12 "Custom Prefix")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -254,10 +264,17 @@ WINEPREFIX=/home/$USER/Homura/Games/itch wine "/home/$USER/.wine/drive_c/users/$
         10)
 echo $'\033]30;GOG Galaxy\007' 
 WINEPREFIX="/home/$USER/Homura/Games/GOG Galaxy" wine "/home/$USER/Homura/Games/GOG Galaxy/drive_c/Program Files/GOG Galaxy/GalaxyClient.exe" /runWithoutUpdating /deelevated   
-;;
+            ;;
         11)
 echo $'\033]30;League of Legends\007' 
 WINEPREFIX="/home/$USER/Homura/Games/League of Legends" wine "/home/$USER/Homura/Games/League of Legends/League of Legends/LeagueClient.exe"
+            ;;
+        12)
+echo $'\033]30;Custom Prefix\007' 
+cd "/home/$USER/Homura/Custom Prefixes"
+FOLDERS=$(ls -a)
+PREFIXNAME=$(zenity --list --title="Launch a custom prefix" --height=260 --width=300 --column="What do you want to start?" $FOLDERS)
+bash $PREFIXNAME/start.sh
 
 esac
 cd $SD
@@ -265,9 +282,9 @@ bash Homura.sh
             ;;
         3)
 #!/bin/bash
-HEIGHT=18
+HEIGHT=19
 WIDTH=40
-CHOICE_HEIGHT=11
+CHOICE_HEIGHT=12
 BACKTITLE="Homura 1.4"
 TITLE="Uninstallation"
 MENU="What do you want to uninstall?"
@@ -282,7 +299,8 @@ OPTIONS=(1 "Steam"
          8 "Anarchy Online"
          9 "itch"
         10 "GOG Galaxy"
-        11 "League of Legends")
+        11 "League of Legends"
+        12 "Custom Prefix")
          
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -342,9 +360,15 @@ rm -d -r "/home/$USER/.local/share/applications/wine/Programs/Itch Corp"
 rm -d -r "/home/$USER/Homura/Games/GOG Galaxy"
 rm -d -r /home/$USER/.local/share/applications/wine/Programs/GOG.com
 rm -d -r "/home/$USER/Desktop/GOG Galaxy.desktop"
-;;
+            ;;
        11)
 rm -d -r "/home/$USER/Homura/Games/League of Legends"
+            ;;
+       12)
+cd "/home/$USER/Homura/Custom Prefixes"
+FOLDERS=$(ls -a)
+PREFIXNAME=$(zenity --list --title="Select a custom prefix" --height=260 --width=300 --column="What prefix?" $FOLDERS)
+rm -r -d "$PREFIXNAME"
 
 esac
 notify-send Done!
@@ -353,9 +377,9 @@ bash Homura.sh
             ;;
         4)
 #!/bin/bash
-HEIGHT=18
+HEIGHT=19
 WIDTH=50
-CHOICE_HEIGHT=11
+CHOICE_HEIGHT=12
 BACKTITLE="Homura 1.4"
 TITLE="Winetricks"
 MENU="In what prefix do you want to open winetricks?"
@@ -370,7 +394,8 @@ OPTIONS=(1 "Steam"
          8 "Anarchy Online"
          9 "itch"
         10 "GOG Galaxy"
-        11 "League of Legends")
+        11 "League of Legends"
+        12 "Custom Prefix")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -415,6 +440,12 @@ WINEPREFIX="/home/$USER/Homura/Games/GOG Galaxy" winetricks
             ;;
        11)
 WINEPREFIX="/home/$USER/Homura/Games/League of Legends" winetricks
+            ;;
+       12)
+cd "/home/$USER/Homura/Custom Prefixes"
+FOLDERS=$(ls -a)
+PREFIXNAME=$(zenity --list --title="Select a custom prefix" --height=260 --width=300 --column="What prefix?" $FOLDERS)
+WINEPREFIX="/home/$USER/Homura/Custom Prefixes/$PREFIXNAME" winetricks
 
 esac
 cd $SD
@@ -422,9 +453,9 @@ bash Homura.sh
             ;;
         5)
 #!/bin/bash
-HEIGHT=18
+HEIGHT=19
 WIDTH=55
-CHOICE_HEIGHT=11
+CHOICE_HEIGHT=12
 BACKTITLE="Homura 1.4"
 TITLE="Run a executable in prefix"
 MENU="In what prefix do you want to open your executable?"
@@ -439,7 +470,8 @@ OPTIONS=(1 "Steam"
          8 "Anarchy Online"
          9 "itch"
         10 "GOG Galaxy"
-        11 "League of Legends")
+        11 "League of Legends"
+        12 "Custom Prefix")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -485,6 +517,12 @@ WINEPREFIX="/home/$USER/Homura/Games/GOG Galaxy" wine "$EXECUTABLE"
             ;;
        11)
 WINEPREFIX="/home/$USER/Homura/Games/League of Legends" wine "$EXECUTABLE"
+            ;;
+       12)
+cd "/home/$USER/Homura/Custom Prefixes"
+FOLDERS=$(ls -a)
+PREFIXNAME=$(zenity --list --title="Select a custom prefix" --height=260 --width=300 --column="What prefix?" $FOLDERS)
+WINEPREFIX="/home/$USER/Homura/Custom Prefixes/$PREFIXNAME" wine "$EXECUTABLE"
 
 esac
 cd $SD
@@ -516,65 +554,6 @@ case $CHOICE in
 WINEPREFIX=/home/$USER/Homura/Programs/Teamspeak wine "/home/$USER/Homura/Programs/Teamspeak/TeamSpeak 3 Client/update.exe"
 killall wine
 
-esac
-notify-send Done!
-cd $SD
-bash Homura.sh
-             ;;
-        7)
-#!/bin/bash
-HEIGHT=15
-WIDTH=60
-CHOICE_HEIGHT=4
-BACKTITLE="Homura 1.4"
-TITLE="Custom Prefixes"
-MENU="What do you want to do?"
-
-OPTIONS=(1 "Create a custom prefix"
-         2 "Launch a custom prefix"
-         3 "Change launch executable of a custom prefix"
-         4 "Remove a custom prefix")
-
-CHOICE=$(dialog --clear \
-                --backtitle "$BACKTITLE" \
-                --title "$TITLE" \
-                --menu "$MENU" \
-                $HEIGHT $WIDTH $CHOICE_HEIGHT \
-                "${OPTIONS[@]}" \
-                2>&1 >/dev/tty)
-
-clear
-case $CHOICE in
-
-        1)
-PREFIXNAME=$(zenity --title="Create a custom prefix" --text "How your prefix should be called?" --entry --width=260) 
-mkdir "/home/$USER/Homura/Custom Prefixes"
-mkdir "/home/$USER/Homura/Custom Prefixes/$PREFIXNAME"
-cd "/home/$USER/Homura/Custom Prefixes/$PREFIXNAME"
-zenity --info --width=260 --title="Create a custom prefix" --text="Now you need to select the executable that do you want to use in this prefix."
-EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
-echo "WINEPREFIX='/home/$USER/Homura/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE'" >> start.sh
-            ;;
-        2)
-cd "/home/$USER/Homura/Custom Prefixes"
-FOLDERS=$(ls -a)
-PREFIXNAME=$(zenity --list --title="Launch a custom prefix" --height=260 --width=300 --column="What do you want to start?" $FOLDERS)
-bash $PREFIXNAME/start.sh
-            ;;
-        3)
-cd "/home/$USER/Homura/Custom Prefixes"
-FOLDERS=$(ls -a)
-PREFIXNAME=$(zenity --list --title="Select a custom prefix" --height=260 --width=300 --column="What prefix?" $FOLDERS)
-zenity --info --width=260 --title="Change the launch executable of a custom prefix" --text="Now you need to select the executable that do you want to use in this prefix."
-EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
-rm "$PREFIXNAME/start.sh"
-echo "WINEPREFIX='/home/$USER/Homura/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE'" >> "$PREFIXNAME/start.sh"
-            ;;
-        4)
-cd "/home/$USER/Homura/Custom Prefixes"
-FOLDERS=$(ls -a)
-PREFIXNAME=$(zenity --list --title="Select a custom prefix" --height=260 --width=300 --column="What prefix?" $FOLDERS)
-rm -r -d "$PREFIXNAME"
 esac
 notify-send Done!
 cd $SD
