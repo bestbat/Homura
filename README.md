@@ -66,7 +66,7 @@ bash Homura.sh
 ```
 To get a better design, copy the file `.dialogrc` to `/home/$USER`
 
-To uninstall that script just delete that and the Games & Programs folder in the home directory.
+To uninstall that script just delete the Homura folder in the home directory.
 
 # Hide terminal
 
