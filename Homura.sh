@@ -571,7 +571,9 @@ rm "$PREFIXNAME/start.sh"
 echo "WINEPREFIX='/home/$USER/Homura/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE'" >> "$PREFIXNAME/start.sh"
             ;;
         4)
-PREFIXNAME=$(zenity  --file-selection --title="Choose a prefix" --directory)
+cd "/home/$USER/Homura/Custom Prefixes"
+FOLDERS=$(ls -a)
+PREFIXNAME=$(zenity --list --title="Select a custom prefix" --height=260 --width=300 --column="What prefix?" $FOLDERS)
 rm -r -d "$PREFIXNAME"
 esac
 notify-send Done!
