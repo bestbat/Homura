@@ -3,7 +3,7 @@ echo $'\033]30;Homura 1.4\007'
 SD=$(pwd)
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=6
+CHOICE_HEIGHT=7
 BACKTITLE="Homura 1.4"
 TITLE="Welcome $USER :)"
 MENU="What do you want to do?"
@@ -13,7 +13,8 @@ OPTIONS=(1 "Installation"
          3 "Uninstallation"
          4 "Winetricks"
          5 "Run a executable in prefix"
-         6 "Update")
+         6 "Update"
+         7 "Custom Prefixes")
          
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -144,6 +145,7 @@ curl -O http://update.anarchy-online.com/download/AO/AnarchyOnline_EP1.exe
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 WINEPREFIX="/home/$USER/Homura/Games/Anarchy Online" winetricks winxp
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+zenity --info --width=260 --title="Anarchy Online" --text="Please let the installer create an shortcut or you will unable to start the launcher later."
 WINEPREFIX="/home/$USER/Homura/Games/Anarchy Online" wine "/home/$USER/Homura/Games/Anarchy Online/AnarchyOnline_EP1.exe"
 rm "/home/$USER/Homura/Games/Anarchy Online/AnarchyOnline_EP1.exe"
             ;;
@@ -514,6 +516,61 @@ case $CHOICE in
 WINEPREFIX=/home/$USER/Homura/Programs/Teamspeak wine "/home/$USER/Homura/Programs/Teamspeak/TeamSpeak 3 Client/update.exe"
 killall wine
 
+esac
+notify-send Done!
+cd $SD
+bash Homura.sh
+             ;;
+        7)
+#!/bin/bash
+HEIGHT=15
+WIDTH=60
+CHOICE_HEIGHT=4
+BACKTITLE="Homura 1.4"
+TITLE="Custom Prefixes"
+MENU="What do you want to do?"
+
+OPTIONS=(1 "Create a custom prefix"
+         2 "Launch a custom prefix"
+         3 "Change launch executable of a custom prefix"
+         4 "Remove a custom prefix")
+
+CHOICE=$(dialog --clear \
+                --backtitle "$BACKTITLE" \
+                --title "$TITLE" \
+                --menu "$MENU" \
+                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                "${OPTIONS[@]}" \
+                2>&1 >/dev/tty)
+
+clear
+case $CHOICE in
+
+        1)
+PREFIXNAME=$(zenity --title="Create a custom prefix" --text "How your prefix should be called?" --entry --width=260) 
+mkdir "/home/$USER/Homura/Custom Prefixes"
+mkdir "/home/$USER/Homura/Custom Prefixes/$PREFIXNAME"
+cd "/home/$USER/Homura/Custom Prefixes/$PREFIXNAME"
+zenity --info --width=260 --title="Create a custom prefix" --text="Now you need to select the executable that do you want to use in this prefix."
+EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
+echo "WINEPREFIX='/home/$USER/Homura/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE'" >> start.sh
+            ;;
+        2)
+PREFIXNAME=$(zenity  --file-selection --title="Choose a prefix" --directory --filename=""/home/$USER/Homura/Custom Prefixes"")
+bash "$PREFIXNAME/start.sh"
+            ;;
+        3)
+PREFIXNAME=$(zenity  --file-selection --title="Choose a prefix" --directory --filename=""/home/$USER/Homura/Custom Prefixes"")
+cd "/home/$USER/Homura/Custom Prefixes/$PREFIXNAME"
+zenity --info --width=260 --title="Change the launch executable of a custom prefix" --text="Now you need to select the executable that do you want to use in this prefix."
+zenity --info --width=260 --title="Change the launch executable of a custom prefix" --text="Note: If you gonna add an executable with a space in the name then you need to fix this later in /home/$USER/Homura/Custom Prefixes/$PREFIXNAME/start.sh"
+EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
+rm start.sh
+echo "WINEPREFIX='/home/$USER/Homura/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE'" >> start.sh
+            ;;
+        4)
+PREFIXNAME=$(zenity  --file-selection --title="Choose a prefix" --directory)
+rm -r -d "$PREFIXNAME"
 esac
 notify-send Done!
 cd $SD
