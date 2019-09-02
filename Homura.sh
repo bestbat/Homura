@@ -531,7 +531,7 @@ bash Homura.sh
         6)
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=1
+CHOICE_HEIGHT=2
 BACKTITLE="Homura 1.4"
 TITLE="Update"
 MENU="What do you want to update?"
