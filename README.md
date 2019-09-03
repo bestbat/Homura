@@ -72,7 +72,7 @@ To uninstall that script just delete the Homura folder in the home directory.
 
 The only solution is to use screen.
 
-Start a screen session in your terminal with `screen -S steam` for example and then open PWGOFBSD after launching something press ctl+a+d then you can close the terminal. To re-open the session use `screen -r steam`.
+Start a screen session in your terminal with `screen -S steam` for example and then open Homura after launching something press ctl+a+d then you can close the terminal. To re-open the session use `screen -r steam`.
 
 ## Contribute :pencil2:
 if you want to contribute to this repo then just send a pull request or issues :)
