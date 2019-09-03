@@ -58,7 +58,7 @@ Tweaks are [here](Tweaks.md)
 
 This Script is designed for FreeBSD 12.0-RELEASE. All other versions are not supported!
 
-Download the latest stable release from [here](https://github.com/Alexander88207/Homura/releases)
+Download the latest stable release from [here](https://github.com/Alexander88207/Homura/releases) or use the git version to enjoy the latest changes.
 
 To start this script use the follwing command in the folder:
 ```
