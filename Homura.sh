@@ -24,7 +24,7 @@ CHOICE=$(dialog --clear \
                 2>&1 >/dev/tty)
 
 clear
-mkdir /home/$USER/Homura
+mkdir -p /home/$USER/Homura
 cd /home/$USER/Homura
 case $CHOICE in
 
@@ -61,13 +61,13 @@ CHOICE=$(dialog --clear \
 
 clear
 cd /home/$USER
-mkdir /home/$USER/Homura/Games
-mkdir /home/$USER/Homura/Programs
+mkdir -p /home/$USER/Homura/Games
+mkdir -p /home/$USER/Homura/Programs
 case $CHOICE in
 
         1)
 echo $'\033]30;Installation of Steam\007'
-mkdir /home/$USER/Homura/Games/Steam
+mkdir -p /home/$USER/Homura/Games/Steam
 cd /home/$USER/Homura/Games/Steam
 echo -e "\e[40;38;5;82mDownloading Steam\e[30;48;5;82m\e[0m"
 curl -O https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
@@ -80,7 +80,7 @@ rm /home/$USER/Homura/Games/Steam/SteamSetup.exe
             
         2)
 echo $'\033]30;Installation of Blizzard\007'
-mkdir /home/$USER/Homura/Games/Blizzard
+mkdir -p /home/$USER/Homura/Games/Blizzard
 cd /home/$USER/Homura/Games/Blizzard
 echo -e "\e[40;38;5;82mDownloading Blizzard\e[30;48;5;82m\e[0m"
 curl -O http://dist.blizzard.com/downloads/bna-installers/322d5bb9ae0318de3d4cde7641c96425/retail.1/Battle.net-Setup-enUS.exe
@@ -90,7 +90,7 @@ rm /home/$USER/Homura/Games/Blizzard/Battle.net-Setup-enUS.exe
             ;;
         3)
 echo $'\033]30;Installation of Origin\007'
-mkdir /home/$USER/Homura/Games/Origin
+mkdir -p /home/$USER/Homura/Games/Origin
 cd /home/$USER/Homura/Games/Origin
 echo -e "\e[40;38;5;82mDownloading Origin\e[30;48;5;82m\e[0m"
 curl -O https://origin-a.akamaihd.net/Origin-Client-Download/origin/legacy/OriginThinSetup.exe
@@ -102,7 +102,7 @@ rm /home/$USER/Homura/Games/Origin/OriginThinSetup.exe
             ;;
         4)
 echo $'\033]30;Installation of Uplay\007'
-mkdir /home/$USER/Homura/Games/Uplay
+mkdir -p /home/$USER/Homura/Games/Uplay
 cd /home/$USER/Homura/Games/Uplay
 echo -e "\e[40;38;5;82mDownloading Uplay\e[30;48;5;82m\e[0m"
 curl -O https://ubistatic3-a.akamaihd.net/orbit/launcher_installer/UplayInstaller.exe
@@ -112,7 +112,7 @@ rm /home/$USER/Homura/Games/Uplay/UplayInstaller.exe
             ;;
         5)
 echo $'\033]30;Installation of Teamspeak\007'
-mkdir /home/$USER/Homura/Programs/Teamspeak
+mkdir -p /home/$USER/Homura/Programs/Teamspeak
 cd /home/$USER/Homura/Programs/Teamspeak
 echo -e "\e[40;38;5;82mDownloading Teamspeak\e[30;48;5;82m\e[0m"
 curl -O http://alt.magzu.net/damn/dl/Teamspeak.zip
@@ -124,7 +124,7 @@ WINEPREFIX=/home/$USER/Homura/Programs/Teamspeak wine "/home/$USER/Homura/Progra
             ;;
         6)
 echo $'\033]30;Installation of Clone Hero\007'
-mkdir "/home/$USER/Homura/Games/Clone Hero"
+mkdir -p "/home/$USER/Homura/Games/Clone Hero"
 cd "/home/$USER/Homura/Games/Clone Hero"
 echo -e "\e[40;38;5;82mDownloading Clone Hero\e[30;48;5;82m\e[0m"
 curl -O http://dl.clonehero.net/clonehero-v.22.5/clonehero-win32.7z
@@ -137,7 +137,7 @@ curl -O http://alt.magzu.net/dl/settings.ini
             ;;
         7)
 echo $'\033]30;Installation of Drakensang Online\007'
-mkdir "/home/$USER/Homura/Games/Drakensang Online"
+mkdir -p "/home/$USER/Homura/Games/Drakensang Online"
 cd "/home/$USER/Homura/Games/Drakensang Online"
 echo -e "\e[40;38;5;82mDownloading Drakensang Online\e[30;48;5;82m\e[0m"
 curl -O https://drasaonline-481-dwl.bpsecure.com/applet/dro_setup.exe
@@ -147,7 +147,7 @@ rm "/home/$USER/Homura/Games/Drakensang Online/dro_setup.exe"
             ;;
         8)
 echo $'\033]30;Installation of Anarchy Online\007'
-mkdir "/home/$USER/Homura/Games/Anarchy Online"
+mkdir -p "/home/$USER/Homura/Games/Anarchy Online"
 cd "/home/$USER/Homura/Games/Anarchy Online"
 echo -e "\e[40;38;5;82mDownloading Anarchy Online\e[30;48;5;82m\e[0m"
 curl -O http://update.anarchy-online.com/download/AO/AnarchyOnline_EP1.exe
@@ -160,7 +160,7 @@ rm "/home/$USER/Homura/Games/Anarchy Online/AnarchyOnline_EP1.exe"
             ;;
         9)
 echo $'\033]30;Installation of itch\007'
-mkdir /home/$USER/Homura/Games/itch
+mkdir -p /home/$USER/Homura/Games/itch
 cd /home/$USER/Homura/Games/itch
 echo -e "\e[40;38;5;82mDownloading itch\e[30;48;5;82m\e[0m"
 curl -L -O http://nuts.itch.zone/download/windows
@@ -170,7 +170,7 @@ rm /home/$USER/Homura/Games/itch/windows
             ;;
         10)
 echo $'\033]30;Installation of GOG Galaxy\007'
-mkdir "/home/$USER/Homura/Games/GOG Galaxy"
+mkdir -p "/home/$USER/Homura/Games/GOG Galaxy"
 cd "/home/$USER/Homura/Games/GOG Galaxy"
 echo -e "\e[40;38;5;82mDownloading GOG Galaxy\e[30;48;5;82m\e[0m"
 curl -O -L https://content-system.gog.com/open_link/download?path=/open/galaxy/client/setup_galaxy_1.2.57.74.exe
@@ -180,7 +180,7 @@ rm "/home/$USER/Homura/Games/GOG Galaxy/setup_galaxy_1.2.57.74.exe"
             ;;
         11)
 echo $'\033]30;Installation of League of Legends\007'
-mkdir "/home/$USER/Homura/Games/League of Legends"
+mkdir -p "/home/$USER/Homura/Games/League of Legends"
 cd "/home/$USER/Homura/Games/League of Legends"
 echo -e "\e[40;38;5;82mDownloading League of Legends\e[30;48;5;82m\e[0m"
 curl -O http://alt.magzu.net/damn/dl/League%20of%20Legends.tar.xz
@@ -191,8 +191,8 @@ rm League%20of%20Legends.tar.xz
        12)
 echo $'\033]30;Installation of a custom prefix\007'
 PREFIXNAME=$(zenity --title="Create a custom prefix" --text "How your prefix should be called?" --entry --width=260) 
-mkdir "/home/$USER/Homura/Custom Prefixes"
-mkdir "/home/$USER/Homura/Custom Prefixes/$PREFIXNAME"
+mkdir -p "/home/$USER/Homura/Custom Prefixes"
+mkdir -p "/home/$USER/Homura/Custom Prefixes/$PREFIXNAME"
 cd "/home/$USER/Homura/Custom Prefixes/$PREFIXNAME"
 zenity --info --width=260 --title="Create a custom prefix" --text="Now you need to select the executable that do you want to use in this prefix."
 EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
