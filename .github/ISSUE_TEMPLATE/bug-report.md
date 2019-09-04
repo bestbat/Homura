@@ -1,12 +1,3 @@
----
-name: Bug Report
-about: Use this to report a bug
-title: ''
-labels: ''
-assignees: ''
-
----
-
 **Describe the bug**
 A clear and concise description of what the bug is.
 
@@ -28,3 +19,6 @@ Add any other context about the problem here.
 
 **Logs**
 Wine logs for example.
+
+**GPU**
+AMD RX 570 for example.
