@@ -229,7 +229,7 @@ WIDTH=45
 CHOICE_HEIGHT=2
 BACKTITLE="Homura 1.4"
 TITLE="Torchlight German Patch"
-MENU="What version??"
+MENU="What version?"
 
 OPTIONS=(1 "German Patch V3 (Steam-Edition)"
          2 "German Patch V5 (GOG/Epic-Edition)")
