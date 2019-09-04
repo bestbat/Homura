@@ -22,4 +22,4 @@ Wine logs for example.
 
 **glxinfo log**
 
-you can get that with `glxinfo | grep OpenGL`
+You can get that with `glxinfo | grep OpenGL`
