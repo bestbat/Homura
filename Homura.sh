@@ -196,8 +196,9 @@ mkdir "/home/$USER/Homura/Custom Prefixes/$PREFIXNAME"
 cd "/home/$USER/Homura/Custom Prefixes/$PREFIXNAME"
 zenity --info --width=260 --title="Create a custom prefix" --text="Now you need to select the executable that do you want to use in this prefix."
 EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
-ENV=$(zenity --title="Environment variable" --text "Do you need an Environment Variable for your executable? if not leave it blank." --entry --width=260) 
-echo "$ENV WINEPREFIX='/home/$USER/Homura/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE'" >> start.sh
+ENV=$(zenity --title="Environment variable" --text "Do you need an environment variable for your executable? (for example DX_HUD=1) if not leave it blank." --entry --width=260) 
+SPM=$(zenity --title="Environment variable" --text "Do you need an startparameter for your executable? (for example -console) if not leave it blank." --entry --width=260) 
+echo "$ENV WINEPREFIX='/home/$USER/Homura/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE' $SPM" >> start.sh
              ;;
         13)
 #!/bin/bash
@@ -639,10 +640,11 @@ cd "/home/$USER/Homura/Custom Prefixes"
 FOLDERS=$(ls -a)
 PREFIXNAME=$(zenity --list --title="Select a custom prefix" --height=260 --width=300 --column="What prefix?" $FOLDERS)
 EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
-ENV=$(zenity --title="Environment variable" --text "Do you need an Environment Variable for your executable? if not leave it blank." --entry --width=260)
+ENV=$(zenity --title="Environment variable" --text "Do you need an environment variable for your executable? if not leave it blank." --entry --width=260)
+SPM=$(zenity --title="Environment variable" --text "Do you need an startparameter for your executable? (for example -console) if not leave it blank." --entry --width=260) 
 cd $PREFIXNAME
 rm start.sh
-echo "$ENV WINEPREFIX='/home/$USER/Homura/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE'" >> start.sh
+echo "$ENV WINEPREFIX='/home/$USER/Homura/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE' $SPM" >> start.sh
 
 esac
 notify-send Done!
