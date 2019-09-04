@@ -20,5 +20,6 @@ Add any other context about the problem here.
 **Logs**
 Wine logs for example.
 
-**GPU**
-AMD RX 570 for example.
+**glxinfo log**
+
+you can get that with `glxinfo | grep OpenGL`
