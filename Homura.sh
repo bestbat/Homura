@@ -30,9 +30,9 @@ case $CHOICE in
 
         1)
 #!/bin/bash
-HEIGHT=19
+HEIGHT=20
 WIDTH=40
-CHOICE_HEIGHT=12
+CHOICE_HEIGHT=13
 BACKTITLE="Homura 1.4"
 TITLE="Installation"
 MENU="What do you want to install?"
@@ -48,7 +48,8 @@ OPTIONS=(1 "Steam"
          9 "itch"
         10 "GOG Galaxy"
         11 "League of Legends"
-        12 "Custom Prefix")
+        12 "Custom Prefix"
+        13 "Extras for games")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -65,6 +66,7 @@ mkdir /home/$USER/Homura/Programs
 case $CHOICE in
 
         1)
+echo $'\033]30;Installation of Steam\007'
 mkdir /home/$USER/Homura/Games/Steam
 cd /home/$USER/Homura/Games/Steam
 echo -e "\e[40;38;5;82mDownloading Steam\e[30;48;5;82m\e[0m"
@@ -77,6 +79,7 @@ rm /home/$USER/Homura/Games/Steam/SteamSetup.exe
             ;;
             
         2)
+echo $'\033]30;Installation of Blizzard\007'
 mkdir /home/$USER/Homura/Games/Blizzard
 cd /home/$USER/Homura/Games/Blizzard
 echo -e "\e[40;38;5;82mDownloading Blizzard\e[30;48;5;82m\e[0m"
@@ -86,6 +89,7 @@ WINEPREFIX=/home/$USER/Homura/Games/Blizzard wine /home/$USER/Homura/Games/Blizz
 rm /home/$USER/Homura/Games/Blizzard/Battle.net-Setup-enUS.exe
             ;;
         3)
+echo $'\033]30;Installation of Origin\007'
 mkdir /home/$USER/Homura/Games/Origin
 cd /home/$USER/Homura/Games/Origin
 echo -e "\e[40;38;5;82mDownloading Origin\e[30;48;5;82m\e[0m"
@@ -97,6 +101,7 @@ WINEPREFIX=/home/$USER/Homura/Games/Origin wine /home/$USER/Homura/Games/Origin/
 rm /home/$USER/Homura/Games/Origin/OriginThinSetup.exe
             ;;
         4)
+echo $'\033]30;Installation of Uplay\007'
 mkdir /home/$USER/Homura/Games/Uplay
 cd /home/$USER/Homura/Games/Uplay
 echo -e "\e[40;38;5;82mDownloading Uplay\e[30;48;5;82m\e[0m"
@@ -106,6 +111,7 @@ WINEPREFIX=/home/$USER/Homura/Games/Uplay wine /home/$USER/Homura/Games/Uplay/Up
 rm /home/$USER/Homura/Games/Uplay/UplayInstaller.exe
             ;;
         5)
+echo $'\033]30;Installation of Teamspeak\007'
 mkdir /home/$USER/Homura/Programs/Teamspeak
 cd /home/$USER/Homura/Programs/Teamspeak
 echo -e "\e[40;38;5;82mDownloading Teamspeak\e[30;48;5;82m\e[0m"
@@ -117,6 +123,7 @@ echo -e "\e[40;38;5;82mUpdate to latest version\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/Homura/Programs/Teamspeak wine "/home/$USER/Homura/Programs/Teamspeak/TeamSpeak 3 Client/update.exe"
             ;;
         6)
+echo $'\033]30;Installation of Clone Hero\007'
 mkdir "/home/$USER/Homura/Games/Clone Hero"
 cd "/home/$USER/Homura/Games/Clone Hero"
 echo -e "\e[40;38;5;82mDownloading Clone Hero\e[30;48;5;82m\e[0m"
@@ -129,6 +136,7 @@ cd clonehero-win32
 curl -O http://alt.magzu.net/dl/settings.ini
             ;;
         7)
+echo $'\033]30;Installation of Drakensang Online\007'
 mkdir "/home/$USER/Homura/Games/Drakensang Online"
 cd "/home/$USER/Homura/Games/Drakensang Online"
 echo -e "\e[40;38;5;82mDownloading Drakensang Online\e[30;48;5;82m\e[0m"
@@ -138,6 +146,7 @@ WINEPREFIX="/home/$USER/Homura/Games/Drakensang Online" wine "/home/$USER/Homura
 rm "/home/$USER/Homura/Games/Drakensang Online/dro_setup.exe"
             ;;
         8)
+echo $'\033]30;Installation of Anarchy Online\007'
 mkdir "/home/$USER/Homura/Games/Anarchy Online"
 cd "/home/$USER/Homura/Games/Anarchy Online"
 echo -e "\e[40;38;5;82mDownloading Anarchy Online\e[30;48;5;82m\e[0m"
@@ -150,6 +159,7 @@ WINEPREFIX="/home/$USER/Homura/Games/Anarchy Online" wine "/home/$USER/Homura/Ga
 rm "/home/$USER/Homura/Games/Anarchy Online/AnarchyOnline_EP1.exe"
             ;;
         9)
+echo $'\033]30;Installation of itch\007'
 mkdir /home/$USER/Homura/Games/itch
 cd /home/$USER/Homura/Games/itch
 echo -e "\e[40;38;5;82mDownloading itch\e[30;48;5;82m\e[0m"
@@ -159,6 +169,7 @@ WINEPREFIX=/home/$USER/Homura/Games/itch wine /home/$USER/Homura/Games/itch/wind
 rm /home/$USER/Homura/Games/itch/windows
             ;;
         10)
+echo $'\033]30;Installation of GOG Galaxy\007'
 mkdir "/home/$USER/Homura/Games/GOG Galaxy"
 cd "/home/$USER/Homura/Games/GOG Galaxy"
 echo -e "\e[40;38;5;82mDownloading GOG Galaxy\e[30;48;5;82m\e[0m"
@@ -168,6 +179,7 @@ WINEPREFIX="/home/$USER/Homura/Games/GOG Galaxy" wine "/home/$USER/Homura/Games/
 rm "/home/$USER/Homura/Games/GOG Galaxy/setup_galaxy_1.2.57.74.exe"
             ;;
         11)
+echo $'\033]30;Installation of League of Legends\007'
 mkdir "/home/$USER/Homura/Games/League of Legends"
 cd "/home/$USER/Homura/Games/League of Legends"
 echo -e "\e[40;38;5;82mDownloading League of Legends\e[30;48;5;82m\e[0m"
@@ -177,6 +189,7 @@ tar -xf League%20of%20Legends.tar.xz
 rm League%20of%20Legends.tar.xz
             ;;
        12)
+echo $'\033]30;Installation of a custom prefix\007'
 PREFIXNAME=$(zenity --title="Create a custom prefix" --text "How your prefix should be called?" --entry --width=260) 
 mkdir "/home/$USER/Homura/Custom Prefixes"
 mkdir "/home/$USER/Homura/Custom Prefixes/$PREFIXNAME"
@@ -185,6 +198,70 @@ zenity --info --width=260 --title="Create a custom prefix" --text="Now you need 
 EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
 ENV=$(zenity --title="Environment variable" --text "Do you need an Environment Variable for your executable? if not leave it blank." --entry --width=260) 
 echo "$ENV WINEPREFIX='/home/$USER/Homura/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE'" >> start.sh
+             ;;
+        13)
+#!/bin/bash
+HEIGHT=10
+WIDTH=40
+CHOICE_HEIGHT=1
+BACKTITLE="Homura 1.4"
+TITLE="Extras for games"
+MENU="What do you want to install?"
+
+OPTIONS=(1 "Torchlight German Patch")
+
+CHOICE=$(dialog --clear \
+                --backtitle "$BACKTITLE" \
+                --title "$TITLE" \
+                --menu "$MENU" \
+                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                "${OPTIONS[@]}" \
+                2>&1 >/dev/tty)
+
+clear
+cd /home/$USER/Homura
+case $CHOICE in
+
+        1)
+#!/bin/bash
+HEIGHT=10
+WIDTH=45
+CHOICE_HEIGHT=2
+BACKTITLE="Homura 1.4"
+TITLE="Torchlight German Patch"
+MENU="What version??"
+
+OPTIONS=(1 "German Patch V3 (Steam-Edition)"
+         2 "German Patch V5 (GOG/Epic-Edition)")
+
+CHOICE=$(dialog --clear \
+                --backtitle "$BACKTITLE" \
+                --title "$TITLE" \
+                --menu "$MENU" \
+                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                "${OPTIONS[@]}" \
+                2>&1 >/dev/tty)
+
+clear
+case $CHOICE in
+
+        1)
+echo $'\033]30;Installation of Torchlight German Patch for Steam\007'
+curl -O http://alt.magzu.net/damn/dl/Torchlight_GerPatchV3_Steam.zip
+unzip Torchlight_GerPatchV3_Steam.zip
+WINEPREFIX=/home/$USER/Homura/Games/Steam wine /home/$USER/Homura/Torchlight_GerPatchV3_Steam.exe
+rm Torchlight_GerPatchV3_Steam.exe
+rm Torchlight_GerPatchV3_Steam.zip
+             ;;
+        2)
+echo $'\033]30;Installation of Torchlight German Patch for GOG/Epic\007'
+curl -O http://alt.magzu.net/damn/dl/Torchlight_GerPatchV5_GOGEPIC.zip
+unzip Torchlight_GerPatchV5_GOGEPIC.zip
+WINEPREFIX="/home/$USER/Homura/Games/GOG Galaxy" wine /home/$USER/Homura/Torchlight_GerPatchV5_GOGEPIC.exe
+rm Torchlight_GerPatchV5_GOGEPIC.exe
+rm Torchlight_GerPatchV5_GOGEPIC.zip
+esac
+esac
 
 esac
 notify-send Done!
@@ -271,10 +348,11 @@ echo $'\033]30;League of Legends\007'
 WINEPREFIX="/home/$USER/Homura/Games/League of Legends" wine "/home/$USER/Homura/Games/League of Legends/League of Legends/LeagueClient.exe"
             ;;
         12)
-echo $'\033]30;Custom Prefix\007' 
+echo $'\033]30;Custom Prefix\007'
 cd "/home/$USER/Homura/Custom Prefixes"
 FOLDERS=$(ls -a)
 PREFIXNAME=$(zenity --list --title="Launch a custom prefix" --height=260 --width=300 --column="What do you want to start?" $FOLDERS)
+echo $'\033]30;$PREFIXNAME\007'
 bash $PREFIXNAME/start.sh
 
 esac
