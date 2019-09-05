@@ -6,11 +6,11 @@ clear
 echo -e "\e[3;5;0;31mGPU Info OpenGL:\e[30;48;5;82m\e[0m" && glxinfo | grep OpenGL
 echo -e "\e[3;5;0;31mGPU Info Vulkan:\e[30;48;5;82m\e[0m" && vulkaninfo | grep "GPU id"
 
-TODO=$(zenity --list --radiolist --height=240 --title="$NAME $VER" --text "       What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update")
+TODO=$(zenity --list --radiolist --height=240 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update")
 
 if [[ $TODO == *"Installation"* ]]; then
 
-INST=$(zenity --list --radiolist --height=405 --title="$NAME $VER - $TODO" --text "   What do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Custom Prefix" FALSE "Extras for games")
+INST=$(zenity --list --radiolist --height=405 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Custom Prefix" FALSE "Extras for games")
 
 if [[ $INST == *"Steam"* ]]; then
 echo $'\033]30;$NAME $VER - Installation of $INST\007'
@@ -186,7 +186,7 @@ fi
 fi
 
 if [[ $TODO == *"Launcher"* ]]; then
-LNCH=$(zenity --list --radiolist --height=380 --title="$NAME $VER - $TODO" --text "   What do you want to launch?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Custom Prefix")
+LNCH=$(zenity --list --radiolist --height=380 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to launch?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Custom Prefix")
 
 if [[ $LNCH == *"Steam"* ]]; then
 echo $'\033]30;$LNCH\007'        
@@ -255,7 +255,7 @@ fi
 fi
 
 if [[ $TODO == *"Uninstallation"* ]]; then
-UNST=$(zenity --list --radiolist --height=380 --title="$NAME $VER - $TODO" --text " What do you want to uninstall?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Custom Prefix")
+UNST=$(zenity --list --radiolist --height=380 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to uninstall?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Custom Prefix")
 
 if [[ $UNST == *"Steam"* ]]; then
 rm -d -r /home/$USER/$NAME/Games/$UNST
@@ -435,7 +435,7 @@ fi
 fi
 
 if [[ $TODO == *"Update"* ]]; then
-UPDE=$(zenity --list --radiolist --height=50 --title="$NAME $VER - $TODO" --text "  What do you want to update?" --hide-header --column "$NAME" --column "Item" FALSE "Teamspeak" FALSE "Custom Prefix executable")
+UPDE=$(zenity --list --radiolist --height=50 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to update?" --hide-header --column "$NAME" --column "Item" FALSE "Teamspeak" FALSE "Custom Prefix executable")
 
 if [[ $UPDE == *"Teamspeak"* ]]; then
 WINEPREFIX=/home/$USER/$NAME/Programs/$UPDE wine "/home/$USER/$NAME/Programs/$UPDE/TeamSpeak 3 Client/update.exe"
