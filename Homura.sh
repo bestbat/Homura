@@ -159,10 +159,10 @@ echo "$ENV WINEPREFIX='/home/$USER/$NAME/Custom Prefixes/$PREFIXNAME' wine '$EXE
 fi
 
 if [[ $INST == *"Extras for games"* ]]; then
-EXFG=$(zenity --list --radiolist --height=100 --title="$NAME $VER - $INST" --text " What extra do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Torchlight German Patch")
+EXFG=$(zenity --list --radiolist --height=100 --width=310  --title="$NAME $VER - $INST" --text "What extra do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Torchlight German Patch")
 
 if [[ $EXFG == *"Torchlight German Patch"* ]]; then
-TGPH=$(zenity --list --radiolist --height=100 --width=310 --title="$NAME $VER $TGPH" --text "                               What version?" --hide-header --column "$NAME $VER" --column "Item" FALSE "German Patch V3 (Steam-Edition)" FALSE "German Patch V5 (GOG/Epic-Edition)")
+TGPH=$(zenity --list --radiolist --height=100 --width=360 --title="$NAME $VER $EXFG" --text "What version?" --hide-header --column "$NAME $VER" --column "Item" FALSE "German Patch V3 (Steam-Edition)" FALSE "German Patch V5 (GOG/Epic-Edition)")
 
 cd /home/$USER/$NAME
 
