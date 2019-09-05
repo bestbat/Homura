@@ -3,6 +3,7 @@ NAME=Homura
 VER=1.4
 SD=$(pwd)
 clear
+echo -e "\e[34mWelcome to $NAME $VER have fun!"
 echo -e "\e[3;5;0;31mGPU Info OpenGL:\e[30;48;5;82m\e[0m" && glxinfo | grep OpenGL
 echo -e "\e[3;5;0;31mGPU Info Vulkan:\e[30;48;5;82m\e[0m" && vulkaninfo | grep "GPU id"
 
