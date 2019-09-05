@@ -22,8 +22,8 @@ Install your favorite windows games & launcher easily!
 - screen (Optional)
 - webfonts
 - winetricks
-- mesa-demos
 - vulkan-tools
+- mesa-demos
 - i386-wine-devel on amd64 or wine-devel on i386
 
 # States :fire:
