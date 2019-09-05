@@ -16,6 +16,7 @@ Install your favorite windows games & launcher easily!
 # Dependencies :syringe:
 
 - curl
+- bash
 - p7zip
 - zenity
 - screen (Optional)
