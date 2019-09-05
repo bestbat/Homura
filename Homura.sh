@@ -166,10 +166,12 @@ if [[ $EXFG == *"Torchlight German Patch"* ]]; then
 TGPH=$(zenity --list --radiolist --height=100 --width=360 --title="$NAME $VER $EXFG" --text "What version?" --hide-header --column "$NAME $VER" --column "Item" FALSE "German Patch V3 (Steam-Edition)" FALSE "German Patch V5 (GOG/Epic-Edition)")
 
 cd /home/$USER/$NAME
+echo -e "\e[40;38;5;82mDownloading $TGPH\e[30;48;5;82m\e[0m"
 
 if [[ $TGPH == *"German Patch V3 (Steam-Edition)"* ]]; then
 curl -O http://alt.magzu.net/damn/dl/Torchlight_GerPatchV3_Steam.zip
 unzip Torchlight_GerPatchV3_Steam.zip
+echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/$NAME/Games/Steam wine /home/$USER/$NAME/Torchlight_GerPatchV3_Steam.exe
 rm Torchlight_GerPatchV3_Steam.exe
 rm Torchlight_GerPatchV3_Steam.zip
@@ -178,6 +180,7 @@ fi
 if [[ $TGPH == *"German Patch V5 (GOG/Epic-Edition)"* ]]; then
 curl -O http://alt.magzu.net/damn/dl/Torchlight_GerPatchV5_GOGEPIC.zip
 unzip Torchlight_GerPatchV5_GOGEPIC.zip
+echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX="/home/$USER/$NAME/Games/GOG Galaxy" wine /home/$USER/$NAME/Torchlight_GerPatchV5_GOGEPIC.exe
 rm Torchlight_GerPatchV5_GOGEPIC.exe
 rm Torchlight_GerPatchV5_GOGEPIC.zip
