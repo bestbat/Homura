@@ -17,7 +17,6 @@ Install your favorite windows games & launcher easily!
 
 - curl
 - p7zip
-- dialog
 - zenity
 - screen (Optional)
 - webfonts
