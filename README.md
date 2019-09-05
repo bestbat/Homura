@@ -21,6 +21,7 @@ Install your favorite windows games & launcher easily!
 - zenity
 - screen (Optional)
 - webfonts
+- alsa-utils (Optional)
 - winetricks
 - vulkan-tools
 - mesa-demos
@@ -66,7 +67,6 @@ To start this script use the follwing command in the folder:
 ```
 bash Homura.sh
 ```
-To get a better design, copy the file `.dialogrc` to `/home/$USER`
 
 To uninstall that script just delete the Homura folder in the home directory.
 
