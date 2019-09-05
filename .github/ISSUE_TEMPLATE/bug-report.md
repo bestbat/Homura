@@ -18,8 +18,4 @@ If applicable, add screenshots to help explain your problem.
 Add any other context about the problem here.
 
 **Logs**
-Wine logs for example.
-
-**glxinfo log**
-
-You can get that with `glxinfo | grep OpenGL`
+Wine logs for example and the gpu info at the start.
