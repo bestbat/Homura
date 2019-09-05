@@ -455,4 +455,4 @@ echo "$ENV WINEPREFIX='/home/$USER/$NAME/Custom Prefixes/$PREFIXNAME' wine '$EXE
 fi
 fi
 cd $SD
-bash $NAMEZenity.sh
+bash $NAME.sh
