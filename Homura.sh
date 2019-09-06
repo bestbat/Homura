@@ -475,4 +475,5 @@ if [[ $TODO == *"Exit"* ]]; then
 notify-send "Thanks for using $NAME and have a great day!"
 exit
 fi
+notify-send Done!
 bash /home/$USER/.local/share/$NAME/$NAME.sh
