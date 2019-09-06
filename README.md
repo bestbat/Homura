@@ -60,7 +60,7 @@ Tweaks are [here](Tweaks.md)
 
 This Script is designed for FreeBSD 12.0-RELEASE. All other versions are not supported!
 
-Use our setup to install Homura correctly
+Use the setup to install Homura correctly
 
 `curl -O https://raw.githubusercontent.com/Alexander88207/Homura/master/Setup.sh && bash Setup.sh`
 
