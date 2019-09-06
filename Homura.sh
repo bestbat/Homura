@@ -2,9 +2,11 @@
 NAME=Homura
 VER=1.4
 SD=$(pwd)
+WINEVER=$(wine --version)
 clear
 echo -e "\e[93mWelcome to $NAME $VER have fun!"
 echo -e "\e[3;5;0;92mRunning on FreeBSD $(uname -r)"
+echo -e "\e[3;5;0;36mWine Version: $WINEVER\e[30;48;5;82m\e[0m"
 echo -e "\e[3;5;0;31mGPU Info OpenGL:\e[30;48;5;82m\e[0m" && glxinfo | grep OpenGL
 echo -e "\e[3;5;0;31mGPU Info Vulkan:\e[30;48;5;82m\e[0m" && vulkaninfo | grep "GPU id"
 
@@ -444,7 +446,7 @@ UPDE=$(zenity --list --radiolist --height=50 --width 300 --title="$NAME $VER - $
 
 if [[ $UPDE == *"Teamspeak"* ]]; then
 WINEPREFIX=/home/$USER/$NAME/Programs/$UPDE wine "/home/$USER/$NAME/Programs/$UPDE/TeamSpeak 3 Client/update.exe"
-killall wine
+kill ts3client_win32.exe
 fi
 
 if [[ $UPDE == *"Custom Prefix executable"* ]]; then
