@@ -6,12 +6,12 @@ TODO=$(zenity --list --radiolist --height=240 --width 300 --title="Homura Instal
 if [[ $TODO == *"Install Homura"* ]]; then
 mkdir /home/$USER/.local/share/$NAME
 cd /home/$USER/.local/share/$NAME
+curl -O http://alt.magzu.net/damn/dl/$NAME.png
 curl -O -L https://github.com/Alexander88207/$NAME/archive/$VER.tar.gz
 tar -xf $VER.tar.gz
 mv /home/$USER/.local/share/$NAME/$NAME-$VER/$NAME.sh /home/$USER/.local/share/$NAME/$NAME.sh
 rm /home/$USER/.local/share/$NAME/$VER.tar.gz
 rm -d -r /home/$USER/.local/share/$NAME/$NAME-$VER
-curl -O http://alt.magzu.net/damn/dl/$NAME.png
 echo "[Desktop Entry]
 Comment=
 Exec=bash /home/$USER/.local/share/$NAME/$NAME.sh
