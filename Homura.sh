@@ -2,7 +2,6 @@
 NAME=Homura
 VER=1.4
 NEXVER=1.5
-SD=$(pwd)
 WINEVER=$(wine --version)
 clear
 echo -e "\e[93mWelcome to $NAME $VER have fun!"
