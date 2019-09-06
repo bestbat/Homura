@@ -17,7 +17,7 @@ if [[ $TODO == *"Installation"* ]]; then
 INST=$(zenity --list --radiolist --height=405 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Custom Prefix" FALSE "Extras for games")
 
 if [[ $INST == *"Steam"* ]]; then
-echo $'\033]30;$NAME $VER - Installation of $INST\007'
+echo $'\033]30;Homura 1.4 - Installation of Steam\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
 cd /home/$USER/.local/share/$NAME/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -30,7 +30,7 @@ rm /home/$USER/.local/share/$NAME/Games/$INST/SteamSetup.exe
 fi
 
 if [[ $INST == *"Blizzard"* ]]; then
-echo $'\033]30;$NAME $VER - Installation of $INST\007'
+echo $'\033]30;Homura 1.4 - Installation of Blizzard\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
 cd /home/alexander/.local/share/HomuraGames/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -41,7 +41,7 @@ rm /home/$USER/.local/share/$NAME/Games/$INST/Battle.net-Setup-enUS.exe
 fi
 
 if [[ $INST == *"Origin"* ]]; then
-echo $'\033]30;$NAME $VER - Installation of $INST\007'
+echo $'\033]30;Homura 1.4 - Installation of Origin\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
 cd /home/$USER/.local/share/$NAME/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -54,7 +54,7 @@ rm /home/$USER/.local/share/$NAME/Games/$INST/OriginThinSetup.exe
 fi
 
 if [[ $INST == *"Uplay"* ]]; then
-echo $'\033]30;$NAME $VER - Installation of $INST\007'
+echo $'\033]30;Homura 1.4 - Installation of Uplay\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
 cd /home/$USER/.local/share/$NAME/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -65,7 +65,7 @@ rm /home/$USER/.local/share/$NAME/Games/$INST/UplayInstaller.exe
 fi
 
 if [[ $INST == *"Teamspeak"* ]]; then
-echo $'\033]30;$NAME $VER - Installation of $INST\007'
+echo $'\033]30;Homura 1.4 - Installation of Teamspeak\007'
 mkdir -p /home/$USER/.local/share/$NAME/Programs/$INST
 cd /home/$USER/.local/share/$NAME/Programs/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -78,7 +78,7 @@ WINEPREFIX=/home/$USER/.local/share/$NAME/Programs/Teamspeak wine "/home/$USER/.
 fi
 
 if [[ $INST == *"Clone Hero"* ]]; then
-echo $'\033]30;$NAME $VER - Installation of $INST\007'
+echo $'\033]30;Homura 1.4 - Installation of Clone Hero\007'
 mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
 cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -92,7 +92,7 @@ curl -O http://alt.magzu.net/dl/settings.ini
 fi
 
 if [[ $INST == *"Drakensang Online"* ]]; then
-echo $'\033]30;$NAME $VER - Installation of $INST\007'
+echo $'\033]30;Homura 1.4 - Installation of Drakensang Online\007'
 mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
 cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -103,7 +103,7 @@ rm "/home/$USER/.local/share/$NAME/Games/Drakensang Online/dro_setup.exe"
 fi
 
 if [[ $INST == *"Anarchy Online"* ]]; then
-echo $'\033]30;$NAME $VER - Installation of $INST\007'
+echo $'\033]30;Homura 1.4 - Installation of Anarchy Online\007'
 mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
 cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -117,7 +117,7 @@ rm "/home/$USER/.local/share/$NAME/Games/Anarchy Online/AnarchyOnline_EP1.exe"
 fi
 
 if [[ $INST == *"itch"* ]]; then
-echo $'\033]30;$NAME $VER - Installation of $INST\007'
+echo $'\033]30;Homura 1.4 - Installation of itch\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
 cd /home/$USER/.local/share/$NAME/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -128,7 +128,7 @@ rm /home/$USER/.local/share/$NAME/Games/itch/windows
 fi
 
 if [[ $INST == *"GOG Galaxy"* ]]; then
-echo $'\033]30;$NAME $VER - Installation of $INST\007'
+echo $'\033]30;Homura 1.4 - Installation of GOG Galaxy\007'
 mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
 cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -139,7 +139,7 @@ rm "/home/$USER/.local/share/$NAME/Games/GOG Galaxy/setup_galaxy_1.2.57.74.exe"
 fi
 
 if [[ $INST == *"League of Legends"* ]]; then
-echo $'\033]30;$NAME $VER - Installation of $INST\007'
+echo $'\033]30;Homura 1.4 - Installation of League of Legends\007'
 mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
 cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -150,7 +150,7 @@ rm League%20of%20Legends.tar.xz
 fi
 
 if [[ $INST == *"Custom Prefix"* ]]; then
-echo $'\033]30;Installation of $INST\007'
+echo $'\033]30;Homura Installation of Custom Prefix\007'
 PREFIXNAME=$(zenity --title="Create a custom prefix" --text "How your prefix should be called?" --entry --width=260) 
 mkdir -p "/home/$USER/.local/share/$NAME/Custom Prefixes"
 mkdir -p "/home/$USER/.local/share/$NAME/Custom Prefixes/$PREFIXNAME"
@@ -196,58 +196,58 @@ if [[ $TODO == *"Launcher"* ]]; then
 LNCH=$(zenity --list --radiolist --height=380 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to launch?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Custom Prefix")
 
 if [[ $LNCH == *"Steam"* ]]; then
-echo $'\033]30;$LNCH\007'        
+echo $'\033]30;Steam\007'        
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$LNCH wine "/home/$USER/.local/share/$NAME/Games/$LNCH/drive_c/Program Files/Steam/Steam.exe" -no-cef-sandbox
 fi
 
 if [[ $LNCH == *"Blizzard"* ]]; then
-echo $'\033]30;$LNCH\007'
+echo $'\033]30;Blizzard\007'
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$LNCH wine "/home/$USER/.local/share/$NAME/Games/$LNCH/drive_c/Program Files/Battle.net/Battle.net.exe"
 fi
 
 if [[ $LNCH == *"Origin"* ]]; then
-echo $'\033]30;$LNCH\007'
+echo $'\033]30;Origin\007'
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$LNCH wine "/home/$USER/.local/share/$NAME/Games/$LNCH/drive_c/Program Files/Origin/Origin.exe"
 fi
 
 if [[ $LNCH == *"Uplay"* ]]; then
-echo $'\033]30;$LNCH\007'
+echo $'\033]30;Uplay\007'
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$LNCH wine "/home/$USER/.local/share/$NAME/Games/$LNCH/drive_c/Program Files/Ubisoft/Ubisoft Game Launcher/Uplay.exe"
 fi
 
 if [[ $LNCH == *"Teamspeak"* ]]; then
-echo $'\033]30;$LNCH\007'
+echo $'\033]30;Teamspeak\007'
 WINEPREFIX=/home/$USER/.local/share/$NAME/Programs/$LNCH wine "/home/$USER/.local/share/$NAME/Programs/$LNCH/TeamSpeak 3 Client/ts3client_win32.exe"
 fi
 
 if [[ $LNCH == *"Clone Hero"* ]]; then
-echo $'\033]30;$LNCH\007'
+echo $'\033]30;Clone Hero\007'
 WINEPREFIX="/home/$USER/.local/share/$NAME/Games/$LNCH" wine "/home/$USER/.local/share/$NAME/Games/$LNCH/clonehero-win32/Clone Hero.exe"
 fi
 
 if [[ $LNCH == *"Drakensang Online"* ]]; then
-echo $'\033]30;$LNCH\007'
+echo $'\033]30;Drakensang Online\007'
 WINEPREFIX="/home/$USER/.local/share/$NAME/Games/$LNCH" wine "/home/$USER/.local/share/$NAME/Games/$LNCH/drive_c/Program Files/Drakensang Online/thinclient.exe"
 fi
 
 if [[ $LNCH == *"Anarchy Online"* ]]; then
-echo $'\033]30;$LNCH\007'
+echo $'\033]30;Anarchy Online\007'
 env WINEPREFIX="/home/$USER/.local/share/$NAME/Games/$LNCH" wine C:\\windows\\command\\start.exe /Unix /home/$USER/.local/share/$NAME/Games/Anarchy\ Online/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Anarchy\ Online/Anarchy\ Online.lnk
 fi
 
 if [[ $LNCH == *"itch"* ]]; then
-echo $'\033]30;$LNCH\007'
+echo $'\033]30;itch\007'
 ITCHVER=25.4.0
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$LNCH wine "/home/$USER/.wine/drive_c/users/$USER/Local Settings/Application Data/itch/app-$ITCHVER/itch.exe"
 fi
 
 if [[ $LNCH == *"GOG Galaxy"* ]]; then
-echo $'\033]30;$LNCH\007'
+echo $'\033]30;GOG Galaxy\007'
 WINEPREFIX="/home/$USER/.local/share/$NAME/Games/$LNCH" wine "/home/$USER/.local/share/$NAME/Games/$LNCH/drive_c/Program Files/GOG Galaxy/GalaxyClient.exe" /runWithoutUpdating /deelevated
 fi
 
 if [[ $LNCH == *"League of Legends"* ]]; then
-echo $'\033]30;$LNCH\007'
+echo $'\033]30;League of Legends\007'
 WINEPREFIX="/home/$USER/.local/share/$NAME/Games/$LNCH" wine "/home/$USER/.local/share/$NAME/Games/$LNCH/League of Legends/LeagueClient.exe"
 fi
 
