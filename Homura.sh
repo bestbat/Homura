@@ -463,12 +463,20 @@ fi
 
 if [[ $UPDE == *"Homura to the latest version"* ]]; then
 cd /home/$USER/.local/share/$NAME
+curl -O https://raw.githubusercontent.com/Alexander88207/Homura/master/VER
+CHKVER=$(cat VER)
+if [[ $CHKVER == *"$VER"* ]]; then
+notify-send "No new updates"
+fi
+if [[ $CHKVER == *"$NEXVER"* ]]; then
+cd /home/$USER/.local/share/$NAME
 curl -O -L https://github.com/Alexander88207/$NAME/archive/$NEXVER.tar.gz
 tar -xf $NEXVER.tar.gz
 rm /home/$USER/.local/share/$NAME/$NAME.sh
 mv /home/$USER/.local/share/$NAME/$NAME-$NEXVER/$NAME.sh /home/$USER/.local/share/$NAME/$NAME.sh
 rm /home/$USER/$NEXVER.tar.gz
 rm -d -r /home/$USER/$NAME-$NEXVER
+fi
 fi
 fi
 if [[ $TODO == *"Exit"* ]]; then
