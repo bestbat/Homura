@@ -64,9 +64,9 @@ Use the setup to install Homura correctly
 
 `curl -O https://raw.githubusercontent.com/Alexander88207/Homura/master/Setup.sh && bash Setup.sh`
 
-To start this script use the shortcut in the startmenu or use `bash /home/$USER/.local/share/Homura/Homura.sh`
+To start this script use the shortcut in the startmenu or use `bash /home/$USER/.local/share/Homura/Homura.sh`.
 
-To uninstall that script open the `Setup.sh` again and select `Uninstall Homura`
+To uninstall that script open the `Setup.sh` again and select `Uninstall Homura`.
 
 ## Contribute :pencil2:
 if you want to contribute to this repo then just send a pull request or issues :)
