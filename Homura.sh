@@ -462,7 +462,7 @@ echo "$ENV WINEPREFIX='/home/$USER/$NAME/Custom Prefixes/$PREFIXNAME' wine '$EXE
 fi
 fi
 if [[ $TODO == *"Exit"* ]]; then
-notify-send "Thanks for using our script and have a great day!"
+notify-send "Thanks for using $NAME and have a great day!"
 exit
 fi
 cd $SD
