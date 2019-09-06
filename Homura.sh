@@ -1,7 +1,7 @@
 #!/bin/bash
 NAME=Homura
-VER=1.5
-NEXVER=1.6
+VER=1.6
+NEXVER=1.7
 WINEVER=$(wine --version)
 clear
 echo -e "\e[93mWelcome to $NAME $VER have fun!"
