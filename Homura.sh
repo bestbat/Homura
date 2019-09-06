@@ -468,6 +468,7 @@ curl -O https://raw.githubusercontent.com/Alexander88207/Homura/master/VER
 CHKVER=$(cat VER)
 if [[ $CHKVER == *"$VER"* ]]; then
 notify-send "No new updates"
+rm VER
 fi
 if [[ $CHKVER == *"$NEXVER"* ]]; then
 cd /home/$USER/.local/share/$NAME
@@ -477,6 +478,7 @@ rm /home/$USER/.local/share/$NAME/$NAME.sh
 mv /home/$USER/.local/share/$NAME/$NAME-$NEXVER/$NAME.sh /home/$USER/.local/share/$NAME/$NAME.sh
 rm /home/$USER/.local/share/$NAME/$NEXVER.tar.gz
 rm -d -r /home/$USER/.local/share/$NAME/$NAME-$NEXVER
+rm VER
 fi
 fi
 fi
