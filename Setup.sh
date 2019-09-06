@@ -33,6 +33,7 @@ fi
 
 if [[ $TODO == *"Uninstall Homura"* ]]; then
 rm /home/$USER/.local/share/applications/$NAME.desktop
+rm /home/$USER/Desktop/$NAME.desktop
 rm -d -r /home/$USER/.local/share/$NAME
 fi
 notify-send Done!
