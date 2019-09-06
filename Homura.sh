@@ -461,7 +461,7 @@ fi
 fi
 if [[ $TODO == *"Exit"* ]]; then
 notify-send "Thanks for using our script and have a great day!"
-exec bash
+sh
 fi
 cd $SD
 bash $NAME.sh
