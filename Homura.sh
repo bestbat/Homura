@@ -475,8 +475,8 @@ curl -O -L https://github.com/Alexander88207/$NAME/archive/$NEXVER.tar.gz
 tar -xf $NEXVER.tar.gz
 rm /home/$USER/.local/share/$NAME/$NAME.sh
 mv /home/$USER/.local/share/$NAME/$NAME-$NEXVER/$NAME.sh /home/$USER/.local/share/$NAME/$NAME.sh
-rm /home/$USER/$NEXVER.tar.gz
-rm -d -r /home/alexander/.local/share/$NAME/$NAME-$NEXVER
+rm /home/$USER/.local/share/$NAME/$NEXVER.tar.gz
+rm -d -r /home/$USER/.local/share/$NAME/$NAME-$NEXVER
 fi
 fi
 fi
