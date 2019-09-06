@@ -19,7 +19,6 @@ Install your favorite windows games & launcher easily!
 - bash
 - p7zip
 - zenity
-- screen (Optional)
 - webfonts
 - alsa-utils (Optional)
 - winetricks
@@ -61,20 +60,13 @@ Tweaks are [here](Tweaks.md)
 
 This Script is designed for FreeBSD 12.0-RELEASE. All other versions are not supported!
 
-Download the latest stable release from [here](https://github.com/Alexander88207/Homura/releases) or use the git version to enjoy the latest changes.
+Use our setup to install Homura correctly
 
-To start this script use the follwing command in the folder:
-```
-bash Homura.sh
-```
+`curl -O https://raw.githubusercontent.com/Alexander88207/Homura/master/Setup.sh && bash Setup.sh`
 
-To uninstall that script just delete the Homura folder in the home directory.
+To start this script use the shortcut in the startmenu or use `bash /home/alexander/.local/share/Homura/Homura.sh`
 
-# Hide terminal
-
-The only solution is to use screen.
-
-Start a screen session in your terminal with `screen -S steam` for example and then open Homura after launching something press ctl+a+d then you can close the terminal. To re-open the session use `screen -r steam`.
+To uninstall that script open the `Setup.sh` again and select `Uninstall Homura`
 
 ## Contribute :pencil2:
 if you want to contribute to this repo then just send a pull request or issues :)
