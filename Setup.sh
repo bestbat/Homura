@@ -1,7 +1,7 @@
 #!/bin/bash
 NAME=Homura
 VER=1.4
-TODO=$(zenity --list --radiolist --height=240 --width 300 --title="Homura Installer" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Install Homura" FALSE "Uninstall Homura")
+TODO=$(zenity --list --radiolist --height=50 --width 300 --title="$NAME $VER Installer" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Install Homura" FALSE "Uninstall Homura")
 
 if [[ $TODO == *"Install Homura"* ]]; then
 mkdir /home/$USER/.local/share/$NAME
@@ -35,3 +35,4 @@ if [[ $TODO == *"Uninstall Homura"* ]]; then
 rm /home/$USER/.local/share/applications/$NAME.desktop
 rm -d -r /home/$USER/.local/share/$NAME
 fi
+notify-send Done!
