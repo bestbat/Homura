@@ -12,6 +12,7 @@ tar -xf $VER.tar.gz
 mv /home/$USER/.local/share/$NAME/$NAME-$VER/$NAME.sh /home/$USER/.local/share/$NAME/$NAME.sh
 rm /home/$USER/.local/share/$NAME/$VER.tar.gz
 rm -d -r /home/$USER/.local/share/$NAME/$NAME-$VER
+mkdir -p /home/alexander/.local/share/applications
 echo "[Desktop Entry]
 Comment=
 Exec=bash /home/$USER/.local/share/$NAME/$NAME.sh
