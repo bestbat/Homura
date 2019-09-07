@@ -52,6 +52,7 @@ WINEPREFIX=/home/$USER/.local/share/$NAME/Games/Origin winetricks winxp
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$INST wine /home/$USER/.local/share/$NAME/Games/$INST/OriginThinSetup.exe
 rm /home/$USER/.local/share/$NAME/Games/$INST/OriginThinSetup.exe
+zenity --info --width=310 --title="$NAME $VER - Origin" --text="Dont forget to disable the Origin in-game overlay or you are unable to start a game."
 fi
 
 if [[ $INST == *"Uplay"* ]]; then
