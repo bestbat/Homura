@@ -18,6 +18,7 @@ Exec=bash /home/$USER/.local/share/$NAME/$NAME.sh
 GenericName=
 Icon=/home/$USER/.local/share/Homura/Homura.png
 MimeType=
+TYPE=Game
 Name=Homura
 Path=
 StartupNotify=false
