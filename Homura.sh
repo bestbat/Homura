@@ -3,7 +3,7 @@ NAME=Homura
 VER=1.6
 NEXVER=1.7
 WINEVER=$(wine --version)
-clear
+
 echo -e "\e[93mWelcome to $NAME $VER have fun!"
 echo -e "\e[3;5;0;92mRunning on FreeBSD $(uname -r)"
 echo -e "\e[3;5;0;36mWine Version: $WINEVER\e[30;48;5;82m\e[0m"
@@ -21,7 +21,7 @@ echo $'\033]30;Homura 1.5 - Installation of Steam\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
 cd /home/$USER/.local/share/$NAME/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
-curl -O https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
+curl -o "SteamSetup.exe" "https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $NAME" --title "$NAME $VER $TODO $INST"
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$INST winetricks winxp dotnet40
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -32,12 +32,12 @@ fi
 if [[ $INST == *"Blizzard"* ]]; then
 echo $'\033]30;Homura 1.5 - Installation of Blizzard\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
-cd /home/alexander/.local/share/HomuraGames/$INST
+cd /home/alexander/.local/share/Homura/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
-curl -O http://dist.blizzard.com/downloads/bna-installers/322d5bb9ae0318de3d4cde7641c96425/retail.1/Battle.net-Setup-enUS.exe
+curl -o "Battle.net-Setup-enUS.exe" "http://dist.blizzard.com/downloads/bna-installers/322d5bb9ae0318de3d4cde7641c96425/retail.1/Battle.net-Setup-enUS.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST"
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$INST wine /home/$USER/.local/share/$NAME/Games/Blizzard/Battle.net-Setup-enUS.exe
-rm /home/$USER/.local/share/$NAME/Games/$INST/Battle.net-Setup-enUS.exe
+WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$INST wine /home/$USER/.local/share/$NAME/Games/$INST/Battle.net-Setup-enUS.exe
+
 fi
 
 if [[ $INST == *"Origin"* ]]; then
@@ -45,7 +45,7 @@ echo $'\033]30;Homura 1.5 - Installation of Origin\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
 cd /home/$USER/.local/share/$NAME/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
-curl -O https://origin-a.akamaihd.net/Origin-Client-Download/origin/legacy/OriginThinSetup.exe
+curl -o "OriginThinSetup.exe" "https://origin-a.akamaihd.net/Origin-Client-Download/origin/legacy/OriginThinSetup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST"
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/Origin winetricks winxp
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -58,7 +58,7 @@ echo $'\033]30;Homura 1.5 - Installation of Uplay\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
 cd /home/$USER/.local/share/$NAME/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
-curl -O https://ubistatic3-a.akamaihd.net/orbit/launcher_installer/UplayInstaller.exe
+curl -o "UplayInstaller.exe" "https://ubistatic3-a.akamaihd.net/orbit/launcher_installer/UplayInstaller.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST"
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$INST wine /home/$USER/.local/share/$NAME/Games/$INST/UplayInstaller.exe
 rm /home/$USER/.local/share/$NAME/Games/$INST/UplayInstaller.exe
@@ -69,7 +69,7 @@ echo $'\033]30;Homura 1.5 - Installation of Teamspeak\007'
 mkdir -p /home/$USER/.local/share/$NAME/Programs/$INST
 cd /home/$USER/.local/share/$NAME/Programs/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
-curl -O http://alt.magzu.net/damn/dl/Teamspeak.zip
+curl -o "Teamspeak.zip" "http://alt.magzu.net/damn/dl/Teamspeak.zip" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST"
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 unzip Teamspeak.zip
 rm Teamspeak.zip
@@ -82,7 +82,7 @@ echo $'\033]30;Homura 1.5 - Installation of Clone Hero\007'
 mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
 cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
-curl -O http://dl.clonehero.net/clonehero-v.22.5/clonehero-win32.7z
+curl -o "clonehero-win32.7z" "http://dl.clonehero.net/clonehero-v.22.5/clonehero-win32.7z" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST"
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 7z x clonehero-win32.7z
 rm clonehero-win32.7z
@@ -96,7 +96,7 @@ echo $'\033]30;Homura 1.5 - Installation of Drakensang Online\007'
 mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
 cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
-curl -O https://drasaonline-481-dwl.bpsecure.com/applet/dro_setup.exe
+curl -o "dro_setup.exe" "https://drasaonline-481-dwl.bpsecure.com/applet/dro_setup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST"
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX="/home/$USER/.local/share/$NAME/Games/Drakensang Online" wine "/home/$USER/.local/share/$NAME/Games/Drakensang Online/dro_setup.exe"
 rm "/home/$USER/.local/share/$NAME/Games/Drakensang Online/dro_setup.exe"
@@ -107,7 +107,7 @@ echo $'\033]30;Homura 1.5 - Installation of Anarchy Online\007'
 mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
 cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
-curl -O http://update.anarchy-online.com/download/AO/AnarchyOnline_EP1.exe
+curl -o "AnarchyOnline_EP1.exe" "http://update.anarchy-online.com/download/AO/AnarchyOnline_EP1.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST"
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 WINEPREFIX="/home/$USER/.local/share/$NAME/Games/Anarchy Online" winetricks winxp
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -121,10 +121,10 @@ echo $'\033]30;Homura 1.5 - Installation of itch\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
 cd /home/$USER/.local/share/$NAME/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
-curl -L -O http://nuts.itch.zone/download/windows
+curl -o "itch-setup.exe" "http://alt.magzu.net/damn/dl/itch-setup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --text "Downloading $INST" --title "$NAME $VER $TODO $INST"
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/itch wine /home/$USER/.local/share/$NAME/Games/itch/windows
-rm /home/$USER/.local/share/$NAME/Games/itch/windows
+WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$INST wine /home/$USER/.local/share/$NAME/Games/$INST/itch-setup.exe
+rm /home/$USER/.local/share/$NAME/Games/$INST/itch-setup.exe
 fi
 
 if [[ $INST == *"GOG Galaxy"* ]]; then
@@ -132,10 +132,10 @@ echo $'\033]30;Homura 1.5 - Installation of GOG Galaxy\007'
 mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
 cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
-curl -O -L https://content-system.gog.com/open_link/download?path=/open/galaxy/client/setup_galaxy_1.2.57.74.exe
+curl -o "setup_galaxy_1.2.54.23.exe" "https://cdn.gog.com/open/galaxy/client/setup_galaxy_1.2.54.23.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST"
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
-WINEPREFIX="/home/$USER/.local/share/$NAME/Games/GOG Galaxy" wine "/home/$USER/.local/share/$NAME/Games/GOG Galaxy/setup_galaxy_1.2.57.74.exe"
-rm "/home/$USER/.local/share/$NAME/Games/GOG Galaxy/setup_galaxy_1.2.57.74.exe"
+WINEPREFIX="/home/$USER/.local/share/$NAME/Games/$INST" wine "/home/$USER/.local/share/$NAME/Games/$INST/setup_galaxy_1.2.54.23.exe"
+rm "/home/$USER/.local/share/$NAME/Games/$INST/setup_galaxy_1.2.54.23.exe"
 fi
 
 if [[ $INST == *"League of Legends"* ]]; then
@@ -143,7 +143,7 @@ echo $'\033]30;Homura 1.5 - Installation of League of Legends\007'
 mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
 cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
-curl -O http://alt.magzu.net/damn/dl/League%20of%20Legends.tar.xz
+curl -o "League%20of%20Legends.tar.xz" "http://alt.magzu.net/damn/dl/League%20of%20Legends.tar.xz" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST"
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 tar -xf League%20of%20Legends.tar.xz
 rm League%20of%20Legends.tar.xz
@@ -172,7 +172,7 @@ cd /home/$USER/$NAME
 echo -e "\e[40;38;5;82mDownloading $TGPH\e[30;48;5;82m\e[0m"
 
 if [[ $TGPH == *"German Patch V3 (Steam-Edition)"* ]]; then
-curl -O http://alt.magzu.net/damn/dl/Torchlight_GerPatchV3_Steam.zip
+curl -o "Torchlight_GerPatchV3_Steam.zip" "http://alt.magzu.net/damn/dl/Torchlight_GerPatchV3_Steam.zip" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $TGPH" --title "$NAME $VER $TODO $TGPH"
 unzip Torchlight_GerPatchV3_Steam.zip
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/Steam wine /home/$USER/.local/share/$NAME/Torchlight_GerPatchV3_Steam.exe
@@ -181,7 +181,7 @@ rm Torchlight_GerPatchV3_Steam.zip
 fi
 
 if [[ $TGPH == *"German Patch V5 (GOG/Epic-Edition)"* ]]; then
-curl -O http://alt.magzu.net/damn/dl/Torchlight_GerPatchV5_GOGEPIC.zip
+curl -o "Torchlight_GerPatchV5_GOGEPIC.zip" "http://alt.magzu.net/damn/dl/Torchlight_GerPatchV5_GOGEPIC.zip" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $TGPH" --title "$NAME $VER $TODO $TGPH"
 unzip Torchlight_GerPatchV5_GOGEPIC.zip
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX="/home/$USER/.local/share/$NAME/Games/GOG Galaxy" wine /home/$USER/.local/share/$NAME/Torchlight_GerPatchV5_GOGEPIC.exe
