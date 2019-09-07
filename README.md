@@ -10,7 +10,7 @@
 - [Tweaks](#tweaks-wrench)
 - [Limitations](#limitations-x)
 - [Installation/Uninstallation](#installationuninstallation-cd)
-- [Release cycle](#release-cycle)
+- [Release cycle](#release-cycle-loudspeaker)
 - [Contribute](#contribute-pencil2)
 
 # Introduction
