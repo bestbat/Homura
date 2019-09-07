@@ -1,6 +1,6 @@
 #!/bin/bash
 NAME=Homura
-VER=1.5
+VER=1.6
 TODO=$(zenity --list --radiolist --height=50 --width 300 --title="$NAME $VER Installer" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Install Homura" FALSE "Uninstall Homura")
 
 if [[ $TODO == *"Install Homura"* ]]; then
