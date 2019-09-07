@@ -1,7 +1,7 @@
 #!/bin/bash
 NAME=Homura
-VER=1.6
-NEXVER=1.7
+VER=1.7
+NEXVER=1.8
 WINEVER=$(wine --version)
 
 echo -e "\e[93mWelcome to $NAME $VER have fun!"
@@ -17,7 +17,7 @@ if [[ $TODO == *"Installation"* ]]; then
 INST=$(zenity --list --radiolist --height=405 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Custom Prefix" FALSE "Extras for games")
 
 if [[ $INST == *"Steam"* ]]; then
-echo $'\033]30;Homura 1.6 - Installation of Steam\007'
+echo $'\033]30;Homura 1.7 - Installation of Steam\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
 cd /home/$USER/.local/share/$NAME/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -30,7 +30,7 @@ rm /home/$USER/.local/share/$NAME/Games/$INST/SteamSetup.exe
 fi
 
 if [[ $INST == *"Blizzard"* ]]; then
-echo $'\033]30;Homura 1.6 - Installation of Blizzard\007'
+echo $'\033]30;Homura 1.7 - Installation of Blizzard\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
 cd /home/alexander/.local/share/Homura/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -41,7 +41,7 @@ WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$INST wine /home/$USER/.local/sh
 fi
 
 if [[ $INST == *"Origin"* ]]; then
-echo $'\033]30;Homura 1.6 - Installation of Origin\007'
+echo $'\033]30;Homura 1.7 - Installation of Origin\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
 cd /home/$USER/.local/share/$NAME/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -54,7 +54,7 @@ rm /home/$USER/.local/share/$NAME/Games/$INST/OriginThinSetup.exe
 fi
 
 if [[ $INST == *"Uplay"* ]]; then
-echo $'\033]30;Homura 1.6 - Installation of Uplay\007'
+echo $'\033]30;Homura 1.7 - Installation of Uplay\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
 cd /home/$USER/.local/share/$NAME/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -65,7 +65,7 @@ rm /home/$USER/.local/share/$NAME/Games/$INST/UplayInstaller.exe
 fi
 
 if [[ $INST == *"Teamspeak"* ]]; then
-echo $'\033]30;Homura 1.6 - Installation of Teamspeak\007'
+echo $'\033]30;Homura 1.7 - Installation of Teamspeak\007'
 mkdir -p /home/$USER/.local/share/$NAME/Programs/$INST
 cd /home/$USER/.local/share/$NAME/Programs/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -78,7 +78,7 @@ WINEPREFIX=/home/$USER/.local/share/$NAME/Programs/Teamspeak wine "/home/$USER/.
 fi
 
 if [[ $INST == *"Clone Hero"* ]]; then
-echo $'\033]30;Homura 1.6 - Installation of Clone Hero\007'
+echo $'\033]30;Homura 1.7 - Installation of Clone Hero\007'
 mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
 cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -92,7 +92,7 @@ curl -O http://alt.magzu.net/dl/settings.ini
 fi
 
 if [[ $INST == *"Drakensang Online"* ]]; then
-echo $'\033]30;Homura 1.6 - Installation of Drakensang Online\007'
+echo $'\033]30;Homura 1.7 - Installation of Drakensang Online\007'
 mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
 cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -103,7 +103,7 @@ rm "/home/$USER/.local/share/$NAME/Games/Drakensang Online/dro_setup.exe"
 fi
 
 if [[ $INST == *"Anarchy Online"* ]]; then
-echo $'\033]30;Homura 1.6 - Installation of Anarchy Online\007'
+echo $'\033]30;Homura 1.7 - Installation of Anarchy Online\007'
 mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
 cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -117,7 +117,7 @@ rm "/home/$USER/.local/share/$NAME/Games/Anarchy Online/AnarchyOnline_EP1.exe"
 fi
 
 if [[ $INST == *"itch"* ]]; then
-echo $'\033]30;Homura 1.6 - Installation of itch\007'
+echo $'\033]30;Homura 1.7 - Installation of itch\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
 cd /home/$USER/.local/share/$NAME/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -128,7 +128,7 @@ rm /home/$USER/.local/share/$NAME/Games/$INST/itch-setup.exe
 fi
 
 if [[ $INST == *"GOG Galaxy"* ]]; then
-echo $'\033]30;Homura 1.6 - Installation of GOG Galaxy\007'
+echo $'\033]30;Homura 1.7 - Installation of GOG Galaxy\007'
 mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
 cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -139,7 +139,7 @@ rm "/home/$USER/.local/share/$NAME/Games/$INST/setup_galaxy_1.2.54.23.exe"
 fi
 
 if [[ $INST == *"League of Legends"* ]]; then
-echo $'\033]30;Homura 1.6 - Installation of League of Legends\007'
+echo $'\033]30;Homura 1.7 - Installation of League of Legends\007'
 mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
 cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
