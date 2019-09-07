@@ -15,12 +15,9 @@ rm -d -r /home/$USER/.local/share/$NAME/$NAME-$VER
 echo "[Desktop Entry]
 Comment=
 Exec=bash /home/$USER/.local/share/$NAME/$NAME.sh
-GenericName=
 Icon=/home/$USER/.local/share/Homura/Homura.png
-MimeType=
-Categories=Game
+Categories=Game;
 Name=Homura
-Path=
 StartupNotify=false
 Terminal=false
 TerminalOptions=
