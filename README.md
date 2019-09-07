@@ -10,6 +10,7 @@
 - [Tweaks](#tweaks-wrench)
 - [Limitations](#limitations-x)
 - [Installation/Uninstallation](#installationuninstallation-cd)
+- [Release cycle](#release-cycle)
 - [Contribute](#contribute-pencil2)
 
 # Introduction
@@ -78,6 +79,11 @@ Use the setup to install Homura correctly
 To start this script use the shortcut in the startmenu or use `bash /home/$USER/.local/share/Homura/Homura.sh`.
 
 To uninstall that script open the `Setup.sh` again and select `Uninstall Homura`.
+
+# Release cycle :loudspeaker:
+
+New features gets releasd in a week or in 5 days.
+If an exiting feature needs a fix then i create fast a release.
 
 ## Contribute :pencil2:
 if you want to contribute to this repo then just send a pull request or issues :)
