@@ -384,7 +384,10 @@ WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$WTR winetricks
 fi
 
 if [[ $WTR == *"Custom Prefix"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$WTR winetricks
+cd "/home/$USER/.local/share/$NAME/Custom Prefixes"
+FOLDERS=$(ls -a)
+PREFIXNAME=$(zenity --list --title="$NAME $VER - Select a custom prefix" --height=260 --width=300 --column="What prefix?" $FOLDERS)
+WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$PREFIXNAME winetricks
 fi
 fi
 
