@@ -13,6 +13,7 @@ PAYDAY 2 (Steam) | Depth of field must be switched off in graphic settings to av
 Unity mouse problems | Tab out and in.
 World of Warcraft 1.12.1 no sound | Start the game in a new wine preifx.
 Origin | Turn off the in-game overlay.
+Garry's Mod | Workshop addons dont work. You need download and install your workshop addon/collection manually. To download the addons visit https://steamworkshopdownloader.io/ and after downloading your addon, copy the addon files in a folder and copy the folder to `/home/$USER/.local/share/Homura/Games/Steam/drive_c/Program Files/Steam/steamapps/common/GarrysMod/garrysmod/addons/`
 
 # FAQ
 
