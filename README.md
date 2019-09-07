@@ -1,6 +1,17 @@
 # Homura
 [![CodeFactor](https://www.codefactor.io/repository/github/alexander88207/Homura/badge)](https://www.codefactor.io/repository/github/alexander88207/Homura) ![GitHub release](https://img.shields.io/github/release/Alexander88207/Homura) [![Discord](https://img.shields.io/badge/chat-on%20discord-7289da.svg?logo=discord)](https://discord.gg/Mm3aNuQ)
 
+# Table of content
+
+- [Introduction](#introduction)
+- [Description](#description-)
+- [Dependencies](#dependencies-syringe)
+- [States](#states-fire)
+- [Tweaks](#tweaks-wrench)
+- [Limitations](#limitations-x)
+- [Installation/Uninstallation](#installationuninstallation-cd)
+- [Contribute](#contribute-pencil2)
+
 # Introduction
 
 Inspired by lutris, we would like to provide a game launcher to play windows games on FreeBSD.
