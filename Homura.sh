@@ -10,7 +10,7 @@ echo -e "\e[3;5;0;36mWine Version: $WINEVER\e[30;48;5;82m\e[0m"
 echo -e "\e[3;5;0;31mGPU Info OpenGL:\e[30;48;5;82m\e[0m" && glxinfo | grep OpenGL
 echo -e "\e[3;5;0;31mGPU Info Vulkan:\e[30;48;5;82m\e[0m" && vulkaninfo | grep "GPU id"
 
-TODO=$(zenity --list --radiolist --height=260 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Exit")
+TODO=$(zenity --list --radiolist --height=270 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Open Homura Folder" FALSE "Exit")
 
 if [[ $TODO == *"Installation"* ]]; then
 
@@ -38,7 +38,6 @@ curl -o "Battle.net-Setup-enUS.exe" "http://dist.blizzard.com/downloads/bna-inst
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$INST wine /home/$USER/.local/share/$NAME/Games/$INST/Battle.net-Setup-enUS.exe
 rm /home/$USER/.local/share/$NAME/Games/$INST/Battle.net-Setup-enUS.exe
-
 fi
 
 if [[ $INST == *"Origin"* ]]; then
@@ -490,6 +489,11 @@ rm VER
 fi
 fi
 fi
+
+if [[ $TODO == *"Open Homura Folder"* ]]; then
+xdg-open /home/$USER/.local/share/$NAME
+fi
+
 if [[ $TODO == *"Exit"* ]]; then
 notify-send "Thanks for using $NAME and have a great day!"
 exit
