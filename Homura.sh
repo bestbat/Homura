@@ -121,7 +121,7 @@ echo $'\033]30;Homura 1.6 - Installation of itch\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
 cd /home/$USER/.local/share/$NAME/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
-curl -o "itch-setup.exe" "http://alt.magzu.net/damn/dl/itch-setup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --text "Downloading $INST" --title "$NAME $VER $TODO $INST"
+curl -o "itch-setup.exe" "http://alt.magzu.net/damn/dl/itch-setup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST"
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$INST wine /home/$USER/.local/share/$NAME/Games/$INST/itch-setup.exe
 rm /home/$USER/.local/share/$NAME/Games/$INST/itch-setup.exe
