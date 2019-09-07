@@ -60,7 +60,7 @@ If you want a special game or launcher then create an issue :)
 
 # Tweaks :wrench:
 
-Tweaks are [here](Tweaks.md)
+Your game dont run in the first time? Tweaks are [here](Tweaks.md)
 
 # Limitations :x:
 
