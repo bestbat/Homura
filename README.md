@@ -83,7 +83,7 @@ To uninstall that script open the `Setup.sh` again and select `Uninstall Homura`
 # Release cycle :loudspeaker:
 
 New features gets releasd in a week or in 5 days.
-If an exiting feature needs a fix then i create fast a release.
+If an existing feature needs a fix then i create fast a release.
 
 ## Contribute :pencil2:
 if you want to contribute to this repo then just send a pull request or issues :)
