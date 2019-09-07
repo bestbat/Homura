@@ -27,16 +27,16 @@ Install your favorite windows games & launcher easily!
 
 # Dependencies :syringe:
 
-- curl
-- bash
-- p7zip
-- zenity
-- webfonts
-- alsa-utils (Optional)
-- winetricks
-- vulkan-tools
-- mesa-demos
-- i386-wine-devel on amd64 or wine-devel on i386
+- [curl](https://www.freshports.org/ftp/curl/)
+- [bash](https://www.freshports.org/shells/bash)
+- [p7zip](https://www.freshports.org/archivers/p7zip/)
+- [zenity](https://www.freshports.org/x11/zenity)
+- [webfonts](https://www.freshports.org/x11-fonts/webfonts)
+- [alsa-utils](https://www.freshports.org/audio/alsa-utils) (Optional)
+- [winetricks](https://www.freshports.org/emulators/winetricks)
+- [vulkan-tools](https://www.freshports.org/devel/vulkan-tools)
+- [mesa-demos](https://www.freshports.org/graphics/mesa-demos)
+- [i386-wine-devel](https://www.freshports.org/emulators/i386-wine-devel) on amd64 or [wine-devel](https://www.freshports.org/emulators/wine-devel) on i386
 
 # States :fire:
 
