@@ -6,7 +6,8 @@ TODO=$(zenity --list --radiolist --height=50 --width 300 --title="$NAME $VER Ins
 if [[ $TODO == *"Install Homura"* ]]; then
 mkdir /home/$USER/.local/share/$NAME
 cd /home/$USER/.local/share/$NAME
-curl -O http://alt.magzu.net/damn/dl/$NAME.png
+curl -O https://vignette.wikia.nocookie.net/madoka/images/7/72/Homura_magical_outfit_1.png/revision/latest/top-crop/width/320/height/320?cb=20160821012353
+mv 320?cb=20160821012353 $NAME.png
 curl -O -L https://github.com/Alexander88207/$NAME/archive/$VER.tar.gz
 tar -xf $VER.tar.gz
 mv /home/$USER/.local/share/$NAME/$NAME-$VER/$NAME.sh /home/$USER/.local/share/$NAME/$NAME.sh
