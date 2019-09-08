@@ -1,7 +1,6 @@
 #!/bin/bash
 NAME=Homura
 VER=1.8
-NEXVER=1.9
 WINEVER=$(wine --version)
 
 echo -e "\e[93mWelcome to $NAME $VER have fun!"
@@ -470,22 +469,21 @@ fi
 
 if [[ $UPDE == *"Homura to the latest version"* ]]; then
 cd /home/$USER/.local/share/$NAME
-rm VER
 curl -O https://raw.githubusercontent.com/Alexander88207/Homura/master/VER
-CHKVER=$(cat VER)
-if [[ $CHKVER == *"$VER"* ]]; then
-notify-send "No new updates"
-rm VER
-fi
-if [[ $CHKVER == *"$NEXVER"* ]]; then
+RELVER=$(cat VER)
+if [ $VER \> $RELVER ]
+        then
+                notify-send "Nice, no new available update!"
+        else
 cd /home/$USER/.local/share/$NAME
-curl -O -L https://github.com/Alexander88207/$NAME/archive/$NEXVER.tar.gz
-tar -xf $NEXVER.tar.gz
+curl -O -L https://github.com/Alexander88207/$NAME/archive/$RELVER.tar.gz
+tar -xf $RELVER.tar.gz
 rm /home/$USER/.local/share/$NAME/$NAME.sh
-mv /home/$USER/.local/share/$NAME/$NAME-$NEXVER/$NAME.sh /home/$USER/.local/share/$NAME/$NAME.sh
-rm /home/$USER/.local/share/$NAME/$NEXVER.tar.gz
-rm -d -r /home/$USER/.local/share/$NAME/$NAME-$NEXVER
+mv /home/$USER/.local/share/$NAME/$NAME-$RELVER/$NAME.sh /home/$USER/.local/share/$NAME/$NAME.sh
+rm /home/$USER/.local/share/$NAME/$RELVER.tar.gz
+rm -d -r /home/$USER/.local/share/$NAME/$NAME-$RELVER
 rm VER
+notify-send "Homura have been updated sucessfully to $RELVER"
 fi
 fi
 fi
