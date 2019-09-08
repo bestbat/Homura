@@ -32,8 +32,14 @@ X-KDE-Username=
 fi
 
 if [[ $TODO == *"Uninstall Homura"* ]]; then
+UH=$(zenity --question --width 300 --title "Homura - Uninstallation - Warning" --text "Everything will be removed in connection with Homura, do you want continue?"; echo $?)
+if [[ $UH == *"1"* ]]; then 
+notify-send "Thats a good decesion :)"
+fi
+if [[ $UH == *"0"* ]]; then 
 rm /home/$USER/.local/share/applications/$NAME.desktop
 rm /home/$USER/Desktop/$NAME.desktop
 rm -d -r /home/$USER/.local/share/$NAME
+fi
 fi
 notify-send Done!
