@@ -13,7 +13,7 @@ TODO=$(zenity --list --radiolist --height=270 --width 300 --title="$NAME $VER" -
 
 if [[ $TODO == *"Installation"* ]]; then
 
-INST=$(zenity --list --radiolist --height=405 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Custom Prefix" FALSE "Extras for games")
+INST=$(zenity --list --radiolist --height=405 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Custom Prefix" FALSE "Extras for games")
 
 if [[ $INST == *"Steam"* ]]; then
 echo $'\033]30;Homura 1.8 - Installation of Steam\007'
@@ -165,6 +165,16 @@ WINEPREFIX="/home/$USER/.local/share/$NAME/Games/$INST" wine "/home/$USER/.local
 rm "/home/$USER/.local/share/$NAME/Games/$INST/Wargaming_Game_Center_Install_EU.exe"
 fi
 
+if [[ $INST == *"Growtopia"* ]]; then
+echo $'\033]30;Homura 1.8 - Installation of Growtopia\007'
+mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
+cd /home/$USER/.local/share/$NAME/Games/$INST
+curl -L -o "Growtopia-Installer.exe" "https://growtopiagame.com/Growtopia-Installer.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --text "Downloading $INST" --title "$NAME $VER $TODO $INST"
+echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$INST wine /home/$USER/.local/share/$NAME/Games/$INST/Growtopia-Installer.exe
+rm /home/$USER/.local/share/$NAME/Games/$INST/Growtopia-Installer.exe
+fi
+
 if [[ $INST == *"Custom Prefix"* ]]; then
 echo $'\033]30;Homura Installation of Custom Prefix\007'
 PREFIXNAME=$(zenity --title="Create a custom prefix" --text "How your prefix should be called?" --entry --width=260) 
@@ -211,7 +221,7 @@ fi
 fi
 
 if [[ $TODO == *"Launcher"* ]]; then
-LNCH=$(zenity --list --radiolist --height=380 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to launch?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Custom Prefix")
+LNCH=$(zenity --list --radiolist --height=380 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to launch?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Custom Prefix")
 
 if [[ $LNCH == *"Steam"* ]]; then
 echo $'\033]30;Steam\007'        
@@ -274,6 +284,11 @@ echo $'\033]30;Wargaming Game Center\007'
 WINEPREFIX="/home/$USER/.local/share/$NAME/Games/$LNCH" wine "/home/$USER/.local/share/$NAME/Games/$LNCH/drive_c/Program Files/Wargaming.net/GameCenter/wgc.exe"
 fi
 
+if [[ $LNCH == *"Growtopia"* ]]; then
+echo $'\033]30;Growtopia\007'
+WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$LNCH wine "/home/$USER/.local/share/$NAME/Games/$LNCH/drive_c/users/$USER/Local Settings/Application Data/Growtopia/Growtopia.exe"
+fi
+
 if [[ $LNCH == *"Custom Prefix"* ]]; then
 echo $'\033]30;Custom Prefix\007'
 cd "/home/$USER/.local/share/$NAME/Custom Prefixes"
@@ -285,7 +300,7 @@ fi
 fi
 
 if [[ $TODO == *"Uninstallation"* ]]; then
-UNST=$(zenity --list --radiolist --height=380 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to uninstall?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Custom Prefix")
+UNST=$(zenity --list --radiolist --height=380 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to uninstall?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Custom Prefix")
 
 if [[ $UNST == *"Steam"* ]]; then
 rm -d -r /home/$USER/.local/share/$NAME/Games/$UNST
@@ -351,7 +366,13 @@ fi
 if [[ $UNST == *"Wargaming Game Center"* ]]; then
 rm -d -r "/home/$USER/.local/share/$NAME/Games/$UNST"
 rm -d -r /home/$USER/.local/share/applications/wine/Programs/Wargaming.net
-rm /home/$USER/Desktop/Game Center.desktop'
+rm /home/$USER/Desktop/Game Center.desktop
+fi
+
+if [[ $UNST == *"Growtopia"* ]]; then
+rm -d -r /home/$USER/.local/share/$NAME/Games/$UNST
+rm -d -r /home/$USER/.local/share/applications/wine/Programs/$UNST
+rm /home/$USER/Desktop/Growtopia.desktop
 fi
 
 if [[ $UNST == *"Custom Prefix"* ]]; then
@@ -363,7 +384,7 @@ fi
 fi
 
 if [[ $TODO == *"Winetricks"* ]]; then
-WTR=$(zenity --list --radiolist --height=380 --title="$NAME $VER - $TODO" --text "In what prefix do you want to open winetricks?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Custom Prefix")
+WTR=$(zenity --list --radiolist --height=380 --title="$NAME $VER - $TODO" --text "In what prefix do you want to open winetricks?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Custom Prefix")
 
 if [[ $WTR == *"Steam"* ]]; then
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$WTR winetricks
@@ -413,6 +434,10 @@ if [[ $WTR == *"Wargaming Game Center"* ]]; then
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$WTR winetricks
 fi
 
+if [[ $WTR == *"Growtopia"* ]]; then
+WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$WTR winetricks
+fi
+
 if [[ $WTR == *"Custom Prefix"* ]]; then
 cd "/home/$USER/.local/share/$NAME/Custom Prefixes"
 FOLDERS=$(ls -a)
@@ -422,7 +447,7 @@ fi
 fi
 
 if [[ $TODO == *"Run a executable in prefix"* ]]; then
-RAEP=$(zenity --list --radiolist --height=380 --title="$NAME $VER - $TODO" --text "In what prefix do you want open your executable?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Custom Prefix")
+RAEP=$(zenity --list --radiolist --height=380 --title="$NAME $VER - $TODO" --text "In what prefix do you want open your executable?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Custom Prefix")
 EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
 	
 if [[ $RAEP == *"Steam"* ]]; then
@@ -473,6 +498,10 @@ if [[ $RAEP == *"Wargaming Game Center"* ]]; then
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$RAEP wine "$EXECUTABLE"
 fi
 
+if [[ $RAEP == *"Growtopia"* ]]; then
+WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$RAEP wine "$EXECUTABLE"
+fi
+
 if [[ $RAEP == *"Custom Prefix"* ]]; then
 cd "/home/$USER/.local/share/$NAME/Custom Prefixes"
 FOLDERS=$(ls -a)
@@ -482,11 +511,19 @@ fi
 fi
 
 if [[ $TODO == *"Update"* ]]; then
-UPDE=$(zenity --list --radiolist --height=50 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to update?" --hide-header --column "$NAME" --column "Item" FALSE "Teamspeak" FALSE "Custom Prefix executable" FALSE "Homura to the latest version")
+UPDE=$(zenity --list --radiolist --height=50 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to update?" --hide-header --column "$NAME" --column "Item" FALSE "Teamspeak" FALSE "Growtopia" FALSE "Custom Prefix executable" FALSE "Homura to the latest version")
 
 if [[ $UPDE == *"Teamspeak"* ]]; then
 WINEPREFIX=/home/$USER/.local/share/$NAME/Programs/$UPDE wine "/home/$USER/.local/share/$NAME/Programs/$UPDE/TeamSpeak 3 Client/update.exe"
 kill ts3client_win32.exe
+fi
+
+if [[ $UPDE == *"Growtopia"* ]]; then
+cd /home/$USER/.local/share/$NAME/Games/$INST
+curl -L -o "Growtopia-Installer.exe" "https://growtopiagame.com/Growtopia-Installer.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --text "Downloading $INST" --title "$NAME $VER $TODO $INST"
+echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$INST wine /home/$USER/.local/share/$NAME/Games/$INST/Growtopia-Installer.exe
+rm /home/$USER/.local/share/$NAME/Games/$INST/Growtopia-Installer.exe
 fi
 
 if [[ $UPDE == *"Custom Prefix executable"* ]]; then
