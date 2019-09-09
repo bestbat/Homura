@@ -56,7 +56,7 @@ Anarchy Online | Runs out of the box. Please let the installer create a shortcut
 [itch](https://www.youtube.com/watch?v=lp-3g08w70A) | Runs out of the box.
 [GOG Galaxy](https://www.youtube.com/watch?v=m4BMvvgeWFE) | Runs out of the box.
 League of Legends | Crashs at starting the game client.
-Wargaming Game Center | Is on the way.
+Wargaming Game Center | Crashes directly 10 seconds after the start and even if the launcher should work a desired game may not work. The test game World of Tanks became a zombie directly.
 Growtopia | Is on the way.
  
 If you want a special game or launcher then create an issue :)
