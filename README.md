@@ -11,7 +11,7 @@
 - [Limitations](#limitations-x)
 - [Installation/Uninstallation](#installationuninstallation-cd)
 - [Release cycle](#release-cycle-loudspeaker)
-- [If you are new to freebsd](#if-you-are-new-to-freebsd)
+- [If you are new to freebsd](#if-you-are-new-to-freebsd-wink)
 - [Contribute](#contribute-pencil2)
 
 # Introduction
