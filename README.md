@@ -32,7 +32,7 @@ Install your favorite windows games & launcher easily!
 - [p7zip](https://www.freshports.org/archivers/p7zip/)
 - [zenity](https://www.freshports.org/x11/zenity)
 - [webfonts](https://www.freshports.org/x11-fonts/webfonts)
-- [alsa-utils](https://www.freshports.org/audio/alsa-utils) (Optional)
+- [alsa-utils](https://www.freshports.org/audio/alsa-utils) ([Optional](#if-you-are-new-to-freebsd))
 - [winetricks](https://www.freshports.org/emulators/winetricks)
 - [vulkan-tools](https://www.freshports.org/devel/vulkan-tools)
 - [mesa-demos](https://www.freshports.org/graphics/mesa-demos)
