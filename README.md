@@ -85,5 +85,9 @@ To uninstall that script open the `Setup.sh` again and select `Uninstall Homura`
 New features gets releasd in a week or in 5 days.
 If an existing feature needs a fix then i create fast a release.
 
-## Contribute :pencil2:
+# If you are new to freebsd
+
+- You might notice that your microphone is muted. If you want to use teamspeak. Open alsamixer in the terminal and rise up the volume of your microphone.
+
+# Contribute :pencil2:
 if you want to contribute to this repo then just send a pull request or issues :)
