@@ -45,17 +45,19 @@ This list will be refreshed on every update of [i386-wine-devel](https://www.fre
 
 Application | Works?
 ------------ | -------------
- [Steam](https://www.youtube.com/watch?v=a2z0nbWOarc) | Uses winxp with an older steam client to get some online features. (Doesn't affect performance)
- [Blizzard](https://www.youtube.com/watch?v=-oAMNgDvWtA) | Runs out of the box.
- [Origin](https://www.youtube.com/watch?v=d_j6Hlguydc) | Uses winxp with an older origin client. (Doesn't affect performance)
- Uplay | Runs out of the box, but crashes to often.
- Teamspeak | Runs out of the box.
- [Clone Hero](https://www.youtube.com/watch?v=qch3_bt4rGo) | Runs out of the box. WARNING: The game can also cause a very, very loud sound error! To fix it restart the system.
- Drakensang Online | Crashs at starting the game client.
- Anarchy Online | Runs out of the box. Please let the installer create a shortcut or you are unable to start the launcher!
- [itch](https://www.youtube.com/watch?v=lp-3g08w70A) | Runs out of the box.
- [GOG Galaxy](https://www.youtube.com/watch?v=m4BMvvgeWFE) | Runs out of the box.
- League of Legends | Crashs at starting the game client.
+[Steam](https://www.youtube.com/watch?v=a2z0nbWOarc) | Uses winxp with an older steam client to get some online features. (Doesn't affect performance)
+[Blizzard](https://www.youtube.com/watch?v=-oAMNgDvWtA) | Runs out of the box.
+[Origin](https://www.youtube.com/watch?v=d_j6Hlguydc) | Uses winxp with an older origin client. (Doesn't affect performance)
+Uplay | Runs out of the box, but crashes to often.
+Teamspeak | Runs out of the box.
+[Clone Hero](https://www.youtube.com/watch?v=qch3_bt4rGo) | Runs out of the box. WARNING: The game can also cause a very, very loud sound error! To fix it restart the system.
+Drakensang Online | Crashs at starting the game client.
+Anarchy Online | Runs out of the box. Please let the installer create a shortcut or you are unable to start the launcher!
+[itch](https://www.youtube.com/watch?v=lp-3g08w70A) | Runs out of the box.
+[GOG Galaxy](https://www.youtube.com/watch?v=m4BMvvgeWFE) | Runs out of the box.
+League of Legends | Crashs at starting the game client.
+Wargaming Game Center | Is on the way.
+Growtopia | Is on the way.
  
 If you want a special game or launcher then create an issue :)
 
