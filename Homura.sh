@@ -3,13 +3,14 @@ NAME=Homura
 VER=1.8
 WINEVER=$(wine --version)
 
+echo -e "\e[32mCopyright (c) 2019, Alexander Vereeken All rights reserved."
 echo -e "\e[93mWelcome to $NAME $VER have fun!"
 echo -e "\e[3;5;0;92mRunning on FreeBSD $(uname -r)"
 echo -e "\e[3;5;0;36mWine Version: $WINEVER\e[30;48;5;82m\e[0m"
 echo -e "\e[3;5;0;31mGPU Info OpenGL:\e[30;48;5;82m\e[0m" && glxinfo | grep OpenGL
 echo -e "\e[3;5;0;31mGPU Info Vulkan:\e[30;48;5;82m\e[0m" && vulkaninfo | grep "GPU id"
 
-TODO=$(zenity --list --radiolist --height=270 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Open Homura Folder" FALSE "Exit")
+TODO=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Open Homura Folder" FALSE "About" FALSE "Exit")
 
 if [[ $TODO == *"Installation"* ]]; then
 
@@ -561,6 +562,13 @@ fi
 
 if [[ $TODO == *"Open Homura Folder"* ]]; then
 xdg-open /home/$USER/.local/share/$NAME
+fi
+
+if [[ $TODO == *"About"* ]]; then
+zenity --info --width=350 --title="$NAME $VER - About" --text="Inspired by lutris.
+Homura is a Windows Games Launcher for FreeBSD and is licensed under the BSD 2-Clause License.
+Copyright (c) 2019, Alexander Vereeken
+All rights reserved."
 fi
 
 if [[ $TODO == *"Exit"* ]]; then
