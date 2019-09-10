@@ -32,7 +32,7 @@ fi
 if [[ $INST == *"Blizzard"* ]]; then
 echo $'\033]30;Homura 1.8 - Installation of Blizzard\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
-cd /home/alexander/.local/share/Homura/Games/$INST
+cd /home/$USER/.local/share/Homura/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "Battle.net-Setup-enUS.exe" "http://dist.blizzard.com/downloads/bna-installers/322d5bb9ae0318de3d4cde7641c96425/retail.1/Battle.net-Setup-enUS.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST"
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
