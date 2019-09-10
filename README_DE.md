@@ -59,7 +59,7 @@ League of Legends | Stürzt beim starten des richtigen Clients ab.
 Wargaming Game Center | Stürzt direkt 10 Sekunden nach dem Start ab und selbst wenn der Launcher arbeiten sollte, funktioniert ein gewünschtes Spiel möglicherweise nicht. Das Testspiel World of Tanks wurde direkt zu einem Zombie.
 Growtopia | Läuft direkt nach der Installation.
  
-Wenn du ein spezielles/en spiel oder launcher haben möchtest dann eröffnen einen neues issue :)
+Wenn du ein spezielles/en spiel oder launcher haben möchtest dann eröffnen sie ein neues issue :)
 
 # Tweaks :wrench:
 
