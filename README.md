@@ -1,6 +1,10 @@
 # Homura
 [![CodeFactor](https://www.codefactor.io/repository/github/alexander88207/Homura/badge)](https://www.codefactor.io/repository/github/alexander88207/Homura) ![GitHub release](https://img.shields.io/github/release/Alexander88207/Homura) [![Discord](https://img.shields.io/badge/chat-on%20discord-7289da.svg?logo=discord)](https://discord.gg/Mm3aNuQ) <img src="https://img.shields.io/discord/618845118060953600">
 
+# Readme languages
+- [English](#README.md) written by [Alexander88207](https://github.com/Alexander88207)
+- [German](#README_DE.md) translated by [Alexander88207](https://github.com/Alexander88207) 
+
 # Table of content
 
 - [Introduction](#introduction)
