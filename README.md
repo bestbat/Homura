@@ -93,4 +93,4 @@ If an existing feature needs a fix then i create fast a release.
 - You might notice that your microphone is muted. If you want to use teamspeak. Open alsamixer in the terminal and rise up the volume of your microphone.
 
 # Contribute :pencil2:
-if you want to contribute to this repo then just send a pull request or issues :)
+if you want to contribute to this repo then take a look [here](CONTRIBUTING.md)
