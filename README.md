@@ -55,11 +55,11 @@ Application | Works?
 Uplay | Runs out of the box, but crashes to often.
 Teamspeak | Runs out of the box.
 [Clone Hero](https://www.youtube.com/watch?v=qch3_bt4rGo) | Runs out of the box.
-Drakensang Online | Crashs at starting the game client.
+Drakensang Online | Crashes at starting the game client.
 Anarchy Online | Runs out of the box. Please let the installer create a shortcut or you are unable to start the launcher!
 [itch](https://www.youtube.com/watch?v=lp-3g08w70A) | Runs out of the box.
 [GOG Galaxy](https://www.youtube.com/watch?v=m4BMvvgeWFE) | Runs out of the box.
-League of Legends | Crashs at starting the game client.
+League of Legends | Crashes at starting the game client.
 Wargaming Game Center | Crashes directly 10 seconds after the start and even if the launcher should work a desired game may not work. The test game World of Tanks became a zombie directly.
 Growtopia | Runs out of the box.
  
@@ -77,7 +77,7 @@ Your game dont run in the first time? Tweaks are [here](TWEAKS.md)
 
 # Installation/Uninstallation :cd:
 
-This Script is designed for FreeBSD 12.0-RELEASE. All other versions are not supported!
+This script is designed for FreeBSD 12.0-RELEASE. All other versions are not supported!
 
 Use the setup to install Homura correctly
 
