@@ -1,7 +1,10 @@
+# Contributing
+
+
 # Table of content
 
-- [I want to add a launcher/game/program]()
-- [I cant code, but i want to help!]()
+- [I want to add a launcher/game/program](#i-want-to-add-a-launchergameprogram)
+- [I cant code, but i want to help!](#i-cant-code-but-i-want-to-help)
 
 # I want to add a launcher/game/program
 
