@@ -3,16 +3,16 @@
 
 # Table of content
 
-- [Einführung](#introduction)
-- [Beschreibung](#description-)
-- [Abhängigkeiten](#dependencies-syringe)
-- [Status](#states-fire)
+- [Einführung](#einführung)
+- [Beschreibung](#beschreibung-)
+- [Abhängigkeiten](#abhängigkeiten-syringe)
+- [Status](#status-fire)
 - [Tweaks](#tweaks-wrench)
-- [Einschränkungen](#limitations-x)
-- [Installation/Deinstallation](#installationuninstallation-cd)
-- [Release-Zyklus](#release-cycle-loudspeaker)
-- [Falls sie neu bei FreeBSD sind](#if-you-are-new-to-freebsd-wink)
-- [Beitragen](#contribute-pencil2)
+- [Einschränkungen](#einschränkungen-x)
+- [Installation/Deinstallation](#installationdeinstallation-cd)
+- [Release-Zyklus](#release-zyklus-loudspeaker)
+- [Falls sie neu bei FreeBSD sind](#falls-sie-neu-bei-freebsd-sind-wink)
+- [Beitragen](#beitragen-pencil2)
 
 # Einführung
 
@@ -20,7 +20,7 @@ Inspiriert von [lutris](https://github.com/lutris/lutris), möchten wir gerne ei
 
 # Beschreibung &#x1F4D8;
 
-Installieren deine lieblings Windows Spiele/Launcher ganz einfch!
+Installieren sie ihre lieblings Windows Spiele/Launcher ganz einfch!
 
 ![](https://github.com/Alexander88207/PWGOFBSD/raw/master/Screenshot.png "Screenshot")
 
