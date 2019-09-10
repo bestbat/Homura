@@ -93,4 +93,4 @@ Wenn ein bestehendes Feature einen Fix benötigt, dann erstelle ich schnell ein 
 - Werden sie feststellen, dass Ihr Mikrofon stumm geschaltet ist. Wenn sie teampeak verwenden möchten. Öffnen Sie den Alsamixer im Terminal und erhöhen Sie die Lautstärke Ihres Mikrofons.
 
 # Beitragen :pencil2:
-Wenn sie zu Homura beitragen möchten lies [dies]() bitte erst durch.
+Wenn sie zu Homura beitragen möchten lies [dies](CONTRIBUTING_DE.md) bitte erst durch.
