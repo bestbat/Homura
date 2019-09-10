@@ -90,7 +90,7 @@ To uninstall that script open the `Setup.sh` again and select `Uninstall Homura`
 # Release cycle :loudspeaker:
 
 New features gets releasd in a week or in 5 days.
-If an existing feature needs a fix then i create fast a release.
+If an existing feature needs a fix then I will release that ASAP.
 
 # If you are new to freebsd :wink:
 
