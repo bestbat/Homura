@@ -3,8 +3,8 @@
 
 # Inhaltsverzeichnis
 
-- Ich möchte einen Launcher/Spiel/Programm hinzufügen](#i-want-to-add-a-launchergameprogram)
-- [Ich kann nicht programmieren, aber ich will helfen!](#i-cant-code-but-i-want-to-help)
+- [Ich möchte einen Launcher/Spiel/Programm hinzufügen](#ich-möchte-einen-launcherspielprogramm-hinzufügen)
+- [Ich kann nicht programmieren, aber ich will helfen!](#ich-kann-nicht-programmieren-aber-ich-will-helfen)
 
 # Ich möchte einen Launcher/Spiel/Programm hinzufügen.
 
