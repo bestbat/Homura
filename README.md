@@ -94,7 +94,7 @@ If an existing feature needs a fix then I will release that ASAP.
 
 # If you are new to freebsd :wink:
 
-- You might notice that your microphone is muted. If you want to use teamspeak. Open alsamixer in the terminal and rise up the volume of your microphone.
+- Your microphone is muted by default. If you want to use Teamspeak, open Alsamixer in the terminal and raise the volume of the microphone.
 
 # Contribute :pencil2:
 if you want to contribute to this repo then take a look [here](CONTRIBUTING.md)
