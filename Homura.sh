@@ -543,7 +543,7 @@ if [[ $UPDE == *"Homura to the latest version"* ]]; then
 cd /home/$USER/.local/share/$NAME
 curl -O https://raw.githubusercontent.com/Alexander88207/Homura/master/VER
 RELVER=$(cat VER)
-if [ $VER \> $RELVER ]
+if [ $VER = $RELVER ]
         then
                 notify-send "Nice, no new available update!"
         else
