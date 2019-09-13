@@ -16,7 +16,7 @@
 
 # Einführung
 
-Inspiriert von [lutris](https://github.com/lutris/lutris), möchten wir gerne einen Windows Games Launcher für FreeBSD bereitstellen.
+Inspiriert von [lutris](https://github.com/lutris/lutris), möchten wir gerne einen Windows Games Launcher für FreeBSD anbieten.
 
 # Beschreibung &#x1F4D8;
 
@@ -51,8 +51,8 @@ Applikation | Funktioniert sie?
 Uplay | Läuft direkt nach der Installation, stürzt aber zu oft ab.
 Teamspeak | Läuft direkt nach der Installation.
 [Clone Hero](https://www.youtube.com/watch?v=qch3_bt4rGo) | Läuft direkt nach der Installation.
-Drakensang Online | Stürzt beim start direkt ab.
-Anarchy Online | Läuft direkt nach der Installation.
+Drakensang Online | Läuft direkt nach der Installation aber scheint nicht mit AMD Karten zu funktionieren.
+Anarchy Online | Läuft direkt nach der Installation aber scheint nicht mit AMD Karten zu funktionieren.
 [itch](https://www.youtube.com/watch?v=lp-3g08w70A) | Läuft direkt nach der Installation.
 [GOG Galaxy](https://www.youtube.com/watch?v=m4BMvvgeWFE) | Läuft direkt nach der Installation.
 League of Legends | Stürzt beim starten des richtigen Clients ab.
@@ -73,7 +73,7 @@ Dein Spiel läuft nicht direkt beim erstenmal? Tweaks are [here](TWEAKS.md)
 
 # Installation/Deinstallation :cd:
 
-Das Script wurde spezielle für FreeBSD 12.0-RELEASE angefertigt. All andere version werden nicht unterstützt.
+Das Script wurde spezielle für FreeBSD 12.0-RELEASE angefertigt. All andere versionen werden nicht unterstützt.
 
 Benutzt das Setup um Homura richtig zu installieren.
 
@@ -86,11 +86,11 @@ Um dieses Skript zu deinstallieren, öffnen Sie die `Setup.sh` erneut und wähle
 # Release-Zyklus :loudspeaker:
 
 Neue Features werden in einer Woche oder in 5 Tagen veröffentlicht.
-Wenn ein bestehendes Feature einen Fix benötigt, dann erstelle ich schnell ein Release.
+Wenn ein bestehendes Feature einen Fix benötigt, dann erstelle ich schnell ein Release so schnell wie möglich.
 
 # Falls sie neu bei FreeBSD sind :wink:
 
-- Werden sie feststellen, dass Ihr Mikrofon stumm geschaltet ist. Wenn sie teampeak verwenden möchten. Öffnen Sie den Alsamixer im Terminal und erhöhen Sie die Lautstärke Ihres Mikrofons.
+- Werden sie feststellen, dass Ihr Mikrofon stumm geschaltet ist, wenn sie teampeak verwenden möchten. Öffnen Sie den Alsamixer im Terminal und erhöhen Sie die Lautstärke Ihres Mikrofons.
 
 # Beitragen :pencil2:
-Wenn sie zu Homura beitragen möchten lies [dies](CONTRIBUTING_DE.md) bitte erst durch.
+Wenn sie zu Homura beitragen möchten lesen sie [dies](CONTRIBUTING_DE.md) bitte erst durch.
