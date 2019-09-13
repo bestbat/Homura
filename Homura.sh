@@ -10,7 +10,7 @@ echo -e "\e[3;5;0;36mWine Version: $WINEVER\e[30;48;5;82m\e[0m"
 echo -e "\e[3;5;0;31mGPU Info OpenGL:\e[30;48;5;82m\e[0m" && glxinfo | grep OpenGL
 echo -e "\e[3;5;0;31mGPU Info Vulkan:\e[30;48;5;82m\e[0m" && vulkaninfo | grep "GPU id"
 
-TODO=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Open Homura folder" FALSE "About" FALSE "Exit")
+TODO=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Open Homura folder" FALSE "About")
 
 if [[ $TODO == *"Installation"* ]]; then
 
@@ -577,7 +577,7 @@ Copyright (c) 2019, Alexander Vereeken
 All rights reserved."
 fi
 
-if [[ $TODO == *"Exit"* ]]; then
+if [[ $? == *"0"* ]]; then
 notify-send "Thanks for using $NAME and have a great day!"
 exit
 fi
