@@ -54,8 +54,8 @@ Application | Works?
 Uplay | Runs out of the box, but crashes to often.
 Teamspeak | Runs out of the box.
 [Clone Hero](https://www.youtube.com/watch?v=qch3_bt4rGo) | Runs out of the box.
-Drakensang Online | Crashes at starting the game client.
-Anarchy Online | Runs out of the box. Please let the installer create a shortcut or you are unable to start the launcher!
+Drakensang Online | Runs out of the box, but fails with AMD cards.
+Anarchy Online | Runs out of the box, but fails with AMD cards.
 [itch](https://www.youtube.com/watch?v=lp-3g08w70A) | Runs out of the box.
 [GOG Galaxy](https://www.youtube.com/watch?v=m4BMvvgeWFE) | Runs out of the box.
 League of Legends | Crashes at starting the game client.
