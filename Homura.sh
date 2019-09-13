@@ -10,7 +10,7 @@ echo -e "\e[3;5;0;36mWine Version: $WINEVER\e[30;48;5;82m\e[0m"
 echo -e "\e[3;5;0;31mGPU Info OpenGL:\e[30;48;5;82m\e[0m" && glxinfo | grep OpenGL
 echo -e "\e[3;5;0;31mGPU Info Vulkan:\e[30;48;5;82m\e[0m" && vulkaninfo | grep "GPU id"
 
-TODO=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Open Homura Folder" FALSE "About" FALSE "Exit")
+TODO=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Open Homura folder" FALSE "About" FALSE "Exit")
 
 if [[ $TODO == *"Installation"* ]]; then
 
@@ -190,7 +190,7 @@ echo "$ENV WINEPREFIX='/home/$USER/.local/share/$NAME/Custom Prefixes/$PREFIXNAM
 fi
 
 if [[ $INST == *"Extras for games"* ]]; then
-EXFG=$(zenity --list --radiolist --height=100 --width=310  --title="$NAME $VER - $INST" --text "What extra do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Torchlight German Patch")
+EXFG=$(zenity --list --radiolist --height=100 --width=310  --title="$NAME $VER - $INST" --text "What extra do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Torchlight German Patch" FALSE "Clone Hero: All Soulless songs in medium difficulty")
 
 if [[ $EXFG == *"Torchlight German Patch"* ]]; then
 echo $'\033]30;Torchlight German Patch\007'
@@ -216,6 +216,12 @@ echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX="/home/$USER/.local/share/$NAME/Games/GOG Galaxy" wine /home/$USER/.local/share/$NAME/Torchlight_GerPatchV5_GOGEPIC.exe
 rm Torchlight_GerPatchV5_GOGEPIC.exe
 rm Torchlight_GerPatchV5_GOGEPIC.zip
+fi
+if [[ $EXFG == *"Clone Hero: All Soulless songs in medium difficulty"* ]]; then
+cd /home/$USER/.local/share/$NAME/Games/Clone Hero/clonehero-win32/Songs/
+curl -o "Soulless%20Series%20in%20Medium.tar.xz" "http://alt.magzu.net/damn/dl/Soulless%20Series%20in%20Medium.tar.xz" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $EXFG" --title "$NAME $VER $TODO $EXFG"
+tar -xf Soulless%20Series%20in%20Medium.tar.xz
+rm Soulless%20Series%20in%20Medium.tar.xz
 fi
 fi
 fi
@@ -560,7 +566,7 @@ fi
 fi
 fi
 
-if [[ $TODO == *"Open Homura Folder"* ]]; then
+if [[ $TODO == *"Open Homura folder"* ]]; then
 xdg-open /home/$USER/.local/share/$NAME
 fi
 
