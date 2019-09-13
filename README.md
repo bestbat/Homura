@@ -19,7 +19,7 @@
 
 # Introduction
 
-Inspired by [lutris](https://github.com/lutris/lutris), we would like to provide a game launcher to play windows games on FreeBSD.
+Inspired by [lutris](https://github.com/lutris/lutris), i would like to provide a game launcher to play windows games on FreeBSD.
 
 # Description &#x1F4D8;
 
