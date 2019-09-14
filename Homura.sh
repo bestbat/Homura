@@ -217,12 +217,12 @@ WINEPREFIX="/home/$USER/.local/share/$NAME/Games/GOG Galaxy" wine /home/$USER/.l
 rm Torchlight_GerPatchV5_GOGEPIC.exe
 rm Torchlight_GerPatchV5_GOGEPIC.zip
 fi
+fi
 if [[ $EXFG == *"Clone Hero: All Soulless songs in medium difficulty"* ]]; then
-cd /home/$USER/.local/share/$NAME/Games/Clone Hero/clonehero-win32/Songs/
+cd "/home/$USER/.local/share/$NAME/Games/Clone Hero/clonehero-win32/Songs/"
 curl -o "Soulless%20Series%20in%20Medium.tar.xz" "http://alt.magzu.net/damn/dl/Soulless%20Series%20in%20Medium.tar.xz" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $EXFG" --title "$NAME $VER $TODO $EXFG"
 tar -xf Soulless%20Series%20in%20Medium.tar.xz
 rm Soulless%20Series%20in%20Medium.tar.xz
-fi
 fi
 fi
 fi
