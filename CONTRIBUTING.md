@@ -20,7 +20,7 @@ Don't be afraid. There are different ways to help in other ways.
 
 - Translate the documents into your language.
 
-- You can give feedback we are happy about every rating.
+- You can give feedback i'm happy about every rating.
 
 - You can send suggestions for improvement or new ideas.
 
