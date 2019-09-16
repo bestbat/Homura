@@ -35,6 +35,7 @@ Install your favorite windows games & launcher easily!
 - [bash](https://www.freshports.org/shells/bash)
 - [p7zip](https://www.freshports.org/archivers/p7zip/)
 - [zenity](https://www.freshports.org/x11/zenity)
+- [xdg-utils](https://www.freshports.org/devel/xdg-utils)
 - [webfonts](https://www.freshports.org/x11-fonts/webfonts)
 - [alsa-utils](https://www.freshports.org/audio/alsa-utils) ([Optional](#if-you-are-new-to-freebsd))
 - [winetricks](https://www.freshports.org/emulators/winetricks)
