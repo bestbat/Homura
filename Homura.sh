@@ -1,6 +1,7 @@
 #!/bin/bash
 NAME=Homura
 VER=1.9
+ICO=/home/$USER/.local/share/$NAME/Data/$NAME.png
 WINEVER=$(wine --version)
 
 echo -e "\e[32mCopyright (c) 2019, Alexander Vereeken All rights reserved."
@@ -10,11 +11,11 @@ echo -e "\e[3;5;0;36mWine Version: $WINEVER\e[30;48;5;82m\e[0m"
 echo -e "\e[3;5;0;31mGPU Info OpenGL:\e[30;48;5;82m\e[0m" && glxinfo | grep OpenGL
 echo -e "\e[3;5;0;31mGPU Info Vulkan:\e[30;48;5;82m\e[0m" && vulkaninfo | grep "GPU id"
 
-TODO=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Open Homura folder" FALSE "About" FALSE "Exit")
+TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=300 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Open Homura folder" FALSE "About" FALSE "Exit")
 
 if [[ $TODO == *"Installation"* ]]; then
 
-INST=$(zenity --list --radiolist --height=460 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Custom Prefix" FALSE "Extras for games")
+INST=$(zenity --list --radiolist --window-icon=$ICO --height=460 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Custom Prefix" FALSE "Extras for games")
 
 if [[ $INST == *"Steam"* ]]; then
 echo $'\033]30;Homura 1.9 - Installation of Steam\007'
@@ -178,23 +179,23 @@ fi
 
 if [[ $INST == *"Custom Prefix"* ]]; then
 echo $'\033]30;Homura Installation of Custom Prefix\007'
-PREFIXNAME=$(zenity --title="Create a custom prefix" --text "How your prefix should be called?" --entry --width=260) 
+PREFIXNAME=$(zenity --window-icon=$ICO --title="Create a custom prefix" --text "How your prefix should be called?" --entry --width=260) 
 mkdir -p "/home/$USER/.local/share/$NAME/Custom Prefixes"
 mkdir -p "/home/$USER/.local/share/$NAME/Custom Prefixes/$PREFIXNAME"
 cd "/home/$USER/.local/share/$NAME/Custom Prefixes/$PREFIXNAME"
 zenity --info --width=260 --title="Create a custom prefix" --text="Now you need to select the executable that do you want to use in this prefix."
 EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
-ENV=$(zenity --title="Environment variable" --text "Do you need an environment variable for your executable? (for example DXVK_HUD=1) if not leave it blank." --entry --width=260) 
-SPM=$(zenity --title="Environment variable" --text "Do you need an startparameter for your executable? (for example -console) if not leave it blank." --entry --width=260) 
+ENV=$(zenity --title="Environment variable" --text "Do you need an environment variable for your executable? (for example DXVK_HUD=1) if not leave it blank." --entry --window-icon=$ICO --width=260) 
+SPM=$(zenity --title="Environment variable" --text "Do you need an startparameter for your executable? (for example -console) if not leave it blank." --entry --window-icon=$ICO --width=260) 
 echo "$ENV WINEPREFIX='/home/$USER/.local/share/$NAME/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE' $SPM" >> start.sh
 fi
 
 if [[ $INST == *"Extras for games"* ]]; then
-EXFG=$(zenity --list --radiolist --height=100 --width=310  --title="$NAME $VER - $INST" --text "What extra do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Torchlight German Patch" FALSE "Clone Hero: All Soulless songs in medium difficulty")
+EXFG=$(zenity --list --radiolist --window-icon=$ICO --height=100 --width=310  --title="$NAME $VER - $INST" --text "What extra do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Torchlight German Patch" FALSE "Clone Hero: All Soulless songs in medium difficulty")
 
 if [[ $EXFG == *"Torchlight German Patch"* ]]; then
 echo $'\033]30;Torchlight German Patch\007'
-TGPH=$(zenity --list --radiolist --height=100 --width=360 --title="$NAME $VER $EXFG" --text "What version?" --hide-header --column "$NAME $VER" --column "Item" FALSE "German Patch V3 (Steam-Edition)" FALSE "German Patch V5 (GOG/Epic-Edition)")
+TGPH=$(zenity --list --radiolist --window-icon=$ICO --height=100 --width=360 --title="$NAME $VER $EXFG" --text "What version?" --hide-header --column "$NAME $VER" --column "Item" FALSE "German Patch V3 (Steam-Edition)" FALSE "German Patch V5 (GOG/Epic-Edition)")
 
 cd /home/$USER/.local/share/$NAME
 
@@ -228,7 +229,7 @@ fi
 fi
 
 if [[ $TODO == *"Launcher"* ]]; then
-LNCH=$(zenity --list --radiolist --height=430 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to launch?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Custom Prefix")
+LNCH=$(zenity --list --radiolist --window-icon=$ICO --height=430 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to launch?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Custom Prefix")
 
 if [[ $LNCH == *"Steam"* ]]; then
 echo $'\033]30;Steam\007'        
@@ -300,14 +301,14 @@ if [[ $LNCH == *"Custom Prefix"* ]]; then
 echo $'\033]30;Custom Prefix\007'
 cd "/home/$USER/.local/share/$NAME/Custom Prefixes"
 FOLDERS=$(ls -a)
-PREFIXNAME=$(zenity --list --title="Launch a custom prefix" --height=260 --width=300 --column="What do you want to start?" $FOLDERS)
+PREFIXNAME=$(zenity --list --title="Launch a custom prefix" --window-icon=$ICO --height=260 --width=300 --column="What do you want to start?" $FOLDERS)
 echo $'\033]30;$PREFIXNAME\007'
 bash $PREFIXNAME/start.sh
 fi
 fi
 
 if [[ $TODO == *"Uninstallation"* ]]; then
-UNST=$(zenity --list --radiolist --height=430 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to uninstall?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Custom Prefix")
+UNST=$(zenity --list --radiolist --window-icon=$ICO --height=430 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to uninstall?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Custom Prefix")
 
 if [[ $UNST == *"Steam"* ]]; then
 rm -d -r /home/$USER/.local/share/$NAME/Games/$UNST
@@ -385,13 +386,13 @@ fi
 if [[ $UNST == *"Custom Prefix"* ]]; then
 cd "/home/$USER/.local/share/$NAME/Custom Prefixes"
 FOLDERS=$(ls -a)
-PREFIXNAME=$(zenity --list --title="$NAME $VER - Select a custom prefix" --height=260 --width=300 --column="What prefix?" $FOLDERS)
+PREFIXNAME=$(zenity --list --title="$NAME $VER - Select a custom prefix" --window-icon=$ICO --height=260 --width=300 --column="What prefix?" $FOLDERS)
 rm -r -d "$PREFIXNAME"
 fi
 fi
 
 if [[ $TODO == *"Winetricks"* ]]; then
-WTR=$(zenity --list --radiolist --height=430 --title="$NAME $VER - $TODO" --text "In what prefix do you want to open winetricks?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Custom Prefix")
+WTR=$(zenity --list --radiolist --window-icon=$ICO --height=430 --title="$NAME $VER - $TODO" --text "In what prefix do you want to open winetricks?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Custom Prefix")
 
 if [[ $WTR == *"Steam"* ]]; then
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$WTR winetricks
@@ -448,13 +449,13 @@ fi
 if [[ $WTR == *"Custom Prefix"* ]]; then
 cd "/home/$USER/.local/share/$NAME/Custom Prefixes"
 FOLDERS=$(ls -a)
-PREFIXNAME=$(zenity --list --title="$NAME $VER - Select a custom prefix" --height=260 --width=300 --column="What prefix?" $FOLDERS)
+PREFIXNAME=$(zenity --list --title="$NAME $VER - Select a custom prefix" --window-icon=$ICO --height=260 --width=300 --column="What prefix?" $FOLDERS)
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$PREFIXNAME winetricks
 fi
 fi
 
 if [[ $TODO == *"Run a executable in prefix"* ]]; then
-RAEP=$(zenity --list --radiolist --height=430 --title="$NAME $VER - $TODO" --text "In what prefix do you want open your executable?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Custom Prefix")
+RAEP=$(zenity --list --radiolist --window-icon=$ICO --height=430 --title="$NAME $VER - $TODO" --text "In what prefix do you want open your executable?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Custom Prefix")
 EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
 	
 if [[ $RAEP == *"Steam"* ]]; then
@@ -512,13 +513,13 @@ fi
 if [[ $RAEP == *"Custom Prefix"* ]]; then
 cd "/home/$USER/.local/share/$NAME/Custom Prefixes"
 FOLDERS=$(ls -a)
-PREFIXNAME=$(zenity --list --title="Select a custom prefix" --height=260 --width=300 --column="What prefix?" $FOLDERS)
+PREFIXNAME=$(zenity --list --title="Select a custom prefix" --window-icon=$ICO --height=260 --width=300 --column="What prefix?" $FOLDERS)
 WINEPREFIX="/home/$USER/.local/share/$NAME/Custom Prefixes/$PREFIXNAME" wine "$EXECUTABLE"
 fi
 fi
 
 if [[ $TODO == *"Update"* ]]; then
-UPDE=$(zenity --list --radiolist --height=200 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to update?" --hide-header --column "$NAME" --column "Item" FALSE "Teamspeak" FALSE "Growtopia" FALSE "Custom Prefix executable" FALSE "Homura to the latest version")
+UPDE=$(zenity --list --radiolist --window-icon=$ICO --height=200 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to update?" --hide-header --column "$NAME" --column "Item" FALSE "Teamspeak" FALSE "Growtopia" FALSE "Custom Prefix executable" FALSE "Homura to the latest version")
 
 if [[ $UPDE == *"Teamspeak"* ]]; then
 WINEPREFIX=/home/$USER/.local/share/$NAME/Programs/$UPDE wine "/home/$USER/.local/share/$NAME/Programs/$UPDE/TeamSpeak 3 Client/update.exe"
@@ -536,10 +537,10 @@ fi
 if [[ $UPDE == *"Custom Prefix executable"* ]]; then
 cd "/home/$USER/.local/share/$NAME/Custom Prefixes"
 FOLDERS=$(ls -a)
-PREFIXNAME=$(zenity --list --title="$NAME $VER - Select a custom prefix" --height=260 --width=300 --column="What prefix?" $FOLDERS)
+PREFIXNAME=$(zenity --list --title="$NAME $VER - Select a custom prefix" --window-icon=$ICO --height=260 --width=300 --column="What prefix?" $FOLDERS)
 EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
-ENV=$(zenity --title="Environment variable" --text "Do you need an environment variable for your executable? (for example DXVK_HUD=1) if not leave it blank." --entry --width=260)
-SPM=$(zenity --title="Environment variable" --text "Do you need an startparameter for your executable? (for example -console) if not leave it blank." --entry --width=260) 
+ENV=$(zenity --title="Environment variable" --text "Do you need an environment variable for your executable? (for example DXVK_HUD=1) if not leave it blank." --entry --window-icon=$ICO --width=260)
+SPM=$(zenity --title="Environment variable" --text "Do you need an startparameter for your executable? (for example -console) if not leave it blank." --entry --window-icon=$ICO --width=260) 
 cd $PREFIXNAME
 rm start.sh
 echo "$ENV WINEPREFIX='/home/$USER/.local/share/$NAME/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE' $SPM" >> start.sh
@@ -571,7 +572,7 @@ xdg-open /home/$USER/.local/share/$NAME
 fi
 
 if [[ $TODO == *"About"* ]]; then
-zenity --info --width=350 --title="$NAME $VER - About" --text="Inspired by lutris.
+zenity --info --window-icon=$ICO --width=350 --title="$NAME $VER - About" --text="Inspired by lutris.
 Homura is a Windows Games Launcher for FreeBSD and is licensed under the BSD 2-Clause License.
 Copyright (c) 2019, Alexander Vereeken
 All rights reserved."
