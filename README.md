@@ -75,6 +75,11 @@ Your game dont run in the first time? Tweaks are [here](TWEAKS.md)
 - No vulkan support on amd64 with 32bit.
 - Kwin is bad for gaming on freebsd in some situations.
 
+# Things that are currently just out of the question
+
+- Epic Games launcher
+- My.com launcher
+
 # Installation/Uninstallation :cd:
 
 This script is designed for FreeBSD 12.0-RELEASE. All other versions are not supported!
