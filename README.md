@@ -12,6 +12,7 @@
 - [States](#states-fire)
 - [Tweaks](#tweaks-wrench)
 - [Limitations](#limitations-x)
+- [Things that are currently just out of the question](#things-that-are-currently-just-out-of-the-question-rabbit2)
 - [Installation/Uninstallation](#installationuninstallation-cd)
 - [Release cycle](#release-cycle-loudspeaker)
 - [If you are new to freebsd](#if-you-are-new-to-freebsd-wink)
@@ -75,10 +76,11 @@ Your game dont run in the first time? Tweaks are [here](TWEAKS.md)
 - No vulkan support on amd64 with 32bit.
 - Kwin is bad for gaming on freebsd in some situations.
 
-# Things that are currently just out of the question
+# Things that are currently just out of the question :rabbit2:
 
 - Epic Games launcher
 - My.com launcher
+- [Reusing of the json files from lutris](https://github.com/Alexander88207/Homura/issues/9)
 
 # Installation/Uninstallation :cd:
 
