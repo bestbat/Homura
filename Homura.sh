@@ -1,8 +1,13 @@
 #!/bin/bash
 NAME=Homura
-VER=1.9
+VER=2.0
 ICO=/home/$USER/.local/share/$NAME/Data/$NAME.png
 WINEVER=$(wine --version)
+
+if [[ $USER == *"root"* ]]; then
+zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER" --text="Homura can not be executed as root."
+exit
+fi
 
 echo -e "\e[32mCopyright (c) 2019, Alexander Vereeken All rights reserved."
 echo -e "\e[93mWelcome to $NAME $VER have fun!"
@@ -18,7 +23,7 @@ if [[ $TODO == *"Installation"* ]]; then
 INST=$(zenity --list --radiolist --window-icon=$ICO --height=460 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Custom Prefix" FALSE "Extras")
 
 if [[ $INST == *"Steam"* ]]; then
-echo $'\033]30;Homura 1.9 - Installation of Steam\007'
+echo $'\033]30;Homura 2.0 - Installation of Steam\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
 cd /home/$USER/.local/share/$NAME/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -31,7 +36,7 @@ rm /home/$USER/.local/share/$NAME/Games/$INST/SteamSetup.exe
 fi
 
 if [[ $INST == *"Blizzard"* ]]; then
-echo $'\033]30;Homura 1.9 - Installation of Blizzard\007'
+echo $'\033]30;Homura 2.0 - Installation of Blizzard\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
 cd /home/$USER/.local/share/Homura/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -42,7 +47,7 @@ rm /home/$USER/.local/share/$NAME/Games/$INST/Battle.net-Setup-enUS.exe
 fi
 
 if [[ $INST == *"Origin"* ]]; then
-echo $'\033]30;Homura 1.9 - Installation of Origin\007'
+echo $'\033]30;Homura 2.0 - Installation of Origin\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
 cd /home/$USER/.local/share/$NAME/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -52,11 +57,11 @@ WINEPREFIX=/home/$USER/.local/share/$NAME/Games/Origin winetricks winxp
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$INST wine /home/$USER/.local/share/$NAME/Games/$INST/OriginThinSetup.exe
 rm /home/$USER/.local/share/$NAME/Games/$INST/OriginThinSetup.exe
-zenity --info --width=310 --title="$NAME $VER - Origin" --text="Dont forget to disable the Origin in-game overlay or you are unable to start a game."
+zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - Origin" --text="Dont forget to disable the Origin in-game overlay or you are unable to start a game."
 fi
 
 if [[ $INST == *"Uplay"* ]]; then
-echo $'\033]30;Homura 1.9 - Installation of Uplay\007'
+echo $'\033]30;Homura 2.0 - Installation of Uplay\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
 cd /home/$USER/.local/share/$NAME/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -67,7 +72,7 @@ rm /home/$USER/.local/share/$NAME/Games/$INST/UplayInstaller.exe
 fi
 
 if [[ $INST == *"Teamspeak"* ]]; then
-echo $'\033]30;Homura 1.9 - Installation of Teamspeak\007'
+echo $'\033]30;Homura 2.0 - Installation of Teamspeak\007'
 mkdir -p /home/$USER/.local/share/$NAME/Programs/$INST
 cd /home/$USER/.local/share/$NAME/Programs/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -75,13 +80,13 @@ curl -o "Teamspeak.zip" "http://alt.magzu.net/damn/dl/Teamspeak.zip" 2>&1 | stdb
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 unzip Teamspeak.zip
 rm Teamspeak.zip
-zenity --info --width=260 --title="$NAME $VER - Installation of Teamspeak" --text="To get Playback and Capture working set both mods to Direct Sound."
+zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of Teamspeak" --text="To get Playback and Capture working set both mods to Direct Sound."
 echo -e "\e[40;38;5;82mUpdate to latest version\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/.local/share/$NAME/Programs/Teamspeak wine "/home/$USER/.local/share/$NAME/Programs/Teamspeak/TeamSpeak 3 Client/update.exe"
 fi
 
 if [[ $INST == *"Clone Hero"* ]]; then
-echo $'\033]30;Homura 1.9 - Installation of Clone Hero\007'
+echo $'\033]30;Homura 2.0 - Installation of Clone Hero\007'
 mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
 cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -97,7 +102,7 @@ curl -O http://alt.magzu.net/dl/settings.ini
 fi
 
 if [[ $INST == *"Drakensang Online"* ]]; then
-echo $'\033]30;Homura 1.9 - Installation of Drakensang Online\007'
+echo $'\033]30;Homura 2.0 - Installation of Drakensang Online\007'
 mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
 cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -108,7 +113,7 @@ rm "/home/$USER/.local/share/$NAME/Games/Drakensang Online/dro_setup.exe"
 fi
 
 if [[ $INST == *"Anarchy Online"* ]]; then
-echo $'\033]30;Homura 1.9 - Installation of Anarchy Online\007'
+echo $'\033]30;Homura 2.0 - Installation of Anarchy Online\007'
 mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
 cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -122,7 +127,7 @@ rm "/home/$USER/.local/share/$NAME/Games/Anarchy Online/AnarchyOnline_EP1.exe"
 fi
 
 if [[ $INST == *"itch"* ]]; then
-echo $'\033]30;Homura 1.9 - Installation of itch\007'
+echo $'\033]30;Homura 2.0 - Installation of itch\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
 cd /home/$USER/.local/share/$NAME/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -133,7 +138,7 @@ rm /home/$USER/.local/share/$NAME/Games/$INST/windows
 fi
 
 if [[ $INST == *"GOG Galaxy"* ]]; then
-echo $'\033]30;Homura 1.9 - Installation of GOG Galaxy\007'
+echo $'\033]30;Homura 2.0 - Installation of GOG Galaxy\007'
 mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
 cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -144,7 +149,7 @@ rm "/home/$USER/.local/share/$NAME/Games/$INST/setup_galaxy_1.2.54.23.exe"
 fi
 
 if [[ $INST == *"League of Legends"* ]]; then
-echo $'\033]30;Homura 1.9 - Installation of League of Legends\007'
+echo $'\033]30;Homura 2.0 - Installation of League of Legends\007'
 mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
 cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -155,7 +160,7 @@ rm League%20of%20Legends.tar.xz
 fi
 
 if [[ $INST == *"Wargaming Game Center"* ]]; then
-echo $'\033]30;Homura 1.9 - Installation of Wargaming Game Center\007'
+echo $'\033]30;Homura 2.0 - Installation of Wargaming Game Center\007'
 mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
 cd "/home/$USER/.local/share/$NAME/Games/$INST"
 curl -L -o "Wargaming_Game_Center_Install_EU.exe" "http://redirect.wargaming.net/WGC/Wargaming_Game_Center_Install_EU.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
@@ -168,7 +173,7 @@ rm "/home/$USER/.local/share/$NAME/Games/$INST/Wargaming_Game_Center_Install_EU.
 fi
 
 if [[ $INST == *"Growtopia"* ]]; then
-echo $'\033]30;Homura 1.9 - Installation of Growtopia\007'
+echo $'\033]30;Homura 2.0 - Installation of Growtopia\007'
 mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
 cd /home/$USER/.local/share/$NAME/Games/$INST
 curl -L -o "Growtopia-Installer.exe" "https://growtopiagame.com/Growtopia-Installer.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
