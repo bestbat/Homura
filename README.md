@@ -52,7 +52,7 @@ Application | Works?
 ------------ | -------------
 [Steam](https://www.youtube.com/watch?v=a2z0nbWOarc) | Uses winxp with an older steam client to get some online features. (Doesn't affect performance)
 [Blizzard](https://www.youtube.com/watch?v=-oAMNgDvWtA) | Runs out of the box.
-[Origin](https://www.youtube.com/watch?v=d_j6Hlguydc) | Uses winxp with an older origin client. (Doesn't affect performance)
+[Origin](https://www.youtube.com/watch?v=d_j6Hlguydc) | Uses winxp with an older origin client. The modern client is currently one issue away to use it.  (Doesn't affect performance)
 Uplay | Runs out of the box, but crashes to often.
 Teamspeak | Runs out of the box.
 [Clone Hero](https://www.youtube.com/watch?v=qch3_bt4rGo) | Runs out of the box.
