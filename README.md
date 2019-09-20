@@ -64,6 +64,7 @@ Anarchy Online | Runs out of the box, but fails with AMD cards.
 League of Legends | Crashes at starting the game client.
 Wargaming Game Center | Crashes directly 10 seconds after the start and even if the launcher should work a desired game may not work. The test game World of Tanks became a zombie directly.
 Growtopia | Runs out of the box.
+Bethesda Launcher | Runs out of the box.
  
 If you want a special game or launcher then create an issue :)
 
