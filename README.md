@@ -81,6 +81,7 @@ Your game dont run in the first time? Tweaks are [here](TWEAKS.md)
 - Epic Games launcher
 - My.com launcher
 - [Reusing of the json files from lutris](https://github.com/Alexander88207/Homura/issues/9)
+- Glyph
 
 # Installation/Uninstallation :cd:
 
