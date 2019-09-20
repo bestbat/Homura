@@ -2,6 +2,7 @@
 NAME=Homura
 VER=2.0
 ICO=/home/$USER/.local/share/$NAME/Data/$NAME.png
+APLH=480
 WINEVER=$(wine --version)
 
 if [[ $USER == *"root"* ]]; then
@@ -20,12 +21,13 @@ TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=310 --width 300 --
 
 if [[ $TODO == *"Installation"* ]]; then
 
-INST=$(zenity --list --radiolist --window-icon=$ICO --height=460 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Custom Prefix" FALSE "Extras")
+INST=$(zenity --list --radiolist --window-icon=$ICO --height=$APLH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Custom Prefix" FALSE "Extras")
+
+mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
+cd "/home/$USER/.local/share/$NAME/Games/$INST"
 
 if [[ $INST == *"Steam"* ]]; then
 echo $'\033]30;Homura 2.0 - Installation of Steam\007'
-mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
-cd /home/$USER/.local/share/$NAME/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "SteamSetup.exe" "https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
@@ -37,8 +39,6 @@ fi
 
 if [[ $INST == *"Blizzard"* ]]; then
 echo $'\033]30;Homura 2.0 - Installation of Blizzard\007'
-mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
-cd /home/$USER/.local/share/Homura/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "Battle.net-Setup-enUS.exe" "http://dist.blizzard.com/downloads/bna-installers/322d5bb9ae0318de3d4cde7641c96425/retail.1/Battle.net-Setup-enUS.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -48,8 +48,6 @@ fi
 
 if [[ $INST == *"Origin"* ]]; then
 echo $'\033]30;Homura 2.0 - Installation of Origin\007'
-mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
-cd /home/$USER/.local/share/$NAME/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "OriginThinSetup.exe" "https://origin-a.akamaihd.net/Origin-Client-Download/origin/legacy/OriginThinSetup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
@@ -62,8 +60,6 @@ fi
 
 if [[ $INST == *"Uplay"* ]]; then
 echo $'\033]30;Homura 2.0 - Installation of Uplay\007'
-mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
-cd /home/$USER/.local/share/$NAME/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "UplayInstaller.exe" "https://ubistatic3-a.akamaihd.net/orbit/launcher_installer/UplayInstaller.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -87,8 +83,6 @@ fi
 
 if [[ $INST == *"Clone Hero"* ]]; then
 echo $'\033]30;Homura 2.0 - Installation of Clone Hero\007'
-mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
-cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "clonehero-win32.7z" "http://dl.clonehero.net/clonehero-v.22.5/clonehero-win32.7z" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
@@ -103,8 +97,6 @@ fi
 
 if [[ $INST == *"Drakensang Online"* ]]; then
 echo $'\033]30;Homura 2.0 - Installation of Drakensang Online\007'
-mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
-cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "dro_setup.exe" "https://drasaonline-481-dwl.bpsecure.com/applet/dro_setup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -114,8 +106,6 @@ fi
 
 if [[ $INST == *"Anarchy Online"* ]]; then
 echo $'\033]30;Homura 2.0 - Installation of Anarchy Online\007'
-mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
-cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "AnarchyOnline_EP1.exe" "http://update.anarchy-online.com/download/AO/AnarchyOnline_EP1.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
@@ -128,8 +118,6 @@ fi
 
 if [[ $INST == *"itch"* ]]; then
 echo $'\033]30;Homura 2.0 - Installation of itch\007'
-mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
-cd /home/$USER/.local/share/$NAME/Games/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -L -o "windows" "http://nuts.itch.zone/download/windows" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -139,8 +127,6 @@ fi
 
 if [[ $INST == *"GOG Galaxy"* ]]; then
 echo $'\033]30;Homura 2.0 - Installation of GOG Galaxy\007'
-mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
-cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "setup_galaxy_1.2.54.23.exe" "https://cdn.gog.com/open/galaxy/client/setup_galaxy_1.2.54.23.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -150,8 +136,6 @@ fi
 
 if [[ $INST == *"League of Legends"* ]]; then
 echo $'\033]30;Homura 2.0 - Installation of League of Legends\007'
-mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
-cd "/home/$USER/.local/share/$NAME/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "League%20of%20Legends.tar.xz" "http://alt.magzu.net/damn/dl/League%20of%20Legends.tar.xz" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -161,8 +145,7 @@ fi
 
 if [[ $INST == *"Wargaming Game Center"* ]]; then
 echo $'\033]30;Homura 2.0 - Installation of Wargaming Game Center\007'
-mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
-cd "/home/$USER/.local/share/$NAME/Games/$INST"
+echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -L -o "Wargaming_Game_Center_Install_EU.exe" "http://redirect.wargaming.net/WGC/Wargaming_Game_Center_Install_EU.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 WINEPREFIX="/home/$USER/.local/share/$NAME/Games/$INST" winetricks vcrun2015
@@ -174,12 +157,20 @@ fi
 
 if [[ $INST == *"Growtopia"* ]]; then
 echo $'\033]30;Homura 2.0 - Installation of Growtopia\007'
-mkdir -p /home/$USER/.local/share/$NAME/Games/$INST
-cd /home/$USER/.local/share/$NAME/Games/$INST
+echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -L -o "Growtopia-Installer.exe" "https://growtopiagame.com/Growtopia-Installer.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$INST wine /home/$USER/.local/share/$NAME/Games/$INST/Growtopia-Installer.exe
 rm /home/$USER/.local/share/$NAME/Games/$INST/Growtopia-Installer.exe
+fi
+
+if [[ $INST == *"Bethesda Launcher"* ]]; then
+echo $'\033]30;Homura 2.0 - Installation of Bethesda Launcher\007'
+echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
+curl -L -o "BethesdaNetLauncher_Setup.exe" "http://download.cdp.bethesda.net/BethesdaNetLauncher_Setup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
+echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+WINEPREFIX="/home/$USER/.local/share/$NAME/Games/$INST" wine "/home/$USER/.local/share/$NAME/Games/$INST/BethesdaNetLauncher_Setup.exe"
+rm "/home/$USER/.local/share/$NAME/Games/$INST/BethesdaNetLauncher_Setup.exe"
 fi
 
 if [[ $INST == *"Custom Prefix"* ]]; then
@@ -234,7 +225,7 @@ fi
 fi
 
 if [[ $TODO == *"Launcher"* ]]; then
-LNCH=$(zenity --list --radiolist --window-icon=$ICO --height=430 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to launch?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Custom Prefix")
+LNCH=$(zenity --list --radiolist --window-icon=$ICO --height=$APLH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to launch?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Custom Prefix")
 
 if [[ $LNCH == *"Steam"* ]]; then
 echo $'\033]30;Steam\007'        
@@ -302,6 +293,11 @@ echo $'\033]30;Growtopia\007'
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$LNCH wine "/home/$USER/.local/share/$NAME/Games/$LNCH/drive_c/users/$USER/Local Settings/Application Data/Growtopia/Growtopia.exe"
 fi
 
+if [[ $LNCH == *"Bethesda Launcher"* ]]; then
+echo $'\033]30;Bethesda Launcher\007'
+WINEPREFIX="/home/$USER/.local/share/$NAME/Games/$LNCH" wine "/home/$USER/.local/share/$NAME/Games/$LNCH/drive_c/Program Files/Bethesda.net Launcher/BethesdaNetLauncher.exe"
+fi
+
 if [[ $LNCH == *"Custom Prefix"* ]]; then
 echo $'\033]30;Custom Prefix\007'
 cd "/home/$USER/.local/share/$NAME/Custom Prefixes"
@@ -313,28 +309,26 @@ fi
 fi
 
 if [[ $TODO == *"Uninstallation"* ]]; then
-UNST=$(zenity --list --radiolist --window-icon=$ICO --height=430 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to uninstall?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Custom Prefix")
+UNST=$(zenity --list --radiolist --window-icon=$ICO --height=$APLH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to uninstall?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Custom Prefix")
+
+rm -d -r "/home/$USER/.local/share/$NAME/Games/$UNST"
 
 if [[ $UNST == *"Steam"* ]]; then
-rm -d -r /home/$USER/.local/share/$NAME/Games/$UNST
 rm -d -r /home/$USER/.local/share/applications/wine/Programs/$UNST
 rm /home/$USER/Desktop/$UNST.desktop
 fi
 
 if [[ $UNST == *"Blizzard"* ]]; then
-rm -d -r /home/$USER/.local/share/$NAME/Games/$UNST
 rm -d -r /home/$USER/.local/share/applications/wine/Programs/Battle.net
 rm -d -r /home/$USER/Desktop/Battle.net.desktop
 fi
 
 if [[ $UNST == *"Origin"* ]]; then
-rm -d -r /home/$USER/.local/share/$NAME/Games/$UNST
 rm -d -r /home/$USER/.local/share/applications/wine/Programs/$UNST
 rm /home/$USER/Desktop/$UNST.desktop
 fi
 
 if [[ $UNST == *"Uplay"* ]]; then
-rm -d -r /home/$USER/.local/share/$NAME/Games/$UNST
 rm -d -r /home/$USER/.local/share/applications/wine/Programs/Ubisoft
 rm /home/$USER/Desktop/$UNST.desktop
 rm /home/$USER/Desktop/$UNST.lnk 
@@ -344,48 +338,38 @@ if [[ $UNST == *"Teamspeak"* ]]; then
 rm -d -r /home/$USER/.local/share/$NAME/Programs/$UNST
 fi
 
-if [[ $UNST == *"Clone Hero"* ]]; then
-rm -d -r "/home/$USER/.local/share/$NAME/Games/$UNST"
-fi
-
 if [[ $UNST == *"Drakensang Online"* ]]; then
-rm -d -r "/home/$USER/.local/share/$NAME/Games/$UNST"
 rm -d -r "/home/$USER/.local/share/applications/wine/Programs/$UNST"
 rm "/home/$USER/Desktop/$UNST.desktop"
 rm "/home/$USER/Desktop/$UNST.lnk"
 fi
 
 if [[ $UNST == *"Anarchy Online"* ]]; then
-rm -d -r "/home/$USER/.local/share/$NAME/Games/$UNST"
 rm -d -r "/home/$USER/.local/share/applications/wine/Programs/$UNST"
 rm "/home/$USER/Desktop/$UNST.desktop"
 fi
 
 if [[ $UNST == *"itch"* ]]; then
-rm -d -r /home/$USER/.local/share/$NAME/Games/$UNST
 rm -d -r "/home/$USER/.local/share/applications/wine/Programs/Itch Corp"
 fi
 
 if [[ $UNST == *"GOG Galaxy"* ]]; then
-rm -d -r "/home/$USER/.local/share/$NAME/Games/$UNST"
 rm -d -r /home/$USER/.local/share/applications/wine/Programs/GOG.com
 rm -d -r "/home/$USER/Desktop/$UNST.desktop"
 fi
 
-if [[ $UNST == *"League of Legends"* ]]; then
-rm -d -r "/home/$USER/.local/share/$NAME/Games/$UNST"
-fi
-
 if [[ $UNST == *"Wargaming Game Center"* ]]; then
-rm -d -r "/home/$USER/.local/share/$NAME/Games/$UNST"
 rm -d -r /home/$USER/.local/share/applications/wine/Programs/Wargaming.net
 rm /home/$USER/Desktop/Game Center.desktop
 fi
 
 if [[ $UNST == *"Growtopia"* ]]; then
-rm -d -r /home/$USER/.local/share/$NAME/Games/$UNST
 rm -d -r /home/$USER/.local/share/applications/wine/Programs/$UNST
 rm /home/$USER/Desktop/Growtopia.desktop
+fi
+
+if [[ $UNST == *"Bethesda Launcher"* ]]; then
+rm -d -r "/home/$USER/.local/share/applications/wine/Programs/Bethesda.net Launcher"
 fi
 
 if [[ $UNST == *"Custom Prefix"* ]]; then
@@ -397,58 +381,12 @@ fi
 fi
 
 if [[ $TODO == *"Winetricks"* ]]; then
-WTR=$(zenity --list --radiolist --window-icon=$ICO --height=430 --title="$NAME $VER - $TODO" --text "In what prefix do you want to open winetricks?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Custom Prefix")
+WTR=$(zenity --list --radiolist --window-icon=$ICO --height=$APLH --title="$NAME $VER - $TODO" --text "In what prefix do you want to open winetricks?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Custom Prefix")
 
-if [[ $WTR == *"Steam"* ]]; then
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$WTR winetricks
-fi
-
-if [[ $WTR == *"Blizzard"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$WTR winetricks
-fi
-
-if [[ $WTR == *"Origin"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$WTR winetricks
-fi
-
-if [[ $WTR == *"Uplay"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$WTR winetricks
-fi
 
 if [[ $WTR == *"Teamspeak"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$WTR winetricks
-fi
-
-if [[ $WTR == *"Clone Hero"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$WTR winetricks
-fi
-
-if [[ $WTR == *"Drakensang Online"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$WTR winetricks
-fi
-
-if [[ $WTR == *"Anarchy Online"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$WTR winetricks
-fi
-
-if [[ $WTR == *"itch"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$WTR winetricks
-fi
-
-if [[ $WTR == *"GOG Galaxy"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$WTR winetricks
-fi
-
-if [[ $WTR == *"League of Legends"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$WTR winetricks
-fi
-
-if [[ $WTR == *"Wargaming Game Center"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$WTR winetricks
-fi
-
-if [[ $WTR == *"Growtopia"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$WTR winetricks
+WINEPREFIX=/home/$USER/.local/share/$NAME/Programs/$WTR winetricks
 fi
 
 if [[ $WTR == *"Custom Prefix"* ]]; then
@@ -460,60 +398,15 @@ fi
 fi
 
 if [[ $TODO == *"Run a executable in prefix"* ]]; then
-RAEP=$(zenity --list --radiolist --window-icon=$ICO --height=430 --title="$NAME $VER - $TODO" --text "In what prefix do you want open your executable?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Custom Prefix")
+RAEP=$(zenity --list --radiolist --window-icon=$ICO --height=460 --title="$NAME $VER - $TODO" --text "In what prefix do you want open your executable?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Custom Prefix")
 EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
-	
-if [[ $RAEP == *"Steam"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$RAEP wine "$EXECUTABLE"
-fi
 
-if [[ $LNCH == *"Blizzard"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$RAEP wine "$EXECUTABLE"
-fi
-
-if [[ $RAEP == *"Origin"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$RAEP wine "$EXECUTABLE"
-fi
-
-if [[ $RAEP == *"Uplay"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$RAEP wine "$EXECUTABLE"
-fi
+WINEPREFIX="/home/$USER/.local/share/$NAME/Games/$RAEP" wine "$EXECUTABLE"
 
 if [[ $RAEP == *"Teamspeak"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$RAEP wine "$EXECUTABLE"
+WINEPREFIX=/home/$USER/.local/share/$NAME/Programs/$RAEP wine "$EXECUTABLE"
 fi
 
-if [[ $RAEP == *"Clone Hero"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$RAEP wine "$EXECUTABLE"
-fi
-
-if [[ $RAEP == *"Drakensang Online"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$RAEP wine "$EXECUTABLE"
-fi
-
-if [[ $RAEP == *"Anarchy Online"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$RAEP wine "$EXECUTABLE"
-fi
-
-if [[ $RAEP == *"itch"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$RAEP wine "$EXECUTABLE"
-fi
-
-if [[ $RAEP == *"GOG Galaxy"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$RAEP wine "$EXECUTABLE"
-fi
-
-if [[ $RAEP == *"League of Legends"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$RAEP wine "$EXECUTABLE"
-fi
-
-if [[ $RAEP == *"Wargaming Game Center"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$RAEP wine "$EXECUTABLE"
-fi
-
-if [[ $RAEP == *"Growtopia"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$RAEP wine "$EXECUTABLE"
-fi
 
 if [[ $RAEP == *"Custom Prefix"* ]]; then
 cd "/home/$USER/.local/share/$NAME/Custom Prefixes"
@@ -587,5 +480,5 @@ if [[ $TODO == *"Exit"* ]]; then
 notify-send "Thanks for using $NAME and have a great day!"
 exit
 fi
-notify-send Done!
+notify-send "Task completed or application closed!"
 bash /home/$USER/.local/share/$NAME/$NAME.sh
