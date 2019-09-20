@@ -17,6 +17,7 @@
 - [Release cycle](#release-cycle-loudspeaker)
 - [If you are new to freebsd](#if-you-are-new-to-freebsd-wink)
 - [Contribute](#contribute-pencil2)
+- [See how it works](#see-how-it-works-eyes)
 
 # Introduction
 
