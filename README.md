@@ -76,7 +76,7 @@ Your game dont run in the first time? Tweaks are [here](TWEAKS.md)
 
 - Only 32-Bit Games and Applications working currently.
 - No vulkan support on amd64 with 32bit.
-- Kwin is bad for gaming on freebsd in some situations.
+- Kwin is bad for gaming in some situations.
 
 # Things that are currently just out of the question :rabbit2:
 
