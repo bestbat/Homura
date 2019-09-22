@@ -456,7 +456,7 @@ fi
 
 if [[ $UPDE == *"Homura to the latest version"* ]]; then
 cd /home/$USER/.local/share/$NAME
-curl -O https://raw.githubusercontent.com/Alexander88207/Homura/master/VER
+curl -O https://raw.githubusercontent.com/Alexander88207/$NAME/master/VER
 RELVER=$(cat VER)
 if [ $VER = $RELVER ]
         then
@@ -481,7 +481,7 @@ fi
 
 if [[ $TODO == *"About"* ]]; then
 zenity --info --window-icon=$ICO --width=350 --title="$NAME $VER - About" --text="Inspired by lutris.
-Homura is a Windows Games Launcher for FreeBSD and is licensed under the BSD 2-Clause License.
+$NAME is a Windows Games Launcher for FreeBSD and is licensed under the BSD 2-Clause License.
 Copyright (c) 2019, Alexander Vereeken
 All rights reserved."
 fi
