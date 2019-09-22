@@ -17,7 +17,7 @@ zenity --info --width=420 --window-icon=$ICO --title="$NAME $VER" --text="$NAME 
 fi
 
 if [[ $OS != "FreeBSD" ]]; then
-zenity --info --width=420 --window-icon=$ICO --title="$NAME $VER" --text="$NAME supports only FreeBSD but can run on this platform too. Please be aware unsupported platform can cause unexpected problems."
+zenity --info --width=360 --window-icon=$ICO --title="$NAME $VER" --text="You are about to use $NAME on an unsupported system. Please be aware that unexpected errors may occur and that your bug reports can be marked as invaild."
 fi
 
 echo -e "\e[32mCopyright (c) 2019, Alexander Vereeken All rights reserved."
