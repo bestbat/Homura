@@ -5,7 +5,7 @@ ICO=/home/$USER/.local/share/$NAME/Data/$NAME.png
 ALH=480
 GPU=$(glxinfo | grep "OpenGL vendor string")
 WINEVER=$(wine --version)
-OSNAME=$(uname)
+OS=$(uname)
 
 if [[ $USER == *"root"* ]]; then
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER" --text="$NAME can not be executed as root."
@@ -16,14 +16,13 @@ if [[ $GPU == *"VMware, Inc."* ]]; then
 zenity --info --width=420 --window-icon=$ICO --title="$NAME $VER" --text="$NAME have detected that you are using the fallback drivers, please check your gpu driver installation. If you should run $NAME in a virtual machine then you can ignore this message."
 fi
 
-if [[ $OSNAME != "FreeBSD" ]]; then
-zenity --info --width=210 --window-icon=$ICO --title="$NAME $VER" --text="$NAME supports only FreeBSD. "
-exit
+if [[ $OS != "FreeBSD" ]]; then
+zenity --info --width=420 --window-icon=$ICO --title="$NAME $VER" --text="$NAME supports only FreeBSD but can run on this platform too. Please be aware unsupported platform can cause unexpected problems."
 fi
 
 echo -e "\e[32mCopyright (c) 2019, Alexander Vereeken All rights reserved."
 echo -e "\e[93mWelcome to $NAME $VER have fun!"
-echo -e "\e[3;5;0;92mRunning on FreeBSD $(uname -r)"
+echo -e "\e[3;5;0;92mRunning on $OS $(uname -r)"
 echo -e "\e[3;5;0;36mWine Version: $WINEVER\e[30;48;5;82m\e[0m"
 echo -e "\e[3;5;0;31mGPU Info OpenGL:\e[30;48;5;82m\e[0m" && glxinfo | grep OpenGL
 echo -e "\e[3;5;0;31mGPU Info Vulkan:\e[30;48;5;82m\e[0m" && vulkaninfo | grep "GPU id"
