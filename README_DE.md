@@ -20,7 +20,7 @@ Inspiriert von [lutris](https://github.com/lutris/lutris), möchte ich gerne ein
 
 # Beschreibung &#x1F4D8;
 
-Installieren sie ihre lieblings Windows Spiele/Launcher ganz einfch!
+Homura ist ein Launcher, der es einfach macht, Windows-Spiele und Launcher mit nur einem Klick auf FreeBSD auszuführen.
 
 ![](https://github.com/Alexander88207/PWGOFBSD/raw/master/Screenshot.png "Screenshot")
 
