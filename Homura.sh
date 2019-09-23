@@ -409,8 +409,6 @@ fi
 if [[ $TODO == *"Winetricks"* ]]; then
 WTR=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --title="$NAME $VER - $TODO" --text "In what prefix do you want to open winetricks?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Custom Prefix")
 
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$WTR winetricks
-
 if [[ $WTR == *"Teamspeak"* ]]; then
 WINEPREFIX=/home/$USER/.local/share/$NAME/Programs/$WTR winetricks
 fi
@@ -419,7 +417,9 @@ if [[ $WTR == *"Custom Prefix"* ]]; then
 cd "/home/$USER/.local/share/$NAME/Custom Prefixes"
 FOLDERS=$(ls -a)
 PREFIXNAME=$(zenity --list --title="$NAME $VER - Select a custom prefix" --window-icon=$ICO --height=260 --width=300 --column="What prefix?" $FOLDERS)
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$PREFIXNAME winetricks
+WINEPREFIX="/home/$USER/.local/share/$NAME/Custom Prefixes/$PREFIXNAME" winetricks
+else
+WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$WTR winetricks
 fi
 fi
 
