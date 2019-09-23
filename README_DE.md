@@ -13,7 +13,7 @@
 - [Release-Zyklus](#release-zyklus-loudspeaker)
 - [Falls sie neu bei FreeBSD sind](#falls-sie-neu-bei-freebsd-sind-wink)
 - [Beitragen](#beitragen-pencil2)
-
+- [Schaue wie es funktioniert](#schaue-wie-es-funktioniert-eyes)
 # Einführung
 
 Inspiriert von [lutris](https://github.com/lutris/lutris), möchte ich gerne einen Windows Games Launcher für FreeBSD anbieten.
@@ -32,6 +32,7 @@ Installieren sie ihre lieblings Windows Spiele/Launcher ganz einfch!
 - [bash](https://www.freshports.org/shells/bash)
 - [p7zip](https://www.freshports.org/archivers/p7zip/)
 - [zenity](https://www.freshports.org/x11/zenity)
+- [xdg-utils](https://www.freshports.org/devel/xdg-utils)
 - [webfonts](https://www.freshports.org/x11-fonts/webfonts)
 - [alsa-utils](https://www.freshports.org/audio/alsa-utils) ([Optional](#if-you-are-new-to-freebsd))
 - [winetricks](https://www.freshports.org/emulators/winetricks)
@@ -58,12 +59,13 @@ Anarchy Online | Läuft direkt nach der Installation aber scheint nicht mit AMD 
 League of Legends | Stürzt beim starten des richtigen Clients ab.
 Wargaming Game Center | Stürzt direkt 10 Sekunden nach dem Start ab und selbst wenn der Launcher arbeiten sollte, funktioniert ein gewünschtes Spiel möglicherweise nicht. Das Testspiel World of Tanks wurde direkt zu einem Zombie.
 Growtopia | Läuft direkt nach der Installation.
+Bethesda Launcher | Läuft direkt nach der Installation.
  
 Wenn du ein spezielles/en spiel oder launcher haben möchtest dann eröffnen sie ein neues issue :)
 
 # Tweaks :wrench:
 
-Dein Spiel läuft nicht direkt beim erstenmal? Tweaks are [here](TWEAKS.md)
+Dein Spiel läuft nicht direkt beim erstenmal? Tweaks sind [hier](TWEAKS.md)
 
 # Einschränkungen :x:
 
@@ -75,7 +77,7 @@ Dein Spiel läuft nicht direkt beim erstenmal? Tweaks are [here](TWEAKS.md)
 
 Das Script wurde spezielle für FreeBSD 12.0-RELEASE angefertigt. All andere versionen werden nicht unterstützt.
 
-Benutzt das Setup um Homura richtig zu installieren.
+Bitte benutzt das Setup um Homura richtig zu installieren.
 
 `curl -O https://raw.githubusercontent.com/Alexander88207/Homura/master/Setup.sh && bash Setup.sh`
 
@@ -94,3 +96,7 @@ Wenn ein bestehendes Feature einen Fix benötigt, dann erstelle ich schnell ein 
 
 # Beitragen :pencil2:
 Wenn sie zu Homura beitragen möchten lesen sie [dies](CONTRIBUTING_DE.md) bitte erst durch.
+
+# Schaue wie es funktioniert :eyes:
+
+<a href="https://www.youtube.com/watch?v=wrjlfRfjaMU"><img src="https://www.bilder-upload.eu/upload/232376-1569000876.png" style="width:82px; height:86px" title="Homura" alt="Homura"></a>
