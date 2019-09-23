@@ -197,7 +197,7 @@ echo "$ENV WINEPREFIX='/home/$USER/.local/share/$NAME/Custom Prefixes/$PREFIXNAM
 fi
 
 if [[ $INST == *"Extras"* ]]; then
-ETS=$(zenity --list --radiolist --window-icon=$ICO --height=100 --width=310  --title="$NAME $VER - $INST" --text "What extra do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Torchlight German Patch" FALSE "Clone Hero: All Soulless songs in medium difficulty")
+ETS=$(zenity --list --radiolist --window-icon=$ICO --height=100 --width=310  --title="$NAME $VER - $INST" --text "What extra do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Torchlight German Patch" FALSE "Clone Hero: All Soulless songs in medium difficulty" FALSE "Left 4 Gore")
 
 if [[ $ETS == *"Torchlight German Patch"* ]]; then
 echo $'\033]30;Torchlight German Patch\007'
@@ -225,17 +225,26 @@ rm Torchlight_GerPatchV5_GOGEPIC.exe
 rm Torchlight_GerPatchV5_GOGEPIC.zip
 fi
 fi
+
 if [[ $ETS == *"Clone Hero: All Soulless songs in medium difficulty"* ]]; then
 cd "/home/$USER/.local/share/$NAME/Games/Clone Hero/clonehero-win32/Songs/"
 curl -o "Soulless%20Series%20in%20Medium.tar.xz" "http://alt.magzu.net/damn/dl/Soulless%20Series%20in%20Medium.tar.xz" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $ETS" --title "$NAME $VER $TODO $ETS" --window-icon=$ICO
 tar -xf Soulless%20Series%20in%20Medium.tar.xz
 rm Soulless%20Series%20in%20Medium.tar.xz
 fi
+
+if [[ $ETS == *"Left 4 Gore"* ]]; then
+cd /home/$USER/.local/share/$NAME/Games/Steam
+curl -o "left4gore-2.3-windows.zip" "http://www.left4gore.com/dist/left4gore-2.3-windows.zip" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $ETS" --title "$NAME $VER $TODO $ETS" --window-icon=$ICO
+unzip left4gore-2.3-windows.zip
+rm left4gore-2.3-windows.zip
+fi
 fi
 fi
 
+
 if [[ $TODO == *"Launcher"* ]]; then
-LNCH=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to launch?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Custom Prefix")
+LNCH=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to launch?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Left 4 Gore" FALSE "Custom Prefix")
 
 if [[ $LNCH == *"Steam"* ]]; then
 echo $'\033]30;Steam\007'        
@@ -308,6 +317,10 @@ echo $'\033]30;Bethesda Launcher\007'
 WINEPREFIX="/home/$USER/.local/share/$NAME/Games/$LNCH" wine "/home/$USER/.local/share/$NAME/Games/$LNCH/drive_c/Program Files/Bethesda.net Launcher/BethesdaNetLauncher.exe"
 fi
 
+if [[ $LNCH == *"Left 4 Gore"* ]]; then
+WINEPREFIX=/home/$USER/.local/share/$NAME/Games/Steam wine "/home/alexander/.local/share/Homura/Games/Steam/left4gore-2.3-windows/left4gore.exe"
+fi
+
 if [[ $LNCH == *"Custom Prefix"* ]]; then
 echo $'\033]30;Custom Prefix\007'
 cd "/home/$USER/.local/share/$NAME/Custom Prefixes"
@@ -319,7 +332,7 @@ fi
 fi
 
 if [[ $TODO == *"Uninstallation"* ]]; then
-UNST=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to uninstall?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Custom Prefix")
+UNST=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to uninstall?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Left 4 Gore" FALSE "Custom Prefix")
 
 rm -d -r "/home/$USER/.local/share/$NAME/Games/$UNST"
 
@@ -380,6 +393,10 @@ fi
 
 if [[ $UNST == *"Bethesda Launcher"* ]]; then
 rm -d -r "/home/$USER/.local/share/applications/wine/Programs/Bethesda.net Launcher"
+fi
+
+if [[ $UNST == *"Left 4 Gore"* ]]; then
+rm -d -r /home/alexander/.local/share/Homura/Games/Steam/left4gore-2.3-windows
 fi
 
 if [[ $UNST == *"Custom Prefix"* ]]; then
