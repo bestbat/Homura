@@ -20,8 +20,8 @@ Hab keine Angst. Es gibt verschiedene Möglichkeiten, auf andere Weise zu helfen
 
 - Übersetzen Sie die Dokumente in Ihre Sprache.
 
-- Du kannst Feedback geben, wir freuen uns über jede Bewertung.
+- Sie können Feedback geben, wir freuen uns über jede Bewertung.
 
-- Du kannst Verbesserungsvorschläge oder neue Ideen schicken.
+- Sie können Verbesserungsvorschläge oder neue Ideen schicken.
 
 - Empfehlen Sie Homura Ihren Freunden, Bekannten oder anderen, die ebenfalls interessiert sein könnten.
