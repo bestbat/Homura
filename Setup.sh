@@ -18,9 +18,9 @@ mkdir -p /home/$USER/.local/share/applications
 echo "[Desktop Entry]
 Comment=
 Exec=bash /home/$USER/.local/share/$NAME/$NAME.sh
-Icon=/home/$USER/.local/share/Homura/Data/Homura.png
+Icon=/home/$USER/.local/share/$NAME/Data/$NAME.png
 Categories=Game;
-Name=Homura
+Name=$NAME
 StartupNotify=false
 Terminal=false
 TerminalOptions=
@@ -33,7 +33,7 @@ X-KDE-Username=
 fi
 
 if [[ $TODO == *"Uninstall Homura"* ]]; then
-UH=$(zenity --question --width 300 --title "Homura - Uninstallation - Warning" --text "Everything will be removed in connection with Homura, do you want continue?"; echo $?)
+UH=$(zenity --question --width 300 --title "$NAME - Uninstallation - Warning" --text "Everything will be removed in connection with $NAME, do you want continue?"; echo $?)
 if [[ $UH == *"1"* ]]; then 
 notify-send "Thats a good decesion :)"
 fi
