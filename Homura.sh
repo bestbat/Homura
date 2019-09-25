@@ -33,9 +33,6 @@ if [[ $TODO == *"Installation"* ]]; then
 
 INST=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Custom Prefix" FALSE "Extras")
 
-mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
-cd "/home/$USER/.local/share/$NAME/Games/$INST"
-
 if [[ $INST == *"Steam"* ]]; then
 echo $'\033]30;Homura 2.1 - Installation of Steam\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -89,6 +86,9 @@ rm Teamspeak.zip
 zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of Teamspeak" --text="To get Playback and Capture working set both mods to Direct Sound."
 echo -e "\e[40;38;5;82mUpdate to latest version\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/.local/share/$NAME/Programs/Teamspeak wine "/home/$USER/.local/share/$NAME/Programs/Teamspeak/TeamSpeak 3 Client/update.exe"
+else
+mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
+cd "/home/$USER/.local/share/$NAME/Games/$INST"
 fi
 
 if [[ $INST == *"Clone Hero"* ]]; then
@@ -234,7 +234,7 @@ rm Soulless%20Series%20in%20Medium.tar.xz
 fi
 
 if [[ $ETS == *"Left 4 Gore"* ]]; then
-cd /home/$USER/.local/share/$NAME/Games/Steam
+cd /home/$USER/.local/share/$NAME/Extras
 curl -o "left4gore-2.3-windows.zip" "http://www.left4gore.com/dist/left4gore-2.3-windows.zip" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $ETS" --title "$NAME $VER $TODO $ETS" --window-icon=$ICO
 unzip left4gore-2.3-windows.zip
 rm left4gore-2.3-windows.zip
@@ -317,7 +317,7 @@ WINEPREFIX="/home/$USER/.local/share/$NAME/Games/$LNCH" wine "/home/$USER/.local
 fi
 
 if [[ $LNCH == *"Left 4 Gore"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/Steam wine "/home/alexander/.local/share/Homura/Games/Steam/left4gore-2.3-windows/left4gore.exe"
+WINEPREFIX=/home/$USER/.local/share/$NAME/Steam wine /home/$USER/.local/share/$NAME/Games/Extras/left4gore-2.3-windows/left4gore.exe"
 fi
 
 if [[ $LNCH == *"Custom Prefix"* ]]; then
@@ -395,7 +395,7 @@ rm -d -r "/home/$USER/.local/share/applications/wine/Programs/Bethesda.net Launc
 fi
 
 if [[ $UNST == *"Left 4 Gore"* ]]; then
-rm -d -r /home/alexander/.local/share/Homura/Games/Steam/left4gore-2.3-windows
+rm -d -r /home/alexander/.local/share/$NAME/Extras/left4gore-2.3-windows
 fi
 
 if [[ $UNST == *"Custom Prefix"* ]]; then
