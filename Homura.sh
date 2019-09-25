@@ -205,8 +205,6 @@ if [[ $ETS == *"Torchlight German Patch"* ]]; then
 echo $'\033]30;Torchlight German Patch\007'
 TGPH=$(zenity --list --radiolist --window-icon=$ICO --height=100 --width=360 --title="$NAME $VER $ETS" --text "What version?" --hide-header --column "$NAME $VER" --column "Item" FALSE "German Patch V3 (Steam-Edition)" FALSE "German Patch V5 (GOG/Epic-Edition)")
 
-cd /home/$USER/.local/share/$NAME/Data
-
 if [[ $TGPH == *"German Patch V3 (Steam-Edition)"* ]]; then
 echo -e "\e[40;38;5;82mDownloading $TGPH\e[30;48;5;82m\e[0m"
 curl -o "Torchlight_GerPatchV3_Steam.zip" "http://alt.magzu.net/damn/dl/Torchlight_GerPatchV3_Steam.zip" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $TGPH" --title "$NAME $VER $TODO $TGPH" --window-icon=$ICO
