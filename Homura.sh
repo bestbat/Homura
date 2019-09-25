@@ -86,9 +86,6 @@ rm Teamspeak.zip
 zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of Teamspeak" --text="To get Playback and Capture working set both mods to Direct Sound."
 echo -e "\e[40;38;5;82mUpdate to latest version\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/.local/share/$NAME/Programs/Teamspeak wine "/home/$USER/.local/share/$NAME/Programs/Teamspeak/TeamSpeak 3 Client/update.exe"
-else
-mkdir -p "/home/$USER/.local/share/$NAME/Games/$INST"
-cd "/home/$USER/.local/share/$NAME/Games/$INST"
 fi
 
 if [[ $INST == *"Clone Hero"* ]]; then
@@ -317,7 +314,7 @@ WINEPREFIX="/home/$USER/.local/share/$NAME/Games/$LNCH" wine "/home/$USER/.local
 fi
 
 if [[ $LNCH == *"Left 4 Gore"* ]]; then
-WINEPREFIX=/home/$USER/.local/share/$NAME/Steam wine /home/$USER/.local/share/$NAME/Games/Extras/left4gore-2.3-windows/left4gore.exe"
+WINEPREFIX=/home/$USER/.local/share/$NAME/Steam wine "/home/$USER/.local/share/$NAME/Games/Extras/left4gore-2.3-windows/left4gore.exe"
 fi
 
 if [[ $LNCH == *"Custom Prefix"* ]]; then
