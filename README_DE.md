@@ -14,6 +14,7 @@
 - [Falls sie neu bei FreeBSD sind](#falls-sie-neu-bei-freebsd-sind-wink)
 - [Beitragen](#beitragen-pencil2)
 - [Schaue wie es funktioniert](#schaue-wie-es-funktioniert-eyes)
+
 # Einführung
 
 Inspiriert von [lutris](https://github.com/lutris/lutris), möchte ich gerne einen Windows Games Launcher für FreeBSD anbieten.
@@ -76,7 +77,7 @@ Dein Spiel läuft nicht direkt beim erstenmal? Tweaks sind [hier](TWEAKS.md)
 
 # Installation/Deinstallation :cd:
 
-Das Script wurde spezielle für FreeBSD 12.0-RELEASE angefertigt. All andere versionen werden nicht unterstützt.
+Das Script wurde spezielle für FreeBSD 12.0-RELEASE angefertigt. Alle andere versionen werden nicht unterstützt.
 
 Bitte benutzt das Setup um Homura richtig zu installieren.
 
