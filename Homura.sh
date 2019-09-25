@@ -42,7 +42,7 @@ curl -o "SteamSetup.exe" "https://steamcdn-a.akamaihd.net/client/installer/Steam
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$INST winetricks winxp dotnet40
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
-WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$INST wine //home/$USER/.local/share/$NAME/Data/SteamSetup.exe
+WINEPREFIX=/home/$USER/.local/share/$NAME/Games/$INST wine /home/$USER/.local/share/$NAME/Data/SteamSetup.exe
 rm /home/$USER/.local/share/$NAME/Data/SteamSetup.exe
 fi
 
@@ -164,7 +164,7 @@ WINEPREFIX="/home/$USER/.local/share/$NAME/Games/$INST" winetricks vcrun2015
 WINEPREFIX="/home/$USER/.local/share/$NAME/Games/$INST" winetricks win7
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX="/home/$USER/.local/share/$NAME/Games/$INST" wine /home/$USER/.local/share/$NAME/Data/Wargaming_Game_Center_Install_EU.exe
-rm /home/$USER/.local/share/$NAME/Data/Wargaming_Game_Center_Install_EU.exe"
+rm /home/$USER/.local/share/$NAME/Data/Wargaming_Game_Center_Install_EU.exe
 fi
 
 if [[ $INST == *"Growtopia"* ]]; then
