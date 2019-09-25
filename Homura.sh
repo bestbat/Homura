@@ -32,7 +32,7 @@ TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=310 --width 300 --
 if [[ $TODO == *"Installation"* ]]; then
 
 INST=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Custom Prefix" FALSE "Extras")
-
+mkdir -p /home/$USER/.local/share/$NAME/Data
 cd /home/$USER/.local/share/$NAME/Data
 
 if [[ $INST == *"Steam"* ]]; then
