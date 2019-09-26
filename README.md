@@ -10,7 +10,7 @@
 - [Description](#description-)
 - [Dependencies](#dependencies-syringe)
 - [States](#states-fire)
-- [Games that are currently dont work](#games-that-are-currently-dont-work-:cyclone:)
+- [Games that are currently dont work](#games-that-are-currently-dont-work-cyclone)
 - [Tweaks](#tweaks-wrench)
 - [Limitations](#limitations-x)
 - [Things that are currently just out of the question](#things-that-are-currently-just-out-of-the-question-rabbit2)
