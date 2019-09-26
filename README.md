@@ -10,6 +10,7 @@
 - [Description](#description-)
 - [Dependencies](#dependencies-syringe)
 - [States](#states-fire)
+- [Games that are currently dont work](#games-that-are-currently-dont-work-:cyclone:)
 - [Tweaks](#tweaks-wrench)
 - [Limitations](#limitations-x)
 - [Things that are currently just out of the question](#things-that-are-currently-just-out-of-the-question-rabbit2)
@@ -72,6 +73,10 @@ If you want a special game or launcher then create an issue :)
 # Tweaks :wrench:
 
 Your game dont run in the first time? Tweaks are [here](TWEAKS.md)
+
+# Games that are currently dont work :cyclone:
+
+[Here](https://github.com/Alexander88207/Homura/blob/master/BORKED.md) is a list of games that are currently dont work or unplayable.
 
 # Limitations :x:
 
