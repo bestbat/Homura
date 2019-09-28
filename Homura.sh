@@ -326,7 +326,7 @@ WINEPREFIX="$NDIR/Games/$LNCH" wine "$NDIR/Games/$LNCH/drive_c/Program Files/Bet
 fi
 
 if [[ $LNCH == *"Left 4 Gore"* ]]; then
-WINEPREFIX=$NDIR/Extras wine "$NDIR/Games/Extras/left4gore-2.3-windows/left4gore.exe"
+WINEPREFIX=$NDIR/Games/Steam wine "$NDIR/Games/Extras/left4gore-2.3-windows/left4gore.exe"
 fi
 
 if [[ $LNCH == *"Custom Prefix"* ]]; then
