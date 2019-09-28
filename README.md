@@ -22,7 +22,7 @@
 
 # Introduction
 
-Inspired by [lutris](https://github.com/lutris/lutris), i would like to provide a game launcher to play windows games on FreeBSD.
+Inspired by [lutris](https://github.com/lutris/lutris), We would like to provide a game launcher to play windows games on FreeBSD.
 
 # Description &#x1F4D8;
 
@@ -107,7 +107,7 @@ To uninstall that script open the `Setup.sh` again and select `Uninstall Homura`
 # Release cycle :loudspeaker:
 
 New features gets releasd in a week or in 5 days.
-If an existing feature needs a fix then I will release that ASAP.
+If an existing feature needs a fix then we will release that ASAP.
 
 # If you are new to freebsd :wink:
 
