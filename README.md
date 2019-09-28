@@ -35,7 +35,7 @@ Homura is launcher that makes it easy to run windows games/launcher just with on
 
 # Handbook :orange_book:
 
-If you want to better understand how Homura works then take a look at our [handbook](https://github.com/The-Homura-Project/Homura-Handbook)
+If you want to better understand how Homura works then take a look at our [handbook](https://github.com/The-Homura-Project/Homura-Handbook).
 
 # Dependencies :syringe:
 - [gtar](https://www.freshports.org/archivers/gtar)
