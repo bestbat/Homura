@@ -1,12 +1,12 @@
 #!/bin/bash
 NAME=Homura
 VER=2.1
-ICO=$DDIR/$NAME.png
 ALH=480
 GPU=$(glxinfo | grep "OpenGL vendor string")
 OSN=$(uname)
 NDIR=/home/$USER/.local/share/$NAME
 DDIR=$NDIR/Data
+ICO=$DDIR/$NAME.png
 DATE=$(date)
 GITACC=Alexander88207
 WINEVER=$(wine --version)
