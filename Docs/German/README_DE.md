@@ -82,14 +82,13 @@ Dein Spiel läuft nicht direkt beim erstenmal? Tweaks sind [hier](Docs/English/T
 - Keinen Vulkan unterstüzung mit 32bit-wine unter amd64.
 - Kwin kann in manchen situationen beim spielen sehr schlecht sein.
 
-# Dinge die gerade außerfrage stehen. :rabbit2:
+# Dinge die gerade außerfrage stehen :rabbit2:
 
 - Epic Games launcher
 - My.com launcher
-- [Reusing of the json files from lutris](https://github.com/Alexander88207/Homura/issues/9)
+- [Das wiederverwenden der Lutris Json Scripts](https://github.com/Alexander88207/Homura/issues/9)
 - Glyph
 - Rockstar Games Launcher
-
 
 # Installation/Deinstallation :cd:
 
