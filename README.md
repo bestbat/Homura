@@ -1,5 +1,5 @@
 # Homura
-[![CodeFactor](https://www.codefactor.io/repository/github/alexander88207/Homura/badge)](https://www.codefactor.io/repository/github/alexander88207/Homura) ![GitHub release](https://img.shields.io/github/release/Alexander88207/Homura) [![Discord](https://img.shields.io/badge/chat-on%20discord-7289da.svg?logo=discord)](https://discord.gg/Mm3aNuQ) <img src="https://img.shields.io/discord/618845118060953600">
+[![CodeFactor](https://www.codefactor.io/repository/github/The-Homura-Project/Homura/badge)](https://www.codefactor.io/repository/github/alexander88207/Homura) ![GitHub release](https://img.shields.io/github/release/The-Homura-Project/Homura) [![Discord](https://img.shields.io/badge/chat-on%20discord-7289da.svg?logo=discord)](https://discord.gg/Mm3aNuQ) <img src="https://img.shields.io/discord/618845118060953600">
 
 # Readme languages
 - [English](README.md) written by [Alexander88207](https://github.com/Alexander88207) and improved by [felixactually](https://github.com/felixactually)
@@ -28,9 +28,9 @@ Inspired by [lutris](https://github.com/lutris/lutris), i would like to provide 
 
 Homura is launcher that makes it easy to run windows games/launcher just with one click on FreeBSD.
 
-![](https://raw.githubusercontent.com/Alexander88207/Homura/master/Media/Screenshot.png "Screenshot")
+![](https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Media/Screenshot.png "Screenshot")
 
- <img src="https://raw.githubusercontent.com/Alexander88207/Homura/master/Media/Screenshot2.png" alt="Monitor" height="500" width="700"> 
+ <img src="https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Media/Screenshot2.png" alt="Monitor" height="500" width="700"> 
 
 # Dependencies :syringe:
 - [gtar](https://www.freshports.org/archivers/gtar)
