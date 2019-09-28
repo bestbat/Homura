@@ -3,7 +3,7 @@ NAME=Homura
 VER=2.0
 NDIR=/home/$USER/.local/share/$NAME
 DDIR=$NDIR/Data
-GITACC=Alexander88207
+GITACC=The-Homura-Project
 TODO=$(zenity --list --radiolist --height=50 --width 300 --title="$NAME $VER Installer" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Install Homura" FALSE "Uninstall Homura")
 
 if [[ $TODO == *"Install Homura"* ]]; then
