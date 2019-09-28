@@ -8,7 +8,7 @@ NDIR=/home/$USER/.local/share/$NAME
 DDIR=$NDIR/Data
 ICO=$DDIR/$NAME.png
 DATE=$(date)
-GITACC=Alexander88207
+GITACC=The-Homura-Project
 WINEVER=$(wine --version)
 
 if [[ $USER == *"root"* ]]; then
@@ -518,7 +518,7 @@ fi
 if [[ $TODO == *"About"* ]]; then
 zenity --info --window-icon=$ICO --width=390 --title="$NAME $VER - About" --text="Inspired by lutris.
 $NAME is a launcher that makes it easy to run windows games/launcher just with one click on FreeBSD and is licensed under the BSD 2-Clause License.
-Copyright (c) 2019, Alexander Vereeken
+Copyright (c) 2019, The Homura Project
 All rights reserved."
 fi
 
