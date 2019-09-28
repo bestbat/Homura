@@ -8,7 +8,9 @@
 - [Abhängigkeiten](#abhängigkeiten-syringe)
 - [Status](#status-fire)
 - [Tweaks](#tweaks-wrench)
+- [Spiele die derzeit nicht funktionieren](#spiele-die-derzeit-nicht-funktionieren-cyclone)
 - [Einschränkungen](#einschränkungen-x)
+- [Dinge die gerade außerfrage stehen](#dinge-die-gerade-außerfrage-stehen-rabbit2)
 - [Installation/Deinstallation](#installationdeinstallation-cd)
 - [Release-Zyklus](#release-zyklus-loudspeaker)
 - [Falls sie neu bei FreeBSD sind](#falls-sie-neu-bei-freebsd-sind-wink)
@@ -23,9 +25,9 @@ Inspiriert von [lutris](https://github.com/lutris/lutris), möchte ich gerne ein
 
 Homura ist ein Launcher, der es einfach macht, Windows-Spiele/Launcher mit nur einem Klick auf FreeBSD auszuführen.
 
-![](https://github.com/Alexander88207/PWGOFBSD/raw/master/Screenshot.png "Screenshot")
+![](https://raw.githubusercontent.com/Alexander88207/Homura/master/Media/Screenshot.png "Screenshot")
 
- <img src="https://raw.githubusercontent.com/Alexander88207/PWGOFBSD/master/Screenshot2.png" alt="Monitor" height="500" width="700"> 
+ <img src="https://raw.githubusercontent.com/Alexander88207/Homura/master/Media/Screenshot2.png" alt="Monitor" height="500" width="700"> 
 
 # Abhängigkeiten :syringe:
 
@@ -68,13 +70,26 @@ Wenn du ein spezielles/en spiel oder launcher haben möchtest dann eröffnen sie
 
 # Tweaks :wrench:
 
-Dein Spiel läuft nicht direkt beim erstenmal? Tweaks sind [hier](TWEAKS.md)
+Dein Spiel läuft nicht direkt beim erstenmal? Tweaks sind [hier](Docs/English/TWEAKS.md)
+
+# Spiele die derzeit nicht funktionieren :cyclone:
+
+[Hier](Docs/English/BORKED.md) ist eine Liste der spiele die zurzeit nicht funktionieren oder unspielbar sind.
 
 # Einschränkungen :x:
 
 - Nur 32-Bit-Spiele und -Anwendungen, funktioniert derzeitig.
 - Keinen Vulkan unterstüzung mit 32bit-wine unter amd64.
 - Kwin kann in manchen situationen beim spielen sehr schlecht sein.
+
+# Dinge die gerade außerfrage stehen. :rabbit2:
+
+- Epic Games launcher
+- My.com launcher
+- [Reusing of the json files from lutris](https://github.com/Alexander88207/Homura/issues/9)
+- Glyph
+- Rockstar Games Launcher
+
 
 # Installation/Deinstallation :cd:
 
@@ -98,7 +113,7 @@ Wenn ein bestehendes Feature einen Fix benötigt, dann erstelle ich schnell ein 
 - Werden sie feststellen, dass Ihr Mikrofon stumm geschaltet ist, wenn sie teampeak verwenden möchten. Öffnen Sie den Alsamixer im Terminal und erhöhen Sie die Lautstärke Ihres Mikrofons.
 
 # Beitragen :pencil2:
-Wenn sie zu Homura beitragen möchten lesen sie [dies](CONTRIBUTING_DE.md) bitte erst durch.
+Wenn sie zu Homura beitragen möchten lesen sie [dies](Docs/German/CONTRIBUTING_DE.md) bitte erst durch.
 
 # Schaue wie es funktioniert :eyes:
 
