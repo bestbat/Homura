@@ -242,6 +242,7 @@ rm Soulless%20Series%20in%20Medium.tar.xz
 fi
 
 if [[ $ETS == *"Left 4 Gore"* ]]; then
+mkdir -p $NDIR/Extras
 cd $NDIR/Extras
 curl -o "left4gore-2.3-windows.zip" "http://www.left4gore.com/dist/left4gore-2.3-windows.zip" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $ETS" --title "$NAME $VER $TODO $ETS" --window-icon=$ICO
 unzip left4gore-2.3-windows.zip
@@ -325,7 +326,7 @@ WINEPREFIX="$NDIR/Games/$LNCH" wine "$NDIR/Games/$LNCH/drive_c/Program Files/Bet
 fi
 
 if [[ $LNCH == *"Left 4 Gore"* ]]; then
-WINEPREFIX=$NDIR/Steam wine "$NDIR/Games/Extras/left4gore-2.3-windows/left4gore.exe"
+WINEPREFIX=$NDIR/Extras wine "$NDIR/Games/Extras/left4gore-2.3-windows/left4gore.exe"
 fi
 
 if [[ $LNCH == *"Custom Prefix"* ]]; then
