@@ -8,6 +8,7 @@
 
 - [Introduction](#introduction)
 - [Description](#description-)
+- [Handbook](#Handbook-orange_book)
 - [Dependencies](#dependencies-syringe)
 - [States](#states-fire)
 - [Games that are currently dont work](#games-that-are-currently-dont-work-cyclone)
@@ -31,6 +32,10 @@ Homura is launcher that makes it easy to run windows games/launcher just with on
 ![](https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Media/Screenshot.png "Screenshot")
 
  <img src="https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Media/Screenshot2.png" alt="Monitor" height="500" width="700"> 
+
+# Handbook :orange_book:
+
+If you want to better understand how Homura works then take a look at our [handbook](https://github.com/The-Homura-Project/Homura-Handbook)
 
 # Dependencies :syringe:
 - [gtar](https://www.freshports.org/archivers/gtar)
