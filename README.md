@@ -33,7 +33,7 @@ Homura is launcher that makes it easy to run windows games/launcher just with on
  <img src="https://raw.githubusercontent.com/Alexander88207/Homura/master/Media/Screenshot2.png" alt="Monitor" height="500" width="700"> 
 
 # Dependencies :syringe:
-
+- [gtar](https://www.freshports.org/archivers/gtar)
 - [curl](https://www.freshports.org/ftp/curl/)
 - [bash](https://www.freshports.org/shells/bash)
 - [unzip](https://www.freshports.org/archivers/unzip)
