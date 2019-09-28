@@ -29,6 +29,7 @@ Homura ist ein Launcher, der es einfach macht, Windows-Spiele/Launcher mit nur e
 
 # Abhängigkeiten :syringe:
 
+- [gtar](https://www.freshports.org/archivers/gtar)
 - [curl](https://www.freshports.org/ftp/curl/)
 - [bash](https://www.freshports.org/shells/bash)
 - [unzip](https://www.freshports.org/archivers/unzip)
