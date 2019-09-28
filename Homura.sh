@@ -31,7 +31,7 @@ echo -e "\e[3;5;0;36mWine Version: $WINEVER\e[30;48;5;82m\e[0m"
 echo -e "\e[3;5;0;31mGPU Info OpenGL:\e[30;48;5;82m\e[0m" && glxinfo | grep OpenGL
 echo -e "\e[3;5;0;31mGPU Info Vulkan:\e[30;48;5;82m\e[0m" && vulkaninfo | grep "GPU id"
 
-TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=310 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Open Homura folder" FALSE "Enable logging" FALSE "About" FALSE "Exit")
+TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=340 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Open Homura folder" FALSE "Enable logging" FALSE "About" FALSE "Exit")
 
 if [[ $TODO == *"Installation"* ]]; then
 
@@ -507,7 +507,8 @@ if [[ $TODO == *"Enable logging"* ]]; then
 mkdir -p $NDIR/Logs
 cd $NDIR/Logs
 zenity --info --window-icon=$ICO --width=300 --title="$NAME $VER - About" --text="Logging for this session has been enabled, you will later find the log file in the log folder."
-bash "$NDIR/$NAME.sh" >> "Log_$DATE.txt" 2>&1
+bash "$NDIR/$NAME.sh" >> "$DATE.log" 2>&1
+notify-send "The logging have been quit."
 fi
 
 if [[ $TODO == *"About"* ]]; then
@@ -518,7 +519,7 @@ All rights reserved."
 fi
 
 if [[ $TODO == *"Exit"* ]]; then
-notify-send "Thanks for using $NAME and have a great day!"
+notify-send -i face-smile "Thanks for using $NAME and have a great day!"
 exit
 fi
 notify-send "Task completed or application closed!"
