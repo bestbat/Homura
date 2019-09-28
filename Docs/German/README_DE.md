@@ -1,5 +1,5 @@
 # Homura
-[![CodeFactor](https://www.codefactor.io/repository/github/alexander88207/Homura/badge)](https://www.codefactor.io/repository/github/alexander88207/Homura) ![GitHub release](https://img.shields.io/github/release/Alexander88207/Homura) [![Discord](https://img.shields.io/badge/chat-on%20discord-7289da.svg?logo=discord)](https://discord.gg/Mm3aNuQ) <img src="https://img.shields.io/discord/618845118060953600">
+[![CodeFactor](https://www.codefactor.io/repository/github/The-Homura-Project/Homura/badge)](https://www.codefactor.io/repository/github/The-Homura-Project/Homura) ![GitHub release](https://img.shields.io/github/release/The-Homura-Project/Homura) [![Discord](https://img.shields.io/badge/chat-on%20discord-7289da.svg?logo=discord)](https://discord.gg/Mm3aNuQ) <img src="https://img.shields.io/discord/618845118060953600">
 
 # Inhaltsverzeichnis
 
@@ -19,7 +19,7 @@
 
 # Einführung
 
-Inspiriert von [lutris](https://github.com/lutris/lutris), möchte ich gerne einen Windows Games Launcher für FreeBSD anbieten.
+Inspiriert von [lutris](https://github.com/lutris/lutris), möchte wir gerne einen Windows Games Launcher für FreeBSD anbieten.
 
 # Beschreibung &#x1F4D8;
 
@@ -105,7 +105,7 @@ Um dieses Skript zu deinstallieren, öffnen Sie die `Setup.sh` erneut und wähle
 # Release-Zyklus :loudspeaker:
 
 Neue Features werden in einer Woche oder in 5 Tagen veröffentlicht.
-Wenn ein bestehendes Feature einen Fix benötigt, dann erstelle ich schnell ein Release so schnell wie möglich.
+Wenn ein bestehendes Feature einen Fix benötigt, dann erstellen wir schnell ein Release so schnell wie möglich.
 
 # Falls sie neu bei FreeBSD sind :wink:
 
