@@ -3,7 +3,7 @@
 
 # Readme languages
 - [English](README.md) written by [Alexander88207](https://github.com/Alexander88207) and improved by [felixactually](https://github.com/felixactually)
-- [German](README_DE.md) translated by [Alexander88207](https://github.com/Alexander88207)
+- [German](Docs/German/README_DE.md) translated by [Alexander88207](https://github.com/Alexander88207)
 # Table of content
 
 - [Introduction](#introduction)
@@ -28,9 +28,9 @@ Inspired by [lutris](https://github.com/lutris/lutris), i would like to provide 
 
 Homura is launcher that makes it easy to run windows games/launcher just with one click on FreeBSD.
 
-![](https://github.com/Alexander88207/PWGOFBSD/raw/master/Screenshot.png "Screenshot")
+![](https://raw.githubusercontent.com/Alexander88207/Homura/master/Media/Screenshot.png "Screenshot")
 
- <img src="https://raw.githubusercontent.com/Alexander88207/PWGOFBSD/master/Screenshot2.png" alt="Monitor" height="500" width="700"> 
+ <img src="https://raw.githubusercontent.com/Alexander88207/Homura/master/Media/Screenshot2.png" alt="Monitor" height="500" width="700"> 
 
 # Dependencies :syringe:
 
@@ -72,11 +72,11 @@ If you want a special game or launcher then create an issue :)
 
 # Tweaks :wrench:
 
-Your game dont run in the first time? Tweaks are [here](TWEAKS.md)
+Your game dont run in the first time? Tweaks are [here](Docs/English/TWEAKS.md)
 
 # Games that are currently dont work :cyclone:
 
-[Here](https://github.com/Alexander88207/Homura/blob/master/BORKED.md) is a list of games that are currently dont work or unplayable.
+[Here](Docs/English/BORKED.md) is a list of games that are currently dont work or unplayable.
 
 # Limitations :x:
 
@@ -114,7 +114,7 @@ If an existing feature needs a fix then I will release that ASAP.
 - Your microphone is muted by default. If you want to use Teamspeak, open Alsamixer in the terminal and raise the volume of the microphone.
 
 # Contribute :pencil2:
-if you want to contribute to this repo then take a look [here](CONTRIBUTING.md)
+if you want to contribute to this repo then take a look [here](Docs/English/CONTRIBUTING.md)
 
 # See how it works :eyes:
 
