@@ -24,7 +24,7 @@ if [[ $OSN != "FreeBSD" ]]; then
 zenity --info --width=360 --window-icon=$ICO --title="$NAME $VER" --text="You are about to use $NAME on an unsupported system. Please be aware that unexpected errors may occur and that your bug reports can be marked as invaild."
 fi
 
-echo -e "\e[32mCopyright (c) 2019, Alexander Vereeken All rights reserved."
+echo -e "\e[32mCopyright (c) 2019, The Homura Project All rights reserved."
 echo -e "\e[93mWelcome to $NAME $VER have fun!"
 echo -e "\e[3;5;0;92mRunning on $OSN $(uname -r)"
 echo -e "\e[3;5;0;36mWine Version: $WINEVER\e[30;48;5;82m\e[0m"
