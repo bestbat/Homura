@@ -1,6 +1,6 @@
 #!/bin/bash
 NAME=Homura
-VER=2.0
+VER=2.1
 NDIR=/home/$USER/.local/share/$NAME
 DDIR=$NDIR/Data
 GITACC=The-Homura-Project
