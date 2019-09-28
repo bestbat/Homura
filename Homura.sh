@@ -341,6 +341,9 @@ fi
 if [[ $TODO == *"Uninstallation"* ]]; then
 UNST=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to uninstall?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Left 4 Gore" FALSE "Custom Prefix")
 
+if [[ $? == *"1"* ]]; then
+echo nothing selected
+else
 rm -d -r "$NDIR/Games/$UNST"
 
 if [[ $UNST == *"Steam"* ]]; then
@@ -411,6 +414,7 @@ cd "$NDIR/Custom Prefixes"
 FOLDERS=$(ls -a)
 PREFIXNAME=$(zenity --list --title="$NAME $VER - Select a custom prefix" --window-icon=$ICO --height=260 --width=300 --column="What prefix?" $FOLDERS)
 rm -r -d "$PREFIXNAME"
+fi
 fi
 fi
 
