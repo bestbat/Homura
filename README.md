@@ -103,7 +103,7 @@ This script is designed for FreeBSD 12.0-RELEASE. All other versions are not sup
 
 Use the setup to install Homura correctly
 
-`curl -O https://raw.githubusercontent.com/Alexander88207/Homura/master/Setup.sh && bash Setup.sh`
+`curl -O https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Setup.sh && bash Setup.sh`
 
 To start this script use the shortcut in the startmenu or use `bash /home/$USER/.local/share/Homura/Homura.sh`.
 
