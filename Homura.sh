@@ -415,8 +415,7 @@ fi
 
 if [[ $UNST == *"Custom Prefix"* ]]; then
 cd "$NDIR/Custom Prefixes"
-FOLDERS=$(ls -a)
-PREFIXNAME=$(zenity --list --title="$NAME $VER - Select a custom prefix" --window-icon=$ICO --height=260 --width=300 --column="What prefix?" $FOLDERS)
+PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/home/$USER/.local/share/$NAME/Custom Prefixes/")
 rm -r -d "$PREFIXNAME"
 fi
 fi
