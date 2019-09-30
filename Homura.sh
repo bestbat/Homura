@@ -336,10 +336,9 @@ fi
 if [[ $LNCH == *"Custom Prefix"* ]]; then
 echo $'\033]30;Custom Prefix\007'
 cd "$NDIR/Custom Prefixes"
-FOLDERS=$(ls -a)
-PREFIXNAME=$(zenity --list --title="Launch a custom prefix" --window-icon=$ICO --height=260 --width=300 --column="What do you want to start?" $FOLDERS)
+PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/home/$USER/.local/share/$NAME/Custom Prefixes/")
 echo $'\033]30;$PREFIXNAME\007'
-bash $PREFIXNAME/start.sh
+bash "$PREFIXNAME/start.sh"
 fi
 fi
 
