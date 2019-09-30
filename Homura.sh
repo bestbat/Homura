@@ -89,7 +89,7 @@ echo $'\033]30;Homura 2.1.2 - Installation of Teamspeak\007'
 mkdir -p $NDIR/Programs/$INST
 cd $NDIR/Programs/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
-curl -o "Teamspeak.zip" "http://alt.magzu.net/damn/dl/Teamspeak.zip" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
+curl -o "Teamspeak.zip" "https://homura.magzu.net/programs/Teamspeak.zip" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 unzip Teamspeak.zip
 rm Teamspeak.zip
@@ -103,7 +103,7 @@ echo $'\033]30;Homura 2.1.2 - Installation of Clone Hero\007'
 mkdir "$NDIR/Games/$INST"
 cd "$NDIR/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
-curl -o "clonehero-win32.7z" "http://dl.clonehero.net/clonehero-v.22.5/clonehero-win32.7z" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
+curl -o "clonehero-win32.7z" "http://dl.clonehero.net/clonehero-v.23.1/clonehero-win32.7z" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 WINEPREFIX="$NDIR/Games/$INST" winetricks arial
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -111,7 +111,7 @@ echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 rm clonehero-win32.7z
 echo -e "\e[40;38;5;82mApplying fix\e[30;48;5;82m\e[0m"
 cd clonehero-win32
-curl -O http://alt.magzu.net/dl/settings.ini
+curl -O https://homura.magzu.net/games/settings.ini
 fi
 
 if [[ $INST == *"Drakensang Online"* ]]; then
@@ -158,7 +158,7 @@ echo $'\033]30;Homura 2.1.2 - Installation of League of Legends\007'
 mkdir "$NDIR/Games/$INST"
 cd "$NDIR/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
-curl -o "League%20of%20Legends.tar.xz" "http://alt.magzu.net/damn/dl/League%20of%20Legends.tar.xz" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
+curl -o "League%20of%20Legends.tar.xz" "https://homura.magzu.net/games/League%20of%20Legends.tar.xz" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 tar -xf League%20of%20Legends.tar.xz
 rm League%20of%20Legends.tar.xz
@@ -216,7 +216,7 @@ TGPH=$(zenity --list --radiolist --window-icon=$ICO --height=100 --width=360 --t
 
 if [[ $TGPH == *"German Patch V3 (Steam-Edition)"* ]]; then
 echo -e "\e[40;38;5;82mDownloading $TGPH\e[30;48;5;82m\e[0m"
-curl -o "Torchlight_GerPatchV3_Steam.zip" "http://alt.magzu.net/damn/dl/Torchlight_GerPatchV3_Steam.zip" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $TGPH" --title "$NAME $VER $TODO $TGPH" --window-icon=$ICO
+curl -o "Torchlight_GerPatchV3_Steam.zip" "https://homura.magzu.net/games/Torchlight_GerPatchV3_Steam.zip" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $TGPH" --title "$NAME $VER $TODO $TGPH" --window-icon=$ICO
 unzip Torchlight_GerPatchV3_Steam.zip
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/Steam wine $DDIR/Torchlight_GerPatchV3_Steam.exe
@@ -226,7 +226,7 @@ fi
 
 if [[ $TGPH == *"German Patch V5 (GOG/Epic-Edition)"* ]]; then
 echo -e "\e[40;38;5;82mDownloading $TGPH\e[30;48;5;82m\e[0m"
-curl -o "Torchlight_GerPatchV5_GOGEPIC.zip" "http://alt.magzu.net/damn/dl/Torchlight_GerPatchV5_GOGEPIC.zip" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $TGPH" --title "$NAME $VER $TODO $TGPH" --window-icon=$ICO
+curl -o "Torchlight_GerPatchV5_GOGEPIC.zip" "https://homura.magzu.net/games/Torchlight_GerPatchV5_GOGEPIC.zip" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $TGPH" --title "$NAME $VER $TODO $TGPH" --window-icon=$ICO
 unzip Torchlight_GerPatchV5_GOGEPIC.zip
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX="$NDIR/Games/GOG Galaxy" wine $DDIR/Torchlight_GerPatchV5_GOGEPIC.exe
@@ -236,16 +236,19 @@ fi
 fi
 
 if [[ $ETS == *"Clone Hero: All Soulless songs in medium difficulty"* ]]; then
+echo -e "\e[40;38;5;82mDownloading $ETS\e[30;48;5;82m\e[0m"
 cd "$NDIR/Games/Clone Hero/clonehero-win32/Songs/"
-curl -o "Soulless%20Series%20in%20Medium.tar.xz" "http://alt.magzu.net/damn/dl/Soulless%20Series%20in%20Medium.tar.xz" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $ETS" --title "$NAME $VER $TODO $ETS" --window-icon=$ICO
+curl -o "Soulless%20Series%20in%20Medium.tar.xz" "https://homura.magzu.net/games/Soulless%20Series%20in%20Medium.tar.xz" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $ETS" --title "$NAME $VER $TODO $ETS" --window-icon=$ICO
 tar -xf Soulless%20Series%20in%20Medium.tar.xz
 rm Soulless%20Series%20in%20Medium.tar.xz
 fi
 
 if [[ $ETS == *"Left 4 Gore"* ]]; then
+echo -e "\e[40;38;5;82mDownloading $ETS\e[30;48;5;82m\e[0m"
 mkdir -p $NDIR/Extras
 cd $NDIR/Extras
 curl -o "left4gore-2.3-windows.zip" "http://www.left4gore.com/dist/left4gore-2.3-windows.zip" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $ETS" --title "$NAME $VER $TODO $ETS" --window-icon=$ICO
+echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 unzip left4gore-2.3-windows.zip
 rm left4gore-2.3-windows.zip
 fi
