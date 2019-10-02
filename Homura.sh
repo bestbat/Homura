@@ -1,6 +1,6 @@
 #!/bin/bash
 NAME=Homura
-VER=2.1.2
+VER=2.2
 ALH=490
 GPU=$(glxinfo | grep "OpenGL vendor string")
 OSN=$(uname)
@@ -44,7 +44,7 @@ fi
 cd $DDIR
 
 if [[ $INST == *"Steam"* ]]; then
-echo $'\033]30;Homura 2.1.2 - Installation of Steam\007'
+echo $'\033]30;Homura 2.2 - Installation of Steam\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "SteamSetup.exe" "https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
@@ -55,7 +55,7 @@ rm $DDIR/SteamSetup.exe
 fi
 
 if [[ $INST == *"Blizzard"* ]]; then
-echo $'\033]30;Homura 2.1.2 - Installation of Blizzard\007'
+echo $'\033]30;Homura 2.2 - Installation of Blizzard\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "Battle.net-Setup-enUS.exe" "http://dist.blizzard.com/downloads/bna-installers/322d5bb9ae0318de3d4cde7641c96425/retail.1/Battle.net-Setup-enUS.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -64,7 +64,7 @@ rm $DDIR/Battle.net-Setup-enUS.exe
 fi
 
 if [[ $INST == *"Origin"* ]]; then
-echo $'\033]30;Homura 2.1.2 - Installation of Origin\007'
+echo $'\033]30;Homura 2.2 - Installation of Origin\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "OriginThinSetup.exe" "https://origin-a.akamaihd.net/Origin-Client-Download/origin/legacy/OriginThinSetup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
@@ -76,7 +76,7 @@ rm $DDIR/OriginThinSetup.exe
 fi
 
 if [[ $INST == *"Uplay"* ]]; then
-echo $'\033]30;Homura 2.1.2 - Installation of Uplay\007'
+echo $'\033]30;Homura 2.2 - Installation of Uplay\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "UplayInstaller.exe" "https://ubistatic3-a.akamaihd.net/orbit/launcher_installer/UplayInstaller.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -85,7 +85,7 @@ rm $DDIR/UplayInstaller.exe
 fi
 
 if [[ $INST == *"Teamspeak"* ]]; then
-echo $'\033]30;Homura 2.1.2 - Installation of Teamspeak\007'
+echo $'\033]30;Homura 2.2 - Installation of Teamspeak\007'
 mkdir -p $NDIR/Programs/$INST
 cd $NDIR/Programs/$INST
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -99,7 +99,7 @@ WINEPREFIX=$NDIR/Programs/Teamspeak wine "$NDIR/Programs/Teamspeak/TeamSpeak 3 C
 fi
 
 if [[ $INST == *"Clone Hero"* ]]; then
-echo $'\033]30;Homura 2.1.2 - Installation of Clone Hero\007'
+echo $'\033]30;Homura 2.2 - Installation of Clone Hero\007'
 mkdir "$NDIR/Games/$INST"
 cd "$NDIR/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -115,7 +115,7 @@ curl -O https://homura.magzu.net/games/settings.ini
 fi
 
 if [[ $INST == *"Drakensang Online"* ]]; then
-echo $'\033]30;Homura 2.1.2 - Installation of Drakensang Online\007'
+echo $'\033]30;Homura 2.2 - Installation of Drakensang Online\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "dro_setup.exe" "https://drasaonline-481-dwl.bpsecure.com/applet/dro_setup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -124,7 +124,7 @@ rm $DDIR/dro_setup.exe
 fi
 
 if [[ $INST == *"Anarchy Online"* ]]; then
-echo $'\033]30;Homura 2.1.2 - Installation of Anarchy Online\007'
+echo $'\033]30;Homura 2.2 - Installation of Anarchy Online\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "AnarchyOnline_EP1.exe" "http://update.anarchy-online.com/download/AO/AnarchyOnline_EP1.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
@@ -136,7 +136,7 @@ rm $DDIR/AnarchyOnline_EP1.exe
 fi
 
 if [[ $INST == *"itch"* ]]; then
-echo $'\033]30;Homura 2.1.2 - Installation of itch\007'
+echo $'\033]30;Homura 2.2 - Installation of itch\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -L -o "windows" "http://nuts.itch.zone/download/windows" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -145,7 +145,7 @@ rm $DDIR/windows
 fi
 
 if [[ $INST == *"GOG Galaxy"* ]]; then
-echo $'\033]30;Homura 2.1.2 - Installation of GOG Galaxy\007'
+echo $'\033]30;Homura 2.2 - Installation of GOG Galaxy\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "setup_galaxy_1.2.54.23.exe" "https://cdn.gog.com/open/galaxy/client/setup_galaxy_1.2.54.23.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -154,7 +154,7 @@ rm $DDIR/setup_galaxy_1.2.54.23.exe
 fi
 
 if [[ $INST == *"League of Legends"* ]]; then
-echo $'\033]30;Homura 2.1.2 - Installation of League of Legends\007'
+echo $'\033]30;Homura 2.2 - Installation of League of Legends\007'
 mkdir "$NDIR/Games/$INST"
 cd "$NDIR/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
@@ -165,7 +165,7 @@ rm League%20of%20Legends.tar.xz
 fi
 
 if [[ $INST == *"Wargaming Game Center"* ]]; then
-echo $'\033]30;Homura 2.1.2 - Installation of Wargaming Game Center\007'
+echo $'\033]30;Homura 2.2 - Installation of Wargaming Game Center\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -L -o "Wargaming_Game_Center_Install_EU.exe" "http://redirect.wargaming.net/WGC/Wargaming_Game_Center_Install_EU.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
@@ -177,7 +177,7 @@ rm $DDIR/Wargaming_Game_Center_Install_EU.exe
 fi
 
 if [[ $INST == *"Growtopia"* ]]; then
-echo $'\033]30;Homura 2.1.2 - Installation of Growtopia\007'
+echo $'\033]30;Homura 2.2 - Installation of Growtopia\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -L -o "Growtopia-Installer.exe" "https://growtopiagame.com/Growtopia-Installer.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -186,7 +186,7 @@ rm $DDIR/Growtopia-Installer.exe
 fi
 
 if [[ $INST == *"Bethesda Launcher"* ]]; then
-echo $'\033]30;Homura 2.1.2 - Installation of Bethesda Launcher\007'
+echo $'\033]30;Homura 2.2 - Installation of Bethesda Launcher\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -L -o "BethesdaNetLauncher_Setup.exe" "http://download.cdp.bethesda.net/BethesdaNetLauncher_Setup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
