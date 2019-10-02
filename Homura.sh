@@ -1,7 +1,7 @@
 #!/bin/bash
 NAME=Homura
 VER=2.2
-ALH=490
+ALH=550
 GPU=$(glxinfo | grep "OpenGL vendor string")
 OSN=$(uname)
 NDIR=/home/$USER/.local/share/$NAME
@@ -31,7 +31,7 @@ echo -e "\e[3;5;0;36mWine Version: $WINEVER\e[30;48;5;82m\e[0m"
 echo -e "\e[3;5;0;31mGPU Info OpenGL:\e[30;48;5;82m\e[0m" && glxinfo | grep OpenGL
 echo -e "\e[3;5;0;31mGPU Info Vulkan:\e[30;48;5;82m\e[0m" && vulkaninfo | grep "GPU id"
 
-TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=340 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Open Homura folder" FALSE "Enable logging" FALSE "About" FALSE "Exit")
+TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=400 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Open Homura folder" FALSE "Enable logging" FALSE "About" FALSE "Exit")
 
 if [[ $TODO == *"Installation"* ]]; then
 
@@ -452,13 +452,13 @@ fi
 if [[ $RAEP == *"Custom Prefix"* ]]; then
 cd "$NDIR/Custom Prefixes"
 FOLDERS=$(ls -a)
-PREFIXNAME=$(zenity --list --title="Select a custom prefix" --window-icon=$ICO --height=260 --width=300 --column="What prefix?" $FOLDERS)
+PREFIXNAME=$(zenity --list --title="Select a custom prefix" --window-icon=$ICO --height=300 --width=300 --column="What prefix?" $FOLDERS)
 WINEPREFIX="$NDIR/Custom Prefixes/$PREFIXNAME" wine "$EXECUTABLE"
 fi
 fi
 
 if [[ $TODO == *"Update"* ]]; then
-UPDE=$(zenity --list --radiolist --window-icon=$ICO --height=200 --width 300 --title="$NAME $VER - $TODO" --text "What do you want to update?" --hide-header --column "$NAME" --column "Item" FALSE "Teamspeak" FALSE "Growtopia" FALSE "Custom Prefix executable" FALSE "Homura to the latest version")
+UPDE=$(zenity --list --radiolist --window-icon=$ICO --height=250 --width 250 --title="$NAME $VER - $TODO" --text "What do you want to update?" --hide-header --column "$NAME" --column "Item" FALSE "Teamspeak" FALSE "Growtopia" FALSE "Custom Prefix executable" FALSE "Homura to the latest version")
 
 if [[ $UPDE == *"Teamspeak"* ]]; then
 WINEPREFIX=$NDIR/Programs/$UPDE wine "$NDIR/Programs/$UPDE/TeamSpeak 3 Client/update.exe"
