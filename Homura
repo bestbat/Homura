@@ -529,6 +529,7 @@ fi
 if [[ $TODO == *"About"* ]]; then
 zenity --info --window-icon=$ICO --width=390 --title="$NAME $VER - About" --text="Inspired by lutris.
 $NAME is a launcher that makes it easy to run windows games/launcher just with one click on FreeBSD and is licensed under the BSD 2-Clause License.
+The Windows emulation is provided by Wine.
 Copyright (c) 2019, The Homura Project
 All rights reserved."
 fi
