@@ -99,15 +99,7 @@ Your game dont run in the first time? Tweaks are [here](Docs/English/TWEAKS.md)
 
 # Installation/Uninstallation :cd:
 
-This script is designed for FreeBSD 12.0-RELEASE. All other versions are not supported!
-
-Use the setup to install Homura correctly
-
-`curl -O https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Setup.sh && bash Setup.sh`
-
-To start this script use the shortcut in the startmenu or use `bash /home/$USER/.local/share/Homura/Homura.sh`.
-
-To uninstall that script open the `Setup.sh` again and select `Uninstall Homura`.
+https://github.com/The-Homura-Project/Homura-Port
 
 # Release cycle :loudspeaker:
 
