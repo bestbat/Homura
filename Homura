@@ -26,7 +26,7 @@ fi
 if [ ! -f "/home/$USER/.local/share/applications/$NAME.desktop" ]; then
 echo "[Desktop Entry]
 Comment=
-Exec=bash $NDIR/$NAME.sh
+Exec=bash /usr/local/bin/$NAME
 Icon=$DDIR/$NAME.png
 Categories=Game;
 Name=$NAME
