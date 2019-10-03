@@ -1,5 +1,5 @@
 # Homura
-[![GitHub release](https://img.shields.io/github/release/The-Homura-Project/Homura) [![Discord](https://img.shields.io/badge/chat-on%20discord-7289da.svg?logo=discord)](https://discord.gg/Mm3aNuQ) <img src="https://img.shields.io/discord/618845118060953600">
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/The-Homura-Project/Homura) [![Discord](https://img.shields.io/badge/chat-on%20discord-7289da.svg?logo=discord)](https://discord.gg/Mm3aNuQ) <img src="https://img.shields.io/discord/618845118060953600">
 
 # Readme languages
 - [English](README.md) written by [Alexander88207](https://github.com/Alexander88207) and improved by [felixactually](https://github.com/felixactually)
