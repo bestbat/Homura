@@ -39,10 +39,9 @@ Homura is launcher that makes it easy to run windows games/launcher just with on
 If you want to better understand how Homura works then take a look at our [handbook](https://github.com/The-Homura-Project/Homura-Handbook).
 
 # Dependencies :syringe:
-- [gtar](https://www.freshports.org/archivers/gtar)
+
 - [curl](https://www.freshports.org/ftp/curl/)
 - [bash](https://www.freshports.org/shells/bash)
-- [unzip](https://www.freshports.org/archivers/unzip)
 - [p7zip](https://www.freshports.org/archivers/p7zip/)
 - [zenity](https://www.freshports.org/x11/zenity)
 - [xdg-utils](https://www.freshports.org/devel/xdg-utils)
