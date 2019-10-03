@@ -11,6 +11,19 @@ DATE=$(date)
 GITACC=The-Homura-Project
 WINEVER=$(wine --version)
 
+if [ ! -d "$NDDIR" ]; then
+mkdir $NDIR
+fi
+
+if [ ! -d "$DDIR" ]; then
+mkdir $NDIR/Data
+fi
+
+if [ ! -f "$ICO" ]; then
+curl -O https://vignette.wikia.nocookie.net/madoka/images/7/72/Homura_magical_outfit_1.png/revision/latest/top-crop/width/320/height/320?cb=20160821012353
+mv 320?cb=20160821012353 $DDIR/$NAME.png
+fi
+
 if [[ $USER == *"root"* ]]; then
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER" --text="$NAME can not be executed as root."
 exit
@@ -36,10 +49,6 @@ TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=400 --width 300 --
 if [[ $TODO == *"Installation"* ]]; then
 
 INST=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Custom Prefix" FALSE "Extras")
-
-if [ ! -d "$DDIR" ]; then
-mkdir $NDIR/Data
-fi
 
 cd $DDIR
 
@@ -197,7 +206,9 @@ fi
 if [[ $INST == *"Custom Prefix"* ]]; then
 echo $'\033]30;Homura Installation of Custom Prefix\007'
 PREFIXNAME=$(zenity --window-icon=$ICO --title="Create a custom prefix" --text "How your prefix should be called?" --entry --width=260) 
-mkdir -p "$NDIR/Custom Prefixes"
+if [ ! -d "$DDIR" ]; then
+mkdir "$NDIR/Custom Prefixes"
+fi
 mkdir -p "$NDIR/Custom Prefixes/$PREFIXNAME"
 cd "$NDIR/Custom Prefixes/$PREFIXNAME"
 zenity --info --width=260 --title="Create a custom prefix" --text="Now you need to select the executable that do you want to use in this prefix."
@@ -458,7 +469,7 @@ fi
 fi
 
 if [[ $TODO == *"Update"* ]]; then
-UPDE=$(zenity --list --radiolist --window-icon=$ICO --height=250 --width 250 --title="$NAME $VER - $TODO" --text "What do you want to update?" --hide-header --column "$NAME" --column "Item" FALSE "Teamspeak" FALSE "Growtopia" FALSE "Custom Prefix executable" FALSE "Homura to the latest version")
+UPDE=$(zenity --list --radiolist --window-icon=$ICO --height=250 --width 250 --title="$NAME $VER - $TODO" --text "What do you want to update?" --hide-header --column "$NAME" --column "Item" FALSE "Teamspeak" FALSE "Growtopia" FALSE "Custom Prefix executable")
 
 if [[ $UPDE == *"Teamspeak"* ]]; then
 WINEPREFIX=$NDIR/Programs/$UPDE wine "$NDIR/Programs/$UPDE/TeamSpeak 3 Client/update.exe"
@@ -483,26 +494,6 @@ SPM=$(zenity --title="Environment variable" --text "Do you need an startparamete
 cd $PREFIXNAME
 rm start.sh
 echo "$ENV WINEPREFIX='$NDIR/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE' $SPM" >> start.sh
-fi
-
-if [[ $UPDE == *"Homura to the latest version"* ]]; then
-cd $NDIR
-curl -O https://raw.githubusercontent.com/$GITACC/$NAME/master/VER
-RELVER=$(cat VER)
-if [ $VER = $RELVER ]
-        then
-                notify-send "Nice, no new available update!"
-        else
-cd $NDIR
-curl -O -L https://github.com/$GITACC/$NAME/archive/$RELVER.tar.gz
-tar -xf $RELVER.tar.gz
-rm $NDIR/$NAME.sh
-mv $NDIR/$NAME-$RELVER/$NAME.sh $NDIR/$NAME.sh
-rm $NDIR/$RELVER.tar.gz
-rm -d -r $NDIR/$NAME-$RELVER
-rm VER
-notify-send "Homura have been updated sucessfully to $RELVER"
-fi
 fi
 fi
 
@@ -530,4 +521,4 @@ notify-send -i face-smile "Thanks for using $NAME and have a great day!"
 exit
 fi
 notify-send "Task completed or application closed!"
-bash $NDIR/$NAME.sh
+bash /usr/local/bin/Homura.sh
