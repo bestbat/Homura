@@ -8,11 +8,10 @@ NDIR=/home/$USER/.local/share/$NAME
 DDIR=$NDIR/Data
 ICO=$DDIR/$NAME.png
 DATE=$(date)
-GITACC=The-Homura-Project
 WINEVER=$(wine --version)
 
-if [ ! -d "$NDDIR" ]; then
-mkdir $NDIR
+if [ ! -d "$NDIR" ]; then
+mkdir -p $NDIR
 fi
 
 if [ ! -d "$DDIR" ]; then
@@ -22,6 +21,24 @@ fi
 if [ ! -f "$ICO" ]; then
 curl -O https://vignette.wikia.nocookie.net/madoka/images/7/72/Homura_magical_outfit_1.png/revision/latest/top-crop/width/320/height/320?cb=20160821012353
 mv 320?cb=20160821012353 $DDIR/$NAME.png
+fi
+
+if [ ! -f "/home/$USER/.local/share/applications/$NAME.desktop" ]; then
+echo "[Desktop Entry]
+Comment=
+Exec=bash $NDIR/$NAME.sh
+Icon=$DDIR/$NAME.png
+Categories=Game;
+Name=$NAME
+StartupNotify=false
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+" >> /home/$USER/.local/share/applications/$NAME.desktop
 fi
 
 if [[ $USER == *"root"* ]]; then
@@ -521,4 +538,4 @@ notify-send -i face-smile "Thanks for using $NAME and have a great day!"
 exit
 fi
 notify-send "Task completed or application closed!"
-bash /usr/local/bin/Homura.sh
+bash /usr/local/bin/Homura
