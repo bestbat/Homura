@@ -1,13 +1,13 @@
-# Homura
+# Homura <img src="https://vignette.wikia.nocookie.net/madoka/images/7/72/Homura_magical_outfit_1.png/revision/latest/top-crop/width/320/height/320?cb=20160821012353" alt="Monitor" height="50" width="50"> 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/the-homura-project/homura) [![Discord](https://img.shields.io/badge/chat-on%20discord-7289da.svg?logo=discord)](https://discord.gg/Mm3aNuQ) <img src="https://img.shields.io/discord/618845118060953600">
 
-# Readme languages
+# Readme languages :us: :de:
 - [English](README.md) written by [Alexander88207](https://github.com/Alexander88207) and improved by [felixactually](https://github.com/felixactually)
 - [German](Docs/German/README_DE.md) translated by [Alexander88207](https://github.com/Alexander88207)
 
-# Table of content
+# Table of content :books:
 
-- [Introduction](#introduction)
+- [Introduction](#introduction-microphone)
 - [Description](#description-)
 - [Handbook](#Handbook-orange_book)
 - [Dependencies](#dependencies-syringe)
@@ -20,9 +20,10 @@
 - [Release cycle](#release-cycle-loudspeaker)
 - [If you are new to freebsd](#if-you-are-new-to-freebsd-wink)
 - [Contribute](#contribute-pencil2)
+- [Credits](#credits-star)
 - [See how it works](#see-how-it-works-eyes)
 
-# Introduction
+# Introduction :microphone:
 
 Inspired by [lutris](https://github.com/lutris/lutris), We would like to provide a game launcher to play windows games on FreeBSD.
 
@@ -32,7 +33,7 @@ Homura is launcher that makes it easy to run windows games/launcher just with on
 
 ![](https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Media/Screenshot.png "Screenshot")
 
- <img src="https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Media/Screenshot2.png" alt="Monitor" height="500" width="700"> 
+<img src="https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Media/Screenshot2.png" alt="Monitor" height="500" width="700"> 
 
 # Handbook :orange_book:
 
@@ -118,6 +119,13 @@ If an existing feature needs a fix then we will release that ASAP.
 
 # Contribute :pencil2:
 if you want to contribute to this repo then take a look [here](Docs/English/CONTRIBUTING.md)
+
+# Credits :star:
+
+- [Alexander88207](https://github.com/Alexander88207) - Lead programmer
+- [MagZu](https://github.com/magzu)          - Hosting the mirror's (alt.magzu.net) & (homura.magzu.net)
+- [Contributors](https://github.com/the-homura-project/homura/graphs/contributors)     - for contributing
+
 
 # See how it works :eyes:
 
