@@ -9,6 +9,11 @@ ICO=$DDIR/$NAME.png
 DATE=$(date)
 WINEVER=$(wine --version)
 
+if [[ $USER == *"root"* ]]; then
+zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER" --text="$NAME can not be executed as root."
+exit
+fi
+
 if [ ! -d "$NDIR" ]; then
 mkdir -p $NDIR
 fi
@@ -38,11 +43,6 @@ X-DBUS-StartupType=
 X-KDE-SubstituteUID=false
 X-KDE-Username=
 " >> /home/$USER/.local/share/applications/$NAME.desktop
-fi
-
-if [[ $USER == *"root"* ]]; then
-zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER" --text="$NAME can not be executed as root."
-exit
 fi
 
 if [[ $GPU == *"VMware, Inc."* ]]; then
