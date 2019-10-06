@@ -27,6 +27,8 @@
 
 Inspired by [lutris](https://github.com/lutris/lutris), We would like to provide a game launcher to play windows games on FreeBSD.
 
+Please know: Homura is in no way comparable to lutris or the something bigger similar. 
+
 # Description &#x1F4D8;
 
 Homura is launcher that makes it easy to run windows games/launcher just with one click on FreeBSD.
