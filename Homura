@@ -230,7 +230,7 @@ cd "$NDIR/Custom Prefixes/$PREFIXNAME"
 zenity --info --width=260 --title="Create a custom prefix" --text="Now you need to select the executable that do you want to use in this prefix."
 EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
 ENV=$(zenity --title="Environment variable" --text "Do you need an environment variable for your executable? (for example DXVK_HUD=1) if not leave it blank." --entry --window-icon=$ICO --width=260) 
-SPM=$(zenity --title="Environment variable" --text "Do you need an startparameter for your executable? (for example -console) if not leave it blank." --entry --window-icon=$ICO --width=260) 
+SPM=$(zenity --title="Startparameter" --text "Do you need an startparameter for your executable? (for example -console) if not leave it blank." --entry --window-icon=$ICO --width=260) 
 echo "$ENV WINEPREFIX='$NDIR/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE' $SPM" >> start.sh
 fi
 
@@ -506,7 +506,7 @@ cd "$NDIR/Custom Prefixes"
 PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/home/$USER/.local/share/$NAME/Custom Prefixes/")
 EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
 ENV=$(zenity --title="Environment variable" --text "Do you need an environment variable for your executable? (for example DXVK_HUD=1) if not leave it blank." --entry --window-icon=$ICO --width=260)
-SPM=$(zenity --title="Environment variable" --text "Do you need an startparameter for your executable? (for example -console) if not leave it blank." --entry --window-icon=$ICO --width=260) 
+SPM=$(zenity --title="Startparameter" --text "Do you need an startparameter for your executable? (for example -console) if not leave it blank." --entry --window-icon=$ICO --width=260) 
 cd "$PREFIXNAME"
 rm start.sh
 echo "$ENV WINEPREFIX='$NDIR/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE' $SPM" >> start.sh
