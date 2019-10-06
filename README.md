@@ -63,20 +63,20 @@ This list will be refreshed on every update of [i386-wine-devel](https://www.fre
 
 Application | Works?
 ------------ | -------------
-[Steam](https://www.youtube.com/watch?v=a2z0nbWOarc) | Uses winxp with an older steam client to get some online features. (Doesn't affect performance)
-[Blizzard](https://www.youtube.com/watch?v=-oAMNgDvWtA) | Runs out of the box.
-[Origin](https://www.youtube.com/watch?v=d_j6Hlguydc) | Uses winxp with an older origin client. (Doesn't affect performance) The modern client is currently one issue away to use it!
-Uplay | Runs out of the box, but crashes to often.
-Teamspeak | Runs out of the box.
-[Clone Hero](https://www.youtube.com/watch?v=qch3_bt4rGo) | Runs out of the box.
-Drakensang Online | Runs out of the box, but fails with AMD cards.
-Anarchy Online | Runs out of the box, but fails with AMD cards.
-[itch](https://www.youtube.com/watch?v=lp-3g08w70A) | Runs out of the box.
-[GOG Galaxy](https://www.youtube.com/watch?v=m4BMvvgeWFE) | Runs out of the box.
-League of Legends | Crashes at starting the game client.
-Wargaming Game Center | Crashes directly 10 seconds after the start and even if the launcher should work a desired game may not work. The test game World of Tanks became a zombie directly.
-Growtopia | Runs out of the box.
-Bethesda Launcher | Runs out of the box.
+[Steam](https://store.steampowered.com/) | Uses winxp with an older steam client to get some online features. (Doesn't affect performance)
+[Blizzard](https://www.blizzard.com) | Runs out of the box.
+[Origin](https://www.origin.com) | Uses winxp with an older origin client. (Doesn't affect performance) The modern client is currently one issue away to use it!
+[Uplay](https://uplay.ubisoft.com) | Runs out of the box, but crashes to often.
+[Teamspeak](https://teamspeak.com) | Runs out of the box.
+[Clone Hero](https://clonehero.net) | Runs out of the box.
+[Drakensang Online](https://www.drakensang.com) | Runs out of the box, but fails with AMD cards.
+[Anarchy Online](https://www.anarchy-online.com) | Runs out of the box, but fails with AMD cards.
+[itch](https://itch.io) | Runs out of the box.
+[GOG Galaxy](https://www.gog.com/) | Runs out of the box.
+[League of Legends](https://euw.leagueoflegends.com) | Crashes at starting the game client.
+[Wargaming Game Center](https://eu.wargaming.net/) | Crashes directly 10 seconds after the start and even if the launcher should work a desired game may not work. The test game World of Tanks became a zombie directly.
+[Growtopia](https://www.growtopiagame.com/) | Runs out of the box.
+[Bethesda Launcher](https://bethesda.net) | Runs out of the box.
  
 If you want a special game or launcher then create an issue :)
 
