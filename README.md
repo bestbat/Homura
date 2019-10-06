@@ -23,12 +23,11 @@
 - [Credits](#credits-star)
 - [See how it works](#see-how-it-works-eyes)
 
-
 # Introduction :microphone:
 
 Inspired by [lutris](https://github.com/lutris/lutris), We would like to provide a game launcher to play windows games on FreeBSD.
 
-Homura is in no way comparable to lutris or the something bigger similar.
+Please know: Homura is in no way comparable to lutris or the something bigger similar.
 
 # Description &#x1F4D8;
 
