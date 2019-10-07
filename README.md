@@ -77,7 +77,10 @@ Application | Works?
 [Wargaming Game Center](https://eu.wargaming.net/) | Crashes directly 10 seconds after the start and even if the launcher should work a desired game may not work. The test game World of Tanks became a zombie directly.
 [Growtopia](https://www.growtopiagame.com/) | Runs out of the box.
 [Bethesda Launcher](https://bethesda.net) | Runs out of the box.
- 
+[Extra/Torchlight German Patch](https://steamcommunity.com/app/41500/discussions/0/451851477884787949/) | -
+[Extra/Clone Hero: Exilelord song pack in medium difficulty]() | Credits of this packa are going to Exilelord, NoFaceCH and NTVMB.
+[Extra/Left4Gore](http://www.left4gore.com/) | -
+
 If you want a special game or launcher then create an issue :)
 
 # Tweaks :wrench:
