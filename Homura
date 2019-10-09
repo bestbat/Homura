@@ -68,7 +68,7 @@ TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=400 --width 300 --
 
 if [[ $TODO == *"Installation"* ]]; then
 
-INST=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Custom Prefix" FALSE "Extras")
+INST=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Discord" FALSE "Custom Prefix" FALSE "Extras")
 
 cd $DDIR
 
@@ -232,6 +232,20 @@ WINEPREFIX=$NDIR/Games/$INST wine $DDIR/download
 rm $DDIR/download
 fi
 
+if [[ $INST == *"Discord"* ]]; then
+echo $'\033]30;Homura 2.4 - Installation of Discord\007'
+mkdir -p $NDIR/Programs/$INST
+mkdir -p $NDIR/Programs/$INST/Discord
+cd $NDIR/Programs/$INST/Discord
+echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
+curl -o "Discord.tar" "https://homura.magzu.net/dl/Discord.tar" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
+echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+WINEPREFIX=$NDIR/Programs/$INST winetricks dotnet472 win7
+echo -e "\e[40;38;5;82mInstalling $INST\e[30;48;5;82m\e[0m"
+tar -xf Discord.tar
+rm Discord.tar
+fi
+
 if [[ $INST == *"Custom Prefix"* ]]; then
 echo $'\033]30;Homura Installation of Custom Prefix\007'
 PREFIXNAME=$(zenity --window-icon=$ICO --title="Create a custom prefix" --text "How your prefix should be called?" --entry --width=260) 
@@ -296,7 +310,7 @@ fi
 fi
 
 if [[ $TODO == *"Launcher"* ]]; then
-LNCH=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to launch?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Left 4 Gore" FALSE "Custom Prefix")
+LNCH=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to launch?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Discord" FALSE "Left 4 Gore" FALSE "Custom Prefix")
 
 if [[ $LNCH == *"Steam"* ]]; then
 echo $'\033]30;Steam\007'        
@@ -374,6 +388,11 @@ echo $'\033]30;Arc\007'
 WINEPREFIX=$NDIR/Games/$LNCH wine "$NDIR/Games/$LNCH/drive_c/Program Files/Arc/ArcLauncher.exe"
 fi
 
+if [[ $LNCH == *"Discord"* ]]; then
+echo $'\033]30;Discord\007'
+WINEPREFIX=$NDIR/Programs/$LNCH wine $NDIR/Programs/$LNCH/Discord/app-0.0.305/Discord.exe
+fi
+
 if [[ $LNCH == *"Left 4 Gore"* ]]; then
 echo $'\033]30;Left 4 Gore\007'
 WINEPREFIX=$NDIR/Games/Steam wine "$NDIR/Games/Extras/left4gore-2.3-windows/left4gore.exe"
@@ -389,7 +408,7 @@ fi
 fi
 
 if [[ $TODO == *"Uninstallation"* ]]; then
-UNST=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to uninstall?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Left 4 Gore" FALSE "Custom Prefix")
+UNST=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to uninstall?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Discord" FALSE "Left 4 Gore" FALSE "Custom Prefix")
 
 if [[ $? == *"1"* ]]; then
 echo nothing selected
@@ -459,6 +478,10 @@ if [[ $UNST == *"Arc"* ]]; then
 rm -d -r "/home/$USER/.local/share/applications/wine/Programs/Perfect World Entertainment"
 fi
 
+if [[ $UNST == *"Discord"* ]]; then
+rm -d -r $NDIR/Programs/$UNST
+fi
+
 if [[ $UNST == *"Left 4 Gore"* ]]; then
 rm -d -r /home/$USER/.local/share/$NAME/Extras/left4gore-2.3-windows
 fi
@@ -472,9 +495,13 @@ fi
 fi
 
 if [[ $TODO == *"Winetricks"* ]]; then
-WTR=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --title="$NAME $VER - $TODO" --text "In what prefix do you want to open winetricks?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Custom Prefix")
+WTR=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --title="$NAME $VER - $TODO" --text "In what prefix do you want to open winetricks?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Teamspeak" FALSE "Custom Prefix")
 
 if [[ $WTR == *"Teamspeak"* ]]; then
+WINEPREFIX=$NDIR/Programs/$WTR winetricks
+fi
+
+if [[ $WTR == *"Discord"* ]]; then
 WINEPREFIX=$NDIR/Programs/$WTR winetricks
 fi
 
@@ -489,7 +516,7 @@ fi
 fi
 
 if [[ $TODO == *"Run a executable in prefix"* ]]; then
-RAEP=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --title="$NAME $VER - $TODO" --text "In what prefix do you want open your executable?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Custom Prefix")
+RAEP=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --title="$NAME $VER - $TODO" --text "In what prefix do you want open your executable?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Discord" FALSE "Custom Prefix")
 EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
 
 WINEPREFIX="$NDIR/Games/$RAEP" wine "$EXECUTABLE"
@@ -498,6 +525,9 @@ if [[ $RAEP == *"Teamspeak"* ]]; then
 WINEPREFIX=$NDIR/Programs/$RAEP wine "$EXECUTABLE"
 fi
 
+if [[ $RAEP == *"Discord"* ]]; then
+WINEPREFIX=$NDIR/Programs/$RAEP wine "$EXECUTABLE"
+fi
 
 if [[ $RAEP == *"Custom Prefix"* ]]; then
 cd "$NDIR/Custom Prefixes"
