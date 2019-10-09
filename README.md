@@ -78,6 +78,7 @@ Application | Works?
 [Growtopia](https://www.growtopiagame.com/) | Runs out of the box.
 [Bethesda Launcher](https://bethesda.net) | Runs out of the box.
 [Arc](https://www.arcgames.com) | Crashes after login.
+[Discord](https://discordapp.com/) | Takes forever to start looks like a network problem in the logs.
 [Extra/Torchlight German Patch](https://steamcommunity.com/app/41500/discussions/0/451851477884787949/) | Runs out of the box.
 [Extra/Clone Hero: Exilelord song pack in medium difficulty]() | Credits of this pack are going to Exilelord, NoFaceCH and NTVMB.
 [Extra/Left4Gore](http://www.left4gore.com/) | -
