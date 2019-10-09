@@ -29,6 +29,7 @@ fi
 
 if [ ! -d "/home/$USER/.local/share/applications" ]; then
 mkdir /home/$USER/.local/share/applications
+fi
 
 if [ ! -f "/home/$USER/.local/share/applications/$NAME.desktop" ]; then
 echo "[Desktop Entry]
