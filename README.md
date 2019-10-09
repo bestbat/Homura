@@ -119,7 +119,7 @@ Is [here](https://github.com/the-homura-project/homura-port)
 # Release cycle :loudspeaker:
 
 New features gets releasd in a week or in 5 days.
-If an existing feature needs a fix then we will release that ASAP.
+If an existing feature needs a fix then we will release that ASAP and will have a number like 1.2.x
 
 # If you are new to freebsd :wink:
 
