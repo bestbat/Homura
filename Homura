@@ -27,6 +27,9 @@ curl -O https://vignette.wikia.nocookie.net/madoka/images/7/72/Homura_magical_ou
 mv 320?cb=20160821012353 $DDIR/$NAME.png
 fi
 
+if [ ! -d "/home/$USER/.local/share/applications" ]; then
+mkdir /home/$USER/.local/share/applications
+
 if [ ! -f "/home/$USER/.local/share/applications/$NAME.desktop" ]; then
 echo "[Desktop Entry]
 Comment=
