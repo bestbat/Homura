@@ -81,7 +81,7 @@ Application | Works?
 [Discord](https://discordapp.com/) | Takes forever to start looks like a network problem in the logs.
 [Extra/Torchlight German Patch](https://steamcommunity.com/app/41500/discussions/0/451851477884787949/) | Runs out of the box.
 [Extra/Clone Hero: Exilelord song pack in medium difficulty]() | Credits of this pack are going to Exilelord, NoFaceCH and NTVMB.
-[Extra/Left4Gore](http://www.left4gore.com/) | -
+[Extra/Left 4 Gore](http://www.left4gore.com/) | -
 
 If you want a special game or launcher then create an issue :)
 
