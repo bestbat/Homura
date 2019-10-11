@@ -16,6 +16,7 @@ fi
 
 if [ ! -d "$NDIR" ]; then
 mkdir -p $NDIR
+zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - Welcome" --text="Welcome to $NAME. If you have a problem, suggestion or similar, do not hesitate to open an issue on GitHub. Have Fun!"
 fi
 
 if [ ! -d "$DDIR" ]; then
