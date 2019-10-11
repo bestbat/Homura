@@ -1,2 +1,2 @@
 Homura linguist-language=Shell
-*.md text
+*.md linguist-language=Text
