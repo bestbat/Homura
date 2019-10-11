@@ -106,6 +106,7 @@ Your game dont run in the first time? Tweaks are [here](Docs/English/TWEAKS.md)
 - [Reusing of the json files from lutris](https://github.com/Alexander88207/Homura/issues/9)
 - Glyph
 - Rockstar Games Launcher
+- Artix Game Launcher
 
 # Installation/Uninstallation :cd:
 
