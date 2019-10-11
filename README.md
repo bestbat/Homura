@@ -59,7 +59,7 @@ If you want to better understand how Homura works then take a look at our [handb
 
 # States :fire:
 
-This list will be refreshed on every update of [i386-wine-devel](https://www.freshports.org/emulators/i386-wine-devel)
+This list will be refreshed on every update of [i386-wine-devel](https://www.freshports.org/emulators/i386-wine-devel), [mesa-dri](https://www.freshports.org/graphics/mesa-dri/) or [drm-kmod](https://www.freshports.org/graphics/drm-kmod/)
 
 Application | Works?
 ------------ | -------------
