@@ -101,11 +101,11 @@ Your game dont run in the first time? Tweaks are [here](Docs/English/TWEAKS.md)
 
 # Things that are currently just out of the question :rabbit2:
 
-- Epic Games launcher | Reason: 64Bit Only but gets implemented soon
+- Epic Games launcher | Reason: 64Bit only but gets implemented soon
 - My.com launcher | Reason: The launcher cant selfupdate and i currently cant maintain it.
 - [Reusing of the json files from lutris](https://github.com/Alexander88207/Homura/issues/9)
 - Glyph | Reason: I dont know where i should start tinkering it just dont work at all.
-- Rockstar Games Launcher | Reason: 64Bit Only but gets implemented soon
+- Rockstar Games Launcher | Reason: 64Bit only but gets implemented soon
 - Artix Game Launcher | Reason: I dont know where i should start tinkering it just dont work at all.
 
 # Installation/Uninstallation :cd:
