@@ -402,10 +402,15 @@ fi
 
 if [[ $LNCH == *"Custom Prefix"* ]]; then
 echo $'\033]30;Custom Prefix\007'
+if [ ! "$(ls -A /home/$USER/.local/share/$NAME/Custom Prefixes)" ]
+then
+zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="There is no custom prefix installed"
+else
 cd "$NDIR/Custom Prefixes"
 PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/home/$USER/.local/share/$NAME/Custom Prefixes/")
 echo $'\033]30;$PREFIXNAME\007'
 bash "$PREFIXNAME/start.sh"
+fi
 fi
 fi
 
