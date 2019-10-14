@@ -564,7 +564,7 @@ ENV=$(zenity --title="Environment variable" --text "Do you need an environment v
 SPM=$(zenity --title="Startparameter" --text "Do you need an startparameter for your executable? (for example -console) if not leave it blank." --entry --window-icon=$ICO --width=260) 
 cd "$PREFIXNAME"
 rm start.sh
-echo "$ENV WINEPREFIX='$NDIR/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE' $SPM" >> start.sh
+echo "$ENV WINEPREFIX='$PREFIXNAME' wine '$EXECUTABLE' $SPM" >> start.sh
 fi
 fi
 
