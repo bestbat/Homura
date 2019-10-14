@@ -402,7 +402,7 @@ fi
 
 if [[ $LNCH == *"Custom Prefix"* ]]; then
 echo $'\033]30;Custom Prefix\007'
-if [ ! "$(ls -A /home/$USER/.local/share/$NAME/Custom Prefixes)" ]
+if [ ! "$(ls -A "/home/$USER/.local/share/$NAME/Custom Prefixes")" ]
 then
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="There is no custom prefix installed"
 else
