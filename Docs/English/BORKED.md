@@ -12,3 +12,4 @@ A list of games that dont work or are unplayable.
 - UNDER the SAND (Steam) (Faild to start even DX11 is present)
 - Path of Exile (Steam) (Dont launch because OSS) If this happends on the next wine relase too, i will report this.
 - Royal Quest (Steam) & (Standalone) launcher starts but the game not. I hope its fixed in next release.
+- Hentai Puzzle Classic (Steam) Crash at start.
