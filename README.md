@@ -1,4 +1,4 @@
-# Homura <img src="https://vignette.wikia.nocookie.net/madoka/images/7/72/Homura_magical_outfit_1.png/revision/latest/top-crop/width/320/height/320?cb=20160821012353" alt="Monitor" height="50" width="50"> 
+# Homura <img src="https://vignette.wikia.nocookie.net/madoka/images/7/72/Homura_magical_outfit_1.png/revision/latest/top-crop/width/320/height/320?cb=20160821012353" alt="Homura" height="50" width="50"> 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/the-homura-project/homura) [![Discord](https://img.shields.io/badge/chat-on%20discord-7289da.svg?logo=discord)](https://discord.gg/Mm3aNuQ) <img src="https://img.shields.io/discord/618845118060953600">
 
 # Readme languages :us: :de:
