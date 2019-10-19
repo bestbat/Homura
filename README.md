@@ -105,7 +105,7 @@ Your game dont run in the first time? Tweaks are [here](Docs/English/TWEAKS.md)
 - My.com launcher | Reason: The launcher cant selfupdate and i currently cant maintain it.
 - [Reusing of the json files from lutris](https://github.com/Alexander88207/Homura/issues/9)
 - Glyph | Reason: I dont know where i should start tinkering it just dont work at all.
-- Rockstar Games Launcher | Reason: 64Bit only but gets implemented soon
+- Rockstar Games Launcher | Reason: 64Bit only but gets maybe implemented soon.
 - Artix Game Launcher | Reason: I dont know where i should start tinkering it just dont work at all.
 
 # Installation/Uninstallation :cd:
