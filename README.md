@@ -63,9 +63,9 @@ This list will be refreshed on every update of [i386-wine-devel](https://www.fre
 
 Application | Works?
 ------------ | -------------
-[Steam](https://store.steampowered.com/) | Uses winxp with an older steam client to get some online features. (Doesn't affect performance)
+[Steam](https://store.steampowered.com/) | Runs out of the box,  uses winxp with an older steam client to get some online features. (Doesn't affect performance)
 [Blizzard](https://www.blizzard.com) | Runs out of the box.
-[Origin](https://www.origin.com) | Uses winxp with an older origin client. (Doesn't affect performance) The modern client is currently one issue away to use it!
+[Origin](https://www.origin.com) | Runs out of the box, uses winxp with an older origin client. (Doesn't affect performance) The modern client is currently one issue away to use it!
 [Uplay](https://uplay.ubisoft.com) | Runs out of the box, but crashes to often.
 [Teamspeak](https://teamspeak.com) | Runs out of the box.
 [Clone Hero](https://clonehero.net) | Runs out of the box.
