@@ -4,7 +4,7 @@ VER=2.6
 ALH=550
 GPU=$(glxinfo | grep "OpenGL vendor string")
 OSN=$(uname)
-NDIR=/home/$USER/.local/share/$NAME
+NDIR=/usr/home/$USER/.local/share/$NAME
 DDIR=$NDIR/Data
 ICO=$DDIR/$NAME.png
 DATE=$(date)
@@ -30,11 +30,11 @@ curl -O https://vignette.wikia.nocookie.net/madoka/images/7/72/Homura_magical_ou
 mv 320?cb=20160821012353 $DDIR/$NAME.png
 fi
 
-if [ ! -d "/home/$USER/.local/share/applications" ]; then
-mkdir /home/$USER/.local/share/applications
+if [ ! -d "/usr/home/$USER/.local/share/applications" ]; then
+mkdir /usr/home/$USER/.local/share/applications
 fi
 
-if [ ! -f "/home/$USER/.local/share/applications/$NAME.desktop" ]; then
+if [ ! -f "/usr/home/$USER/.local/share/applications/$NAME.desktop" ]; then
 echo "[Desktop Entry]
 Comment=
 Exec=bash /usr/local/bin/$NAME
@@ -49,7 +49,7 @@ X-DBUS-ServiceName=
 X-DBUS-StartupType=
 X-KDE-SubstituteUID=false
 X-KDE-Username=
-" >> /home/$USER/.local/share/applications/$NAME.desktop
+" >> /usr/home/$USER/.local/share/applications/$NAME.desktop
 fi
 
 if [[ $GPU == *"VMware, Inc."* ]]; then
@@ -359,7 +359,7 @@ fi
 if [[ $LNCH == *"itch"* ]]; then
 echo $'\033]30;itch\007'
 ITCHVER=25.4.0
-WINEPREFIX=$NDIR/Games/$LNCH wine "/home/$USER/.wine/drive_c/users/$USER/Local Settings/Application Data/itch/app-$ITCHVER/itch.exe"
+WINEPREFIX=$NDIR/Games/$LNCH wine "/usr/home/$USER/.wine/drive_c/users/$USER/Local Settings/Application Data/itch/app-$ITCHVER/itch.exe"
 fi
 
 if [[ $LNCH == *"GOG Galaxy"* ]]; then
@@ -404,12 +404,12 @@ fi
 
 if [[ $LNCH == *"Custom Prefix"* ]]; then
 echo $'\033]30;Custom Prefix\007'
-if [ ! "$(ls -A "/home/$USER/.local/share/$NAME/Custom Prefixes")" ]
+if [ ! "$(ls -A "/usr/home/$USER/.local/share/$NAME/Custom Prefixes")" ]
 then
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="There is no custom prefix installed"
 else
 cd "$NDIR/Custom Prefixes"
-PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/home/$USER/.local/share/$NAME/Custom Prefixes/")
+PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/Custom Prefixes/")
 echo $'\033]30;$PREFIXNAME\007'
 bash "$PREFIXNAME/start.sh"
 fi
@@ -425,27 +425,27 @@ fi
 
 if [[ $UNST == *"Steam"* ]]; then
 rm -d -r "$NDIR/Games/$UNST"
-rm -d -r /home/$USER/.local/share/applications/wine/Programs/$UNST
-rm /home/$USER/Desktop/$UNST.desktop
+rm -d -r /usr/home/$USER/.local/share/applications/wine/Programs/$UNST
+rm /usr/home/$USER/Desktop/$UNST.desktop
 fi
 
 if [[ $UNST == *"Blizzard"* ]]; then
 rm -d -r "$NDIR/Games/$UNST"
-rm -d -r /home/$USER/.local/share/applications/wine/Programs/Battle.net
-rm -d -r /home/$USER/Desktop/Battle.net.desktop
+rm -d -r /usr/home/$USER/.local/share/applications/wine/Programs/Battle.net
+rm -d -r /usr/home/$USER/Desktop/Battle.net.desktop
 fi
 
 if [[ $UNST == *"Origin"* ]]; then
 rm -d -r "$NDIR/Games/$UNST"
-rm -d -r /home/$USER/.local/share/applications/wine/Programs/$UNST
-rm /home/$USER/Desktop/$UNST.desktop
+rm -d -r /usr/home/$USER/.local/share/applications/wine/Programs/$UNST
+rm /usr/home/$USER/Desktop/$UNST.desktop
 fi
 
 if [[ $UNST == *"Uplay"* ]]; then
 rm -d -r "$NDIR/Games/$UNST"
-rm -d -r /home/$USER/.local/share/applications/wine/Programs/Ubisoft
-rm /home/$USER/Desktop/$UNST.desktop
-rm /home/$USER/Desktop/$UNST.lnk 
+rm -d -r /usr/home/$USER/.local/share/applications/wine/Programs/Ubisoft
+rm /usr/home/$USER/Desktop/$UNST.desktop
+rm /usr/home/$USER/Desktop/$UNST.lnk 
 fi
 
 if [[ $UNST == *"Teamspeak"* ]]; then
@@ -454,47 +454,47 @@ fi
 
 if [[ $UNST == *"Drakensang Online"* ]]; then
 rm -d -r "$NDIR/Games/$UNST"
-rm -d -r "/home/$USER/.local/share/applications/wine/Programs/$UNST"
-rm "/home/$USER/Desktop/$UNST.desktop"
-rm "/home/$USER/Desktop/$UNST.lnk"
+rm -d -r "/usr/home/$USER/.local/share/applications/wine/Programs/$UNST"
+rm "/usr/home/$USER/Desktop/$UNST.desktop"
+rm "/usr/home/$USER/Desktop/$UNST.lnk"
 fi
 
 if [[ $UNST == *"Anarchy Online"* ]]; then
 rm -d -r "$NDIR/Games/$UNST"
-rm -d -r "/home/$USER/.local/share/applications/wine/Programs/$UNST"
-rm "/home/$USER/Desktop/$UNST.desktop"
+rm -d -r "/usr/home/$USER/.local/share/applications/wine/Programs/$UNST"
+rm "/usr/home/$USER/Desktop/$UNST.desktop"
 fi
 
 if [[ $UNST == *"itch"* ]]; then
-rm -d -r "/home/$USER/.local/share/applications/wine/Programs/Itch Corp"
+rm -d -r "/usr/home/$USER/.local/share/applications/wine/Programs/Itch Corp"
 fi
 
 if [[ $UNST == *"GOG Galaxy"* ]]; then
 rm -d -r "$NDIR/Games/$UNST"
-rm -d -r /home/$USER/.local/share/applications/wine/Programs/GOG.com
-rm -d -r "/home/$USER/Desktop/$UNST.desktop"
+rm -d -r /usr/home/$USER/.local/share/applications/wine/Programs/GOG.com
+rm -d -r "/usr/home/$USER/Desktop/$UNST.desktop"
 fi
 
 if [[ $UNST == *"Wargaming Game Center"* ]]; then
 rm -d -r "$NDIR/Games/$UNST"
-rm -d -r /home/$USER/.local/share/applications/wine/Programs/Wargaming.net
-rm /home/$USER/Desktop/Game Center.desktop
+rm -d -r /usr/home/$USER/.local/share/applications/wine/Programs/Wargaming.net
+rm /usr/home/$USER/Desktop/Game Center.desktop
 fi
 
 if [[ $UNST == *"Growtopia"* ]]; then
 rm -d -r "$NDIR/Games/$UNST"
-rm -d -r /home/$USER/.local/share/applications/wine/Programs/$UNST
-rm /home/$USER/Desktop/Growtopia.desktop
+rm -d -r /usr/home/$USER/.local/share/applications/wine/Programs/$UNST
+rm /usr/home/$USER/Desktop/Growtopia.desktop
 fi
 
 if [[ $UNST == *"Bethesda Launcher"* ]]; then
 rm -d -r "$NDIR/Games/$UNST"
-rm -d -r "/home/$USER/.local/share/applications/wine/Programs/Bethesda.net Launcher"
+rm -d -r "/usr/home/$USER/.local/share/applications/wine/Programs/Bethesda.net Launcher"
 fi
 
 if [[ $UNST == *"Arc"* ]]; then
 rm -d -r "$NDIR/Games/$UNST"
-rm -d -r "/home/$USER/.local/share/applications/wine/Programs/Perfect World Entertainment"
+rm -d -r "/usr/home/$USER/.local/share/applications/wine/Programs/Perfect World Entertainment"
 fi
 
 if [[ $UNST == *"Discord"* ]]; then
@@ -502,12 +502,12 @@ rm -d -r $NDIR/Programs/$UNST
 fi
 
 if [[ $UNST == *"Left 4 Gore"* ]]; then
-rm -d -r /home/$USER/.local/share/$NAME/Extras/left4gore-2.3-windows
+rm -d -r /usr/home/$USER/.local/share/$NAME/Extras/left4gore-2.3-windows
 fi
 
 if [[ $UNST == *"Custom Prefix"* ]]; then
 cd "$NDIR/Custom Prefixes"
-PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/home/$USER/.local/share/$NAME/Custom Prefixes/")
+PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/Custom Prefixes/")
 rm -r -d "$PREFIXNAME"
 fi
 fi
@@ -574,7 +574,7 @@ fi
 if [[ $UPDE == *"Custom Prefix executable"* ]]; then
 echo $'\033]30;Update Custom Prefix executable\007'
 cd "$NDIR/Custom Prefixes"
-PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/home/$USER/.local/share/$NAME/Custom Prefixes/")
+PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/Custom Prefixes/")
 EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
 ENV=$(zenity --title="Environment variable" --text "Do you need an environment variable for your executable? (for example DXVK_HUD=1) if not leave it blank." --entry --window-icon=$ICO --width=260)
 SPM=$(zenity --title="Startparameter" --text "Do you need an startparameter for your executable? (for example -console) if not leave it blank." --entry --window-icon=$ICO --width=260) 
