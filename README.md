@@ -31,7 +31,7 @@ Please know: Homura is in no way comparable to [lutris](https://github.com/lutri
 
 # Description &#x1F4D8;
 
-Homura is launcher that makes it easy to run windows games/launcher just with one click on FreeBSD.
+Homura is launcher that makes it easy to run windows games/launcher easily on FreeBSD by providing the requiered fixes and workarounds.
 
 The Windows emulation is provided by [Wine](https://www.winehq.org).
 
