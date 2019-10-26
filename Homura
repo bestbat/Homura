@@ -63,7 +63,7 @@ echo -e "\e[3;5;0;36mWine Version: $WINEVER\e[30;48;5;82m\e[0m"
 echo -e "\e[3;5;0;31mGPU Info OpenGL:\e[30;48;5;82m\e[0m" && glxinfo | grep OpenGL
 echo -e "\e[3;5;0;31mGPU Info Vulkan:\e[30;48;5;82m\e[0m" && vulkaninfo | grep "GPU id"
 
-TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=400 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Open Homura folder" FALSE "Enable logging" FALSE "About" FALSE "Exit")
+TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=400 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Applying a fix" FALSE "Open Homura folder" FALSE "Enable logging" FALSE "About" FALSE "Exit")
 
 if [[ $TODO == *"Installation"* ]]; then
 
@@ -577,6 +577,15 @@ SPM=$(zenity --title="Startparameter" --text "Do you need an startparameter for 
 cd "$PREFIXNAME"
 rm start.sh
 echo "$ENV WINEPREFIX='$PREFIXNAME' wine '$EXECUTABLE' $SPM" >> start.sh
+fi
+fi
+
+if [[ $TODO == *"Applying a fix"* ]]; then
+FWG=$(zenity --list --radiolist --window-icon=$ICO  --height=200 --width 300 --title="$NAME $VER" --text "What fix do you want to apply?" --hide-header --column "$NAME" --column "Item" FALSE "Fix of blackscreen in Anno 1404")
+
+if [[ $FWG == *"Fix of blackscreen in Anno 1404"* ]]; then
+cd "/usr/home/$USER/.local/share/Homura/Games/Steam/drive_c/Program Files/Steam/steamapps/common/Anno 1404"
+curl -O https://github.com/the-homura-project/homura-database/blob/master/Anno%201404/Engine.ini
 fi
 fi
 
