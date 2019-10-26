@@ -45,10 +45,6 @@ StartupNotify=false
 Terminal=false
 TerminalOptions=
 Type=Application
-X-DBUS-ServiceName=
-X-DBUS-StartupType=
-X-KDE-SubstituteUID=false
-X-KDE-Username=
 " >> /usr/home/$USER/.local/share/applications/$NAME.desktop
 fi
 
