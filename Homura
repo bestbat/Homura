@@ -581,9 +581,9 @@ fi
 fi
 
 if [[ $TODO == *"Applying a fix"* ]]; then
-FWG=$(zenity --list --radiolist --window-icon=$ICO  --height=200 --width 300 --title="$NAME $VER" --text "What fix do you want to apply?" --hide-header --column "$NAME" --column "Item" FALSE "Fix of blackscreen in Anno 1404")
+AAF=$(zenity --list --radiolist --window-icon=$ICO  --height=200 --width 300 --title="$NAME $VER" --text "What fix do you want to apply?" --hide-header --column "$NAME" --column "Item" FALSE "Fix of blackscreen in Anno 1404")
 
-if [[ $FWG == *"Fix of blackscreen in Anno 1404"* ]]; then
+if [[ $AAF == *"Fix of blackscreen in Anno 1404"* ]]; then
 cd "/usr/home/$USER/.local/share/Homura/Games/Steam/drive_c/Program Files/Steam/steamapps/common/Anno 1404"
 curl -O https://github.com/the-homura-project/homura-database/blob/master/Anno%201404/Engine.ini
 fi
