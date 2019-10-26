@@ -581,7 +581,7 @@ fi
 fi
 
 if [[ $TODO == *"Applying a fix"* ]]; then
-AAF=$(zenity --list --radiolist --window-icon=$ICO  --height=200 --width 300 --title="$NAME $VER" --text "What fix do you want to apply?" --hide-header --column "$NAME" --column "Item" FALSE "Fix of blackscreen in Anno 1404 (Steam)")
+AAF=$(zenity --list --radiolist --window-icon=$ICO  --height=200 --width 350 --title="$NAME $VER" --text "What fix do you want to apply?" --hide-header --column "$NAME" --column "Item" FALSE "Fix of blackscreen in Anno 1404 (Steam)")
 
 if [[ $AAF == *"Fix of blackscreen in Anno 1404 (Steam)"* ]]; then
 cd "/usr/home/$USER/.local/share/Homura/Games/Steam/drive_c/Program Files/Steam/steamapps/common/Anno 1404"
