@@ -140,7 +140,7 @@ echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 rm clonehero-win32.7z
 echo -e "\e[40;38;5;82mApplying fix\e[30;48;5;82m\e[0m"
 cd clonehero-win32
-curl -O https://homura.magzu.net/games/settings.ini
+curl -O https://raw.githubusercontent.com/the-homura-project/homura-database/master/Clone%20Hero/settings.ini
 fi
 
 if [[ $INST == *"Drakensang Online"* ]]; then
