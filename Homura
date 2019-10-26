@@ -585,7 +585,7 @@ AAF=$(zenity --list --radiolist --window-icon=$ICO  --height=200 --width 350 --t
 
 if [[ $AAF == *"Fix of blackscreen in Anno 1404 (Steam)"* ]]; then
 cd "/usr/home/$USER/.local/share/Homura/Games/Steam/drive_c/Program Files/Steam/steamapps/common/Anno 1404"
-curl -O https://github.com/the-homura-project/homura-database/blob/master/Anno%201404/Engine.ini
+curl -O https://raw.githubusercontent.com/the-homura-project/homura-database/master/Anno%201404/Engine.ini
 fi
 fi
 
