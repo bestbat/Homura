@@ -61,6 +61,8 @@ If you want to better understand how Homura works then take a look at our [handb
 
 This list will be refreshed on every update of [i386-wine-devel](https://www.freshports.org/emulators/i386-wine-devel), [mesa-dri](https://www.freshports.org/graphics/mesa-dri/) or [drm-kmod](https://www.freshports.org/graphics/drm-kmod/)
 
+Some applications that don't work will still be included to allow other users to simply tinker.
+
 Application | Works?
 ------------ | -------------
 [Steam](https://store.steampowered.com/) | Runs out of the box,  uses winxp with an older steam client to get some online features. (Doesn't affect performance)
@@ -81,7 +83,7 @@ Application | Works?
 [Discord](https://discordapp.com/) | Takes forever to start looks like a network problem in the logs.
 [Extra/Torchlight German Patch](https://steamcommunity.com/app/41500/discussions/0/451851477884787949/) | Runs out of the box.
 [Extra/Clone Hero: Exilelord song pack in medium difficulty]() | Credits of this pack are going to [Exilelord](https://www.youtube.com/user/ExileLord), [NoFaceCH](https://www.youtube.com/channel/UCes2SZaMbCf_GXwEBTGsnhA) and [NTVMB](https://www.youtube.com/channel/UCk4xsKxjsMxVpT8Ro5ZtP5Q).
-[Extra/Left 4 Gore](http://www.left4gore.com/) | -
+[Extra/Left 4 Gore](http://www.left4gore.com/) | Not tested.
 
 If you want a special game or launcher then create an issue :)
 
