@@ -320,7 +320,7 @@ LNCH=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --
 
 if [[ $LNCH == *"Steam"* ]]; then
 echo $'\033]30;Steam\007'        
-WINEPREFIX=$NDIR/Games/$LNCH wine "$NDIR/Games/$LNCH/drive_c/Program Files/Steam/Steam.exe"
+WINEPREFIX=$NDIR/Games/$LNCH wine "$NDIR/Games/$LNCH/drive_c/Program Files/Steam/Steam.exe" -no-cef-sandbox
 fi
 
 if [[ $LNCH == *"Blizzard"* ]]; then
