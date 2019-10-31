@@ -454,6 +454,10 @@ if [[ $UNST == *"Teamspeak"* ]]; then
 rm -d -r $NDIR/Programs/$UNST
 fi
 
+if [[ $UNST == *"Clone Hero"* ]]; then
+rm -d -r "$NDIR/Games/$UNST"
+fi
+
 if [[ $UNST == *"Drakensang Online"* ]]; then
 rm -d -r "$NDIR/Games/$UNST"
 rm -d -r "/usr/home/$USER/.local/share/applications/wine/Programs/$UNST"
