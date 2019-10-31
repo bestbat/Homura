@@ -1,7 +1,7 @@
 #!/usr/local/bin/bash
 NAME=Homura
 VER=2.7
-ALH=550
+ALH=600
 GPU=$(glxinfo | grep "OpenGL vendor string")
 OSN=$(uname)
 NDIR=/usr/home/$USER/.local/share/$NAME
@@ -63,7 +63,7 @@ echo -e "\e[3;5;0;36mWine Version: $WINEVER\e[30;48;5;82m\e[0m"
 echo -e "\e[3;5;0;31mGPU Info OpenGL:\e[30;48;5;82m\e[0m" && glxinfo | grep OpenGL
 echo -e "\e[3;5;0;31mGPU Info Vulkan:\e[30;48;5;82m\e[0m" && vulkaninfo | grep "GPU id"
 
-TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=400 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Applying a fix" FALSE "Open Homura folder" FALSE "Enable logging" FALSE "About" FALSE "Exit")
+TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=420 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Applying a fix" FALSE "Open Homura folder" FALSE "Enable logging" FALSE "About" FALSE "Exit")
 
 if [[ $TODO == *"Installation"* ]]; then
 
@@ -83,10 +83,10 @@ echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks dotnet40 arial winxp
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 cd "$NDIR/Games/$INST/drive_c/Program Files"
-tar -xf $DDIR/Steam%20(Legacy).tar.xz
+tar -xf "$DDIR/Steam%20(Legacy).tar.xz"
 cd Steam
 chmod -w package
-rm $DDIR/Steam%20(Legacy).tar.xz
+rm "$DDIR/Steam%20(Legacy).tar.xz"
 fi
 
 if [[ $INST == *"Blizzard"* ]]; then
@@ -268,7 +268,7 @@ echo "$ENV WINEPREFIX='$NDIR/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE' $SP
 fi
 
 if [[ $INST == *"Extras"* ]]; then
-ETS=$(zenity --list --radiolist --window-icon=$ICO --height=200 --width=310  --title="$NAME $VER - $INST" --text "What extra do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Torchlight German Patch" FALSE "Clone Hero: Exilelord song pack in medium difficulty" FALSE "Left 4 Gore")
+ETS=$(zenity --list --radiolist --window-icon=$ICO --height=200 --width=400  --title="$NAME $VER - $INST" --text "What extra do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Torchlight German Patch" FALSE "Clone Hero: Exilelord song pack in medium difficulty" FALSE "Left 4 Gore")
 
 if [[ $ETS == *"Torchlight German Patch"* ]]; then
 echo $'\033]30;Torchlight German Patch\007'
