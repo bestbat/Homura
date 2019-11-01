@@ -78,15 +78,12 @@ cd $DDIR
 if [[ $INST == *"Steam"* ]]; then
 echo $'\033]30;Homura 2.6.1 - Installation of Steam\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
-curl -o "Steam%20(Legacy).tar.xz" "https://homura.magzu.net/games/Steam%20(Legacy).tar.xz" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
+curl -o "SteamSetup.exe" "https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
-WINEPREFIX=$NDIR/Games/$INST winetricks dotnet40 arial winxp
+WINEPREFIX=$NDIR/Games/$INST winetricks dotnet40 arial win7
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
-cd "$NDIR/Games/$INST/drive_c/Program Files"
-tar -xf "$DDIR/Steam%20(Legacy).tar.xz"
-cd Steam
-chmod -w package
-rm "$DDIR/Steam%20(Legacy).tar.xz"
+WINEPREFIX=$NDIR/Games/$INST wine $DDIR/SteamSetup.exe
+rm $DDIR/SteamSetup.exe
 fi
 
 if [[ $INST == *"Blizzard"* ]]; then
@@ -320,7 +317,7 @@ LNCH=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --
 
 if [[ $LNCH == *"Steam"* ]]; then
 echo $'\033]30;Steam\007'        
-WINEPREFIX=$NDIR/Games/$LNCH wine "$NDIR/Games/$LNCH/drive_c/Program Files/Steam/Steam.exe" -no-cef-sandbox
+WINEPREFIX=$NDIR/Games/$LNCH wine "$NDIR/Games/$LNCH/drive_c/Program Files/Steam/Steam.exe" -no-browser +open steam://open/minigameslist
 fi
 
 if [[ $LNCH == *"Blizzard"* ]]; then
@@ -426,7 +423,6 @@ echo nothing selected
 fi
 
 if [[ $UNST == *"Steam"* ]]; then
-chmod +w "$NDIR/Games/$LNCH/drive_c/Program Files/Steam/package"
 rm -d -r "$NDIR/Games/$UNST"
 rm -d -r /usr/home/$USER/.local/share/applications/wine/Programs/$UNST
 rm /usr/home/$USER/Desktop/$UNST.desktop
