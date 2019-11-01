@@ -426,7 +426,7 @@ echo nothing selected
 fi
 
 if [[ $UNST == *"Steam"* ]]; then
-chmod +w $NDIR/Games/$LNCH/drive_c/Program Files/Steam/package
+chmod +w "$NDIR/Games/$LNCH/drive_c/Program Files/Steam/package"
 rm -d -r "$NDIR/Games/$UNST"
 rm -d -r /usr/home/$USER/.local/share/applications/wine/Programs/$UNST
 rm /usr/home/$USER/Desktop/$UNST.desktop
