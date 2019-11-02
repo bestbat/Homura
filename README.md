@@ -65,7 +65,7 @@ Some applications that don't work will still be included to allow other users to
 
 Application | Works?
 ------------ | -------------
-[Steam](https://store.steampowered.com/) | Runs out of the box, uses the minimal mode to use online features and the browser is disabled but things like buying games etc.. can be done with your native web browser ;)
+[Steam](https://store.steampowered.com/) | Runs out of the box, uses the minimal mode to use online features and the browser is disabled but things like buying games etc.. can be done with your native web browser. Thanks to the FreeBSD user: drozdowsky.
 [Blizzard](https://www.blizzard.com) | Runs out of the box.
 [Origin](https://www.origin.com) | Runs out of the box, uses winxp with an older origin client. (Doesn't affect performance) The modern client is currently one issue away to use it!
 [Uplay](https://uplay.ubisoft.com) | Runs out of the box, but crashes to often.
