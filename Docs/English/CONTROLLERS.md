@@ -12,4 +12,4 @@ Xbox/360/One/One-S/Xplorer etc... dont work.
 
 # Guitar Hero World Tour Guitar
 
-Works, but the tool [x11/antimicro](https://www.freshports.org/x11/antimicro/) is need to map the buttons.
+Works, but the tool [x11/antimicro](https://www.freshports.org/x11/antimicro/) is needed to map the buttons.
