@@ -65,24 +65,24 @@ Some applications that don't work will still be included to allow other users to
 
 Application | Works?
 ------------ | -------------
-[Steam](https://store.steampowered.com/) | Runs out of the box, uses the minimal mode to use online features and the browser is disabled but things like buying games etc.. can be done with your native web browser. Thanks to the FreeBSD user: [drozdowsky](https://forums.freebsd.org/members/drozdowsky.58433/).
-[Blizzard](https://www.blizzard.com) | Runs out of the box.
-[Origin](https://www.origin.com) | Runs out of the box, uses winxp with an older origin client. (Doesn't affect performance) The modern client is currently one issue away to use it!
-[Uplay](https://uplay.ubisoft.com) | Runs out of the box, but crashes to often.
-[Teamspeak](https://teamspeak.com) | Runs out of the box.
-[Clone Hero](https://clonehero.net) | Runs out of the box.
+[Steam](https://store.steampowered.com/) ✅ | Runs out of the box, uses the minimal mode to use online features and the browser is disabled but things like buying games etc.. can be done with your native web browser. Thanks to the FreeBSD user: [drozdowsky](https://forums.freebsd.org/members/drozdowsky.58433/).
+[Blizzard](https://www.blizzard.com) ✅ | Runs out of the box.
+[Origin](https://www.origin.com) ✅ | Runs out of the box, uses winxp with an older origin client. (Doesn't affect performance) The modern client is currently one issue away to use it!
+[Uplay](https://uplay.ubisoft.com) ❎ | Runs out of the box, but crashes to often.
+[Teamspeak](https://teamspeak.com) ✅ | Runs out of the box.
+[Clone Hero](https://clonehero.net) ✅ | Runs out of the box.
 [Drakensang Online](https://www.drakensang.com) | Runs out of the box, but fails with AMD cards.
 [Anarchy Online](https://www.anarchy-online.com) | Runs out of the box, but fails with AMD cards.
-[itch](https://itch.io) | Runs out of the box.
-[GOG Galaxy](https://www.gog.com/) | Runs out of the box.
+[itch](https://itch.io) ✅ | Runs out of the box.
+[GOG Galaxy](https://www.gog.com/) ✅ | Runs out of the box.
 [League of Legends](https://euw.leagueoflegends.com) | Crashes at starting the game client.
-[Wargaming Game Center](https://eu.wargaming.net/) | Crashes directly 10 seconds after the start and even if the launcher should work a desired game may not work. The test game World of Tanks became a zombie directly.
+[Wargaming Game Center](https://eu.wargaming.net/) ❎ | Crashes directly 10 seconds after the start and even if the launcher should work a desired game may not work. The test game World of Tanks became a zombie directly.
 [Growtopia](https://www.growtopiagame.com/) | Runs out of the box.
-[Bethesda Launcher](https://bethesda.net) | Runs out of the box.
-[Arc](https://www.arcgames.com) | Crashes after login.
-[Discord](https://discordapp.com/) | Takes forever to start looks like a network problem in the logs.
-[Extra/Torchlight German Patch](https://steamcommunity.com/app/41500/discussions/0/451851477884787949/) | Runs out of the box.
-[Extra/Clone Hero: Exilelord song pack in medium difficulty]() | Credits of this pack are going to [Exilelord](https://www.youtube.com/user/ExileLord), [NoFaceCH](https://www.youtube.com/channel/UCes2SZaMbCf_GXwEBTGsnhA) and [NTVMB](https://www.youtube.com/channel/UCk4xsKxjsMxVpT8Ro5ZtP5Q).
+[Bethesda Launcher](https://bethesda.net) ✅ | Runs out of the box.
+[Arc](https://www.arcgames.com) ❎ | Crashes after login.
+[Discord](https://discordapp.com/) ❎ | Takes forever to start looks like a network problem in the logs.
+[Extra/Torchlight German Patch](https://steamcommunity.com/app/41500/discussions/0/451851477884787949/) ✅ | Runs out of the box.
+[Extra/Clone Hero: Exilelord song pack in medium difficulty]() ✅ | Credits of this pack are going to [Exilelord](https://www.youtube.com/user/ExileLord), [NoFaceCH](https://www.youtube.com/channel/UCes2SZaMbCf_GXwEBTGsnhA) and [NTVMB](https://www.youtube.com/channel/UCk4xsKxjsMxVpT8Ro5ZtP5Q).
 [Extra/Left 4 Gore](http://www.left4gore.com/) | Not tested.
 
 If you want a special game or launcher then create an issue :)
