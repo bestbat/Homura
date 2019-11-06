@@ -338,6 +338,7 @@ echo $'\033]30;Custom Prefix\007'
 zenity --info --width=200 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="$LNCH is not installed."
 exec $NAME
 fi
+fi
 
 if [[ $LNCH == *"Steam"* ]]; then
 echo $'\033]30;Steam\007'        
