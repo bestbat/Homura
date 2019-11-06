@@ -447,6 +447,31 @@ if [[ $? == *"1"* ]]; then
 echo nothing selected
 fi
 
+CCKGPDIR=$NDIR/Games/$LNCH
+
+if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] ; then
+if [ ! -d "$NDIR/Programs/$LNCH" ]; then
+zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
+exec $NAME
+fi
+fi
+
+if [[ $CCKGPDIR == *"$NDIR/Games/Left 4 Gore"* ]]; then
+if [ ! -d "$NDIR/Games/Extras/left4gore-2.3-windows" ]; then
+zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
+exec $NAME
+fi
+fi
+
+if [[ $CCKGPDIR == *"$NDIR/Games/Custom Prefix"* ]]; then
+echo $'\033]30;Custom Prefix\007'
+fi
+
+if [ ! -d "$NDIR/Games/$UNST" ]; then
+zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
+exec $NAME
+fi
+
 if [[ $UNST == *"Steam"* ]]; then
 rm -d -r "$NDIR/Games/$UNST"
 rm -d -r /usr/home/$USER/.local/share/applications/wine/Programs/$UNST
@@ -494,6 +519,7 @@ rm "/usr/home/$USER/Desktop/$UNST.desktop"
 fi
 
 if [[ $UNST == *"itch"* ]]; then
+rm -d -r "$NDIR/Games/$UNST"
 rm -d -r "/usr/home/$USER/.local/share/applications/wine/Programs/Itch Corp"
 fi
 
@@ -541,7 +567,9 @@ fi
 fi
 
 if [[ $TODO == *"Winetricks"* ]]; then
-WTR=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --title="$NAME $VER - $TODO" --text "In what prefix do you want to open winetricks?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Teamspeak" FALSE "Custom Prefix")
+WTR=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --title="$NAME $VER - $TODO" --text "In what prefix do you want to open winetricks?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Discord" FALSE "Custom Prefix")
+
+# If a prefix dont exists, winetricks will create a prefix instead. We leave this like this, if someone wants to change the prefix before installing the application.
 
 if [[ $WTR == *"Teamspeak"* ]]; then
 WINEPREFIX=$NDIR/Programs/$WTR winetricks
@@ -587,16 +615,24 @@ if [[ $TODO == *"Update"* ]]; then
 UPDE=$(zenity --list --radiolist --window-icon=$ICO --height=250 --width 250 --title="$NAME $VER - $TODO" --text "What do you want to update?" --hide-header --column "$NAME" --column "Item" FALSE "Teamspeak" FALSE "Growtopia" FALSE "Custom Prefix executable")
 
 if [[ $UPDE == *"Teamspeak"* ]]; then
+if [ ! -d "$NDIR/Programs/$UPDE" ]; then
+zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="You can not update something what is not installed :)"
+else
 WINEPREFIX=$NDIR/Programs/$UPDE wine "$NDIR/Programs/$UPDE/TeamSpeak 3 Client/update.exe"
 kill ts3client_win32.exe
 fi
+fi
 
 if [[ $UPDE == *"Growtopia"* ]]; then
+if [ ! -d "$NDIR/Games/$UPDE" ]; then
+zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UPDE" --text="You can not update something what is not installed :)"
+else
 cd $NDIR/Games/$UPDE
 curl -L -o "Growtopia-Installer.exe" "https://growtopiagame.com/Growtopia-Installer.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --text "Downloading $UPDE" --title "$NAME $VER $TODO $INST"
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$UPDE wine $NDIR/Games/$UPDE/Growtopia-Installer.exe
 rm $NDIR/Games/$UPDE/Growtopia-Installer.exe
+fi
 fi
 
 if [[ $UPDE == *"Custom Prefix executable"* ]]; then
