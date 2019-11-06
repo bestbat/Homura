@@ -136,7 +136,7 @@ echo $'\033]30;Homura 2.7 - Installation of Clone Hero\007'
 mkdir "$NDIR/Games/$INST"
 cd "$NDIR/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
-curl -o "clonehero-win32.7z" "http://dl.clonehero.net/clonehero-v.22.5/clonehero-win32.7z" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
+curl -o "clonehero-win32.7z" "http://dl.clonehero.net/clonehero-v.23.2/clonehero-win32.7z" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 WINEPREFIX="$NDIR/Games/$INST" winetricks arial
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -331,11 +331,10 @@ zenity --info --width=200 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text
 exec $NAME
 fi
 fi
+fi
 
+if [[ $CCKGPDIR == *"$NDIR/Games/Steam"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Blizzard"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Origin"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Uplay"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Clone Hero"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Drakensang Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/itch"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Anarchy Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/GOG Galaxy"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/League of Legends"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Growtopia"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Bethesda Launcher"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Arc"* ]] ; then
 if [ ! -d "$NDIR/Games/$LNCH" ]; then
-if [[ $CCKGPDIR == *"$NDIR/Games/Custom Prefix"* ]]; then
-echo $'\033]30;Custom Prefix\007'
-else
 zenity --info --width=200 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="$LNCH is not installed."
 exec $NAME
 fi
@@ -438,7 +437,6 @@ echo $'\033]30;$PREFIXNAME\007'
 bash "$PREFIXNAME/start.sh"
 fi
 fi
-fi
 
 if [[ $TODO == *"Uninstallation"* ]]; then
 UNST=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to uninstall?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Discord" FALSE "Left 4 Gore" FALSE "Custom Prefix")
@@ -465,7 +463,9 @@ fi
 
 if [[ $CCKGPDIR == *"$NDIR/Games/Custom Prefix"* ]]; then
 echo $'\033]30;Custom Prefix\007'
-else
+fi
+
+if [[ $CCKGPDIR == *"$NDIR/Games/Steam"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Blizzard"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Origin"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Uplay"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Clone Hero"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Drakensang Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/itch"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Anarchy Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/GOG Galaxy"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/League of Legends"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Growtopia"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Bethesda Launcher"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Arc"* ]] ; then
 if [ ! -d "$NDIR/Games/$UNST" ]; then
 zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
 exec $NAME
