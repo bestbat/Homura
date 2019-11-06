@@ -447,10 +447,10 @@ if [[ $? == *"1"* ]]; then
 echo nothing selected
 fi
 
-CCKGPDIR=$NDIR/Games/$LNCH
+CCKGPDIR=$NDIR/Games/$UNST
 
 if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] ; then
-if [ ! -d "$NDIR/Programs/$LNCH" ]; then
+if [ ! -d "$NDIR/Programs/$UNST" ]; then
 zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
 exec $NAME
 fi
@@ -465,11 +465,11 @@ fi
 
 if [[ $CCKGPDIR == *"$NDIR/Games/Custom Prefix"* ]]; then
 echo $'\033]30;Custom Prefix\007'
-fi
-
+else
 if [ ! -d "$NDIR/Games/$UNST" ]; then
 zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
 exec $NAME
+fi
 fi
 
 if [[ $UNST == *"Steam"* ]]; then
