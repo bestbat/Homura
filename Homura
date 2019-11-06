@@ -332,11 +332,9 @@ exec $NAME
 fi
 fi
 
-if [[ $CCKGPDIR == *"$NDIR/Games/Custom Prefix"* ]]; then
-echo $'\033]30;Custom Prefix\007'
-fi
-
 if [ ! -d "$NDIR/Games/$LNCH" ]; then
+if [[ $CCKGPDIR == *"$NDIR/Games/Custom Prefix"* ]]; then
+echo ignore!
 zenity --info --width=200 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="$LNCH is not installed."
 exec $NAME
 fi
@@ -428,6 +426,7 @@ WINEPREFIX=$NDIR/Games/Steam wine "$NDIR/Games/Extras/left4gore-2.3-windows/left
 fi
 
 if [[ $LNCH == *"Custom Prefix"* ]]; then
+echo $'\033]30;Custom Prefix\007'
 if [ ! "$(ls -A "/usr/home/$USER/.local/share/$NAME/Custom Prefixes")" ]
 then
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="There is no custom prefix installed"
