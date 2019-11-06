@@ -616,7 +616,7 @@ UPDE=$(zenity --list --radiolist --window-icon=$ICO --height=250 --width 250 --t
 
 if [[ $UPDE == *"Teamspeak"* ]]; then
 if [ ! -d "$NDIR/Programs/$UPDE" ]; then
-zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="You can not update something what is not installed :)"
+zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UPDE" --text="You can not update something what is not installed :)"
 else
 WINEPREFIX=$NDIR/Programs/$UPDE wine "$NDIR/Programs/$UPDE/TeamSpeak 3 Client/update.exe"
 kill ts3client_win32.exe
