@@ -295,7 +295,7 @@ fi
 
 if [[ $ETS == *"Clone Hero: Exilelord song pack in medium difficulty"* ]]; then
 echo -e "\e[40;38;5;82mDownloading $ETS\e[30;48;5;82m\e[0m"
-cd "$NDIR/Games/Clone Hero/clonehero-win32/Songs/"
+cd "$NDIR/Games/Clone Hero/clonehero-win32/songs/"
 curl -o "Exilelord%20song%20pack%20in%20medium%20difficulty.tar.xz" "https://homura.magzu.net/dl/Exilelord%20song%20pack%20in%20medium%20difficulty.tar.xz" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $ETS" --title "$NAME $VER $TODO $ETS" --window-icon=$ICO
 tar -xf Exilelord%20song%20pack%20in%20medium%20difficulty.tar.xz
 rm Exilelord%20song%20pack%20in%20medium%20difficulty.tar.xz
@@ -605,8 +605,7 @@ fi
 
 if [[ $RAEP == *"Custom Prefix"* ]]; then
 cd "$NDIR/Custom Prefixes"
-FOLDERS=$(ls -a)
-PREFIXNAME=$(zenity --list --title="Select a custom prefix" --window-icon=$ICO --height=300 --width=300 --column="What prefix?" $FOLDERS)
+PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/Custom Prefixes/")
 WINEPREFIX="$NDIR/Custom Prefixes/$PREFIXNAME" wine "$EXECUTABLE"
 fi
 fi
