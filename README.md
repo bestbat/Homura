@@ -71,19 +71,19 @@ Application | Works?
 [Uplay](https://uplay.ubisoft.com) ❎ | Runs out of the box, but crashes to often.
 [Teamspeak](https://teamspeak.com) ✅ | Runs out of the box.
 [Clone Hero](https://clonehero.net) ✅ | Runs out of the box.
-[Drakensang Online](https://www.drakensang.com) | Runs out of the box, but fails with AMD cards.
-[Anarchy Online](https://www.anarchy-online.com) | Runs out of the box, but fails with AMD cards.
+[Drakensang Online](https://www.drakensang.com) ❓ | Runs out of the box, but fails with AMD cards.
+[Anarchy Online](https://www.anarchy-online.com) ❓ | Runs out of the box, but fails with AMD cards.
 [itch](https://itch.io) ✅ | Runs out of the box.
 [GOG Galaxy](https://www.gog.com/) ✅ | Runs out of the box.
-[League of Legends](https://euw.leagueoflegends.com) | Crashes at starting the game client.
+[League of Legends](https://euw.leagueoflegends.com) ❎ | Crashes at starting the game client.
 [Wargaming Game Center](https://eu.wargaming.net/) ❎ | Crashes directly 10 seconds after the start and even if the launcher should work a desired game may not work. The test game World of Tanks became a zombie directly.
-[Growtopia](https://www.growtopiagame.com/) | Runs out of the box.
+[Growtopia](https://www.growtopiagame.com/) ✅ | Runs out of the box.
 [Bethesda Launcher](https://bethesda.net) ✅ | Runs out of the box.
 [Arc](https://www.arcgames.com) ❎ | Crashes after login.
 [Discord](https://discordapp.com/) ❎ | Takes forever to start looks like a network problem in the logs.
 [Extra/Torchlight German Patch](https://steamcommunity.com/app/41500/discussions/0/451851477884787949/) ✅ | Runs out of the box.
 [Extra/Clone Hero: Exilelord song pack in medium difficulty]() ✅ | Credits of this pack are going to [Exilelord](https://www.youtube.com/user/ExileLord), [NoFaceCH](https://www.youtube.com/channel/UCes2SZaMbCf_GXwEBTGsnhA) and [NTVMB](https://www.youtube.com/channel/UCk4xsKxjsMxVpT8Ro5ZtP5Q).
-[Extra/Left 4 Gore](http://www.left4gore.com/) | Not tested.
+[Extra/Left 4 Gore](http://www.left4gore.com/) ❓ | Not tested.
 
 If you want a special game or launcher then create an issue :)
 
