@@ -266,7 +266,7 @@ echo "$ENV WINEPREFIX='$NDIR/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE' $SP
 fi
 
 if [[ $INST == *"Extras"* ]]; then
-ETS=$(zenity --list --radiolist --window-icon=$ICO --height=200 --width=400  --title="$NAME $VER - $INST" --text "What extra do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Torchlight German Patch" FALSE "Clone Hero: Exilelord song pack in medium difficulty" FALSE "Left 4 Gore")
+ETS=$(zenity --list --radiolist --window-icon=$ICO --height=200 --width=400  --title="$NAME $VER - $INST" --text "What extra do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Torchlight German Patch" FALSE "Left 4 Gore")
 
 if [[ $ETS == *"Torchlight German Patch"* ]]; then
 echo $'\033]30;Torchlight German Patch\007'
@@ -291,14 +291,6 @@ WINEPREFIX="$NDIR/Games/GOG Galaxy" wine $DDIR/Torchlight_GerPatchV5_GOGEPIC.exe
 rm Torchlight_GerPatchV5_GOGEPIC.exe
 rm Torchlight_GerPatchV5_GOGEPIC.zip
 fi
-fi
-
-if [[ $ETS == *"Clone Hero: Exilelord song pack in medium difficulty"* ]]; then
-echo -e "\e[40;38;5;82mDownloading $ETS\e[30;48;5;82m\e[0m"
-cd "$NDIR/Games/Clone Hero/clonehero-win32/songs/"
-curl -o "Exilelord%20song%20pack%20in%20medium%20difficulty.tar.xz" "https://homura.magzu.net/dl/Exilelord%20song%20pack%20in%20medium%20difficulty.tar.xz" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $ETS" --title "$NAME $VER $TODO $ETS" --window-icon=$ICO
-tar -xf Exilelord%20song%20pack%20in%20medium%20difficulty.tar.xz
-rm Exilelord%20song%20pack%20in%20medium%20difficulty.tar.xz
 fi
 
 if [[ $ETS == *"Left 4 Gore"* ]]; then
