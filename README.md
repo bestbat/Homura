@@ -97,7 +97,7 @@ Your game dont run in the first time? Tweaks are [here](Docs/English/TWEAKS.md)
 # Limitations :x:
 
 - Only 32-Bit Games and Applications working currently.
-- No vulkan support on amd64 with 32bit.
+- No winevulkan for 32bit Wine on amd64.
 - Kwin is bad for gaming in some situations.
 
 # Things that are currently just out of the question :rabbit2:
