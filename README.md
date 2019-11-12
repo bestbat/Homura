@@ -67,7 +67,7 @@ Application | Works?
 ------------ | -------------
 [Steam](https://store.steampowered.com/) ✅ | Runs out of the box, uses the minimal mode to use online features and the browser is disabled but things like buying games etc.. can be done with your native web browser. Thanks to the FreeBSD user: [drozdowsky](https://forums.freebsd.org/members/drozdowsky.58433/).
 [Blizzard](https://www.blizzard.com) ✅ | Runs out of the box.
-[Origin](https://www.origin.com) ✅ | Runs out of the box, uses winxp with an older origin client. (Doesn't affect performance) The modern client is currently one issue away to use it!
+[Origin](https://www.origin.com) ✅ | Runs out of the box, uses winxp with an older origin client. (Doesn't affect performance) The modern client is currently garbage :D
 [Uplay](https://uplay.ubisoft.com) ❎ | Runs out of the box, but crashes to often.
 [Teamspeak](https://teamspeak.com) ✅ | Runs out of the box.
 [Clone Hero](https://clonehero.net) ✅ | Runs out of the box.
@@ -103,7 +103,7 @@ Your game dont run in the first time? Tweaks are [here](Docs/English/TWEAKS.md)
 # Things that are currently just out of the question :rabbit2:
 
 - Epic Games launcher | Reason: Its 64bit only even it offers 32bit binarys, can not be installed correctly and crashs at start without helpful logs.
-- My.com launcher | Reason: The launcher cant selfupdate and i currently cant maintain it.
+- My.com launcher | Reason: The launcher cant selfupdate and i won't maintain it.
 - [Reusing of the json files from lutris](https://github.com/Alexander88207/Homura/issues/9)
 - Glyph | Reason: I dont know where i should start tinkering it just dont work at all.
 - Rockstar Games Launcher | Reason: 64Bit only but gets maybe implemented soon.
