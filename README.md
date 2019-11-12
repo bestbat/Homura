@@ -63,6 +63,8 @@ This list will be refreshed on every update of [i386-wine-devel](https://www.fre
 
 Some applications that don't work will still be included to allow other users to simply tinker.
 
+Please note: We only work with [i386-wine-devel](https://www.freshports.org/emulators/i386-wine-devel) so the experience can be different if [wine-devel](https://www.freshports.org/emulators/wine-devel) on i386 will be used.
+
 Application | Works?
 ------------ | -------------
 [Steam](https://store.steampowered.com/) ✅ | Runs out of the box, uses the minimal mode to use online features and the browser is disabled but things like buying games etc.. can be done with your native web browser. Thanks to the FreeBSD user: [drozdowsky](https://forums.freebsd.org/members/drozdowsky.58433/).
