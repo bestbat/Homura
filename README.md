@@ -11,7 +11,7 @@
 - [Description](#description-)
 - [Handbook](#Handbook-orange_book)
 - [Dependencies](#dependencies-syringe)
-- [Homura is NOT](#Homura is NOT:)
+- [Homura is NOT](#homura-is-not-no_entry_sign)
 - [States](#states-fire)
 - [Games that are currently dont work](#games-that-are-currently-dont-work-cyclone)
 - [Tweaks](#tweaks-wrench)
