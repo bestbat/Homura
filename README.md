@@ -11,6 +11,7 @@
 - [Description](#description-)
 - [Handbook](#Handbook-orange_book)
 - [Dependencies](#dependencies-syringe)
+- [Homura is NOT](#Homura is NOT:)
 - [States](#states-fire)
 - [Games that are currently dont work](#games-that-are-currently-dont-work-cyclone)
 - [Tweaks](#tweaks-wrench)
@@ -27,8 +28,6 @@
 
 Inspired by [lutris](https://github.com/lutris/lutris), We would like to provide a game launcher to play windows games on FreeBSD.
 
-Please know: Homura is in no way comparable to [lutris](https://github.com/lutris/lutris) or anything more complex.
-
 # Description &#x1F4D8;
 
 Homura is launcher that makes it easy to run windows games/launcher easily on FreeBSD by providing the requiered fixes and workarounds.
@@ -38,6 +37,11 @@ The Windows emulation is provided by [Wine](https://www.winehq.org).
 ![](https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Media/Screenshot.png "Screenshot")
 
 <img src="https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Media/Screenshot2.png" alt="Monitor" height="500" width="700"> 
+
+# Homura is NOT: :no_entry_sign:
+
+- [Akin to CrossOver or Lutris](https://www.phoronix.com/scan.php?page=news_item&px=Homura-FreeBSD-Gaming)
+- [Similar to Wine](https://www.freebsdnews.com/2019/09/06/homura-windows-games-launcher-for-freebsd)
 
 # Handbook :orange_book:
 
