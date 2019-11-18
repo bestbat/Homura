@@ -142,9 +142,8 @@ if you want to contribute to this repo then take a look [here](Docs/English/CONT
 - [MagZu](https://github.com/magzu)          - Hosting the mirror's (alt.magzu.net) & (homura.magzu.net)
 - [Contributors](https://github.com/the-homura-project/homura/graphs/contributors)     - for contributing
 
-
 # See how it works :eyes:
 
-Review: https://www.youtube.com/watch?v=0lLs3JxezBM
+Review by RoboNuggie: https://www.youtube.com/watch?v=0lLs3JxezBM
 
 <a href="https://www.youtube.com/watch?v=wrjlfRfjaMU"><img src="https://www.bilder-upload.eu/upload/232376-1569000876.png" style="width:82px; height:86px" title="Homura" alt="Homura"></a>
