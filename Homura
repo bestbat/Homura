@@ -674,8 +674,8 @@ All rights reserved."
 fi
 
 if [[ $TODO == *"Exit"* ]]; then
-notify-send -i face-smile "Thanks for using $NAME and have a great day!"
+zenity --notification --window-icon=$ICO --text "Thanks for using $NAME and have a great day!"
 exit
 fi
-notify-send "Task completed or application closed!"
+zenity --notification --window-icon=$ICO --text "Task completed or application closed!"
 exec $NAME
