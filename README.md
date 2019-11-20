@@ -20,6 +20,7 @@
 - [Installation/Uninstallation](#installationuninstallation-cd)
 - [Release cycle](#release-cycle-loudspeaker)
 - [If you are new to freebsd](#if-you-are-new-to-freebsd-wink)
+- [If you are using KDE](#if-you-are-using-kde)
 - [Contribute](#contribute-pencil2)
 - [Credits](#credits-star)
 - [See how it works](#see-how-it-works-eyes)
@@ -132,6 +133,10 @@ If an existing feature needs a fix then we will release that ASAP and will have 
 # If you are new to freebsd :wink:
 
 - Your microphone is muted by default. If you want to use Teamspeak, open Alsamixer in the terminal and raise the volume of the microphone.
+
+# If you are using KDE
+
+- Then we recommend to create special window rules for every game with the setting that the compositor gets blocked.
 
 # Contribute :pencil2:
 if you want to contribute to this repo then take a look [here](Docs/English/CONTRIBUTING.md)
