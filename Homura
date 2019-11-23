@@ -56,7 +56,7 @@ Terminal=false
 TerminalOptions=
 Type=Application
 " >> /usr/home/$USER/.local/share/applications/$NAME.desktop
-zenity --info --width=350 --window-icon=$ICO --title="$NAME $VER - Welcome" --text="A shortcut of $NAME have been created, if you want dont want an shortcut then delete the shortcut and set 'Create a shortcut?' to 'No' under $NDIR/$NAME.cfg"
+zenity --info --width=350 --window-icon=$ICO --title="$NAME $VER - Welcome" --text="A shortcut of $NAME have been created, if you dont want an shortcut then delete the shortcut and set 'Create a shortcut?' to 'No' under $NDIR/$NAME.cfg"
 if [[ $SQ == *"No"* ]]; then
 echo "Shortcut will be not created."
 fi
