@@ -19,7 +19,7 @@ if [ ! -d "$NDIR" ]; then
 mkdir -p $NDIR
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - Welcome" --text="Welcome to $NAME. If you have a problem, suggestion, questions or similar, do not hesitate to open an issue on GitHub. Have Fun!"
 SC=$(zenity --question --window-icon=$ICO --width 300 --title "$NAME $VER - One time question" --text "Do you want a shortcut of $NAME in your application menu?"; echo $?)
-if [[ $UH == *"0"* ]]; then
+if [[ $SC == *"0"* ]]; then
 echo "[Desktop Entry]
 Comment=
 Exec=bash /usr/local/bin/$NAME
@@ -31,7 +31,7 @@ Terminal=false
 TerminalOptions=
 Type=Application
 " >> /usr/home/$USER/.local/share/applications/$NAME.desktop 
-if [[ $UH == *"1"* ]]; then 
+if [[ $SC == *"1"* ]]; then 
 echo "Shortcut will be not created"
 fi
 fi
