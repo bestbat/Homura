@@ -18,33 +18,8 @@ fi
 if [ ! -d "$NDIR" ]; then
 mkdir -p $NDIR
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - Welcome" --text="Welcome to $NAME. If you have a problem, suggestion, questions or similar, do not hesitate to open an issue on GitHub. Have Fun!"
-fi
-
-if [ ! -d "$DDIR" ]; then
-mkdir $NDIR/Data
-fi
-
-if [ ! -f "$NDIR/Homura.cfg" ]; then
-echo "# Homura configuration file
-
-Create a shortcut?
-Yes
-" >> $NDIR/$NAME.cfg
-fi
-
-if [ ! -f "$ICO" ]; then
-cd $DDIR
-curl -O https://vignette.wikia.nocookie.net/madoka/images/7/72/Homura_magical_outfit_1.png/revision/latest/top-crop/width/320/height/320?cb=20160821012353
-mv 320?cb=20160821012353 $DDIR/$NAME.png
-fi
-
-if [ ! -d "/usr/home/$USER/.local/share/applications" ]; then
-mkdir /usr/home/$USER/.local/share/applications
-fi
-
-if [ ! -f "/usr/home/$USER/.local/share/applications/$NAME.desktop" ]; then
-SQ=$(awk '/Create a shortcut?/{getline; print}' $NDIR/$NAME.cfg)
-if [[ $SQ == *"Yes"* ]]; then
+SC=$(zenity --question --window-icon=$ICO --width 300 --title "$NAME $VER - One time question" --text "Do you want a shortcut of $NAME in your application menu?"; echo $?)
+if [[ $UH == *"0"* ]]; then
 echo "[Desktop Entry]
 Comment=
 Exec=bash /usr/local/bin/$NAME
@@ -55,12 +30,25 @@ StartupNotify=false
 Terminal=false
 TerminalOptions=
 Type=Application
-" >> /usr/home/$USER/.local/share/applications/$NAME.desktop
-zenity --info --width=350 --window-icon=$ICO --title="$NAME $VER - Welcome" --text="A shortcut of $NAME have been created, if you dont want an shortcut then delete the shortcut and set 'Create a shortcut?' to 'No' under $NDIR/$NAME.cfg"
-if [[ $SQ == *"No"* ]]; then
-echo "Shortcut will be not created."
+" >> /usr/home/$USER/.local/share/applications/$NAME.desktop 
+if [[ $UH == *"1"* ]]; then 
+echo "Shortcut will be not created"
 fi
 fi
+fi
+
+if [ ! -d "$DDIR" ]; then
+mkdir $NDIR/Data
+fi
+
+if [ ! -f "$ICO" ]; then
+cd $DDIR
+curl -O https://vignette.wikia.nocookie.net/madoka/images/7/72/Homura_magical_outfit_1.png/revision/latest/top-crop/width/320/height/320?cb=20160821012353
+mv 320?cb=20160821012353 $DDIR/$NAME.png
+fi
+
+if [ ! -d "/usr/home/$USER/.local/share/applications" ]; then
+mkdir /usr/home/$USER/.local/share/applications
 fi
 
 if [[ $GPU == *"VMware, Inc."* ]]; then
