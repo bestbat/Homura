@@ -1,7 +1,7 @@
 #!/usr/local/bin/bash
 NAME=Homura
 VER=2.9
-ALH=600
+ALH=630
 GPU=$(glxinfo | grep "OpenGL vendor string")
 OSN=$(uname)
 NDIR=/usr/home/$USER/.local/share/$NAME
