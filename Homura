@@ -646,7 +646,7 @@ AAF=$(zenity --list --radiolist --window-icon=$ICO  --height=200 --width 350 --t
 
 if [[ $AAF == *"Fix of blackscreen in Anno 1404 (Steam)"* ]]; then
 if [ ! -d "/usr/home/$USER/.local/share/Homura/Games/Steam/drive_c/Program Files/Steam/steamapps/common/Anno 1404" ]; then
-zenity --info --window-icon=$ICO --width=300 --title="$NAME $VER - About" --text="Please install the game first."
+zenity --info --window-icon=$ICO --width=300 --title="$NAME $VER - $AAF" --text="Please install the game first."
 else
 cd "/usr/home/$USER/.local/share/Homura/Games/Steam/drive_c/Program Files/Steam/steamapps/common/Anno 1404"
 curl -O https://raw.githubusercontent.com/the-homura-project/homura-database/master/Anno%201404/Engine.ini
