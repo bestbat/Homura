@@ -82,7 +82,7 @@ Application | Works?
 [Anarchy Online](https://www.anarchy-online.com) ❓ | Runs out of the box, but fails with AMD cards.
 [itch](https://itch.io) ✅ | Runs out of the box.
 [GOG Galaxy](https://www.gog.com/) ✅ | Runs out of the box.
-[League of Legends](https://euw.leagueoflegends.com) ❎ | Crashes at starting the game client.
+[League of Legends](https://euw.leagueoflegends.com) ❎ | The launcher crashes directly at start.
 [Wargaming Game Center](https://eu.wargaming.net/) ❎ | Crashes directly 10 seconds after the start and even if the launcher should work a desired game may not work. The test game World of Tanks became a zombie directly.
 [Growtopia](https://www.growtopiagame.com/) ✅ | Runs out of the box.
 [Bethesda Launcher](https://bethesda.net) ✅ | Runs out of the box.
