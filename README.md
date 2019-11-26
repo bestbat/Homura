@@ -121,7 +121,7 @@ Your game dont run in the first time? Tweaks are [here](Docs/English/TWEAKS.md)
 
 Is [on the way](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=241042)
 
-### Compile port & installing the port 
+### Build & installing the port 
 
 Is [here](https://github.com/the-homura-project/homura-port)
 
