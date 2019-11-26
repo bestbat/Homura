@@ -75,6 +75,10 @@ if [ ! -d "$NDIR/Games" ]; then
 mkdir $NDIR/Games
 fi
 
+if [ ! -d "$NDIR/Programs" ]; then
+mkdir $NDIR/Games
+fi
+
 cd $DDIR
 
 if [[ $INST == *"Steam"* ]]; then
