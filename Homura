@@ -128,7 +128,7 @@ echo $'\033]30;Homura 3.0 - Installation of Teamspeak\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "TeamSpeak3-Client-win32-3.3.2.exe" "https://files.teamspeak-services.com/releases/client/3.3.2/TeamSpeak3-Client-win32-3.3.2.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
-WINEPREFIX=$NDIR/Programs/Teamspeak wine $DDIR/TeamSpeak3-Client-win32-3.3.2.exe
+WINEPREFIX=$NDIR/Programs/$INST wine $DDIR/TeamSpeak3-Client-win32-3.3.2.exe
 zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of Teamspeak" --text="To get Playback and Capture working set both mods to Direct Sound."
 rm $DDIR/TeamSpeak3-Client-win32-3.3.2.exe
 fi
