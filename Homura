@@ -76,7 +76,7 @@ mkdir $NDIR/Games
 fi
 
 if [ ! -d "$NDIR/Programs" ]; then
-mkdir $NDIR/Games
+mkdir $NDIR/Programs
 fi
 
 cd $DDIR
