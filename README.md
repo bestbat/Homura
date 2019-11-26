@@ -72,7 +72,7 @@ Please note: We only work with [i386-wine-devel](https://www.freshports.org/emul
 
 Application | Works?
 ------------ | -------------
-[Steam](https://store.steampowered.com/) ✅ | Runs out of the box, uses the minimal mode to use online features and the browser is disabled but things like buying games etc.. can be done with your native web browser. Thanks to the FreeBSD user: [drozdowsky](https://forums.freebsd.org/members/drozdowsky.58433/).
+[Steam](https://store.steampowered.com/) ✅ | Runs out of the box, uses the minimal mode to use online features and the browser is disabled + game uninstallation dont work means you need to remove the game folder.. but things like buying games etc.. can be done with your native web browser. Thanks to the FreeBSD user: [drozdowsky](https://forums.freebsd.org/members/drozdowsky.58433/).
 [Blizzard](https://www.blizzard.com) ✅ | Runs out of the box.
 [Origin](https://www.origin.com) ✅ | Runs out of the box, uses winxp with an older origin client. (Doesn't affect performance) The modern client is currently garbage :D
 [Uplay](https://uplay.ubisoft.com) ❎ | Runs out of the box, but crashes to often.
