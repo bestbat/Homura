@@ -78,8 +78,8 @@ Application | Works?
 [Uplay](https://uplay.ubisoft.com) ❎ | Runs out of the box, but crashes to often.
 [Teamspeak](https://teamspeak.com) ✅ | Runs out of the box.
 [Clone Hero](https://clonehero.net) ✅ | Runs out of the box.
-[Drakensang Online](https://www.drakensang.com) ❓ | Runs out of the box, but fails with AMD cards needs a bump of [i386-wine-devel](https://www.freshports.org/emulators/i386-wine-devel) at least to 4.0rc4.
-[Anarchy Online](https://www.anarchy-online.com) ❓ | Runs out of the box, but fails with AMD cards.
+[Drakensang Online](https://www.drakensang.com) ❓ | Runs out of the box, but fails with AMD cards, take a look at [#19](https://github.com/the-homura-project/homura/issues/19).
+[Anarchy Online](https://www.anarchy-online.com) ❓ | Runs out of the box, but fails with AMD cards, take a look at [#19](https://github.com/the-homura-project/homura/issues/19).
 [itch](https://itch.io) ✅ | Runs out of the box.
 [GOG Galaxy](https://www.gog.com/) ✅ | Runs out of the box.
 [League of Legends](https://euw.leagueoflegends.com) ❎ | The launcher crashes directly at start.
