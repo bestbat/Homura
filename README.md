@@ -6,11 +6,11 @@
   <img src="https://img.shields.io/github/v/release/the-homura-project/homura?style=flat-square&logo=appveyor"> <img src="https://img.shields.io/discord/618845118060953600?style=flat-square&logo=appveyor">
 </p>
 <p align="center">
-	<a href=""></a>&nbsp;&nbsp;&nbsp;
-	<a href=""></a>&nbsp;&nbsp;&nbsp;
-	<a href=""></a>&nbsp;&nbsp;&nbsp;
-	<a href=""></a>&nbsp;&nbsp;&nbsp;
-	<a href=""></a>
+	<a href="https://github.com/the-homura-project/homura-docs/blob/master/STATUS.md">Status</a>&nbsp;&nbsp;&nbsp;
+	<a href="https://github.com/the-homura-project/homura-docs/blob/master/TWEAKS.md">Tweaks</a>&nbsp;&nbsp;&nbsp;
+	<a href="https://github.com/the-homura-project/homura-docs/blob/master/Handbook.md">Handbook</a>&nbsp;&nbsp;&nbsp;
+	<a href="https://github.com/the-homura-project/homura-docs/blob/master/HINTS.md">Hints</a>&nbsp;&nbsp;&nbsp;
+	<a href="https://github.com/the-homura-project/homura-docs/blob/master/CONTRIBUTING.md">Contrubuting</a>
 </p>
 
 # Introduction :microphone:
@@ -71,30 +71,17 @@ Is [here](https://github.com/the-homura-project/homura-port)
 New features gets releasd in a week or in 5 days.
 If an existing feature needs a fix then we will release that ASAP and will have a number like 1.2.x
 
-# If you are new to freebsd :wink:
-
-- Your microphone is muted by default. If you want to use Teamspeak, open Alsamixer in the terminal and raise the volume of the microphone.
-
-# If you are using KDE
-
-- Then we recommend to create special window rules for every game with the setting that the compositor gets blocked.
-
-# Contribute :pencil2:
-if you want to contribute to this repo then take a look [here](Docs/English/CONTRIBUTING.md)
-
 # Credits :star:
 
 - [Alexander88207](https://github.com/Alexander88207) - Lead programmer
 - [MagZu](https://github.com/magzu)          - Hosting the mirror's (alt.magzu.net) & (homura.magzu.net)
 - [Contributors](https://github.com/the-homura-project/homura/graphs/contributors)     - for contributing
 
-# Screenshots
+# Screenshots & videos
 
 ![](https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Media/Screenshot.png "Screenshot")
 
 <img src="https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Media/Screenshot2.png" alt="Monitor" height="500" width="700"> 
-
-# See how it works :eyes:
 
 Review by RoboNuggie: https://www.youtube.com/watch?v=0lLs3JxezBM
 
