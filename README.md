@@ -90,6 +90,8 @@ Application | Works?
 [Discord](https://discordapp.com/) ❎ | Takes forever to start looks like a network problem in the logs.
 [Extra/Torchlight German Patch](https://steamcommunity.com/app/41500/discussions/0/451851477884787949/) ✅ | Runs out of the box.
 [Extra/Left 4 Gore](http://www.left4gore.com/) ❓ | Not tested.
+[Diablo II](https://www.blizzard.com/de-de/games/d2/) ❓ | Coming soon.
+[Warcraft III](https://www.blizzard.com/de-de/games/war3/) ❓ | Coming soon.
 
 If you want a special game or launcher then create an issue :)
 
