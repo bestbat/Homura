@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/v/release/the-homura-project/homura?style=flat-square&logo=appveyor"> <img src="https://img.shields.io/badge/chat-on%20discord-7289da.svg?logo=discord"> <img src="https://img.shields.io/discord/618845118060953600?style=flat-square&logo=appveyor">
+  <img src="https://img.shields.io/github/v/release/the-homura-project/homura?style=flat-square&logo=appveyor"> <img src="https://img.shields.io/discord/618845118060953600?style=flat-square&logo=appveyor">
 </p>
 
 # Readme languages :us: :de:
