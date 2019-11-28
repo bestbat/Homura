@@ -6,10 +6,6 @@
   <img src="https://img.shields.io/github/v/release/the-homura-project/homura?style=flat-square&logo=appveyor"> <img src="https://img.shields.io/discord/618845118060953600?style=flat-square&logo=appveyor">
 </p>
 
-# Readme languages :us: :de:
-- [English](README.md) written by [Alexander88207](https://github.com/Alexander88207) and improved by [felixactually](https://github.com/felixactually)
-- [German](Docs/German/README_DE.md) translated by [Alexander88207](https://github.com/Alexander88207)
-
 # Table of content :books:
 
 - [Introduction](#introduction-microphone)
