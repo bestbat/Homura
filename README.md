@@ -8,6 +8,7 @@
 <p align="center">
 	<a href="https://github.com/the-homura-project/homura-docs/blob/master/STATUS.md">Status</a>&nbsp;&nbsp;&nbsp;
 	<a href="https://github.com/the-homura-project/homura-docs/blob/master/TWEAKS.md">Tweaks</a>&nbsp;&nbsp;&nbsp;
+	<a href="https://github.com/the-homura-project/homura-docs/blob/master/BORKED.md">Borked</a>&nbsp;&nbsp;&nbsp;
 	<a href="https://github.com/the-homura-project/homura-docs/blob/master/Handbook.md">Handbook</a>&nbsp;&nbsp;&nbsp;
 	<a href="https://github.com/the-homura-project/homura-docs/blob/master/HINTS.md">Hints</a>&nbsp;&nbsp;&nbsp;
 	<a href="https://github.com/the-homura-project/homura-docs/blob/master/CONTRIBUTING.md">Contrubuting</a>
