@@ -5,26 +5,13 @@
 <p align="center">
   <img src="https://img.shields.io/github/v/release/the-homura-project/homura?style=flat-square&logo=appveyor"> <img src="https://img.shields.io/discord/618845118060953600?style=flat-square&logo=appveyor">
 </p>
-
-# Table of content :books:
-
-- [Introduction](#introduction-microphone)
-- [Description](#description-)
-- [Handbook](#Handbook-orange_book)
-- [Dependencies](#dependencies-syringe)
-- [Homura is NOT](#homura-is-not-no_entry_sign)
-- [States](#states-fire)
-- [Games that are currently dont work](#games-that-are-currently-dont-work-cyclone)
-- [Tweaks](#tweaks-wrench)
-- [Limitations](#limitations-x)
-- [Things that are currently just out of the question](#things-that-are-currently-just-out-of-the-question-rabbit2)
-- [Installation/Uninstallation](#installationuninstallation-cd)
-- [Release cycle](#release-cycle-loudspeaker)
-- [If you are new to freebsd](#if-you-are-new-to-freebsd-wink)
-- [If you are using KDE](#if-you-are-using-kde)
-- [Contribute](#contribute-pencil2)
-- [Credits](#credits-star)
-- [See how it works](#see-how-it-works-eyes)
+<p align="center">
+	<a href=""></a>&nbsp;&nbsp;&nbsp;
+	<a href=""></a>&nbsp;&nbsp;&nbsp;
+	<a href=""></a>&nbsp;&nbsp;&nbsp;
+	<a href=""></a>&nbsp;&nbsp;&nbsp;
+	<a href=""></a>
+</p>
 
 # Introduction :microphone:
 
@@ -36,18 +23,10 @@ Homura is launcher that makes it easy to run windows games/launcher easily on Fr
 
 The Windows emulation is provided by [Wine](https://www.winehq.org).
 
-![](https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Media/Screenshot.png "Screenshot")
-
-<img src="https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Media/Screenshot2.png" alt="Monitor" height="500" width="700"> 
-
 # Homura is NOT :no_entry_sign:
 
 - [Akin to CrossOver or Lutris](https://www.phoronix.com/scan.php?page=news_item&px=Homura-FreeBSD-Gaming)
 - [Similar to Wine](https://www.freebsdnews.com/2019/09/06/homura-windows-games-launcher-for-freebsd)
-
-# Handbook :orange_book:
-
-If you want to better understand how Homura works then take a look at our [handbook](https://github.com/the-homura-project/homura-handbook).
 
 # Dependencies :syringe:
 
@@ -63,46 +42,15 @@ If you want to better understand how Homura works then take a look at our [handb
 - [mesa-demos](https://www.freshports.org/graphics/mesa-demos)
 - [i386-wine-devel](https://www.freshports.org/emulators/i386-wine-devel) on amd64 or [wine-devel](https://www.freshports.org/emulators/wine-devel) on i386
 
-# States :fire:
+# Installation/Uninstallation :cd:
 
-This list will be refreshed on every update of [i386-wine-devel](https://www.freshports.org/emulators/i386-wine-devel), [mesa-dri](https://www.freshports.org/graphics/mesa-dri/) or [drm-kmod](https://www.freshports.org/graphics/drm-kmod/)
+### Installing from FreeBSD repository 
 
-Some applications that don't work will still be included to allow other users to simply tinker.
+Is [on the way](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=241042)
 
-Please note: We only work with [i386-wine-devel](https://www.freshports.org/emulators/i386-wine-devel) so the experience can be different if [wine-devel](https://www.freshports.org/emulators/wine-devel) on i386 will be used.
+### Build & installing the port 
 
-Application | Works?
------------- | -------------
-[Steam](https://store.steampowered.com/) ✅ | Runs out of the box, uses the minimal mode to use online features and the browser is disabled + game uninstallation dont work means you need to remove the game folder.. but things like buying games etc.. can be done with your native web browser. Thanks to the FreeBSD user: [drozdowsky](https://forums.freebsd.org/members/drozdowsky.58433/).
-[Blizzard](https://www.blizzard.com) ✅ | Runs out of the box.
-[Origin](https://www.origin.com) ✅ | Runs out of the box, uses winxp with an older origin client. (Doesn't affect performance) The modern client is currently garbage :D
-[Uplay](https://uplay.ubisoft.com) ❎ | Runs out of the box, but crashes to often.
-[Teamspeak](https://teamspeak.com) ✅ | Runs out of the box.
-[Clone Hero](https://clonehero.net) ✅ | Runs out of the box.
-[Drakensang Online](https://www.drakensang.com) ❓ | Runs out of the box, but fails with AMD cards, take a look at [#19](https://github.com/the-homura-project/homura/issues/19).
-[Anarchy Online](https://www.anarchy-online.com) ❓ | Runs out of the box, but fails with AMD cards, take a look at [#19](https://github.com/the-homura-project/homura/issues/19).
-[itch](https://itch.io) ✅ | Runs out of the box.
-[GOG Galaxy](https://www.gog.com/) ✅ | Runs out of the box.
-[League of Legends](https://euw.leagueoflegends.com) ❎ | The launcher crashes directly at start.
-[Wargaming Game Center](https://eu.wargaming.net/) ❎ | Crashes directly 10 seconds after the start and even if the launcher should work a desired game may not work. The test game World of Tanks became a zombie directly.
-[Growtopia](https://www.growtopiagame.com/) ✅ | Runs out of the box.
-[Bethesda Launcher](https://bethesda.net) ✅ | Runs out of the box.
-[Arc](https://www.arcgames.com) ❎ | Crashes after login.
-[Discord](https://discordapp.com/) ❎ | Takes forever to start looks like a network problem in the logs.
-[Extra/Torchlight German Patch](https://steamcommunity.com/app/41500/discussions/0/451851477884787949/) ✅ | Runs out of the box.
-[Extra/Left 4 Gore](http://www.left4gore.com/) ❓ | Not tested.
-[Diablo II](https://www.blizzard.com/de-de/games/d2/) ❓ | Coming soon.
-[Warcraft III](https://www.blizzard.com/de-de/games/war3/) ❓ | Coming soon.
-
-If you want a special game or launcher then create an issue :)
-
-# Tweaks :wrench:
-
-Your game dont run in the first time? Tweaks are [here](Docs/English/TWEAKS.md)
-
-# Games that are currently dont work :cyclone:
-
-[Here](Docs/English/BORKED.md) is a list of games that are currently dont work or unplayable.
+Is [here](https://github.com/the-homura-project/homura-port)
 
 # Limitations :x:
 
@@ -117,16 +65,6 @@ Your game dont run in the first time? Tweaks are [here](Docs/English/TWEAKS.md)
 - Glyph | Reason: I dont know where i should start tinkering it just dont work at all.
 - Rockstar Games Launcher | Reason: 64Bit only but gets maybe implemented soon.
 - Artix Game Launcher | Reason: I dont know where i should start tinkering it just dont work at all.
-
-# Installation/Uninstallation :cd:
-
-### Installing from FreeBSD repository 
-
-Is [on the way](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=241042)
-
-### Build & installing the port 
-
-Is [here](https://github.com/the-homura-project/homura-port)
 
 # Release cycle :loudspeaker:
 
@@ -149,6 +87,12 @@ if you want to contribute to this repo then take a look [here](Docs/English/CONT
 - [Alexander88207](https://github.com/Alexander88207) - Lead programmer
 - [MagZu](https://github.com/magzu)          - Hosting the mirror's (alt.magzu.net) & (homura.magzu.net)
 - [Contributors](https://github.com/the-homura-project/homura/graphs/contributors)     - for contributing
+
+# Screenshots
+
+![](https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Media/Screenshot.png "Screenshot")
+
+<img src="https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Media/Screenshot2.png" alt="Monitor" height="500" width="700"> 
 
 # See how it works :eyes:
 
