@@ -72,6 +72,13 @@ Is [here](https://github.com/the-homura-project/homura-port)
 New features gets releasd in a week or in 5 days.
 If an existing feature needs a fix then we will release that ASAP and will have a number like 1.2.x
 
+# Chat
+
+No fear we don't bite ;)
+
+- IRC: #freebsd-gaming ping @alexander88207
+- Discord: https://discord.gg/dzVDdKd
+
 # Credits :star:
 
 - [Alexander88207](https://github.com/Alexander88207) - Lead programmer
