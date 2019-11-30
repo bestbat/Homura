@@ -77,7 +77,7 @@ If an existing feature needs a fix then we will release that ASAP and will have 
 No fear we don't bite ;)
 
 - IRC: #freebsd-gaming ping @Alexander88207
-- Discord: https://discord.gg/dzVDdKd
+- Discord: https://discord.gg/JBKcdNt
 
 # Credits :star:
 
