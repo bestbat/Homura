@@ -91,6 +91,6 @@ No fear we don't bite ;)
 
 <img src="https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Media/Screenshot2.png" alt="Monitor" height="500" width="700"> 
 
-Review by RoboNuggie: https://www.youtube.com/watch?v=0lLs3JxezBM
+Preview: https://www.youtube.com/watch?v=6B1h0F4rIs4
 
-<a href="https://www.youtube.com/watch?v=wrjlfRfjaMU"><img src="https://www.bilder-upload.eu/upload/232376-1569000876.png" style="width:82px; height:86px" title="Homura" alt="Homura"></a>
+Review by RoboNuggie: https://www.youtube.com/watch?v=0lLs3JxezBM
