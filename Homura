@@ -182,10 +182,10 @@ fi
 if [[ $INST == *"GOG Galaxy"* ]]; then
 echo $'\033]30;Homura 3.0 - Installation of GOG Galaxy\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
-curl -o "setup_galaxy_1.2.54.23.exe" "https://cdn.gog.com/open/galaxy/client/setup_galaxy_1.2.54.23.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
+curl -o "setup_galaxy_1.2.64.2.exe" "https://cdn.gog.com/open/galaxy/client/setup_galaxy_1.2.64.2.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
-WINEPREFIX="$NDIR/Games/$INST" wine $DDIR/setup_galaxy_1.2.54.23.exe
-rm $DDIR/setup_galaxy_1.2.54.23.exe
+WINEPREFIX="$NDIR/Games/$INST" wine $DDIR/setup_galaxy_1.2.64.2.exe
+rm $DDIR/setup_galaxy_1.2.64.2.exe
 fi
 
 if [[ $INST == *"League of Legends"* ]]; then
