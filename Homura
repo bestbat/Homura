@@ -658,7 +658,7 @@ fi
 fi
 
 if [[ $TODO == *"Use a workaround"* ]]; then
-UAW=$(zenity --list --radiolist --window-icon=$ICO  --height=200 --width 350 --title="$NAME $VER" --text "What workaround do you want to use?" --hide-header --column "$NAME" --column "Item" FALSE "Steam (Software Rendering)" FALSE "Diablo II (Software Rendering)")
+UAW=$(zenity --list --radiolist --window-icon=$ICO  --height=200 --width 350 --title="$NAME $VER" --text "What workaround do you want to use?" --hide-header --column "$NAME" --column "Item" FALSE "Steam (Software Rendering)")
 
 if [[ $UAW == *"Steam (Software Rendering)"* ]]; then
 LIBGL_ALWAYS_SOFTWARE=1 WINEPREFIX=$NDIR/Games/Steam wine "$NDIR/Games/Steam/drive_c/Program Files/Steam/Steam.exe" -no-browser +open steam://open/minigameslist
