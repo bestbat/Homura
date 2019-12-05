@@ -58,15 +58,6 @@ Is [here](https://github.com/the-homura-project/homura-port)
 - Only 32-Bit Games and Applications working currently.
 - No winevulkan for 32bit Wine on amd64.
 
-# Things that are currently just out of the question :rabbit2:
-
-- Epic Games launcher | Reason: Its 64bit only even it offers 32bit binarys, can not be installed correctly and crashs at start without helpful logs.
-- My.com launcher | Reason: The launcher cant selfupdate and i won't maintain it.
-- [Reusing of the json files from lutris](https://github.com/Alexander88207/Homura/issues/9)
-- Glyph | Reason: I dont know where i should start tinkering it just dont work at all.
-- Rockstar Games Launcher | Reason: 64Bit only but gets maybe implemented soon.
-- Artix Game Launcher | Reason: I dont know where i should start tinkering it just dont work at all.
-
 # Release cycle :loudspeaker:
 
 New features gets releasd in a week or in 5 days.
