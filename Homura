@@ -88,6 +88,7 @@ curl -o "SteamSetup.exe" "https://steamcdn-a.akamaihd.net/client/installer/Steam
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks dotnet40 arial win7
 WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\AppDefaults\LifeIsStrange.exe" /v "Version" /t "REG_SZ" /d "winxp" /f
+WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\AppDefaults\helldivers.exe" /v "Version" /t "REG_SZ" /d "winxp" /f
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/SteamSetup.exe
 rm $DDIR/SteamSetup.exe
