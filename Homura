@@ -94,9 +94,10 @@ if [[ $CLI == *"0"* ]]; then
 TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=420 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Applying a fix" FALSE "Use a workaround" FALSE "Open Homura folder" FALSE "Enable logging" FALSE "About" FALSE "Exit")
 fi
 
-if [[ $TODO == *"Installation"* ]]; then
 if [[ $CLI == *"0"* ]]; then
+if [[ $TODO == *"Installation"* ]]; then
 INST=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Discord" FALSE "Custom Prefix" FALSE "Extras")
+fi
 fi
 
 if [ ! -d "$NDIR/Games" ]; then
@@ -332,7 +333,6 @@ unzip left4gore-2.3-windows.zip
 rm left4gore-2.3-windows.zip
 fi
 fi
-fi
 
 if [[ $CLI == *"0"* ]]; then
 if [[ $TODO == *"Launcher"* ]]; then
@@ -465,6 +465,7 @@ if [[ $CLI == *"0"* ]]; then
 if [[ $TODO == *"Uninstallation"* ]]; then
 UNST=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to uninstall?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Discord" FALSE "Left 4 Gore" FALSE "Custom Prefix")
 fi
+fi
 
 if [[ $? == *"1"* ]]; then
 echo nothing selected
@@ -594,14 +595,18 @@ cd "$NDIR/Custom Prefixes"
 PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/Custom Prefixes/")
 rm -r -d "$PREFIXNAME"
 fi
-fi
 
 if [[ $CLI == *"0"* ]]; then
 if [[ $TODO == *"Winetricks"* ]]; then
 WTR=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --title="$NAME $VER - $TODO" --text "In what prefix do you want to open winetricks?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Discord" FALSE "Custom Prefix")
 fi
+fi
 
 # If a prefix dont exists, winetricks will create a prefix instead. We leave this like this, if someone wants to change the prefix before installing the application.
+
+if [[ $WTR == *"Steam"* ]] || [[ $WTR == *"Blizzard"* ]] || [[ $WTR == *"Origin"* ]] || [[ $WTR == *"Uplay"* ]] || [[ $WTR == *"Clone Hero"* ]] || [[ $WTR == *"Drakensang Online"* ]] || [[ $WTR == *"itch"* ]] || [[ $WTR == *"Anarchy Online"* ]] || [[ $WTR == *"GOG Galaxy"* ]] || [[ $WTR == *"League of Legends"* ]] || [[ $WTR == *"Wargaming Game Center"* ]] || [[ $WTR == *"Wargaming Game Center"* ]] || [[ $WTR == *"Growtopia"* ]] || [[ $WTR == *"Bethesda Launcher"* ]] || [[ $WTR == *"Wargaming Game Center"* ]] || [[ $WTR == *"Arc"* ]] ; then
+WINEPREFIX=$NDIR/Games/$WTR winetricks
+fi
 
 if [[ $WTR == *"Teamspeak"* ]]; then
 WINEPREFIX=$NDIR/Programs/$WTR winetricks
@@ -613,12 +618,8 @@ fi
 
 if [[ $WTR == *"Custom Prefix"* ]]; then
 cd "$NDIR/Custom Prefixes"
-FOLDERS=$(ls -a)
-PREFIXNAME=$(zenity --list --title="$NAME $VER - Select a custom prefix" --window-icon=$ICO --height=260 --width=300 --column="What prefix?" $FOLDERS)
+PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/Custom Prefixes/")
 WINEPREFIX="$NDIR/Custom Prefixes/$PREFIXNAME" winetricks
-else
-WINEPREFIX="$NDIR/Games/$WTR" winetricks
-fi
 fi
 
 if [[ $TODO == *"Run a executable in prefix"* ]]; then
