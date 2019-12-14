@@ -32,6 +32,10 @@ The Windows emulation is provided by [Wine](https://www.winehq.org).
 
 # Dependencies :syringe:
 
+Phsysical:
+- A GPU with OpenGL 3.0 & 128MB VRAM or better
+
+Software: 
 - [curl](https://www.freshports.org/ftp/curl/)
 - [bash](https://www.freshports.org/shells/bash)
 - [p7zip](https://www.freshports.org/archivers/p7zip/)
