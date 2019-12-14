@@ -46,6 +46,8 @@ The Windows emulation is provided by [Wine](https://www.winehq.org).
 
 # Installation/Uninstallation :cd:
 
+Note: It is not recommended to simply download the script and make it executable.
+
 ### Installing from FreeBSD repository 
 
 Is [on the way](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=241042)
