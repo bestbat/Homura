@@ -33,6 +33,7 @@ The Windows emulation is provided by [Wine](https://www.winehq.org).
 # Dependencies :syringe:
 
 Phsysical:
+- A x86 CPU with 1,4 Ghz or better
 - A GPU with OpenGL 3.0 & 128MB VRAM or better
 
 Software: 
