@@ -80,7 +80,7 @@ Examples:
 - To launch something use `Homura Launch Steam`
 - To uninstall something use `Homura Uninstall Steam`
 - To open winetricks in a prefix use `Homura Winetricks Steam`
-- To run a exe file in a prefix use `Homura RunEXE Steam /home/alexander/Downloads/Patch.exe`
+- To run a exe file in a prefix use `Homura RunEXE Steam /usr/home/alexander/Downloads/Patch.exe`
 
 # Limitations :x:
 
