@@ -56,6 +56,20 @@ Is [on the way](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=241042)
 
 Is [here](https://github.com/the-homura-project/homura-port)
 
+# Usage :computer:
+
+Homura can be opened via the commandline `Homura` but also via a shortcut (if you have Homura allowed to create one).
+
+For terminal fans there are also some fast commands:
+
+Examples: 
+
+- To install something use `Homura Install  Steam`
+- To launch something use `Homura Launch Steam`
+- To uninstall something use `Homura Uninstall Steam`
+- To open winetricks in a prefix use `Homura Winetricks Steam`
+- To run a exe file in a prefix use `Homura RunEXE Steam /home/alexander/Downloads/Patch.exe`
+
 # Limitations :x:
 
 - Only 32-Bit Games and Applications working currently.
