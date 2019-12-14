@@ -15,6 +15,11 @@ zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER" --text="$NAME 
 exit
 fi
 
+if [ -z "$1" ]
+then
+CLI=0
+fi
+
 if [ ! -d "$NDIR" ]; then
 mkdir -p $NDIR
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - Welcome" --text="Welcome to $NAME. If you have a problem, suggestion, questions or similar, do not hesitate to open an issue on GitHub. Have Fun!"
@@ -65,11 +70,34 @@ echo -e "\e[3;5;0;36mWine Version: $WINEVER\e[30;48;5;82m\e[0m"
 echo -e "\e[3;5;0;31mGPU Info OpenGL:\e[30;48;5;82m\e[0m" && glxinfo | grep OpenGL
 echo -e "\e[3;5;0;31mGPU Info Vulkan:\e[30;48;5;82m\e[0m" && vulkaninfo | grep -m 1 "GPU id"
 
+var2=$2
+
+Install() {
+INST=$var2
+}
+
+Launch() {
+LNCH=$var2
+}
+
+Uninstall() {
+UNST=$var2
+}
+
+Winetricks() {
+WTR=$var2
+}
+
+"$@"
+
+if [[ $CLI == *"0"* ]]; then
 TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=420 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Applying a fix" FALSE "Use a workaround" FALSE "Open Homura folder" FALSE "Enable logging" FALSE "About" FALSE "Exit")
+fi
 
 if [[ $TODO == *"Installation"* ]]; then
-
+if [[ $CLI == *"0"* ]]; then
 INST=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Discord" FALSE "Custom Prefix" FALSE "Extras")
+fi
 
 if [ ! -d "$NDIR/Games" ]; then
 mkdir $NDIR/Games
@@ -306,8 +334,10 @@ fi
 fi
 fi
 
+if [[ $CLI == *"0"* ]]; then
 if [[ $TODO == *"Launcher"* ]]; then
 LNCH=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to launch?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Discord" FALSE "Left 4 Gore" FALSE "Custom Prefix")
+fi
 
 CCKGPDIR=$NDIR/Games/$LNCH
 
@@ -431,8 +461,10 @@ bash "$PREFIXNAME/start.sh"
 fi
 fi
 
+if [[ $CLI == *"0"* ]]; then
 if [[ $TODO == *"Uninstallation"* ]]; then
 UNST=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to uninstall?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Discord" FALSE "Left 4 Gore" FALSE "Custom Prefix")
+fi
 
 if [[ $? == *"1"* ]]; then
 echo nothing selected
@@ -564,8 +596,10 @@ rm -r -d "$PREFIXNAME"
 fi
 fi
 
+if [[ $CLI == *"0"* ]]; then
 if [[ $TODO == *"Winetricks"* ]]; then
 WTR=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --title="$NAME $VER - $TODO" --text "In what prefix do you want to open winetricks?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Discord" FALSE "Custom Prefix")
+fi
 
 # If a prefix dont exists, winetricks will create a prefix instead. We leave this like this, if someone wants to change the prefix before installing the application.
 
@@ -692,4 +726,6 @@ zenity --notification --window-icon=$ICO --text "Thanks for using $NAME and have
 exit
 fi
 zenity --notification --window-icon=$ICO --text "Task completed or application closed!"
+if [[ $CLI == *"0"* ]]; then
 exec $NAME
+fi
