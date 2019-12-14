@@ -46,6 +46,8 @@ The Windows emulation is provided by [Wine](https://www.winehq.org).
 
 # Installation/Uninstallation :cd:
 
+### Installation
+
 Note: It is not recommended to simply download the script and make it executable.
 
 ### Installing from FreeBSD repository 
@@ -55,6 +57,16 @@ Is [on the way](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=241042)
 ### Build & installing the port 
 
 Is [here](https://github.com/the-homura-project/homura-port)
+
+### Uninstallation
+
+`# pkg uninstall homura`
+
+To also delete the related games etc...
+
+`rm -r -d /usr/home/$USER/.local/share/Homura`
+
+`rm /usr/home/$USER/.local/share/applications/Homura.desktop`
 
 # Usage :computer:
 
@@ -80,7 +92,7 @@ Examples:
 New features gets releasd in a week or in 5 days.
 If an existing feature needs a fix then we will release that ASAP and will have a number like 1.2.x
 
-# Chat
+# Chat :speech_balloon:
 
 No fear we don't bite ;)
 
