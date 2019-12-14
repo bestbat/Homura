@@ -71,6 +71,7 @@ echo -e "\e[3;5;0;31mGPU Info OpenGL:\e[30;48;5;82m\e[0m" && glxinfo | grep Open
 echo -e "\e[3;5;0;31mGPU Info Vulkan:\e[30;48;5;82m\e[0m" && vulkaninfo | grep -m 1 "GPU id"
 
 var2=$2
+EXECUTABLE=$3
 
 Install() {
 INST=$var2
@@ -86,6 +87,10 @@ UNST=$var2
 
 Winetricks() {
 WTR=$var2
+}
+
+RunEXE() {
+RAEP=$var2
 }
 
 "$@"
@@ -622,11 +627,16 @@ PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --
 WINEPREFIX="$NDIR/Custom Prefixes/$PREFIXNAME" winetricks
 fi
 
+if [[ $CLI == *"0"* ]]; then
 if [[ $TODO == *"Run a executable in prefix"* ]]; then
 RAEP=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --title="$NAME $VER - $TODO" --text "In what prefix do you want open your executable?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Discord" FALSE "Custom Prefix")
 EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
+fi
+fi
 
+if [[ $RAEP == *"Steam"* ]] || [[ $RAEP == *"Blizzard"* ]] || [[ $RAEP == *"Origin"* ]] || [[ $RAEP == *"Uplay"* ]] || [[ $RAEP == *"Clone Hero"* ]] || [[ $RAEP == *"Drakensang Online"* ]] || [[ $RAEP == *"itch"* ]] || [[ $RAEP == *"Anarchy Online"* ]] || [[ $RAEP == *"GOG Galaxy"* ]] || [[ $WTR == *"League of Legends"* ]] || [[ $WTR == *"Wargaming Game Center"* ]] || [[ $WTR == *"Wargaming Game Center"* ]] || [[ $RAEP == *"Growtopia"* ]] || [[ $RAEP == *"Bethesda Launcher"* ]] || [[ $RAEP == *"Wargaming Game Center"* ]] || [[ $RAEP == *"Arc"* ]] ; then
 WINEPREFIX="$NDIR/Games/$RAEP" wine "$EXECUTABLE"
+fi
 
 if [[ $RAEP == *"Teamspeak"* ]]; then
 WINEPREFIX=$NDIR/Programs/$RAEP wine "$EXECUTABLE"
@@ -640,7 +650,6 @@ if [[ $RAEP == *"Custom Prefix"* ]]; then
 cd "$NDIR/Custom Prefixes"
 PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/Custom Prefixes/")
 WINEPREFIX="$NDIR/Custom Prefixes/$PREFIXNAME" wine "$EXECUTABLE"
-fi
 fi
 
 if [[ $TODO == *"Update"* ]]; then
