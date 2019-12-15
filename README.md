@@ -120,3 +120,5 @@ No fear we don't bite ;)
 Preview: https://www.youtube.com/watch?v=6B1h0F4rIs4
 
 Review by RoboNuggie: https://www.youtube.com/watch?v=0lLs3JxezBM
+
+BSD-PL November 2019: https://www.youtube.com/watch?v=X68aGybmHwI&t=2029s
