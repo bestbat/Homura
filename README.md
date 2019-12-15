@@ -27,8 +27,8 @@ The Windows emulation is provided by [Wine](https://www.winehq.org).
 
 # Homura is NOT :no_entry_sign:
 
--  [Akin to CrossOver or Lutris](https://www.phoronix.com/scan.php?page=news_item&px=Homura-FreeBSD-Gaming)
--  [Similar to Wine](https://www.freebsdnews.com/2019/09/06/homura-windows-games-launcher-for-freebsd)
+- [Akin to CrossOver or Lutris](https://www.phoronix.com/scan.php?page=news_item&px=Homura-FreeBSD-Gaming)
+- [Similar to Wine](https://www.freebsdnews.com/2019/09/06/homura-windows-games-launcher-for-freebsd)
 
 # Dependencies :syringe:
 
