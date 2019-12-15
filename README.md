@@ -37,17 +37,17 @@ Physical:
 - A GPU with OpenGL 3.0 & 128MB VRAM or better
 
 Software: 
-- [curl](https://www.freshports.org/ftp/curl/)
-- [bash](https://www.freshports.org/shells/bash)
-- [p7zip](https://www.freshports.org/archivers/p7zip/)
-- [zenity](https://www.freshports.org/x11/zenity)
-- [xdg-utils](https://www.freshports.org/devel/xdg-utils)
-- [webfonts](https://www.freshports.org/x11-fonts/webfonts)
-- [alsa-utils](https://www.freshports.org/audio/alsa-utils) ([Optional](#if-you-are-new-to-freebsd-wink))
-- [winetricks](https://www.freshports.org/emulators/winetricks)
-- [vulkan-tools](https://www.freshports.org/devel/vulkan-tools)
-- [mesa-demos](https://www.freshports.org/graphics/mesa-demos)
-- [i386-wine-devel](https://www.freshports.org/emulators/i386-wine-devel) on amd64 or [wine-devel](https://www.freshports.org/emulators/wine-devel) on i386
+- [ftp/curl](https://www.freshports.org/ftp/curl/)
+- [shells/bash](https://www.freshports.org/shells/bash)
+- [archivers/p7zip](https://www.freshports.org/archivers/p7zip/)
+- [x11/zenity](https://www.freshports.org/x11/zenity)
+- [devel/xdg-utils](https://www.freshports.org/devel/xdg-utils)
+- [x11-fonts/webfonts](https://www.freshports.org/x11-fonts/webfonts)
+- [audio/alsa-utils](https://www.freshports.org/audio/alsa-utils) ([Optional](#if-you-are-new-to-freebsd-wink))
+- [emulators/winetricks](https://www.freshports.org/emulators/winetricks)
+- [devel/vulkan-tools](https://www.freshports.org/devel/vulkan-tools)
+- [graphics/mesa-demos](https://www.freshports.org/graphics/mesa-demos)
+- [emulators/i386-wine-devel](https://www.freshports.org/emulators/i386-wine-devel) on amd64 or [emulators/wine-devel](https://www.freshports.org/emulators/wine-devel) on i386
 
 # Installation/Uninstallation :cd:
 
