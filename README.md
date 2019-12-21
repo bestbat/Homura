@@ -47,6 +47,7 @@ Software:
 - [emulators/winetricks](https://www.freshports.org/emulators/winetricks)
 - [devel/vulkan-tools](https://www.freshports.org/devel/vulkan-tools)
 - [graphics/mesa-demos](https://www.freshports.org/graphics/mesa-demos)
+- [x11-fonts/noto](https://www.freshports.org/x11-fonts/noto)
 - [emulators/i386-wine-devel](https://www.freshports.org/emulators/i386-wine-devel) on amd64 or [emulators/wine-devel](https://www.freshports.org/emulators/wine-devel) on i386
 
 # Installation/Uninstallation :cd:
