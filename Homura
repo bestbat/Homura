@@ -120,8 +120,11 @@ echo $'\033]30;Homura 3.2 - Installation of Steam\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "SteamSetup.exe" "https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
-WINEPREFIX=$NDIR/Games/$INST winetricks dotnet40 arial win7
-echo -e "\e[40;38;5;82mApplying audio fixes for several games\e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;32mInstalling dotnet40& arial fonts to fix crahes and missing fonts in several games\e[30;48;5;82m\e[0m"
+WINEPREFIX=$NDIR/Games/$INST winetricks dotnet40 arial
+echo -e "\e[40;38;5;32mSet prefix to windows 7\e[30;48;5;82m\e[0m"
+WINEPREFIX=$NDIR/Games/$INST winetricks win7
+echo -e "\e[40;38;5;32mApplying audio fixes for several games\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\AppDefaults\LifeIsStrange.exe" /v "Version" /t "REG_SZ" /d "winxp" /f
 WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\AppDefaults\helldivers.exe" /v "Version" /t "REG_SZ" /d "winxp" /f
 WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\AppDefaults\VanHelsing_x86.exe" /v "Version" /t "REG_SZ" /d "winxp" /f
@@ -144,6 +147,7 @@ echo $'\033]30;Homura 3.2 - Installation of Origin\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "OriginThinSetup.exe" "https://origin-a.akamaihd.net/Origin-Client-Download/origin/legacy/OriginThinSetup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;32mSet prefix to windows xp because origin dont work with newer versions\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/Origin winetricks winxp
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - Origin" --text="Dont forget to disable the Origin in-game overlay or you are unable to start a game."
@@ -177,11 +181,12 @@ cd "$NDIR/Games/$INST"
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "clonehero-win32.7z" "http://dl.clonehero.net/clonehero-v.23.2.2/clonehero-win32.7z" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;32mInstalling arial fonts to fix missing fonts in the controls menu and in game\e[30;48;5;82m\e[0m"
 WINEPREFIX="$NDIR/Games/$INST" winetricks arial
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 7z x clonehero-win32.7z
 rm clonehero-win32.7z
-echo -e "\e[40;38;5;82mApplying fix\e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;32mApplying a fix to prevent game from crashing at start\e[30;48;5;82m\e[0m"
 cd clonehero-win32
 curl -O https://raw.githubusercontent.com/the-homura-project/homura-database/master/Clone%20Hero/settings.ini
 fi
