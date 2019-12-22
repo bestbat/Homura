@@ -52,8 +52,6 @@ Software:
 
 # Installation/Uninstallation :cd:
 
-### Installation
-
 Note: It is not recommended to simply download the script and make it executable.
 
 ### Installing from FreeBSD repository 
