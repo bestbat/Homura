@@ -58,7 +58,7 @@ Note: It is not recommended to simply download the script and make it executable
 
 ### Installing from FreeBSD repository 
 
-Is [on the way](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=241042)
+`# pkg install homura`
 
 ### Build & installing the port 
 
