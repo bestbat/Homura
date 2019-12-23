@@ -189,6 +189,7 @@ rm clonehero-win32.7z
 echo -e "\e[40;38;5;32mApplying a fix to prevent game from crashing at start\e[30;48;5;82m\e[0m"
 cd clonehero-win32
 curl -O https://raw.githubusercontent.com/the-homura-project/homura-database/master/Clone%20Hero/settings.ini
+zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - Clone Hero" --text="If you own a guitar hero controller, check out the tutorial how to get this controller working https://forums.freebsd.org/threads/setting-up-guitar-hero-guitars-for-clone-hero-etc-on-freebsd.72953/"
 fi
 
 if [[ $INST == *"Drakensang Online"* ]]; then
