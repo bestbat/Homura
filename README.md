@@ -52,7 +52,7 @@ Software:
 
 # Installation/Uninstallation :cd:
 
-Note: Packages can lag behind ports. If you want the latest version you may want to use the `latest` repository instead of `quarterly`.
+Note: Packages can lag behind ports. If you want the latest version you may want to use the `latest` repository instead of `quarterly` or build the package yourself.
 
 ### Installing from FreeBSD repository 
 
