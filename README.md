@@ -100,7 +100,6 @@ If an existing feature needs a fix then we will release that ASAP and will have 
 
 No fear we don't bite ;)
 
-- IRC: #freebsd-games ping @Alexander88207 if he is around.
 - Discord: https://discord.gg/JBKcdNt
 
 # Credits :star:
