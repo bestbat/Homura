@@ -91,11 +91,6 @@ Examples:
 - Only 32-Bit Games and Applications working currently.
 - No winevulkan for 32bit Wine on amd64.
 
-# Release cycle :loudspeaker:
-
-New features gets releasd in a week or in 5 days.
-If an existing feature needs a fix then we will release that ASAP and will have a number like 1.2.x
-
 # Chat :speech_balloon:
 
 No fear we don't bite ;)
