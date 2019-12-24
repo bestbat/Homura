@@ -52,7 +52,7 @@ Software:
 
 # Installation/Uninstallation :cd:
 
-Note: It is not recommended to simply download the script and make it executable.
+Note: Packages often lag behind ports. If you want the latest version, and the package is not available, then you should install the port.
 
 ### Installing from FreeBSD repository 
 
