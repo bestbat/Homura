@@ -52,13 +52,13 @@ Software:
 
 # Installation/Uninstallation :cd:
 
-Note: Packages can lag behind ports. If you want the latest version you may want to use the `latest` repository instead of `quarterly` or build the package yourself.
+Note: Packages can lag behind ports. If you want the latest version you may want to use the `latest` repository instead of `quarterly` or build the package yourself. If you dont know how to do this [here](https://forums.FreeBSD.org/threads/pkg-repository-changed-to-quarterly-in-10-2.52843/post-296554) is a small explanation.
 
-### Installing from FreeBSD repository 
+### Installing from FreeBSD repository 📦
 
 `# pkg install homura`
 
-### Build & installing the port 
+### Build & installing the port
 
 Is [here](https://github.com/the-homura-project/homura-port)
 
@@ -104,7 +104,7 @@ No fear we don't bite ;)
 - [You](https://github.com/the-homura-project/homura-docs/blob/master/CONTRIBUTING.md)? - ?
 - [Contributors](https://github.com/the-homura-project/homura/graphs/contributors)     - for contributing
 
-# Screenshots & videos
+# Screenshots & videos :video_camera:
 
 ![](https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Media/Screenshot.png "Screenshot")
 
