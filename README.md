@@ -56,7 +56,7 @@ Note: Packages can lag behind ports. If you want the latest version you may want
 
 ### Installing from FreeBSD repository 📦
 
-`# pkg install homura`
+`# pkg install games/homura`
 
 ### Build & installing the port
 
@@ -64,7 +64,7 @@ Is [here](https://github.com/the-homura-project/homura-port)
 
 ### Uninstallation
 
-`# pkg uninstall homura`
+`# pkg uninstall games/homura`
 
 To also delete the related games etc...
 
