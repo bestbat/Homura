@@ -756,7 +756,7 @@ if [[ $TODO == *"Enable logging"* ]]; then
 mkdir -p $NDIR/Logs
 cd $NDIR/Logs
 zenity --info --window-icon=$ICO --width=300 --title="$NAME $VER - About" --text="Logging for this session has been enabled, you will later find the log file in the log folder."
-bash "/usr/local/bin/$NAME" >> "$DATE.log" 2>&1
+bash $NAME >> "$DATE.log" 2>&1
 notify-send "The logging have been quit."
 fi
 
