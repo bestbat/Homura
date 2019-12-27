@@ -12,16 +12,16 @@
 	<a href="https://github.com/the-homura-project/homura-docs/blob/master/RECOMMENDATIONS.md">Recommendations</a>&nbsp;&nbsp;&nbsp;
 	<a href="https://github.com/the-homura-project/homura-docs/blob/master/Handbook.md">Handbook</a>&nbsp;&nbsp;&nbsp;
 	<a href="https://github.com/the-homura-project/homura-docs/blob/master/HINTS.md">Hints</a>&nbsp;&nbsp;&nbsp;
-	<a href="https://github.com/the-homura-project/homura-docs/blob/master/CONTRIBUTING.md">Contrubuting</a>
+	<a href="https://github.com/the-homura-project/homura-docs/blob/master/CONTRIBUTING.md">Contributing</a>
 </p>
 
 # Introduction :microphone:
 
-Inspired by [lutris](https://github.com/lutris/lutris), We would like to provide a game launcher to play windows games on FreeBSD.
+Inspired by [Lutris](https://github.com/lutris/lutris), we would like to provide a game launcher to play Windows games on FreeBSD.
 
 # Description &#x1F4D8;
 
-Homura is a launcher that makes it easy to run windows games/launcher easily on FreeBSD by providing the requiered fixes and workarounds.
+Homura is a launcher that makes it easy to run Windows games/launcher easily on FreeBSD by providing the requiered fixes and workarounds.
 
 The Windows emulation is provided by [Wine](https://www.winehq.org).
 
