@@ -30,7 +30,7 @@ The Windows emulation is provided by [Wine](https://www.winehq.org).
 - [Akin to CrossOver or Lutris](https://www.phoronix.com/scan.php?page=news_item&px=Homura-FreeBSD-Gaming)
 - [Similar to Wine](https://www.freebsdnews.com/2019/09/06/homura-windows-games-launcher-for-freebsd)
 
-# Dependencies :syringe:
+# Run dependencies :syringe:
 
 Physical:
 - A x86 CPU with 1,4 GHz or better
