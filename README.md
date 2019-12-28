@@ -48,6 +48,7 @@ Software:
 - [devel/vulkan-tools](https://www.freshports.org/devel/vulkan-tools)
 - [graphics/mesa-demos](https://www.freshports.org/graphics/mesa-demos)
 - [x11-fonts/noto](https://www.freshports.org/x11-fonts/noto)
+- [x11/antimicro](https://www.freshports.org/x11/antimicro) ([Optional](https://github.com/the-homura-project/homura-docs/blob/master/CONTROLLERS.md#guitar-hero-world-tour-guitar-pc--guitar-hero-3-guitar-les-paul-ps3))
 - [emulators/i386-wine-devel](https://www.freshports.org/emulators/i386-wine-devel) on amd64 or [emulators/wine-devel](https://www.freshports.org/emulators/wine-devel) on i386
 
 # Installation/Uninstallation :cd:
