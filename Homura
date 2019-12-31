@@ -63,7 +63,7 @@ if [[ $OSN != "FreeBSD" ]]; then
 zenity --info --width=360 --window-icon=$ICO --title="$NAME $VER" --text="You are about to use $NAME on an unsupported system. Please be aware that unexpected errors may occur and that your bug reports can be marked as invaild."
 fi
 
-echo -e "\e[32mCopyright (c) 2019, The Homura Project All rights reserved."
+echo -e "\e[32mCopyright (c) 2019-2020, The Homura Project All rights reserved."
 echo -e "\e[93mWelcome to $NAME $VER have fun!"
 echo -e "\e[3;5;0;92mRunning on $OSN $(uname -r)"
 echo -e "\e[3;5;0;36mWine Version: $WINEVER\e[30;48;5;82m\e[0m"
@@ -765,7 +765,7 @@ zenity --info --window-icon=$ICO --width=390 --title="$NAME $VER - About" --text
 $NAME is a launcher that makes it easy to run Windows games/launcher easily on FreeBSD by providing the required fixes and workarounds. 
 The Windows emulation is provided by Wine.
 $NAME is licensed under the BSD 2-Clause License.
-Copyright (c) 2019, The Homura Project
+Copyright (c) 2019-2020, The Homura Project
 All rights reserved."
 fi
 
