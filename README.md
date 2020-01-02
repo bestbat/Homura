@@ -53,9 +53,9 @@ Software:
 
 # Installation/Uninstallation :cd:
 
-Note: Packages can lag behind ports. If you want the latest version you may want to use the `latest` repository instead of `quarterly` or build the package yourself. If you dont know how to do this [here](https://forums.FreeBSD.org/threads/pkg-repository-changed-to-quarterly-in-10-2.52843/post-296554) is a small explanation.
-
 ### Installing from FreeBSD repository 📦
+
+Currently homura is only in the latest repository. 
 
 `# pkg install games/homura`
 
