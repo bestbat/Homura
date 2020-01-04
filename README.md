@@ -89,8 +89,8 @@ Examples:
 
 # Limitations :x:
 
-- Only 32-Bit Games and Applications working currently.
-- No winevulkan for 32bit Wine on amd64.
+- Only 32-Bit Games and Applications working currently. You may want to see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=242625
+- No winevulkan for 32bit Wine on amd64. Reason: There are no options to build i386-wine-devel with vulkan.
 
 # Chat :speech_balloon:
 
