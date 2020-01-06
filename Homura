@@ -120,7 +120,7 @@ echo $'\033]30;Homura 3.3 - Installation of Steam\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "SteamSetup.exe" "https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
-echo -e "\e[40;38;5;32mInstalling dotnet40& arial fonts to fix crahes and missing fonts in several games\e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;32mInstalling dotnet40 & arial fonts to fix crahes and missing fonts in several games\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks dotnet40 arial
 echo -e "\e[40;38;5;32mSet prefix to windows 7\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win7
@@ -130,6 +130,14 @@ WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\A
 WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\AppDefaults\VanHelsing_x86.exe" /v "Version" /t "REG_SZ" /d "winxp" /f
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/SteamSetup.exe
+echo -e "\e[40;38;5;32mReplacing the shortcut with one that contains the required tweaks\e[30;48;5;82m\e[0m"
+rm /usr/home/$USER/.local/share/applications/wine/Programs/Steam/Steam.desktop
+echo "[Desktop Entry]
+Name=Steam
+Exec=env WINEPREFIX="$NDIR/Games/$INST" wine '$NDIR/Games/$INST/drive_c/Program Files/Steam/Steam.exe' -no-browser +open steam://open/minigameslist
+Type=Application
+StartupNotify=true
+Icon=BAC4_steam.0" >> /usr/home/$USER/.local/share/applications/wine/Programs/Steam/Steam.desktop
 rm $DDIR/SteamSetup.exe
 fi
 
@@ -228,6 +236,18 @@ echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "setup_galaxy_1.2.64.2.exe" "https://cdn.gog.com/open/galaxy/client/setup_galaxy_1.2.64.2.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX="$NDIR/Games/$INST" wine $DDIR/setup_galaxy_1.2.64.2.exe
+if [ -f "/home/$USER/.local/share/applications/wine/Programs/GOG.com/GOG Galaxy/GOG Galaxy.desktop" ]; then
+echo -e "\e[40;38;5;32mReplacing the shortcut with one that contains the required tweaks\e[30;48;5;82m\e[0m"
+rm "/usr/home/$USER/.local/share/applications/wine/Programs/GOG.com/GOG Galaxy/GOG Galaxy.desktop"
+echo "[Desktop Entry]
+Name=GOG Galaxy
+Exec=env WINEPREFIX="$NDIR/Games/$LNCH" wine '$NDIR/Games/$LNCH/drive_c/Program Files/GOG Galaxy/GalaxyClient.exe' /runWithoutUpdating /deelevated
+Type=Application
+StartupNotify=true
+Icon=F77E_GalaxyClient.0" >> "/usr/home/$USER/.local/share/applications/wine/Programs/GOG.com/GOG Galaxy/GOG Galaxy.desktop"
+else 
+echo -e "\e[40;38;5;32mNo shortcut was created\e[30;48;5;82m\e[0m"
+fi
 rm $DDIR/setup_galaxy_1.2.64.2.exe
 fi
 
