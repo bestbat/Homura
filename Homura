@@ -21,6 +21,7 @@ CLI=0
 fi
 
 if [ ! -d "$NDIR" ]; then
+if [[ $CLI == *"0"* ]]; then
 mkdir -p $NDIR
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - Welcome" --text="Welcome to $NAME. If you have a problem, suggestion, questions or similar, do not hesitate to open an issue on GitHub. Have Fun!"
 SC=$(zenity --question --window-icon=$ICO --width 300 --title "$NAME $VER - One time question" --text "Do you want a shortcut of $NAME in your application menu?"; echo $?)
@@ -42,6 +43,10 @@ Type=Application
 if [[ $SC == *"1"* ]]; then 
 echo "Shortcut will be not created"
 fi
+fi
+else
+echo -e "\e[40;38;5;82mYou must open $NAME first without a command. \e[30;48;5;82m\e[0m"
+exit
 fi
 fi
 
@@ -120,7 +125,7 @@ echo $'\033]30;Homura 3.3 - Installation of Steam\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "SteamSetup.exe" "https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
-echo -e "\e[40;38;5;32mInstalling dotnet40 & arial fonts to fix crahes and missing fonts in several games\e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;32mInstalling dotnet40 & arial fonts to fix crashes and missing fonts in several games\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks dotnet40 arial
 echo -e "\e[40;38;5;32mSet prefix to windows 7\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win7
@@ -376,28 +381,40 @@ if [[ $CLI == *"0"* ]]; then
 if [[ $TODO == *"Launcher"* ]]; then
 LNCH=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to launch?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Discord" FALSE "Left 4 Gore" FALSE "Custom Prefix")
 fi
+fi
 
 CCKGPDIR=$NDIR/Games/$LNCH
 
 if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] ; then
 if [ ! -d "$NDIR/Programs/$LNCH" ]; then
+if [[ $CLI == *"0"* ]]; then
 zenity --info --width=200 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="$LNCH is not installed."
 exec $NAME
+fi
+echo -e "\e[40;38;5;82m$LNCH is not installed.\e[30;48;5;82m\e[0m"
+exit
 fi
 fi
 
 if [[ $CCKGPDIR == *"$NDIR/Games/Left 4 Gore"* ]]; then
 if [ ! -d "$NDIR/Games/Extras/left4gore-2.3-windows" ]; then
+if [[ $CLI == *"0"* ]]; then
 zenity --info --width=200 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="$LNCH is not installed."
 exec $NAME
 fi
+echo -e "\e[40;38;5;82m$LNCH is not installed.\e[30;48;5;82m\e[0m"
+exit
 fi
 fi
 
 if [[ $CCKGPDIR == *"$NDIR/Games/Steam"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Blizzard"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Origin"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Uplay"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Clone Hero"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Drakensang Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/itch"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Anarchy Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/GOG Galaxy"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/League of Legends"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Growtopia"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Bethesda Launcher"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Arc"* ]] ; then
 if [ ! -d "$NDIR/Games/$LNCH" ]; then
+if [[ $CLI == *"0"* ]]; then
 zenity --info --width=200 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="$LNCH is not installed."
 exec $NAME
+fi
+echo -e "\e[40;38;5;82m$LNCH is not installed.\e[30;48;5;82m\e[0m"
+exit
 fi
 fi
 
@@ -504,6 +521,7 @@ fi
 fi
 fi
 
+
 if [[ $CLI == *"0"* ]]; then
 if [[ $TODO == *"Uninstallation"* ]]; then
 UNST=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to uninstall?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Discord" FALSE "Left 4 Gore" FALSE "Custom Prefix")
@@ -513,16 +531,24 @@ fi
 CCKGPDIR=$NDIR/Games/$UNST
 
 if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] ; then
+if [[ $CLI == *"0"* ]]; then
 if [ ! -d "$NDIR/Programs/$UNST" ]; then
 zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
 exec $NAME
 fi
+echo -e "\e[40;38;5;82mYou must open $NAME first without a command. \e[30;48;5;82m\e[0m"
+exit
+fi
 fi
 
 if [[ $CCKGPDIR == *"$NDIR/Games/Left 4 Gore"* ]]; then
+if [[ $CLI == *"0"* ]]; then
 if [ ! -d "$NDIR/Games/Extras/left4gore-2.3-windows" ]; then
 zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
 exec $NAME
+fi
+echo -e "\e[40;38;5;82mYou must open $NAME first without a command. \e[30;48;5;82m\e[0m"
+exit
 fi
 fi
 
@@ -532,8 +558,12 @@ fi
 
 if [[ $CCKGPDIR == *"$NDIR/Games/Steam"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Blizzard"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Origin"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Uplay"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Clone Hero"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Drakensang Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/itch"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Anarchy Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/GOG Galaxy"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/League of Legends"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Growtopia"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Bethesda Launcher"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Arc"* ]] ; then
 if [ ! -d "$NDIR/Games/$UNST" ]; then
+if [[ $CLI == *"0"* ]]; then
 zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
 exec $NAME
+fi
+echo -e "\e[40;38;5;82mYou can not uninstall something that you dont have installed :)\e[30;48;5;82m\e[0m"
+exit
 fi
 fi
 
