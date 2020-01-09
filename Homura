@@ -61,7 +61,7 @@ mv 320?cb=20160821012353 $DDIR/$NAME.png
 fi
 
 if [[ $GPU == *"VMware, Inc."* ]]; then
-zenity --info --width=420 --window-icon=$ICO --title="$NAME $VER" --text="$NAME have detected that you are using the fallback drivers, please check your gpu driver installation. If you should run $NAME in a virtual machine then you can ignore this message."
+zenity --info --width=420 --window-icon=$ICO --title="$NAME $VER" --text="$NAME have detected that you are using the fallback drivers, please check your gpu driver installation. If you should run $NAME in a virtual machine or you have enabled software rendering then you can ignore this message."
 fi
 
 if [[ $OSN != "FreeBSD" ]]; then
@@ -101,7 +101,7 @@ RAEP=$var2
 "$@"
 
 if [[ $CLI == *"0"* ]]; then
-TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=420 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Applying a fix" FALSE "Use a workaround" FALSE "Open Homura folder" FALSE "Enable logging" FALSE "About" FALSE "Exit")
+TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=420 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Applying a fix" FALSE "Open Homura folder" FALSE "Enable logging" FALSE "Other" FALSE "About" FALSE "Exit")
 fi
 
 if [[ $CLI == *"0"* ]]; then
@@ -785,18 +785,6 @@ fi
 fi
 fi
 
-if [[ $TODO == *"Use a workaround"* ]]; then
-UAW=$(zenity --list --radiolist --window-icon=$ICO  --height=200 --width 350 --title="$NAME $VER" --text "What workaround do you want to use?" --hide-header --column "$NAME" --column "Item" FALSE "Steam (Software Rendering)")
-
-if [[ $UAW == *"Steam (Software Rendering)"* ]]; then
-if [ ! -d /usr/home/$USER/.local/share/Homura/Games/Steam/ ]; then
-zenity --info --window-icon=$ICO --width=300 --title="$NAME $VER - $UAW" --text="Steam is not installed."
-else
-LIBGL_ALWAYS_SOFTWARE=1 WINEPREFIX=$NDIR/Games/Steam wine "$NDIR/Games/Steam/drive_c/Program Files/Steam/Steam.exe" -no-browser +open steam://open/minigameslist
-fi
-fi
-fi
-
 if [[ $TODO == *"Open Homura folder"* ]]; then
 xdg-open $NDIR
 fi
@@ -807,6 +795,15 @@ cd $NDIR/Logs
 zenity --info --window-icon=$ICO --width=300 --title="$NAME $VER - About" --text="Logging for this session has been enabled, you will later find the log file in the log folder."
 bash $NAME >> "$DATE.log" 2>&1
 notify-send "The logging have been quit."
+fi
+
+if [[ $TODO == *"Other"* ]]; then
+OTR=$(zenity --list --radiolist --window-icon=$ICO --height=250 --width 250 --title="$NAME $VER - $TODO" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Use software rendering" FALSE "Delete & Reset everything")
+
+if [[ $OTR == *"Use software rendering"* ]]; then
+LIBGL_ALWAYS_SOFTWARE=1 $NAME
+zenity --notification --window-icon=$ICO --text "You are using now hardware rendering again."
+fi
 fi
 
 if [[ $TODO == *"About"* ]]; then
