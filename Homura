@@ -241,7 +241,7 @@ echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "setup_galaxy_1.2.64.2.exe" "https://cdn.gog.com/open/galaxy/client/setup_galaxy_1.2.64.2.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX="$NDIR/Games/$INST" wine $DDIR/setup_galaxy_1.2.64.2.exe
-if [ -f "/home/$USER/.local/share/applications/wine/Programs/GOG.com/GOG Galaxy/GOG Galaxy.desktop" ]; then
+if [ -f "/usr/home/$USER/.local/share/applications/wine/Programs/GOG.com/GOG Galaxy/GOG Galaxy.desktop" ]; then
 echo -e "\e[40;38;5;32mReplacing the shortcut with one that contains the required tweaks\e[30;48;5;82m\e[0m"
 rm "/usr/home/$USER/.local/share/applications/wine/Programs/GOG.com/GOG Galaxy/GOG Galaxy.desktop"
 echo "[Desktop Entry]
@@ -530,23 +530,23 @@ fi
 CCKGPDIR=$NDIR/Games/$UNST
 
 if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] ; then
-if [[ $CLI == *"0"* ]]; then
 if [ ! -d "$NDIR/Programs/$UNST" ]; then
+if [[ $CLI == *"0"* ]]; then
 zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
 exec $NAME
 fi
-echo -e "\e[40;38;5;82mYou must open $NAME first without a command. \e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;82mYou can not uninstall something that you dont have installed :)\e[30;48;5;82m\e[0m"
 exit
 fi
 fi
 
 if [[ $CCKGPDIR == *"$NDIR/Games/Left 4 Gore"* ]]; then
-if [[ $CLI == *"0"* ]]; then
 if [ ! -d "$NDIR/Games/Extras/left4gore-2.3-windows" ]; then
+if [[ $CLI == *"0"* ]]; then
 zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
 exec $NAME
 fi
-echo -e "\e[40;38;5;82mYou must open $NAME first without a command. \e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;82mYou can not uninstall something that you dont have installed :)\e[30;48;5;82m\e[0m"
 exit
 fi
 fi
@@ -561,9 +561,9 @@ if [[ $CLI == *"0"* ]]; then
 zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
 exec $NAME
 fi
+fi
 echo -e "\e[40;38;5;82mYou can not uninstall something that you dont have installed :)\e[30;48;5;82m\e[0m"
 exit
-fi
 fi
 
 if [[ $UNST == *"Steam"* ]]; then
@@ -798,11 +798,42 @@ notify-send "The logging have been quit."
 fi
 
 if [[ $TODO == *"Other"* ]]; then
-OTR=$(zenity --list --radiolist --window-icon=$ICO --height=250 --width 250 --title="$NAME $VER - $TODO" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Use software rendering" FALSE "Delete & Reset everything")
+OTR=$(zenity --list --radiolist --window-icon=$ICO --height=250 --width 250 --title="$NAME $VER - $TODO" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Use software rendering" FALSE "Delete & reset everything")
 
 if [[ $OTR == *"Use software rendering"* ]]; then
 LIBGL_ALWAYS_SOFTWARE=1 $NAME
 zenity --notification --window-icon=$ICO --text "You are using now hardware rendering again."
+fi
+
+if [[ $OTR == *"Delete & reset everything"* ]]; then
+DQ=$(zenity --question --window-icon=$ICO --width 300 --title "$NAME $VER - $OTR" --text "Do you really want to delete and reset everything? ／人◕ ‿‿ ◕人＼"; echo $?)
+if [[ $DQ == *"0"* ]]; then
+$NAME Uninstall Steam
+$NAME Uninstall Blizzard
+$NAME Uninstall Origin
+$NAME Uninstall Uplay
+$NAME Uninstall Teamspeak
+$NAME Uninstall "Clone Hero"
+$NAME Uninstall "Drakensang Online"
+$NAME Uninstall "Anarchy Online"
+$NAME Uninstall itch
+$NAME Uninstall "GOG Galaxy"
+$NAME Uninstall "League of Legends"
+$NAME Uninstall "Wargaming Game Center"
+$NAME Uninstall Growtopia
+$NAME Uninstall "Bethesda Launcher"
+$NAME Uninstall Arc
+$NAME Uninstall Discord
+$NAME Uninstall "Left 4 Gore"
+rm -r -d $NDIR
+if [ -f "/usr/home/$USER/.local/share/applications/$NAME.desktop" ]; then
+rm "/usr/home/$USER/.local/share/applications/$NAME.desktop"
+else 
+echo -e "\e[40;38;5;32mNo shortcut was created\e[30;48;5;82m\e[0m"
+fi
+zenity --info --window-icon=$ICO --width=200 --title="$NAME $VER - $OTR" --text="All files of $NAME have been deleted, we hope you had a good time."
+exit
+fi
 fi
 fi
 
