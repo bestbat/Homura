@@ -561,9 +561,9 @@ if [[ $CLI == *"0"* ]]; then
 zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
 exec $NAME
 fi
-fi
 echo -e "\e[40;38;5;82mYou can not uninstall something that you dont have installed :)\e[30;48;5;82m\e[0m"
 exit
+fi
 fi
 
 if [[ $UNST == *"Steam"* ]]; then
@@ -798,7 +798,7 @@ notify-send "The logging have been quit."
 fi
 
 if [[ $TODO == *"Other"* ]]; then
-OTR=$(zenity --list --radiolist --window-icon=$ICO --height=250 --width 250 --title="$NAME $VER - $TODO" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Use software rendering" FALSE "Delete & reset everything")
+OTR=$(zenity --list --radiolist --window-icon=$ICO --height=250 --width 250 --title="$NAME $VER - $TODO" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Use software rendering" FALSE "Delete & reset everything" FALSE "GitHub page")
 
 if [[ $OTR == *"Use software rendering"* ]]; then
 LIBGL_ALWAYS_SOFTWARE=1 $NAME
@@ -834,6 +834,10 @@ fi
 zenity --info --window-icon=$ICO --width=200 --title="$NAME $VER - $OTR" --text="All files of $NAME have been deleted, we hope you had a good time."
 exit
 fi
+fi
+
+if [[ $OTR == *"GitHub page"* ]]; then
+xdg-open https://github.com/the-homura-project/homura
 fi
 fi
 
