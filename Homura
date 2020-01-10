@@ -806,8 +806,8 @@ zenity --notification --window-icon=$ICO --text "You are using now hardware rend
 fi
 
 if [[ $OTR == *"Delete & reset everything"* ]]; then
-DQ=$(zenity --question --window-icon=$ICO --width 300 --title "$NAME $VER - $OTR" --text "Do you really want to delete and reset everything? ／人◕ ‿‿ ◕人＼"; echo $?)
-if [[ $DQ == *"0"* ]]; then
+DRQ=$(zenity --question --window-icon=$ICO --width 300 --title "$NAME $VER - $OTR" --text "Do you really want to delete and reset everything? ／人◕ ‿‿ ◕人＼"; echo $?)
+if [[ $DRQ == *"0"* ]]; then
 $NAME Uninstall Steam
 $NAME Uninstall Blizzard
 $NAME Uninstall Origin
