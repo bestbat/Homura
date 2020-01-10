@@ -69,9 +69,7 @@ Is [here](https://github.com/the-homura-project/homura-port)
 
 To also delete the related games etc...
 
-`rm -r -d /usr/home/$USER/.local/share/Homura`
-
-`rm /usr/home/$USER/.local/share/applications/Homura.desktop`
+Use the "Delete and reset everything" function.`
 
 # Usage :computer:
 
