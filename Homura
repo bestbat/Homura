@@ -127,7 +127,7 @@ curl -o "SteamSetup.exe" "https://steamcdn-a.akamaihd.net/client/installer/Steam
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 echo -e "\e[40;38;5;32mInstalling dotnet40 & arial fonts to fix crashes and missing fonts in several games\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks dotnet40 arial
-echo -e "\e[40;38;5;32mSet prefix to windows 7\e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;32mSet prefix to Windows 7\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win7
 echo -e "\e[40;38;5;32mApplying audio fixes for several games\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\AppDefaults\LifeIsStrange.exe" /v "Version" /t "REG_SZ" /d "winxp" /f
@@ -160,7 +160,7 @@ echo $'\033]30;Homura 3.3 - Installation of Origin\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "OriginThinSetup.exe" "https://origin-a.akamaihd.net/Origin-Client-Download/origin/legacy/OriginThinSetup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
-echo -e "\e[40;38;5;32mSet prefix to windows xp because origin dont work with newer versions\e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;32mSet prefix to Windows xp because origin dont work with newer versions\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/Origin winetricks winxp
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - Origin" --text="Dont forget to disable the Origin in-game overlay or you are unable to start a game."
@@ -173,6 +173,7 @@ echo $'\033]30;Homura 3.3 - Installation of Uplay\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "UplayInstaller.exe" "https://ubistatic3-a.akamaihd.net/orbit/launcher_installer/UplayInstaller.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of $INST" --text="Before you continue, please make sure that the meta package x11-fonts/noto-extra is not installed. After installation of $INST you can install it again. "
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/UplayInstaller.exe
 rm $DDIR/UplayInstaller.exe
 fi
@@ -182,7 +183,8 @@ echo $'\033]30;Homura 3.3 - Installation of Teamspeak\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "TeamSpeak3-Client-win32-3.3.2.exe" "https://files.teamspeak-services.com/releases/client/3.3.2/TeamSpeak3-Client-win32-3.3.2.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
-zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of Teamspeak" --text="To get Playback and Capture working set both mods to Direct Sound."
+zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of $INST" --text="To get Playback and Capture working set both mods to Direct Sound."
+zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of $INST" --text="Before you continue, please make sure that the meta package x11-fonts/noto-extra is installed. After installation of $INST you can remove it again."
 WINEPREFIX=$NDIR/Programs/$INST wine $DDIR/TeamSpeak3-Client-win32-3.3.2.exe
 rm $DDIR/TeamSpeak3-Client-win32-3.3.2.exe
 fi
@@ -246,10 +248,10 @@ echo -e "\e[40;38;5;32mReplacing the shortcut with one that contains the require
 rm "/usr/home/$USER/.local/share/applications/wine/Programs/GOG.com/GOG Galaxy/GOG Galaxy.desktop"
 echo "[Desktop Entry]
 Name=GOG Galaxy
-Exec=env WINEPREFIX="$NDIR/Games/$LNCH" wine '$NDIR/Games/$LNCH/drive_c/Program Files/GOG Galaxy/GalaxyClient.exe' /runWithoutUpdating /deelevated
+Exec=$NAME Launch '$INST'
 Type=Application
 StartupNotify=true
-Icon=F77E_GalaxyClient.0" >> "/usr/home/$USER/.local/share/applications/wine/Programs/GOG.com/GOG Galaxy/GOG Galaxy.desktop"
+Icon=F77E_GalaxyClient.0" >> "/usr/home/$USER/.local/share/applications/wine/Programs/GOG.com/GOG Galaxy/$INST.desktop"
 else 
 echo -e "\e[40;38;5;32mNo shortcut was created\e[30;48;5;82m\e[0m"
 fi
@@ -397,7 +399,7 @@ fi
 fi
 
 if [[ $CCKGPDIR == *"$NDIR/Games/Left 4 Gore"* ]]; then
-if [ ! -d "$NDIR/Games/Extras/left4gore-2.3-windows" ]; then
+if [ ! -d "$NDIR/Extras/left4gore-2.3-windows" ]; then
 if [[ $CLI == *"0"* ]]; then
 zenity --info --width=200 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="$LNCH is not installed."
 exec $NAME
@@ -501,7 +503,7 @@ fi
 
 if [[ $LNCH == *"Left 4 Gore"* ]]; then
 echo $'\033]30;Left 4 Gore\007'
-WINEPREFIX=$NDIR/Games/Steam wine "$NDIR/Games/Extras/left4gore-2.3-windows/left4gore.exe"
+WINEPREFIX=$NDIR/Games/Steam wine "$NDIR/Extras/left4gore-2.3-windows/left4gore.exe"
 fi
 
 if [[ $LNCH == *"Custom Prefix"* ]]; then
@@ -541,7 +543,7 @@ fi
 fi
 
 if [[ $CCKGPDIR == *"$NDIR/Games/Left 4 Gore"* ]]; then
-if [ ! -d "$NDIR/Games/Extras/left4gore-2.3-windows" ]; then
+if [ ! -d "$NDIR/Extras/left4gore-2.3-windows" ]; then
 if [[ $CLI == *"0"* ]]; then
 zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
 exec $NAME
@@ -598,6 +600,7 @@ fi
 
 if [[ $UNST == *"Clone Hero"* ]]; then
 rm -d -r "$NDIR/Games/$UNST"
+rm "/usr/home/$USER/.local/share/applications/$CS.desktop"
 fi
 
 if [[ $UNST == *"Drakensang Online"* ]]; then
@@ -620,6 +623,8 @@ fi
 
 if [[ $UNST == *"League of Legends"* ]]; then
 rm -d -r "$NDIR/Games/$UNST"
+rm "/usr/home/$USER/.local/share/applications/$UNST.desktop"
+rm $DDIR/icon.png
 fi
 
 if [[ $UNST == *"GOG Galaxy"* ]]; then
@@ -631,7 +636,7 @@ fi
 if [[ $UNST == *"Wargaming Game Center"* ]]; then
 rm -d -r "$NDIR/Games/$UNST"
 rm -d -r /usr/home/$USER/.local/share/applications/wine/Programs/Wargaming.net
-rm /usr/home/$USER/Desktop/Game Center.desktop
+rm "/usr/home/$USER/Desktop/Wargaming.net Game Center.desktop"
 fi
 
 if [[ $UNST == *"Growtopia"* ]]; then
@@ -652,10 +657,12 @@ fi
 
 if [[ $UNST == *"Discord"* ]]; then
 rm -d -r $NDIR/Programs/$UNST
+rm /usr/home/$USER/.local/share/applications/$UNST.desktop
 fi
 
 if [[ $UNST == *"Left 4 Gore"* ]]; then
 rm -d -r /usr/home/$USER/.local/share/$NAME/Extras/left4gore-2.3-windows
+rm "/usr/home/$USER/.local/share/applications/$UNST.desktop"
 fi
 
 if [[ $UNST == *"Custom Prefix"* ]]; then
@@ -798,7 +805,7 @@ notify-send "The logging have been quit."
 fi
 
 if [[ $TODO == *"Other"* ]]; then
-OTR=$(zenity --list --radiolist --window-icon=$ICO --height=250 --width 250 --title="$NAME $VER - $TODO" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Use software rendering" FALSE "Delete & reset everything" FALSE "GitHub page")
+OTR=$(zenity --list --radiolist --window-icon=$ICO --height=250 --width 250 --title="$NAME $VER - $TODO" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Use software rendering" FALSE "Delete & reset everything" FALSE "Create a shortcut" FALSE "GitHub page")
 
 if [[ $OTR == *"Use software rendering"* ]]; then
 LIBGL_ALWAYS_SOFTWARE=1 $NAME
@@ -833,6 +840,232 @@ echo -e "\e[40;38;5;32mNo shortcut was created\e[30;48;5;82m\e[0m"
 fi
 zenity --info --window-icon=$ICO --width=200 --title="$NAME $VER - $OTR" --text="All files of $NAME have been deleted, we hope you had a good time."
 exit
+fi
+fi
+
+if [[ $OTR == *"Create a shortcut"* ]]; then
+CS=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $OTR" --text "What shortcut do you want to create?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Discord" FALSE "Left 4 Gore" FALSE "Custom Prefix")
+
+CCKGPDIR=$NDIR/Games/$CS
+
+if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] ; then
+if [ ! -d "$NDIR/Programs/$CS" ]; then
+if [[ $CLI == *"0"* ]]; then
+zenity --info --width=200 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="$LNCH is not installed."
+exec $NAME
+fi
+echo -e "\e[40;38;5;82m$LNCH is not installed.\e[30;48;5;82m\e[0m"
+exit
+fi
+fi
+
+if [[ $CCKGPDIR == *"$NDIR/Games/Left 4 Gore"* ]]; then
+if [ ! -d "$NDIR/Extras/left4gore-2.3-windows" ]; then
+zenity --info --width=200 --window-icon=$ICO --title="$NAME $VER - $OTR" --text="$CS is not installed."
+exec $NAME
+fi
+fi
+
+if [[ $CCKGPDIR == *"$NDIR/Games/Steam"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Blizzard"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Origin"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Uplay"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Clone Hero"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Drakensang Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/itch"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Anarchy Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/GOG Galaxy"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/League of Legends"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Growtopia"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Bethesda Launcher"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Arc"* ]] ; then
+if [ ! -d "$NDIR/Games/$CS" ]; then
+zenity --info --width=200 --window-icon=$ICO --title="$NAME $VER - $OTR" --text="$CS is not installed."
+exec $NAME
+fi
+fi
+
+if [ ! -d "/usr/home/$USER/.local/share/applications/Homura" ]; then
+mkdir /usr/home/$USER/.local/share/applications/Homura
+fi
+
+if [[ $CS == *"Steam"* ]]; then
+mkdir -p /usr/home/$USER/.local/share/applications/wine/Programs/$CS
+echo "[Desktop Entry]
+Name=$CS
+Exec=$NAME Launch $CS
+Type=Application
+StartupNotify=true
+Icon=BAC4_steam.0" >> /usr/home/$USER/.local/share/applications/wine/Programs/$CS/$CS.desktop
+fi
+
+if [[ $CS == *"Blizzard"* ]]; then
+mkdir -p /usr/home/$USER/.local/share/applications/wine/Programs/Battle.net
+echo "[Desktop Entry]
+Name=$CS
+Exec=$NAME Launch $CS
+Type=Application
+StartupNotify=true
+Icon=65EF_Battle.net Launcher.0" >> /usr/home/$USER/.local/share/applications/wine/Programs/Battle.net/Battle.net.desktop
+fi
+
+if [[ $CS == *"Origin"* ]]; then
+mkdir -p /usr/home/$USER/.local/share/applications/wine/Programs/$CS
+echo "[Desktop Entry]
+Name=$CS
+Exec=$NAME Launch $CS
+Type=Application
+StartupNotify=true
+Icon=9AD6_Origin.0" >> /usr/home/$USER/.local/share/applications/wine/Programs/$CS/$CS.desktop
+fi
+
+if [[ $CS == *"Uplay"* ]]; then
+mkdir -p /usr/home/$USER/.local/share/applications/wine/Programs/Ubisoft/$CS
+echo "[Desktop Entry]
+Name=$CS
+Exec=$NAME Launch $CS
+Type=Application
+StartupNotify=true
+Icon=3B99_Uplay.0" >> /usr/home/$USER/.local/share/applications/wine/Programs/Ubisoft/$CS/$CS.desktop
+fi
+
+if [[ $CS == *"Teamspeak"* ]]; then
+mkdir -p /usr/home/$USER/.local/share/applications/wine/Programs
+echo "[Desktop Entry]
+Name=$CS
+Exec=$NAME Launch $CS
+Type=Application
+StartupNotify=true
+Icon=0352_ts3client_win32.0" >> "/usr/home/$USER/.local/share/applications/wine/Programs/TeamSpeak 3 Client.desktop"
+fi
+
+if [[ $CS == *"Clone Hero"* ]]; then
+cd $DDIR
+curl -O https://clonehero.net/favicon.ico
+echo "[Desktop Entry]
+Name=$CS
+Exec=$NAME Launch '$CS'
+Type=Application
+StartupNotify=true
+Icon=$DDIR/favicon.ico" >> "/usr/home/$USER/.local/share/applications/$CS.desktop"
+fi
+
+if [[ $CS == *"Drakensang Online"* ]]; then
+mkdir -p "/usr/home/$USER/.local/share/applications/wine/Programs/$CS"
+echo "[Desktop Entry]
+Name="$CS"
+Exec=$NAME Launch '$CS'
+Type=Application
+StartupNotify=true
+Icon=DA0A_icon" >> "/usr/home/$USER/.local/share/applications/wine/Programs/$CS/$CS.desktop"
+fi
+
+if [[ $CS == *"Anarchy Online"* ]]; then
+zenity --info --width=350 --window-icon=$ICO --title="$NAME $VER - $CS" --text="We have told you to check/use the shortcut that the installer offer, sorry but no new shortcut for you!"
+exec $NAME
+fi
+
+if [[ $LNCH == *"itch"* ]]; then
+mkdir -p "/usr/home/$USER/.local/share/applications/wine/Programs/Itch Corp"
+echo "[Desktop Entry]
+Name=$CS
+Exec=$NAME Launch $CS
+Type=Application
+StartupNotify=true
+Icon=C840_itch-setup.0" >> "/usr/home/$USER/.local/share/applications/wine/Programs/Itch Corp/$CS.desktop"
+fi
+
+if [[ $CS == *"GOG Galaxy"* ]]; then
+mkdir -p "/usr/home/$USER/.local/share/applications/wine/Programs/GOG.com/GOG Galaxy"
+echo "[Desktop Entry]
+Name="$CS"
+Exec=$NAME Launch '$CS'
+Type=Application
+StartupNotify=true
+Icon=F77E_GalaxyClient.0" >> "/usr/home/$USER/.local/share/applications/wine/Programs/GOG.com/GOG Galaxy/$CS.desktop"
+fi
+
+if [[ $CS == *"League of Legends"* ]]; then
+cd $DDIR
+curl -O http://2.bp.blogspot.com/-HqSOKIIV59A/U8WP4WFW28I/AAAAAAAAT5U/qTSiV9UgvUY/s1600/icon.png
+echo "[Desktop Entry]
+Name=$CS
+Exec=$NAME Launch '$CS'
+Type=Application
+StartupNotify=true
+Icon=$DDIR/icon.png" >> "/usr/home/$USER/.local/share/applications/$CS.desktop"
+fi
+
+if [[ $CS == *"Wargaming Game Center"* ]]; then
+mkdir -p /usr/home/$USER/.local/share/applications/wine/Programs/Wargaming.net
+echo "[Desktop Entry]
+Name=$CS
+Exec=$NAME Launch '$CS'
+Type=Application
+StartupNotify=true
+Icon=3CE7_wgc.0" >> "/usr/home/$USER/.local/share/applications/wine/Programs/Wargaming.net/Wargaming.net Game Center.desktop"
+fi
+
+if [[ $CS == *"Growtopia"* ]]; then
+mkdir -p /usr/home/$USER/.local/share/applications/wine/Programs/$CS
+echo "[Desktop Entry]
+Name=$CS
+Exec=$NAME Launch $CS
+Type=Application
+StartupNotify=true
+Icon=B09A_Growtopia.0" >> /usr/home/$USER/.local/share/applications/wine/Programs/$CS/$CS.desktop
+fi
+
+if [[ $CS == *"Bethesda Launcher"* ]]; then
+mkdir -p "/usr/home/$USER/.local/share/applications/wine/Programs/Bethesda.net Launcher"
+echo "[Desktop Entry]
+Name="$CS"
+Exec=$NAME Launch '$CS'
+Type=Application
+StartupNotify=true
+Icon=5C20_BethesdaNetUpdater.0" >> "/usr/home/$USER/.local/share/applications/wine/Programs/Bethesda.net Launcher/Bethesda.net Launcher.desktop"
+fi
+
+if [[ $CS == *"Arc"* ]]; then
+mkdir -p "/usr/home/$USER/.local/share/applications/wine/Programs/Perfect World Entertainment/$CS"
+echo "[Desktop Entry]
+Name=$CS
+Exec=$NAME Launch $CS
+Type=Application
+StartupNotify=true
+Icon=403B_ArcLauncher.0" >> "/usr/home/$USER/.local/share/applications/wine/Programs/Perfect World Entertainment/$CS/$CS.desktop"
+fi
+
+if [[ $CS == *"Discord"* ]]; then
+echo "[Desktop Entry]
+Name=$CS
+Exec=$NAME Launch $CS
+Type=Application
+StartupNotify=true
+Icon=NDIR/Programs/$CS/$CS/app.ico" >> /usr/home/$USER/.local/share/applications/$CS.desktop
+fi
+
+if [[ $CS == *"Left 4 Gore"* ]]; then
+cd $DDIR
+curl -O http://www.left4gore.com/favicon.ico
+mv favicon.ico favicon_lf4g.ico
+echo "[Desktop Entry]
+Name="$CS"
+Exec=$NAME Launch '$CS'
+Type=Application
+StartupNotify=true
+Icon=$DDIR/favicon_lf4g.ico" >> "/usr/home/$USER/.local/share/applications/$CS.desktop"
+fi
+
+if [[ $CS == *"Custom Prefix"* ]]; then
+if [ ! "$(ls -A "/usr/home/$USER/.local/share/$NAME/Custom Prefixes")" ]
+then
+zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="There is no custom prefix installed"
+else
+cd "$NDIR/Custom Prefixes"
+PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/Custom Prefixes/")
+if [ -z "$PREFIXNAME" ]
+then
+zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - $TODO" --text="There was no custom prefix selected."
+else
+SCNAME=$(zenity --window-icon=$ICO --title="Create a custom prefix shortcut" --text "How your shortcut should be called?" --entry --width=260) 
+SCICO="$(zenity --file-selection --title="Choose an icon")"
+echo "[Desktop Entry]
+Name="$SCNAME"
+Exec=bash '$PREFIXNAME/start.sh'
+Type=Application
+StartupNotify=true
+Icon=$SCICO" >> "/usr/home/$USER/.local/share/applications/$SCNAME.desktop"
+fi
+fi
 fi
 fi
 
