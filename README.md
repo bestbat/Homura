@@ -55,7 +55,7 @@ Software:
 
 ### Installing from FreeBSD repository 📦
 
-Currently homura is only in the latest repository. 
+Note: Packages can lag behind ports. If you want the latest version you may want to use the `latest` repository instead of `quarterly` or build the package yourself.
 
 `# pkg install games/homura`
 
