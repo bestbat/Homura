@@ -105,11 +105,11 @@ No fear we don't bite ;)
 
 # Screenshots & videos :video_camera:
 
-![](https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Media/Screenshot.png "Screenshot")
+![](https://raw.githubusercontent.com/the-homura-project/homura/master/Media/Screenshot.png "Screenshot")
 
-<img src="https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Media/Screenshot2.png" alt="Monitor" height="500" width="700"> 
+<img src="https://raw.githubusercontent.com/the-homura-project/homura/master/Media/Screenshot2.png" alt="Monitor" height="500" width="700"> 
 
-<img src="https://raw.githubusercontent.com/The-Homura-Project/Homura/master/Media/Screenshot3.png" alt="Monitor" height="500" width="700"> 
+<img src="https://raw.githubusercontent.com/the-homura-project/homura/master/Media/Screenshot3.png" alt="Monitor" height="500" width="700"> 
 
 Preview: https://www.youtube.com/watch?v=6B1h0F4rIs4
 
