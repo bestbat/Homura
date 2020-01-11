@@ -953,7 +953,7 @@ zenity --info --width=350 --window-icon=$ICO --title="$NAME $VER - $CS" --text="
 exec $NAME
 fi
 
-if [[ $LNCH == *"itch"* ]]; then
+if [[ $CS == *"itch"* ]]; then
 mkdir -p "/usr/home/$USER/.local/share/applications/wine/Programs/Itch Corp"
 echo "[Desktop Entry]
 Name=$CS
