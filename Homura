@@ -636,7 +636,7 @@ fi
 if [[ $UNST == *"Wargaming Game Center"* ]]; then
 rm -d -r "$NDIR/Games/$UNST"
 rm -d -r /usr/home/$USER/.local/share/applications/wine/Programs/Wargaming.net
-rm "/usr/home/$USER/Desktop/Wargaming.net Game Center.desktop"
+rm /usr/home/$USER/Desktop/Game Center.desktop
 fi
 
 if [[ $UNST == *"Growtopia"* ]]; then
