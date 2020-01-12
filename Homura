@@ -173,7 +173,7 @@ echo $'\033]30;Homura 3.3 - Installation of Uplay\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "UplayInstaller.exe" "https://ubistatic3-a.akamaihd.net/orbit/launcher_installer/UplayInstaller.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
-zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of $INST" --text="Before you continue, please make sure that the meta package x11-fonts/noto-extra is not installed. After installation of $INST you can install it again. "
+zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of $INST" --text="Before you continue, please make sure that the package x11-fonts/noto-extra is not installed. After installation of $INST you can install it again. "
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/UplayInstaller.exe
 rm $DDIR/UplayInstaller.exe
 fi
@@ -184,7 +184,7 @@ echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "TeamSpeak3-Client-win32-3.3.2.exe" "https://files.teamspeak-services.com/releases/client/3.3.2/TeamSpeak3-Client-win32-3.3.2.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of $INST" --text="To get Playback and Capture working set both mods to Direct Sound."
-zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of $INST" --text="Before you continue, please make sure that the meta package x11-fonts/noto-extra is installed. After installation of $INST you can remove it again."
+zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of $INST" --text="Before you continue, please make sure that the package x11-fonts/noto-extra is installed. After installation of $INST you can remove it again."
 WINEPREFIX=$NDIR/Programs/$INST wine $DDIR/TeamSpeak3-Client-win32-3.3.2.exe
 rm $DDIR/TeamSpeak3-Client-win32-3.3.2.exe
 fi
