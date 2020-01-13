@@ -73,7 +73,7 @@ Use the "Delete and reset everything" function.`
 
 # Usage :computer:
 
-Homura can be opened via the commandline `Homura` but also via a shortcut (if you have Homura allowed to create one).
+The Homura GUI can be opened via the commandline `Homura` but also via a shortcut (if you have Homura allowed to create one).
 
 For terminal fans there are also some fast commands:
 
