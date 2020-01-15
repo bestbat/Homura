@@ -703,7 +703,7 @@ if [ -z "$PREFIXNAME" ]
 then
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - $TODO" --text="There was no custom prefix selected."
 else
-WINEPREFIX="$NDIR/Custom Prefixes/$PREFIXNAME" winetricks
+WINEPREFIX="$PREFIXNAME" winetricks
 fi
 fi
 
