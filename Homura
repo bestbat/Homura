@@ -127,8 +127,8 @@ curl -o "SteamSetup.exe" "https://steamcdn-a.akamaihd.net/client/installer/Steam
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 echo -e "\e[40;38;5;32mInstalling dotnet40 & arial fonts to fix crashes and missing fonts in several games\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks dotnet40 arial
-echo -e "\e[40;38;5;32mSet prefix to Windows 7\e[30;48;5;82m\e[0m"
-WINEPREFIX=$NDIR/Games/$INST winetricks win7
+echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
+WINEPREFIX=$NDIR/Games/$INST winetricks win10
 echo -e "\e[40;38;5;32mApplying audio fixes for several games\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\AppDefaults\LifeIsStrange.exe" /v "Version" /t "REG_SZ" /d "winxp" /f
 WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\AppDefaults\helldivers.exe" /v "Version" /t "REG_SZ" /d "winxp" /f
@@ -150,6 +150,9 @@ if [[ $INST == *"Blizzard"* ]]; then
 echo $'\033]30;Homura 3.4.1 - Installation of Blizzard\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "Battle.net-Setup-enUS.exe" "http://dist.blizzard.com/downloads/bna-installers/322d5bb9ae0318de3d4cde7641c96425/retail.1/Battle.net-Setup-enUS.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
+echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
+WINEPREFIX=$NDIR/Games/$INST winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/Battle.net-Setup-enUS.exe
 rm $DDIR/Battle.net-Setup-enUS.exe
@@ -172,6 +175,9 @@ if [[ $INST == *"Uplay"* ]]; then
 echo $'\033]30;Homura 3.4.1 - Installation of Uplay\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "UplayInstaller.exe" "https://ubistatic3-a.akamaihd.net/orbit/launcher_installer/UplayInstaller.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
+echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
+WINEPREFIX=$NDIR/Games/$INST winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of $INST" --text="Before you continue, please make sure that the package x11-fonts/noto-extra is not installed. After installation of $INST you can install it again. "
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/UplayInstaller.exe
@@ -182,6 +188,9 @@ if [[ $INST == *"Teamspeak"* ]]; then
 echo $'\033]30;Homura 3.4.1 - Installation of Teamspeak\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "TeamSpeak3-Client-win32-3.3.2.exe" "https://files.teamspeak-services.com/releases/client/3.3.2/TeamSpeak3-Client-win32-3.3.2.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
+echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
+WINEPREFIX=$NDIR/Games/$INST winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of $INST" --text="To get Playback and Capture working set both mods to Direct Sound."
 zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of $INST" --text="Before you continue, please make sure that the package x11-fonts/noto-extra is installed. After installation of $INST you can remove it again."
@@ -198,6 +207,8 @@ curl -o "clonehero-win32.7z" "http://dl.clonehero.net/clonehero-v.23.2.2/clonehe
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 echo -e "\e[40;38;5;32mInstalling arial fonts to fix missing fonts in the controls menu and ingame\e[30;48;5;82m\e[0m"
 WINEPREFIX="$NDIR/Games/$INST" winetricks arial
+echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
+WINEPREFIX=$NDIR/Games/$INST winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 7z x clonehero-win32.7z
 rm clonehero-win32.7z
@@ -211,6 +222,9 @@ if [[ $INST == *"Drakensang Online"* ]]; then
 echo $'\033]30;Homura 3.4.1 - Installation of Drakensang Online\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "dro_setup.exe" "https://drasaonline-481-dwl.bpsecure.com/applet/dro_setup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
+echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
+WINEPREFIX=$NDIR/Games/$INST winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX="$NDIR/Games/Drakensang Online" wine $DDIR/dro_setup.exe
 rm $DDIR/dro_setup.exe
@@ -232,6 +246,9 @@ if [[ $INST == *"itch"* ]]; then
 echo $'\033]30;Homura 3.4.1 - Installation of itch\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -L -o "windows" "http://nuts.itch.zone/download/windows" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
+echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
+WINEPREFIX=$NDIR/Games/$INST winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/windows
 rm $DDIR/windows
@@ -241,6 +258,9 @@ if [[ $INST == *"GOG Galaxy"* ]]; then
 echo $'\033]30;Homura 3.4.1 - Installation of GOG Galaxy\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "setup_galaxy_1.2.64.2.exe" "https://cdn.gog.com/open/galaxy/client/setup_galaxy_1.2.64.2.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
+echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
+WINEPREFIX=$NDIR/Games/$INST winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX="$NDIR/Games/$INST" wine $DDIR/setup_galaxy_1.2.64.2.exe
 if [ -f "/usr/home/$USER/.local/share/applications/wine/Programs/GOG.com/GOG Galaxy/GOG Galaxy.desktop" ]; then
@@ -262,6 +282,9 @@ if [[ $INST == *"League of Legends"* ]]; then
 echo $'\033]30;Homura 3.4.1 - Installation of League of Legends\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "live.euw.exe" "https://lol.secure.dyn.riotcdn.net/channels/public/x/installer/current/live.euw.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
+echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
+WINEPREFIX=$NDIR/Games/$INST winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/live.euw.exe
 rm $DDIR/live.euw.exe
@@ -283,6 +306,9 @@ if [[ $INST == *"Growtopia"* ]]; then
 echo $'\033]30;Homura 3.4.1 - Installation of Growtopia\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -L -o "Growtopia-Installer.exe" "https://growtopiagame.com/Growtopia-Installer.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
+echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
+WINEPREFIX=$NDIR/Games/$INST winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/Growtopia-Installer.exe
 rm $DDIR/Growtopia-Installer.exe
@@ -292,6 +318,9 @@ if [[ $INST == *"Bethesda Launcher"* ]]; then
 echo $'\033]30;Homura 3.4.1 - Installation of Bethesda Launcher\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -L -o "BethesdaNetLauncher_Setup.exe" "http://download.cdp.bethesda.net/BethesdaNetLauncher_Setup.exe" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
+echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
+WINEPREFIX=$NDIR/Games/$INST winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX="$NDIR/Games/$INST" wine $DDIR/BethesdaNetLauncher_Setup.exe
 rm $DDIR/BethesdaNetLauncher_Setup.exe
@@ -301,6 +330,9 @@ if [[ $INST == *"Arc"* ]]; then
 echo $'\033]30;Homura 3.4.1 - Installation of Arc\007'
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "download" "https://www.arcgames.com/download" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
+echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
+WINEPREFIX=$NDIR/Games/$INST winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/download
 rm $DDIR/download
@@ -314,7 +346,8 @@ cd $NDIR/Programs/$INST/Discord
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 curl -o "Discord.tar" "https://homura.magzu.net/dl/Discord.tar" 2>&1 | stdbuf -oL tr '\r' '\n' | sed -u 's/^ *\([0-9][0-9]*\).*\( [0-9].*$\)/\1\\:\2/' | zenity --progress --auto-close --text "Downloading $INST" --title "$NAME $VER $TODO $INST" --window-icon=$ICO
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
-WINEPREFIX=$NDIR/Programs/$INST winetricks dotnet472 win7
+echo -e "\e[40;38;5;32mInstallation of dotnet472 and setting prefix to Windows 10\e[30;48;5;82m\e[0m"
+WINEPREFIX=$NDIR/Programs/$INST winetricks dotnet472 win10
 echo -e "\e[40;38;5;82mInstalling $INST\e[30;48;5;82m\e[0m"
 tar -xf Discord.tar
 rm Discord.tar
