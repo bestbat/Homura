@@ -85,6 +85,18 @@ Examples:
 - To open winetricks in a prefix use `Homura Winetricks Steam`
 - To run a exe file in a prefix use `Homura RunEXE Steam /usr/home/alexander/Downloads/Patch.exe`
 
+# Feature list / To-Do List
+
+Features | Done?
+------------ | -------------
+Installation launching & uninstallation of our collection of applications | ✅
+Custom prefixes | ✅
+Shortcut creation | ✅
+Delete & reset everything | ✅
+Enable/Disable DX/D9VK | ❎
+Prefix experiments | ❎
+
+
 # Limitations :x:
 
 - Only 32-Bit Games and Applications working currently. You may want to see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=242625
