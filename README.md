@@ -93,9 +93,9 @@ Installation launching & uninstallation of our collection of applications | ✅
 Custom prefixes | ✅
 Shortcut creation | ✅
 Delete & reset everything | ✅
-Enable/Disable DX/D9VK | ❎
+Enable/Disable DXVK | ❎
 Prefix experiments | ❎
-
+Gamesever hosting | ❎
 
 # Limitations :x:
 
