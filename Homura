@@ -911,6 +911,9 @@ fi
 
 if [[ $CS == *"Steam"* ]]; then
 mkdir -p /usr/home/$USER/.local/share/applications/wine/Programs/$CS
+if [ -f "/usr/home/$USER/.local/share/applications/wine/Programs/$CS/$CS.desktop" ]; then
+rm /usr/home/$USER/.local/share/applications/wine/Programs/$CS/$CS.desktop
+fi
 echo "[Desktop Entry]
 Name=$CS
 Exec=$NAME Launch $CS
@@ -921,6 +924,9 @@ fi
 
 if [[ $CS == *"Blizzard"* ]]; then
 mkdir -p /usr/home/$USER/.local/share/applications/wine/Programs/Battle.net
+if [ -f "/usr/home/$USER/.local/share/applications/wine/Programs/Battle.net/Battle.net.desktop" ]; then
+rm /usr/home/$USER/.local/share/applications/wine/Programs/Battle.net/Battle.net.desktop
+fi
 echo "[Desktop Entry]
 Name=$CS
 Exec=$NAME Launch $CS
@@ -931,6 +937,9 @@ fi
 
 if [[ $CS == *"Origin"* ]]; then
 mkdir -p /usr/home/$USER/.local/share/applications/wine/Programs/$CS
+if [ -f "/usr/home/$USER/.local/share/applications/wine/Programs/$CS/$CS.desktop" ]; then
+rm /usr/home/$USER/.local/share/applications/wine/Programs/$CS/$CS.desktop
+fi
 echo "[Desktop Entry]
 Name=$CS
 Exec=$NAME Launch $CS
@@ -941,6 +950,9 @@ fi
 
 if [[ $CS == *"Uplay"* ]]; then
 mkdir -p /usr/home/$USER/.local/share/applications/wine/Programs/Ubisoft/$CS
+if [ -f "/usr/home/$USER/.local/share/applications/wine/Programs/Ubisoft/$CS/$CS.desktop" ]; then
+rm /usr/home/$USER/.local/share/applications/wine/Programs/Ubisoft/$CS/$CS.desktop
+fi
 echo "[Desktop Entry]
 Name=$CS
 Exec=$NAME Launch $CS
@@ -951,6 +963,9 @@ fi
 
 if [[ $CS == *"Teamspeak"* ]]; then
 mkdir -p /usr/home/$USER/.local/share/applications/wine/Programs
+if [ -f "/usr/home/$USER/.local/share/applications/wine/Programs/TeamSpeak 3 Client.desktop" ]; then
+rm "/usr/home/$USER/.local/share/applications/wine/Programs/TeamSpeak 3 Client.desktop"
+fi
 echo "[Desktop Entry]
 Name=$CS
 Exec=$NAME Launch $CS
@@ -962,6 +977,9 @@ fi
 if [[ $CS == *"Clone Hero"* ]]; then
 cd $DDIR
 curl -O https://clonehero.net/favicon.ico
+if [ -f "/usr/home/$USER/.local/share/applications/$CS.desktop" ]; then
+rm "/usr/home/$USER/.local/share/applications/$CS.desktop"
+fi
 echo "[Desktop Entry]
 Name=$CS
 Exec=$NAME Launch '$CS'
@@ -972,6 +990,9 @@ fi
 
 if [[ $CS == *"Drakensang Online"* ]]; then
 mkdir -p "/usr/home/$USER/.local/share/applications/wine/Programs/$CS"
+if [ -f "/usr/home/$USER/.local/share/applications/wine/Programs/$CS/$CS.desktop" ]; then
+rm "/usr/home/$USER/.local/share/applications/wine/Programs/$CS/$CS.desktop"
+fi
 echo "[Desktop Entry]
 Name="$CS"
 Exec=$NAME Launch '$CS'
@@ -987,6 +1008,9 @@ fi
 
 if [[ $CS == *"itch"* ]]; then
 mkdir -p "/usr/home/$USER/.local/share/applications/wine/Programs/Itch Corp"
+if [ -f "/usr/home/$USER/.local/share/applications/wine/Programs/Itch Corp/$CS.desktop" ]; then
+rm "/usr/home/$USER/.local/share/applications/wine/Programs/Itch Corp/$CS.desktop"
+fi
 echo "[Desktop Entry]
 Name=$CS
 Exec=$NAME Launch $CS
@@ -997,6 +1021,9 @@ fi
 
 if [[ $CS == *"GOG Galaxy"* ]]; then
 mkdir -p "/usr/home/$USER/.local/share/applications/wine/Programs/GOG.com/GOG Galaxy"
+if [ -f "/usr/home/$USER/.local/share/applications/wine/Programs/GOG.com/GOG Galaxy/$CS.desktop" ]; then
+rm "/usr/home/$USER/.local/share/applications/wine/Programs/GOG.com/GOG Galaxy/$CS.desktop"
+fi
 echo "[Desktop Entry]
 Name="$CS"
 Exec=$NAME Launch '$CS'
@@ -1008,6 +1035,9 @@ fi
 if [[ $CS == *"League of Legends"* ]]; then
 cd $DDIR
 curl -O http://2.bp.blogspot.com/-HqSOKIIV59A/U8WP4WFW28I/AAAAAAAAT5U/qTSiV9UgvUY/s1600/icon.png
+if [ -f "/usr/home/$USER/.local/share/applications/$CS.desktop" ]; then
+rm "/usr/home/$USER/.local/share/applications/$CS.desktop"
+fi
 echo "[Desktop Entry]
 Name=$CS
 Exec=$NAME Launch '$CS'
@@ -1018,6 +1048,9 @@ fi
 
 if [[ $CS == *"Wargaming Game Center"* ]]; then
 mkdir -p /usr/home/$USER/.local/share/applications/wine/Programs/Wargaming.net
+if [ -f "/usr/home/$USER/.local/share/applications/wine/Programs/Wargaming.net/Wargaming.net Game Center.desktop" ]; then
+rm "/usr/home/$USER/.local/share/applications/wine/Programs/Wargaming.net/Wargaming.net Game Center.desktop"
+fi
 echo "[Desktop Entry]
 Name=$CS
 Exec=$NAME Launch '$CS'
@@ -1028,6 +1061,9 @@ fi
 
 if [[ $CS == *"Growtopia"* ]]; then
 mkdir -p /usr/home/$USER/.local/share/applications/wine/Programs/$CS
+if [ -f "/usr/home/$USER/.local/share/applications/wine/Programs/$CS/$CS.desktop" ]; then
+rm "/usr/home/$USER/.local/share/applications/wine/Programs/$CS/$CS.desktop"
+fi
 echo "[Desktop Entry]
 Name=$CS
 Exec=$NAME Launch $CS
@@ -1038,6 +1074,9 @@ fi
 
 if [[ $CS == *"Bethesda Launcher"* ]]; then
 mkdir -p "/usr/home/$USER/.local/share/applications/wine/Programs/Bethesda.net Launcher"
+if [ -f "/usr/home/$USER/.local/share/applications/wine/Programs/Bethesda.net Launcher/Bethesda.net Launcher.desktop" ]; then
+rm "/usr/home/$USER/.local/share/applications/wine/Programs/Bethesda.net Launcher/Bethesda.net Launcher.desktop"
+fi
 echo "[Desktop Entry]
 Name="$CS"
 Exec=$NAME Launch '$CS'
@@ -1048,6 +1087,9 @@ fi
 
 if [[ $CS == *"Arc"* ]]; then
 mkdir -p "/usr/home/$USER/.local/share/applications/wine/Programs/Perfect World Entertainment/$CS"
+if [ -f "/usr/home/$USER/.local/share/applications/wine/Programs/Perfect World Entertainment/$CS/$CS.desktop" ]; then
+rm /usr/home/$USER/.local/share/applications/wine/Programs/Perfect World Entertainment/$CS/$CS.desktop
+fi
 echo "[Desktop Entry]
 Name=$CS
 Exec=$NAME Launch $CS
@@ -1057,6 +1099,9 @@ Icon=403B_ArcLauncher.0" >> "/usr/home/$USER/.local/share/applications/wine/Prog
 fi
 
 if [[ $CS == *"Discord"* ]]; then
+if [ -f "/usr/home/$USER/.local/share/applications/$CS.desktop" ]; then
+rm /usr/home/$USER/.local/share/applications/$CS.desktop
+fi
 echo "[Desktop Entry]
 Name=$CS
 Exec=$NAME Launch $CS
@@ -1069,6 +1114,9 @@ if [[ $CS == *"Left 4 Gore"* ]]; then
 cd $DDIR
 curl -O http://www.left4gore.com/favicon.ico
 mv favicon.ico favicon_lf4g.ico
+if [ -f "/usr/home/$USER/.local/share/applications/$CS.desktop" ]; then
+rm /usr/home/$USER/.local/share/applications/$CS.desktop
+fi
 echo "[Desktop Entry]
 Name="$CS"
 Exec=$NAME Launch '$CS'
@@ -1090,6 +1138,9 @@ zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - $TODO" --text
 else
 SCNAME=$(zenity --window-icon=$ICO --title="Create a custom prefix shortcut" --text "How your shortcut should be called?" --entry --width=260) 
 SCICO="$(zenity --file-selection --title="Choose an icon")"
+if [ -f "/usr/home/$USER/.local/share/applications/$SCNAME.desktop" ]; then
+rm /usr/home/$USER/.local/share/applications/$SCNAME.desktop
+fi
 echo "[Desktop Entry]
 Name="$SCNAME"
 Exec=bash '$PREFIXNAME/start.sh'
