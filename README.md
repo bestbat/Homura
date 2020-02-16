@@ -95,7 +95,7 @@ Shortcut creation | ✅
 Delete & reset everything | ✅
 Enable/Disable DXVK | ❎
 Prefix experiments | ❎
-Gamesever hosting | ❎
+SteamCMD | ❎
 
 # Limitations :x:
 
