@@ -59,7 +59,7 @@ Note: Packages can lag behind ports. If you want the latest version you may want
 
 `# pkg install games/homura`
 
-### Build & installing the port
+### Build & installing the port ⚙️
 
 Is [here](https://github.com/the-homura-project/homura-port)
 
@@ -69,7 +69,7 @@ Is [here](https://github.com/the-homura-project/homura-port)
 
 To also delete the related games etc...
 
-Use the "Delete and reset everything" function.`
+Use the "Delete and reset everything" function.
 
 # Usage :computer:
 
