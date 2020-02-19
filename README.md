@@ -89,13 +89,13 @@ Examples:
 
 Features | Done?
 ------------ | -------------
-Installation launching & uninstallation of our collection of applications | ✅
-Custom prefixes | ✅
-Shortcut creation | ✅
-Delete & reset everything | ✅
-Enable/Disable DXVK | ❎
-Prefix experiments | ❎
-SteamCMD | ❎
+Installation launching & uninstallation of our collection of applications | :heavy_check_mark:
+Custom prefixes | :heavy_check_mark:
+Shortcut creation | :heavy_check_mark:
+Delete & reset everything | :heavy_check_mark:
+Enable/Disable DXVK | :heavy_multiplication_x:
+Prefix experiments | :heavy_multiplication_x:
+SteamCMD | :heavy_multiplication_x:
 
 # Limitations :x:
 
