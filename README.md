@@ -85,7 +85,7 @@ Examples:
 - To open winetricks in a prefix use `Homura Winetricks Steam`
 - To run a exe file in a prefix use `Homura RunEXE Steam /usr/home/alexander/Downloads/Patch.exe`
 
-# Feature list / To-Do list
+# Feature / To-Do list
 
 Features | Done?
 ------------ | -------------
