@@ -104,6 +104,8 @@ SteamCMD | :heavy_multiplication_x:
 
 # Chat :speech_balloon:
 
+You need want or want to help?
+
 No fear we don't bite ;)
 
 - Discord: https://discord.gg/JBKcdNt
