@@ -97,6 +97,10 @@ Enable/Disable DXVK | :heavy_multiplication_x:
 Sandboxing | :heavy_multiplication_x:
 SteamCMD | :heavy_multiplication_x:
 
+# Known issues :disappointed:
+
+- Teamspeak dont get set automatically to windows 10 because it creates a folder under games that have to be deleted and the windows version have to be changed manually. Gets fixed in 3.6
+
 # Limitations :x:
 
 - Only 32-Bit Games and Applications working currently. You may want to see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=242625
