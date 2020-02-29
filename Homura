@@ -9,7 +9,7 @@ DDIR=$NDIR/Data
 ICO=$DDIR/$NAME.png
 DATE=$(date)
 WINEVER=$(wine --version)
-COPYRIGHT=$(cat '/usr/local/share/licenses/homura-3.5/BSD2CLAUSE' | grep Copyright)
+COPYRIGHT=$(cat '/usr/local/share/licenses/homura-$VER/BSD2CLAUSE' | grep Copyright)
 
 if [[ $USER == *"root"* ]]; then
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER" --text="$NAME can not be executed as root."
