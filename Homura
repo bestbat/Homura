@@ -9,6 +9,7 @@ DDIR=$NDIR/Data
 ICO=$DDIR/$NAME.png
 DATE=$(date)
 WINEVER=$(wine --version)
+COPYRIGHT=$(cat '/usr/local/share/licenses/homura-3.5/BSD2CLAUSE' | grep Copyright)
 
 if [[ $USER == *"root"* ]]; then
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER" --text="$NAME can not be executed as root."
@@ -67,7 +68,7 @@ if [[ $GPU == *"VMware, Inc."* ]]; then
 zenity --info --width=420 --window-icon=$ICO --title="$NAME $VER" --text="$NAME have detected that you are using the fallback drivers, please check your gpu driver installation. If you should run $NAME in a virtual machine or you have enabled software rendering then you can ignore this message."
 fi
 
-echo -e "\e[32mCopyright (c) 2019-2020, The Homura Project All rights reserved."
+echo -e "\e[32m$COPYRIGHT All rights reserved."
 echo -e "\e[93mWelcome to $NAME $VER have fun!"
 echo -e "\e[3;5;0;92mRunning on $OSN $(uname -r)"
 echo -e "\e[3;5;0;36mWine Version: $WINEVER\e[30;48;5;82m\e[0m"
@@ -1162,7 +1163,7 @@ zenity --info --window-icon=$ICO --width=390 --title="$NAME $VER - About" --text
 $NAME is a launcher that makes it easy to run Windows games/launcher easily on FreeBSD by providing the required fixes and workarounds. 
 The Windows emulation is provided by Wine.
 $NAME is licensed under the BSD 2-Clause License.
-Copyright (c) 2019-2020, The Homura Project
+$COPYRIGHT
 All rights reserved."
 fi
 
