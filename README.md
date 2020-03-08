@@ -99,7 +99,7 @@ SteamCMD | :heavy_multiplication_x:
 
 # Known issues :disappointed:
 
-- Teamspeak dont get set automatically to windows 10 because it creates a folder under games that have to be deleted and the windows version have to be changed manually. Gets fixed in 3.6
+- Teamspeak dont get set automatically to windows 10 because it creates a folder under games that have to be deleted and the windows version have to be changed manually. Is fixed in 3.6
 
 # Limitations :x:
 
@@ -108,7 +108,7 @@ SteamCMD | :heavy_multiplication_x:
 
 # Chat :speech_balloon:
 
-You need want or want to help?
+You need help, want to help or just want to talk?
 
 No fear we don't bite ;)
 
@@ -121,13 +121,15 @@ No fear we don't bite ;)
 - [You](https://github.com/the-homura-project/homura-docs/blob/master/CONTRIBUTING.md)? - ?
 - [Contributors](https://github.com/the-homura-project/homura/graphs/contributors)     - for contributing
 
-# Screenshots & videos :video_camera:
+# Screenshots
 
 ![](https://raw.githubusercontent.com/the-homura-project/homura/master/Media/Screenshot.png "Screenshot")
 
 <img src="https://raw.githubusercontent.com/the-homura-project/homura/master/Media/Screenshot2.png" alt="Monitor" height="500" width="700"> 
 
 <img src="https://raw.githubusercontent.com/the-homura-project/homura/master/Media/Screenshot3.png" alt="Monitor" height="500" width="700"> 
+
+# Videos
 
 Preview: https://www.youtube.com/watch?v=6B1h0F4rIs4
 
