@@ -87,6 +87,8 @@ Examples:
 
 # Feature / To-Do list
 
+We are currently waiting for the wine 5.0 update (https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=244369) before we continue the development.
+
 Features | Done?
 ------------ | -------------
 Installation launching & uninstallation of our collection of applications | :heavy_check_mark:
