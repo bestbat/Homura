@@ -9,7 +9,8 @@ DDIR=$NDIR/Data
 ICO=$DDIR/$NAME.png
 DATE=$(date)
 WINEVER=$(wine --version)
-COPYRIGHT=$(cat '/usr/local/share/licenses/homura-$VER/BSD2CLAUSE' | grep Copyright)
+COPYRIGHT=$(cat "/usr/local/share/licenses/homura-$VER/BSD2CLAUSE" | grep Copyright)
+APPS=$(cat '/home/alexander/Desktop/Apps.hma')
 
 if [[ $USER == *"root"* ]]; then
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER" --text="$NAME can not be executed as root."
@@ -106,7 +107,7 @@ fi
 
 if [[ $CLI == *"0"* ]]; then
 if [[ $TODO == *"Installation"* ]]; then
-INST=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to install?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Discord" FALSE "Custom Prefix" FALSE "Extras")
+INST=$(zenity --list --title="$NAME $VER - $TODO" --column="Application" --column="Description" $APPS)
 fi
 fi
 
