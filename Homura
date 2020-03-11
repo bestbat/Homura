@@ -1,7 +1,7 @@
 #!/usr/local/bin/bash
 export NAME=Homura
 VER=3.5
-ALH=630
+export ALH=500
 GPU=$(glxinfo | grep "OpenGL vendor string")
 OSN=$(uname)
 export NDIR=/usr/home/$USER/.local/share/$NAME
@@ -107,11 +107,11 @@ fi
 
 if [[ $CLI == *"0"* ]]; then
 if [[ $TODO == *"Installation"* ]]; then
-export INST=$(zenity --list --title="$NAME $VER - $TODO" --column="Application" --column="Description" $APPS)
+export INST=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --height=$ALH --width 1000 --column="Application" --column="Description" $APPS)
 fi
 fi
 
-bash /home/alexander/Desktop/Setups.hma
+exec /home/alexander/Desktop/Setups.hma
 
 if [[ $CLI == *"0"* ]]; then
 if [[ $TODO == *"Launcher"* ]]; then

@@ -300,5 +300,6 @@ rm left4gore-2.3-windows.zip
 fi
 fi
 
+unset INST
 zenity --notification --window-icon=$ICO --text "Task completed!"
 exec $NAME
