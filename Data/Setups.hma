@@ -10,7 +10,7 @@ fi
 cd $DDIR
 
 if [[ -z "$INST" ]]; then
-# Do nothing
+echo 
 else
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 zenity --notification --window-icon=$ICO --text "Downloading $INST"
@@ -92,7 +92,7 @@ echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 echo -e "\e[40;38;5;32mInstalling arial fonts to fix missing fonts in the controls menu and ingame\e[30;48;5;82m\e[0m"
 "WINEPREFIX="$NDIR/Games/$INST" winetricks arial
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
-"WINEPREFIX=$NDIR/Games/$INST" winetricks win10
+WINEPREFIX=$NDIR/Games/$INST" winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 7z x clonehero-win32.7z
 rm clonehero-win32.7z
@@ -339,12 +339,6 @@ fi
 fi
 fi
 
-if [[ $CLI == *"0"* ]]; then
-if [[ $TODO == *"Uninstallation"* ]]; then
-UNST=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $TODO" --text "What do you want to uninstall?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Discord" FALSE "Left 4 Gore" FALSE "Custom Prefix")
-fi
-fi
-
 CCKGPDIR=$NDIR/Games/$UNST
 
 if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] ; then
@@ -359,7 +353,7 @@ fi
 fi
 
 if [[ $CCKGPDIR == *"$NDIR/Games/Custom Prefix"* ]]; then
-echo $'\033]30;Custom Prefix\007'
+echo
 fi
 
 if [[ $CCKGPDIR == *"$NDIR/Games/Steam"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Blizzard"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Origin"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Uplay"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Clone Hero"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Drakensang Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/itch"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Anarchy Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/GOG Galaxy"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/League of Legends"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Growtopia"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Bethesda Launcher"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Arc"* ]] ; then
@@ -373,98 +367,10 @@ exit
 fi
 fi
 
-if [[ $UNST == *"Steam"* ]]; then
-rm -d -r "$NDIR/Games/$UNST"
-rm -d -r /usr/home/$USER/.local/share/applications/wine/Programs/$UNST
-rm /usr/home/$USER/Desktop/$UNST.desktop
-fi
 
-if [[ $UNST == *"Blizzard"* ]]; then
-rm -d -r "$NDIR/Games/$UNST"
-rm -d -r /usr/home/$USER/.local/share/applications/wine/Programs/Battle.net
-rm -d -r /usr/home/$USER/Desktop/Battle.net.desktop
-fi
-
-if [[ $UNST == *"Origin"* ]]; then
-rm -d -r "$NDIR/Games/$UNST"
-rm -d -r /usr/home/$USER/.local/share/applications/wine/Programs/$UNST
-rm /usr/home/$USER/Desktop/$UNST.desktop
-fi
-
-if [[ $UNST == *"Uplay"* ]]; then
-rm -d -r "$NDIR/Games/$UNST"
-rm -d -r /usr/home/$USER/.local/share/applications/wine/Programs/Ubisoft
-rm /usr/home/$USER/Desktop/$UNST.desktop
-rm /usr/home/$USER/Desktop/$UNST.lnk 
-fi
-
-if [[ $UNST == *"Teamspeak"* ]]; then
-rm -d -r $NDIR/Programs/$UNST
-rm "/usr/home/$USER/.local/share/applications/wine/Programs/TeamSpeak 3 Client.desktop"
-fi
-
-if [[ $UNST == *"Clone-Hero"* ]]; then
-rm -d -r "$NDIR/Games/$UNST"
-rm "/usr/home/$USER/.local/share/applications/$CS.desktop"
-fi
-
-if [[ $UNST == *"Drakensang Online"* ]]; then
-rm -d -r "$NDIR/Games/$UNST"
-rm -d -r "/usr/home/$USER/.local/share/applications/wine/Programs/$UNST"
-rm "/usr/home/$USER/Desktop/$UNST.desktop"
-rm "/usr/home/$USER/Desktop/$UNST.lnk"
-fi
-
-if [[ $UNST == *"Anarchy-Online"* ]]; then
-rm -d -r "$NDIR/Games/$UNST"
-rm -d -r "/usr/home/$USER/.local/share/applications/wine/Programs/$UNST"
-rm "/usr/home/$USER/Desktop/$UNST.desktop"
-fi
-
-if [[ $UNST == *"itch"* ]]; then
-rm -d -r "$NDIR/Games/$UNST"
-rm -d -r "/usr/home/$USER/.local/share/applications/wine/Programs/Itch Corp"
-fi
-
-if [[ $UNST == *"League-of-Legends"* ]]; then
-rm -d -r "$NDIR/Games/$UNST"
-rm "/usr/home/$USER/.local/share/applications/$UNST.desktop"
-rm $DDIR/icon.png
-fi
-
-if [[ $UNST == *"GOG-Galaxy"* ]]; then
-rm -d -r "$NDIR/Games/$UNST"
-rm -d -r /usr/home/$USER/.local/share/applications/wine/Programs/GOG.com
-rm -d -r "/usr/home/$USER/Desktop/$UNST.desktop"
-fi
-
-if [[ $UNST == *"Wargaming-Game-Center"* ]]; then
-rm -d -r "$NDIR/Games/$UNST"
-rm -d -r /usr/home/$USER/.local/share/applications/wine/Programs/Wargaming.net
-rm "/usr/home/$USER/Desktop/Game Center.desktop"
-fi
-
-if [[ $UNST == *"Growtopia"* ]]; then
-rm -d -r "$NDIR/Games/$UNST"
-rm -d -r /usr/home/$USER/.local/share/applications/wine/Programs/$UNST
-rm /usr/home/$USER/Desktop/Growtopia.desktop
-fi
-
-if [[ $UNST == *"Bethesda-Launcher"* ]]; then
-rm -d -r "$NDIR/Games/$UNST"
-rm -d -r "/usr/home/$USER/.local/share/applications/wine/Programs/Bethesda.net Launcher"
-fi
-
-if [[ $UNST == *"Arc"* ]]; then
-rm -d -r "$NDIR/Games/$UNST"
-rm -d -r "/usr/home/$USER/.local/share/applications/wine/Programs/Perfect World Entertainment"
-fi
-
-if [[ $UNST == *"Discord"* ]]; then
-rm -d -r $NDIR/Programs/$UNST
-rm /usr/home/$USER/.local/share/applications/$UNST.desktop
-fi
-
+if [[ $UNST == *"Teamspeak"* ]] || [[ $UNST == *"Discord"* ]] ; then
+echo Y | WINEPREFIX=$NDIR/Programs/$UNST winetricks annihilate
+else
 if [[ $UNST == *"Custom-Prefix"* ]]; then
 cd "$NDIR/Custom Prefixes"
 PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/Custom Prefixes/")
@@ -473,6 +379,9 @@ then
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - $TODO" --text="There was no custom prefix selected."
 else
 rm -r -d "$PREFIXNAME"
+fi
+else
+echo Y | WINEPREFIX=$NDIR/Games/$UNST winetricks annihilate 
 fi
 fi
 
