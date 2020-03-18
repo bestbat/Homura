@@ -77,98 +77,34 @@ echo -e "\e[3;5;0;36mWine Version: $WINEVER\e[30;48;5;82m\e[0m"
 echo -e "\e[3;5;0;31mGPU Info OpenGL:\e[30;48;5;82m\e[0m" && glxinfo | grep OpenGL
 echo -e "\e[3;5;0;31mGPU Info Vulkan:\e[30;48;5;82m\e[0m" && vulkaninfo | grep -m 1 "GPU id"
 
-var2=$2
-EXECUTABLE=$3
-
-Install() {
-export INST=$var2
-}
-
-Launch() {
-LNCH=$var2
-}
-
-Uninstall() {
-UNST=$var2
-}
-
-Winetricks() {
-WTR=$var2
-}
-
-RunEXE() {
-RAEP=$var2
-}
-
-"$@"
-
-if [[ $CLI == *"0"* ]]; then
 TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=420 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Applying a fix" FALSE "Open Homura folder" FALSE "Enable logging" FALSE "Other" FALSE "About" FALSE "Exit")
-fi
 
-if [[ $CLI == *"0"* ]]; then
+
 if [[ $TODO == *"Installation"* ]]; then
 export INST=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to install?" --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
-exec /home/alexander/Desktop/Setups.hma
-fi
+exec /home/alexander/Downloads/homura-master/Data/Setups.hma
 fi
 
-if [[ $CLI == *"0"* ]]; then
 if [[ $TODO == *"Launcher"* ]]; then
-export LNCH=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
+export LNCH=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to launch?" --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
+bash /home/alexander/Downloads/homura-master/Data/Checks.hma
+exec /home/alexander/Downloads/homura-master/Data/Setups.hma
+fi
+
+if [[ $TODO == *"Uninstallation"* ]]; then
+export UNST=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to uninstall?" --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
+if [[ -z "$UNST" ]]; then
+zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="Nothing was selected for uninstallation"
+exec $NAME
+else
+bash /home/alexander/Downloads/homura-master/Data/Checks.hma
 exec /home/alexander/Downloads/homura-master/Data/Setups.hma
 fi
 fi
 
-if [[ $CLI == *"0"* ]]; then
-if [[ $TODO == *"Uninstallation"* ]]; then
-export UNST=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
-fi
-fi
-
-CCKGPDIR=$NDIR/Games/$UNST
-
-if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] ; then
-if [ ! -d "$NDIR/Programs/$UNST" ]; then
-if [[ $CLI == *"0"* ]]; then
-zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
-exec $NAME
-fi
-echo -e "\e[40;38;5;82mYou can not uninstall something that you dont have installed :)\e[30;48;5;82m\e[0m"
-exit
-fi
-fi
-
-if [[ $CCKGPDIR == *"$NDIR/Games/Left 4 Gore"* ]]; then
-if [ ! -d "$NDIR/Extras/left4gore-2.3-windows" ]; then
-if [[ $CLI == *"0"* ]]; then
-zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
-exec $NAME
-fi
-echo -e "\e[40;38;5;82mYou can not uninstall something that you dont have installed :)\e[30;48;5;82m\e[0m"
-exit
-fi
-fi
-
-if [[ $CCKGPDIR == *"$NDIR/Games/Custom Prefix"* ]]; then
-echo $'\033]30;Custom Prefix\007'
-fi
-
-if [[ $CCKGPDIR == *"$NDIR/Games/Steam"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Blizzard"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Origin"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Uplay"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Clone Hero"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Drakensang Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/itch"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Anarchy Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/GOG Galaxy"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/League of Legends"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Growtopia"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Bethesda Launcher"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Arc"* ]] ; then
-if [ ! -d "$NDIR/Games/$UNST" ]; then
-if [[ $CLI == *"0"* ]]; then
-zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
-exec $NAME
-fi
-echo -e "\e[40;38;5;82mYou can not uninstall something that you dont have installed :)\e[30;48;5;82m\e[0m"
-exit
-fi
-fi
-
-if [[ $CLI == *"0"* ]]; then
 if [[ $TODO == *"Winetricks"* ]]; then
-WTR=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --title="$NAME $VER - $TODO" --text "In what prefix do you want to open winetricks?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Discord" FALSE "Custom Prefix")
-fi
+export WTR=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "In what prefix do do you want to open winetricks?" --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
+exec /home/alexander/Downloads/homura-master/Data/Misc.hma
 fi
 
 # If a prefix dont exists, winetricks will create a prefix instead. We leave this like this, if someone wants to change the prefix before installing the application.

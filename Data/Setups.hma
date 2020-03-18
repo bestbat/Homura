@@ -133,7 +133,6 @@ rm $DDIR/windows
 fi
 
 if [[ $INST == *"GOG-Galaxy"* ]]; then
-INST="GOG Galaxy"
 fetch --retry https://cdn.gog.com/open/galaxy/client/setup_galaxy_1.2.64.2.exe
 echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
@@ -237,31 +236,6 @@ echo "$ENV WINEPREFIX='$NDIR/Custom Prefixes/$PREFIXNAME' wine '$EXECUTABLE' $SP
 fi
 fi
 
-
-CCKGPDIR=$NDIR/Games/$LNCH
-
-if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] ; then
-if [ ! -d "$NDIR/Programs/$LNCH" ]; then
-if [[ $CLI == *"0"* ]]; then
-zenity --info --width=200 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="$LNCH is not installed."
-exec $NAME
-fi
-echo -e "\e[40;38;5;82m$LNCH is not installed.\e[30;48;5;82m\e[0m"
-exit
-fi
-fi
-
-if [[ $CCKGPDIR == *"$NDIR/Games/Steam"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Blizzard"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Origin"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Uplay"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Clone Hero"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Drakensang Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/itch"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Anarchy Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/GOG Galaxy"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/League of Legends"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Growtopia"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Bethesda Launcher"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Arc"* ]] ; then
-if [ ! -d "$NDIR/Games/$LNCH" ]; then
-if [[ $CLI == *"0"* ]]; then
-zenity --info --width=200 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="$LNCH is not installed."
-exec $NAME
-fi
-echo -e "\e[40;38;5;82m$LNCH is not installed.\e[30;48;5;82m\e[0m"
-exit
-fi
-fi
-
 if [[ $LNCH == *"Steam"* ]]; then     
 WINEPREFIX=$NDIR/Games/$LNCH wine "$NDIR/Games/$LNCH/drive_c/Program Files/Steam/Steam.exe" -no-browser +open steam://open/minigameslist
 fi
@@ -339,35 +313,7 @@ fi
 fi
 fi
 
-CCKGPDIR=$NDIR/Games/$UNST
-
-if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] ; then
-if [ ! -d "$NDIR/Programs/$UNST" ]; then
-if [[ $CLI == *"0"* ]]; then
-zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
-exec $NAME
-fi
-echo -e "\e[40;38;5;82mYou can not uninstall something that you dont have installed :)\e[30;48;5;82m\e[0m"
-exit
-fi
-fi
-
-if [[ $CCKGPDIR == *"$NDIR/Games/Custom Prefix"* ]]; then
-echo
-fi
-
-if [[ $CCKGPDIR == *"$NDIR/Games/Steam"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Blizzard"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Origin"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Uplay"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Clone Hero"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Drakensang Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/itch"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Anarchy Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/GOG Galaxy"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/League of Legends"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Growtopia"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Bethesda Launcher"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Arc"* ]] ; then
-if [ ! -d "$NDIR/Games/$UNST" ]; then
-if [[ $CLI == *"0"* ]]; then
-zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
-exec $NAME
-fi
-echo -e "\e[40;38;5;82mYou can not uninstall something that you dont have installed :)\e[30;48;5;82m\e[0m"
-exit
-fi
-fi
-
-
+if [[ -v UNST ]]; then 
 if [[ $UNST == *"Teamspeak"* ]] || [[ $UNST == *"Discord"* ]] ; then
 echo Y | WINEPREFIX=$NDIR/Programs/$UNST winetricks annihilate
 else
@@ -381,7 +327,8 @@ else
 rm -r -d "$PREFIXNAME"
 fi
 else
-echo Y | WINEPREFIX=$NDIR/Games/$UNST winetricks annihilate 
+echo Y | WINEPREFIX=$NDIR/Games/$UNST winetricks annihilate
+fi
 fi
 fi
 

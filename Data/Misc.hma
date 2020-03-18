@@ -1,0 +1,20 @@
+#!/usr/local/bin/bash
+if [[ $WTR == *"Teamspeak"* ]] || [[ $UNST == *"Discord"* ]] ; then
+echo Y | WINEPREFIX=$NDIR/Programs/$UNST winetricks annihilate
+else
+if [[ $WTR == *"Custom Prefix"* ]]; then
+cd "$NDIR/Custom Prefixes"
+PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/Custom Prefixes/")
+if [ -z "$PREFIXNAME" ]
+then
+zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - $TODO" --text="There was no custom prefix selected."
+else
+WINEPREFIX="$PREFIXNAME" winetricks
+fi
+else
+WINEPREFIX=$NDIR/Games/$WTR winetricks
+fi
+fi
+
+unset $WTR
+exec $NAME
