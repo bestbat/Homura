@@ -10,7 +10,8 @@ fi
 cd $DDIR
 
 if [[ -z "$INST" ]]; then
-echo 
+zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - $TODO" --text="There was nothing selected."
+exec $NAME
 else
 echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
 zenity --notification --window-icon=$ICO --text "Downloading $INST"

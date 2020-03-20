@@ -107,59 +107,10 @@ export WTR=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --tex
 exec /home/alexander/Downloads/homura-master/Data/Misc.hma
 fi
 
-# If a prefix dont exists, winetricks will create a prefix instead. We leave this like this, if someone wants to change the prefix before installing the application.
 
-if [[ $WTR == *"Steam"* ]] || [[ $WTR == *"Blizzard"* ]] || [[ $WTR == *"Origin"* ]] || [[ $WTR == *"Uplay"* ]] || [[ $WTR == *"Clone Hero"* ]] || [[ $WTR == *"Drakensang Online"* ]] || [[ $WTR == *"itch"* ]] || [[ $WTR == *"Anarchy Online"* ]] || [[ $WTR == *"GOG Galaxy"* ]] || [[ $WTR == *"League of Legends"* ]] || [[ $WTR == *"Wargaming Game Center"* ]] || [[ $WTR == *"Wargaming Game Center"* ]] || [[ $WTR == *"Growtopia"* ]] || [[ $WTR == *"Bethesda Launcher"* ]] || [[ $WTR == *"Wargaming Game Center"* ]] || [[ $WTR == *"Arc"* ]] ; then
-WINEPREFIX=$NDIR/Games/$WTR winetricks
-fi
-
-if [[ $WTR == *"Teamspeak"* ]]; then
-WINEPREFIX=$NDIR/Programs/$WTR winetricks
-fi
-
-if [[ $WTR == *"Discord"* ]]; then
-WINEPREFIX=$NDIR/Programs/$WTR winetricks
-fi
-
-if [[ $WTR == *"Custom Prefix"* ]]; then
-cd "$NDIR/Custom Prefixes"
-PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/Custom Prefixes/")
-if [ -z "$PREFIXNAME" ]
-then
-zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - $TODO" --text="There was no custom prefix selected."
-else
-WINEPREFIX="$PREFIXNAME" winetricks
-fi
-fi
-
-if [[ $CLI == *"0"* ]]; then
 if [[ $TODO == *"Run a executable in prefix"* ]]; then
-RAEP=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --title="$NAME $VER - $TODO" --text "In what prefix do you want open your executable?" --hide-header --column "$NAME" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone Hero" FALSE "Drakensang Online" FALSE "Anarchy Online" FALSE "itch" FALSE "GOG Galaxy" FALSE "League of Legends" FALSE "Wargaming Game Center" FALSE "Growtopia" FALSE "Bethesda Launcher" FALSE "Arc" FALSE "Discord" FALSE "Custom Prefix")
-EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
-fi
-fi
-
-if [[ $RAEP == *"Steam"* ]] || [[ $RAEP == *"Blizzard"* ]] || [[ $RAEP == *"Origin"* ]] || [[ $RAEP == *"Uplay"* ]] || [[ $RAEP == *"Clone Hero"* ]] || [[ $RAEP == *"Drakensang Online"* ]] || [[ $RAEP == *"itch"* ]] || [[ $RAEP == *"Anarchy Online"* ]] || [[ $RAEP == *"GOG Galaxy"* ]] || [[ $WTR == *"League of Legends"* ]] || [[ $WTR == *"Wargaming Game Center"* ]] || [[ $WTR == *"Wargaming Game Center"* ]] || [[ $RAEP == *"Growtopia"* ]] || [[ $RAEP == *"Bethesda Launcher"* ]] || [[ $RAEP == *"Wargaming Game Center"* ]] || [[ $RAEP == *"Arc"* ]] ; then
-WINEPREFIX="$NDIR/Games/$RAEP" wine "$EXECUTABLE"
-fi
-
-if [[ $RAEP == *"Teamspeak"* ]]; then
-WINEPREFIX=$NDIR/Programs/$RAEP wine "$EXECUTABLE"
-fi
-
-if [[ $RAEP == *"Discord"* ]]; then
-WINEPREFIX=$NDIR/Programs/$RAEP wine "$EXECUTABLE"
-fi
-
-if [[ $RAEP == *"Custom Prefix"* ]]; then
-cd "$NDIR/Custom Prefixes"
-PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/Custom Prefixes/")
-if [ -z "$PREFIXNAME" ]
-then
-zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - $TODO" --text="There was no custom prefix selected."
-else
-WINEPREFIX="$NDIR/Custom Prefixes/$PREFIXNAME" wine "$EXECUTABLE"
-fi
+export RAEP=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "In what prefix do do you want to open your executable?" --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
+exec /home/alexander/Downloads/homura-master/Data/Misc.hma
 fi
 
 if [[ $TODO == *"Update"* ]]; then
