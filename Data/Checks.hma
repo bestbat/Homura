@@ -44,3 +44,19 @@ exec $NAME
 exit
 fi
 fi
+
+CCKGPDIR=$NDIR/Games/$CS
+
+if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] ; then
+if [ ! -d "$NDIR/Programs/$CS" ]; then
+zenity --info --width=200 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="$LNCH is not installed."
+exec $NAME
+exit
+fi
+
+if [[ $CCKGPDIR == *"$NDIR/Games/Steam"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Blizzard"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Origin"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Uplay"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Clone Hero"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Drakensang Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/itch"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Anarchy Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/GOG Galaxy"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/League of Legends"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Growtopia"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Bethesda Launcher"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming Game Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Arc"* ]] ; then
+if [ ! -d "$NDIR/Games/$CS" ]; then
+zenity --info --width=200 --window-icon=$ICO --title="$NAME $VER - $OTR" --text="$CS is not installed."
+exec $NAME
+fi
+fi
