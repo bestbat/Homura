@@ -91,23 +91,6 @@ fi
 if [[ $OTR == *"Delete & reset everything"* ]]; then
 DRQ=$(zenity --question --window-icon=$ICO --width 300 --title "$NAME $VER - $OTR" --text "Do you really want to delete and reset everything? ／人◕ ‿‿ ◕人＼"; echo $?)
 if [[ $DRQ == *"0"* ]]; then
-$NAME Uninstall Steam
-$NAME Uninstall Blizzard
-$NAME Uninstall Origin
-$NAME Uninstall Uplay
-$NAME Uninstall Teamspeak
-$NAME Uninstall "Clone Hero"
-$NAME Uninstall "Drakensang Online"
-$NAME Uninstall "Anarchy Online"
-$NAME Uninstall itch
-$NAME Uninstall "GOG Galaxy"
-$NAME Uninstall "League of Legends"
-$NAME Uninstall "Wargaming Game Center"
-$NAME Uninstall Growtopia
-$NAME Uninstall "Bethesda Launcher"
-$NAME Uninstall Arc
-$NAME Uninstall Discord
-$NAME Uninstall "Left 4 Gore"
 rm -r -d $NDIR
 if [ -f "/usr/home/$USER/.local/share/applications/$NAME.desktop" ]; then
 rm "/usr/home/$USER/.local/share/applications/$NAME.desktop"
@@ -362,4 +345,6 @@ fi
 unset WTR
 unset RAEP
 unset UPDE
+unset OTR
+unset CS
 exec $NAME
