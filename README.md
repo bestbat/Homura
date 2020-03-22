@@ -72,7 +72,7 @@ Use the "Delete and reset everything" function.
 
 # Usage :computer:
 
-The Homura GUI can be opened via the commandline `Homura` but also via a shortcut (if you have Homura allowed to create one).
+Homura was created for the gui usage in the first place, the gui can be opened via the commandline `Homura` but also via a shortcut (if you have Homura allowed to create one).
 
 For terminal fans there are also some fast commands:
 
@@ -82,7 +82,6 @@ Examples:
 - To launch something use `Homura Launch Steam`
 - To uninstall something use `Homura Uninstall Steam`
 - To open winetricks in a prefix use `Homura Winetricks Steam`
-- To run a exe file in a prefix use `Homura RunEXE Steam /usr/home/alexander/Downloads/Patch.exe`
 
 # Feature / To-Do list
 
