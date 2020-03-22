@@ -11,7 +11,7 @@ export ICO=$DDIR/$NAME.png
 DATE=$(date)
 WINEVER=$(wine --version)
 COPYRIGHT=$(cat "/usr/local/share/licenses/homura-$VER/BSD2CLAUSE" | grep Copyright)
-APPS=$(cat '/home/alexander/Downloads/homura-master/Data/Apps.hma')
+APPS=$(cat '/usr/local/share/homura/Data/Apps.hma')
 
 if [[ $USER == *"root"* ]]; then
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER" --text="$NAME can not be executed as root."
@@ -64,25 +64,25 @@ var2=$2
 
 Install() {
 export INST=$var2
-bash /home/alexander/Downloads/homura-master/Data/Checks.hma
-exec /home/alexander/Downloads/homura-master/Data/Setups.hma
+bash /usr/local/share/homura/Data/Checks.hma
+exec /usr/local/share/homura/Data/Setups.hma
 }
 
 Launch() {
 export LNCH=$var2
-bash /home/alexander/Downloads/homura-master/Data/Checks.hma
-exec /home/alexander/Downloads/homura-master/Data/Setups.hma
+bash /usr/local/share/homura/Data/Checks.hma
+exec /usr/local/share/homura/Data/Setups.hma
 }
 
 Uninstall() {
 export UNST=$var2
-bash /home/alexander/Downloads/homura-master/Data/Checks.hma
-exec /home/alexander/Downloads/homura-master/Data/Setups.hma
+bash /usr/local/share/homura/Data/Checks.hma
+exec /usr/local/share/homura/Data/Setups.hma
 }
 
 Winetricks() {
 export WTR=$var2
-exec exec /home/alexander/Downloads/homura-master/Data/Misc.hma
+exec /usr/local/share/homura/Data/Misc.hma
 }
 
 "$@"
@@ -99,13 +99,13 @@ TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=420 --width 300 --
 
 if [[ $TODO == *"Installation"* ]]; then
 export INST=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to install?" --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
-exec /home/alexander/Downloads/homura-master/Data/Setups.hma
+exec /usr/local/share/homura/Data/Setups.hma
 fi
 
 if [[ $TODO == *"Launcher"* ]]; then
 export LNCH=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to launch?" --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
-bash /home/alexander/Downloads/homura-master/Data/Checks.hma
-exec /home/alexander/Downloads/homura-master/Data/Setups.hma
+bash /usr/local/share/homura/Data/Checks.hma
+exec /usr/local/share/homura/Data/Setups.hma
 fi
 
 if [[ $TODO == *"Uninstallation"* ]]; then
@@ -114,31 +114,31 @@ if [[ -z "$UNST" ]]; then
 zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="Nothing was selected for uninstallation"
 exec $NAME
 else
-bash /home/alexander/Downloads/homura-master/Data/Checks.hma
-exec /home/alexander/Downloads/homura-master/Data/Setups.hma
+bash /usr/local/share/homura/Data/Checks.hma
+exec /usr/local/share/homura/Data/Setups.hma
 fi
 fi
 
 if [[ $TODO == *"Winetricks"* ]]; then
 export WTR=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "In what prefix do do you want to open winetricks?" --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
-exec /home/alexander/Downloads/homura-master/Data/Misc.hma
+exec /usr/local/share/homura/Data/Misc.hma
 fi
 
 
 if [[ $TODO == *"Run a executable in prefix"* ]]; then
 export RAEP=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "In what prefix do do you want to open your executable?" --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
-exec /home/alexander/Downloads/homura-master/Data/Misc.hma
+exec /usr/local/share/homura/Data/Misc.hma
 fi
 
 if [[ $TODO == *"Update"* ]]; then
 export UPDE=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to update?" --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
-exec /home/alexander/Downloads/homura-master/Data/Misc.hma
+exec /usr/local/share/homura/Data/Misc.hma
 fi
 
 
 if [[ $TODO == *"Applying a fix"* ]]; then
 AAF=$(zenity --list --radiolist --window-icon=$ICO  --height=200 --width 350 --title="$NAME $VER" --text "What fix do you want to apply?" --hide-header --column "$NAME" --column "Item" FALSE "Fix of blackscreen in Anno 1404 (Steam)")
-exec /home/alexander/Downloads/homura-master/Data/Misc.hma
+exec /usr/local/share/homura/Data/Misc.hma
 fi
 
 if [[ $TODO == *"Open Homura folder"* ]]; then
@@ -155,7 +155,7 @@ fi
 
 if [[ $TODO == *"Other"* ]]; then
 export OTR=$(zenity --list --radiolist --window-icon=$ICO --height=250 --width 250 --title="$NAME $VER - $TODO" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Use software rendering" FALSE "Delete & reset everything" FALSE "Create a shortcut" FALSE "GitHub page")
-exec /home/alexander/Downloads/homura-master/Data/Misc.hma
+exec /usr/local/share/homura/Data/Misc.hma
 fi
 
 if [[ $TODO == *"About"* ]]; then
