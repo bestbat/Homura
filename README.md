@@ -37,7 +37,6 @@ Hardware:
 - A GPU with OpenGL 3.0 & 128MB VRAM or better
 
 Software: 
-- [ftp/curl](https://www.freshports.org/ftp/curl/)
 - [shells/bash](https://www.freshports.org/shells/bash)
 - [archivers/p7zip](https://www.freshports.org/archivers/p7zip/)
 - [x11/zenity](https://www.freshports.org/x11/zenity)
