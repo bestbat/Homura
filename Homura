@@ -18,13 +18,7 @@ zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER" --text="$NAME 
 exit
 fi
 
-if [ -z "$1" ]
-then
-CLI=0
-fi
-
 if [ ! -d "$NDIR" ]; then
-if [[ $CLI == *"0"* ]]; then
 mkdir -p $NDIR
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - Welcome" --text="Welcome to $NAME. If you have a problem, suggestion, questions or similar, do not hesitate to open an issue on GitHub. Have Fun!"
 SC=$(zenity --question --window-icon=$ICO --width 300 --title "$NAME $VER - One time question" --text "Do you want a shortcut of $NAME in your application menu?"; echo $?)
@@ -50,10 +44,6 @@ if [[ $OSN != "FreeBSD" ]]; then
 zenity --info --width=360 --window-icon=$ICO --title="$NAME $VER" --text="You are about to use $NAME on an unsupported system. Please be aware that unexpected errors may occur and that your bug reports can be marked as invaild."
 fi
 fi
-else
-echo -e "\e[40;38;5;82mYou must open $NAME first without a command. \e[30;48;5;82m\e[0m"
-exit
-fi
 fi
 
 if [ ! -d "$DDIR" ]; then
@@ -69,6 +59,33 @@ fi
 if [[ $GPU == *"VMware, Inc."* ]]; then
 zenity --info --width=420 --window-icon=$ICO --title="$NAME $VER" --text="$NAME have detected that you are using the fallback drivers, please check your gpu driver installation. If you should run $NAME in a virtual machine or you have enabled software rendering then you can ignore this message."
 fi
+
+var2=$2
+
+Install() {
+export INST=$var2
+bash /home/alexander/Downloads/homura-master/Data/Checks.hma
+exec /home/alexander/Downloads/homura-master/Data/Setups.hma
+}
+
+Launch() {
+export LNCH=$var2
+bash /home/alexander/Downloads/homura-master/Data/Checks.hma
+exec /home/alexander/Downloads/homura-master/Data/Setups.hma
+}
+
+Uninstall() {
+export UNST=$var2
+bash /home/alexander/Downloads/homura-master/Data/Checks.hma
+exec /home/alexander/Downloads/homura-master/Data/Setups.hma
+}
+
+Winetricks() {
+export WTR=$var2
+exec exec /home/alexander/Downloads/homura-master/Data/Misc.hma
+}
+
+"$@"
 
 echo -e "\e[32m$COPYRIGHT All rights reserved."
 echo -e "\e[93mWelcome to $NAME $VER have fun!"
