@@ -1,5 +1,7 @@
 #!/usr/local/bin/bash
 
+# Checks for the launcher
+
 CCKGPDIR=$NDIR/Games/$LNCH
 
 if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] ; then
@@ -19,6 +21,8 @@ unset LNCH
 exec $NAME
 fi
 fi
+
+# Checks for the uninstalller
 
 CCKGPDIR=$NDIR/Games/$UNST
 
@@ -44,6 +48,8 @@ exec $NAME
 exit
 fi
 fi
+
+# Checks for the shortcut creator
 
 CCKGPDIR=$NDIR/Games/$CS
 
