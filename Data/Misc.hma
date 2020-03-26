@@ -30,9 +30,11 @@ PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --
 if [ -z "$PREFIXNAME" ]
 then
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - $TODO" --text="There was no custom prefix selected."
-fi
 else
 WINEPREFIX="$NDIR/Custom Prefixes/$PREFIXNAME" wine "$EXECUTABLE"
+fi
+else
+WINEPREFIX="$NDIR/Games/$RAEP" wine "$EXECUTABLE"
 fi
 fi
 fi
