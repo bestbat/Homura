@@ -137,7 +137,7 @@ fi
 
 
 if [[ $TODO == *"Applying a fix"* ]]; then
-AAF=$(zenity --list --radiolist --window-icon=$ICO  --height=200 --width 350 --title="$NAME $VER" --text "What fix do you want to apply?" --hide-header --column "$NAME" --column "Item" FALSE "Fix of blackscreen in Anno 1404 (Steam)")
+export AAF=$(zenity --list --radiolist --window-icon=$ICO  --height=200 --width 350 --title="$NAME $VER" --text "What fix do you want to apply?" --hide-header --column "$NAME" --column "Item" FALSE "Fix of blackscreen in Anno 1404 (Steam)")
 exec /usr/local/share/homura/Data/Misc.hma
 fi
 
