@@ -87,6 +87,23 @@ exec /usr/local/share/homura/Data/Misc.hma
 
 "$@"
 
+function download {
+               zenity --notification --window-icon=$ICO --text "Downloading $INST"
+               fetch --retry $1
+           }
+
+function prefix-message {
+               zenity --notification --window-icon=$ICO --text "Setup prefix"
+           }
+
+function installer-message {
+               zenity --notification --window-icon=$ICO --text "Starting installer"
+           }
+           
+export -f download
+export -f prefix-message
+export -f installer-message
+
 echo -e "\e[32m$COPYRIGHT All rights reserved."
 echo -e "\e[93mWelcome to $NAME $VER have fun!"
 echo -e "\e[3;5;0;92mRunning on $OSN $(uname -r)"
