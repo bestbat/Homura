@@ -1,4 +1,5 @@
 #!/usr/local/bin/bash
+
 if [ ! -d "$NDIR/Games" ]; then
 mkdir $NDIR/Games
 fi
@@ -6,12 +7,12 @@ fi
 if [ ! -d "$NDIR/Programs" ]; then
 mkdir $NDIR/Programs
 fi
-
+           
 cd $DDIR
 
 if [[ $INST == *"Steam"* ]]; then
-fetch --retry https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
-echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+download https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
+prefix-message
 echo -e "\e[40;38;5;32mInstalling dotnet40 & arial fonts to fix crashes and missing fonts in several games\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks dotnet40 arial vcrun2015
 echo -e "\e[40;38;5;32mSet prefix to Windows 10 and prevent that the wm decorates the window\e[30;48;5;82m\e[0m"
@@ -20,7 +21,7 @@ echo -e "\e[40;38;5;32mApplying audio fixes for several games\e[30;48;5;82m\e[0m
 WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\AppDefaults\LifeIsStrange.exe" /v "Version" /t "REG_SZ" /d "winxp" /f
 WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\AppDefaults\helldivers.exe" /v "Version" /t "REG_SZ" /d "winxp" /f
 WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\AppDefaults\VanHelsing_x86.exe" /v "Version" /t "REG_SZ" /d "winxp" /f
-echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+installer-message
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/SteamSetup.exe
 echo -e "\e[40;38;5;32mReplacing the shortcut with one that contains the required tweaks\e[30;48;5;82m\e[0m"
 rm /usr/home/$USER/.local/share/applications/wine/Programs/Steam/Steam.desktop
@@ -34,8 +35,8 @@ rm $DDIR/SteamSetup.exe
 fi
 
 if [[ $INST == *"Blizzard"* ]]; then
-fetch --retry http://dist.blizzard.com/downloads/bna-installers/322d5bb9ae0318de3d4cde7641c96425/retail.1/Battle.net-Setup-enUS.exe
-echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+download http://dist.blizzard.com/downloads/bna-installers/322d5bb9ae0318de3d4cde7641c96425/retail.1/Battle.net-Setup-enUS.exe
+prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10 and prevent that the wm decorates the window\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10 windowmanagerdecorated=n
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -44,8 +45,8 @@ rm $DDIR/Battle.net-Setup-enUS.exe
 fi
 
 if [[ $INST == *"Origin"* ]]; then
-fetch --retry https://origin-a.akamaihd.net/Origin-Client-Download/origin/legacy/OriginThinSetup.exe
-echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+download https://origin-a.akamaihd.net/Origin-Client-Download/origin/legacy/OriginThinSetup.exe
+prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows xp because origin dont work with newer versions\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/Origin winetricks winxp
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -55,8 +56,8 @@ rm $DDIR/OriginThinSetup.exe
 fi
 
 if [[ $INST == *"Uplay"* ]]; then
-fetch --retry https://ubistatic3-a.akamaihd.net/orbit/launcher_installer/UplayInstaller.exe
-echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+download https://ubistatic3-a.akamaihd.net/orbit/launcher_installer/UplayInstaller.exe
+prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -66,8 +67,8 @@ rm $DDIR/UplayInstaller.exe
 fi
 
 if [[ $INST == *"Teamspeak"* ]]; then
-fetch --retry https://files.teamspeak-services.com/releases/client/3.5.0/TeamSpeak3-Client-win32-3.5.0.exe
-echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+download https://files.teamspeak-services.com/releases/client/3.5.0/TeamSpeak3-Client-win32-3.5.0.exe
+prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Programs/$INST winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -80,8 +81,8 @@ fi
 if [[ $INST == *"Clone-Hero"* ]]; then
 mkdir "$NDIR/Games/$INST"
 cd "$NDIR/Games/$INST"
-fetch --retry http://dl.clonehero.net/clonehero-v.23.2.2/clonehero-win32.7z
-echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+download http://dl.clonehero.net/clonehero-v.23.2.2/clonehero-win32.7z
+prefix-message
 echo -e "\e[40;38;5;32mInstalling arial fonts to fix missing fonts in the controls menu and ingame\e[30;48;5;82m\e[0m"
 "WINEPREFIX="$NDIR/Games/$INST" winetricks arial
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
@@ -96,8 +97,8 @@ zenity --info --width=500 --window-icon=$ICO --title="$NAME $VER - Clone-Hero" -
 fi
 
 if [[ $INST == *"Drakensang-Online"* ]]; then
-fetch --retry https://drasaonline-481-dwl.bpsecure.com/applet/dro_setup.exe
-echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+download https://drasaonline-481-dwl.bpsecure.com/applet/dro_setup.exe
+prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -106,8 +107,8 @@ rm $DDIR/dro_setup.exe
 fi
 
 if [[ $INST == *"Anarchy-Online"* ]]; then
-fetch --retry http://update.anarchy-online.com/download/AO/AnarchyOnline_EP1.exe
-echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+download http://update.anarchy-online.com/download/AO/AnarchyOnline_EP1.exe
+prefix-message
 WINEPREFIX="$NDIR/Games/$INST" winetricks winxp
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
 zenity --info --width=260 --title="$NAME $VER - Installation of Anarchy Online" --text="Please let the installer create an shortcut or you will unable to start the launcher later."
@@ -116,8 +117,8 @@ rm $DDIR/AnarchyOnline_EP1.exe
 fi
 
 if [[ $INST == *"itch"* ]]; then
-fetch --retry http://nuts.itch.zone/download/windows
-echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+download http://nuts.itch.zone/download/windows
+prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -126,8 +127,8 @@ rm $DDIR/windows
 fi
 
 if [[ $INST == *"GOG-Galaxy"* ]]; then
-fetch --retry https://cdn.gog.com/open/galaxy/client/setup_galaxy_1.2.64.2.exe
-echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+download https://cdn.gog.com/open/galaxy/client/setup_galaxy_1.2.64.2.exe
+prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -148,7 +149,8 @@ rm $DDIR/setup_galaxy_1.2.64.2.exe
 fi
 
 if [[ $INST == *"League-of-Legends"* ]]; then
-fetch --retry https://lol.secure.dyn.riotcdn.net/channels/public/x/installer/current/live.euw.exe
+download https://lol.secure.dyn.riotcdn.net/channels/public/x/installer/current/live.euw.exe
+prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -157,8 +159,8 @@ rm $DDIR/live.euw.exe
 fi
 
 if [[ $INST == *"Wargaming-Game-Center"* ]]; then
-fetch --retry http://redirect.wargaming.net/WGC/Wargaming_Game_Center_Install_EU.exe
-echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+download http://redirect.wargaming.net/WGC/Wargaming_Game_Center_Install_EU.exe
+prefix-message
 WINEPREFIX="$NDIR/Games/$INST" winetricks vcrun2015
 WINEPREFIX="$NDIR/Games/$INST" winetricks win7
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -167,8 +169,8 @@ rm $DDIR/Wargaming_Game_Center_Install_EU.exe
 fi
 
 if [[ $INST == *"Growtopia"* ]]; then
-fetch --retry https://growtopiagame.com/Growtopia-Installer.exe
-echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+download https://growtopiagame.com/Growtopia-Installer.exe
+prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -177,8 +179,8 @@ rm $DDIR/Growtopia-Installer.exe
 fi
 
 if [[ $INST == *"Bethesda-Launcher"* ]]; then
-fetch --retry http://download.cdp.bethesda.net/BethesdaNetLauncher_Setup.exe
-echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+download http://download.cdp.bethesda.net/BethesdaNetLauncher_Setup.exe
+prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -187,8 +189,8 @@ rm $DDIR/BethesdaNetLauncher_Setup.exe
 fi
 
 if [[ $INST == *"Arc"* ]]; then
-fetch --retry https://www.arcgames.com/download
-echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+download https://www.arcgames.com/download
+prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
@@ -200,9 +202,8 @@ if [[ $INST == *"Discord"* ]]; then
 mkdir -p $NDIR/Programs/$INST
 mkdir -p $NDIR/Programs/$INST/Discord
 cd $NDIR/Programs/$INST/Discord
-echo -e "\e[40;38;5;82mDownloading $INST\e[30;48;5;82m\e[0m"
-fetch --retry https://homura.magzu.net/dl/Discord.tar
-echo -e "\e[40;38;5;82mSetup prefix\e[30;48;5;82m\e[0m"
+download https://homura.magzu.net/dl/Discord.tar
+prefix-message
 echo -e "\e[40;38;5;32mInstallation of dotnet472 and setting prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Programs/$INST winetricks dotnet472 win10
 echo -e "\e[40;38;5;82mInstalling $INST\e[30;48;5;82m\e[0m"
