@@ -128,12 +128,13 @@ rm $DDIR/windows
 fi
 
 if [[ $INST == *"GOG-Galaxy"* ]]; then
-download https://cdn.gog.com/open/galaxy/client/setup_galaxy_1.2.64.2.exe
+GOGVER=1.2.67.58
+download https://cdn.gog.com/open/galaxy/client/setup_galaxy_$GOGVER.exe
 prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10
 echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
-WINEPREFIX="$NDIR/Games/$INST" wine $DDIR/setup_galaxy_1.2.64.2.exe
+WINEPREFIX="$NDIR/Games/$INST" wine $DDIR/setup_galaxy_$GOGVER.exe
 if [ -f "/usr/home/$USER/.local/share/applications/wine/Programs/GOG.com/GOG Galaxy/GOG Galaxy.desktop" ]; then
 echo -e "\e[40;38;5;32mReplacing the shortcut with one that contains the required tweaks\e[30;48;5;82m\e[0m"
 rm "/usr/home/$USER/.local/share/applications/wine/Programs/GOG.com/GOG Galaxy/GOG Galaxy.desktop"
@@ -146,7 +147,7 @@ Icon=F77E_GalaxyClient.0" >> "/usr/home/$USER/.local/share/applications/wine/Pro
 else 
 echo -e "\e[40;38;5;32mNo shortcut was created\e[30;48;5;82m\e[0m"
 fi
-rm $DDIR/setup_galaxy_1.2.64.2.exe
+rm $DDIR/setup_galaxy_$GOGVER.exe
 fi
 
 if [[ $INST == *"League-of-Legends"* ]]; then
