@@ -113,6 +113,7 @@ You need help, want to help or just want to talk?
 No fear we don't bite ;)
 
 - Discord: https://discord.gg/JBKcdNt
+- Steam: https://steamcommunity.com/id/Alexander88207/
 
 # Credits :star:
 
