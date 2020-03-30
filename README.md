@@ -9,7 +9,7 @@
 	<a href="https://github.com/the-homura-project/homura/wiki/Status">Status</a>&nbsp;&nbsp;&nbsp;
 	<a href="https://github.com/the-homura-project/homura/wiki/Tweaks">Tweaks</a>&nbsp;&nbsp;&nbsp;
 	<a href="https://github.com/the-homura-project/homura/wiki/Borked">Borked</a>&nbsp;&nbsp;&nbsp;
-	<a href="https://github.com/the-homura-project/homura/wiki/recomendations.md">Recommendations</a>&nbsp;&nbsp;&nbsp;
+	<a href="https://github.com/the-homura-project/homura/wiki/recomendations">Recommendations</a>&nbsp;&nbsp;&nbsp;
 	<a href="https://github.com/the-homura-project/homura/wiki/Handbook">Handbook</a>&nbsp;&nbsp;&nbsp;
 	<a href="https://github.com/the-homura-project/homura/wiki/Hints">Hints</a>&nbsp;&nbsp;&nbsp;
 	<a href="https://github.com/the-homura-project/homura/wiki/Contributing">Contributing</a>
