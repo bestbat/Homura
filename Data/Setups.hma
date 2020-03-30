@@ -39,7 +39,7 @@ download http://dist.blizzard.com/downloads/bna-installers/322d5bb9ae0318de3d4cd
 prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10 and prevent that the wm decorates the window\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10 windowmanagerdecorated=n
-echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+installer-message
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/Battle.net-Setup-enUS.exe
 rm $DDIR/Battle.net-Setup-enUS.exe
 fi
@@ -49,7 +49,7 @@ download https://origin-a.akamaihd.net/Origin-Client-Download/origin/legacy/Orig
 prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows xp because origin dont work with newer versions\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/Origin winetricks winxp
-echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+installer-message
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - Origin" --text="Dont forget to disable the Origin in-game overlay or you are unable to start a game."
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/OriginThinSetup.exe
 rm $DDIR/OriginThinSetup.exe
@@ -60,7 +60,7 @@ download https://ubistatic3-a.akamaihd.net/orbit/launcher_installer/UplayInstall
 prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10
-echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+installer-message
 zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of $INST" --text="Before you continue, please make sure that the package x11-fonts/noto-extra is not installed. After installation of $INST you can install it again. "
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/UplayInstaller.exe
 rm $DDIR/UplayInstaller.exe
@@ -72,7 +72,7 @@ download https://files.teamspeak-services.com/releases/client/$TSVER/TeamSpeak3-
 prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Programs/$INST winetricks win10
-echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+installer-message
 zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of $INST" --text="To get Playback and Capture working set both mods to Direct Sound."
 zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of $INST" --text="Before you continue, please make sure that the package x11-fonts/noto-extra is installed. After installation of $INST you can remove it again."
 WINEPREFIX=$NDIR/Programs/$INST wine $DDIR/TeamSpeak3-Client-win32-$TSVER.exe
@@ -88,12 +88,12 @@ echo -e "\e[40;38;5;32mInstalling arial fonts to fix missing fonts in the contro
 "WINEPREFIX="$NDIR/Games/$INST" winetricks arial
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST" winetricks win10
-echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+installer-message
 7z x clonehero-win32.7z
 rm clonehero-win32.7z
 echo -e "\e[40;38;5;32mApplying a fix to prevent game from crashing at start\e[30;48;5;82m\e[0m"
 cd clonehero-win32
-fetch https://raw.githubusercontent.com/the-homura-project/homura-database/master/Clone%20Hero/settings.ini
+fetch https://raw.githubusercontent.com/the-homura-project/homura/master/Gameconfigs/Clone%20Hero/settings.ini
 zenity --info --width=500 --window-icon=$ICO --title="$NAME $VER - Clone-Hero" --text="If you own a guitar hero controller, you may want to check out the tutorial how to get this controller working: https://forums.freebsd.org/threads/setting-up-guitar-hero-guitars-for-clone-hero-etc-on-freebsd.72953/"
 fi
 
@@ -102,7 +102,7 @@ download https://drasaonline-481-dwl.bpsecure.com/applet/dro_setup.exe
 prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10
-echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+installer-message
 WINEPREFIX="$NDIR/Games/Drakensang Online" wine $DDIR/dro_setup.exe
 rm $DDIR/dro_setup.exe
 fi
@@ -111,7 +111,7 @@ if [[ $INST == *"Anarchy-Online"* ]]; then
 download http://update.anarchy-online.com/download/AO/AnarchyOnline_EP1.exe
 prefix-message
 WINEPREFIX="$NDIR/Games/$INST" winetricks winxp
-echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+installer-message
 zenity --info --width=260 --title="$NAME $VER - Installation of Anarchy Online" --text="Please let the installer create an shortcut or you will unable to start the launcher later."
 WINEPREFIX="$NDIR/Games/$INST" wine $DDIR/AnarchyOnline_EP1.exe
 rm $DDIR/AnarchyOnline_EP1.exe
@@ -122,7 +122,7 @@ download http://nuts.itch.zone/download/windows
 prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10
-echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+installer-message
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/windows
 rm $DDIR/windows
 fi
@@ -133,7 +133,7 @@ download https://cdn.gog.com/open/galaxy/client/setup_galaxy_$GOGVER.exe
 prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10
-echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+installer-message
 WINEPREFIX="$NDIR/Games/$INST" wine $DDIR/setup_galaxy_$GOGVER.exe
 if [ -f "/usr/home/$USER/.local/share/applications/wine/Programs/GOG.com/GOG Galaxy/GOG Galaxy.desktop" ]; then
 echo -e "\e[40;38;5;32mReplacing the shortcut with one that contains the required tweaks\e[30;48;5;82m\e[0m"
@@ -155,7 +155,7 @@ download https://lol.secure.dyn.riotcdn.net/channels/public/x/installer/current/
 prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10
-echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+installer-message
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/live.euw.exe
 rm $DDIR/live.euw.exe
 fi
@@ -165,7 +165,7 @@ download http://redirect.wargaming.net/WGC/Wargaming_Game_Center_Install_EU.exe
 prefix-message
 WINEPREFIX="$NDIR/Games/$INST" winetricks vcrun2015
 WINEPREFIX="$NDIR/Games/$INST" winetricks win7
-echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+installer-message
 WINEPREFIX="$NDIR/Games/$INST" wine $DDIR/Wargaming_Game_Center_Install_EU.exe
 rm $DDIR/Wargaming_Game_Center_Install_EU.exe
 fi
@@ -175,7 +175,7 @@ download https://growtopiagame.com/Growtopia-Installer.exe
 prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10
-echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+installer-message
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/Growtopia-Installer.exe
 rm $DDIR/Growtopia-Installer.exe
 fi
@@ -185,7 +185,7 @@ download http://download.cdp.bethesda.net/BethesdaNetLauncher_Setup.exe
 prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10
-echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+installer-message
 WINEPREFIX="$NDIR/Games/$INST" wine $DDIR/BethesdaNetLauncher_Setup.exe
 rm $DDIR/BethesdaNetLauncher_Setup.exe
 fi
@@ -195,7 +195,7 @@ download https://www.arcgames.com/download
 prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10
-echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
+installer-message
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/download
 rm $DDIR/download
 fi
@@ -208,7 +208,7 @@ download https://homura.magzu.net/dl/Discord.tar
 prefix-message
 echo -e "\e[40;38;5;32mInstallation of dotnet472 and setting prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Programs/$INST winetricks dotnet472 win10
-echo -e "\e[40;38;5;82mInstalling $INST\e[30;48;5;82m\e[0m"
+installer-message
 tar -xf Discord.tar
 rm Discord.tar
 fi
