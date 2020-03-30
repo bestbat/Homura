@@ -97,7 +97,7 @@ function prefix-message {
            }
 
 function installer-message {
-               zenity --notification --window-icon=$ICO --text "Starting installer"
+               zenity --notification --window-icon=$ICO --text "Starting installation"
            }
            
 export -f download
