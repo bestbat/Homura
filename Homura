@@ -60,28 +60,26 @@ if [[ $GPU == *"VMware, Inc."* ]]; then
 zenity --info --width=420 --window-icon=$ICO --title="$NAME $VER" --text="$NAME have detected that you are using the fallback drivers, please check your gpu driver installation. If you should run $NAME in a virtual machine or you have enabled software rendering then you can ignore this message."
 fi
 
-var2=$2
-
 Install() {
-export INST=$var2
+export INST=$2
 bash /usr/local/share/homura/Data/Checks.hma
 exec /usr/local/share/homura/Data/Setups.hma
 }
 
 Launch() {
-export LNCH=$var2
+export LNCH=$2
 bash /usr/local/share/homura/Data/Checks.hma
 exec /usr/local/share/homura/Data/Setups.hma
 }
 
 Uninstall() {
-export UNST=$var2
+export UNST=$2
 bash /usr/local/share/homura/Data/Checks.hma
 exec /usr/local/share/homura/Data/Setups.hma
 }
 
 Winetricks() {
-export WTR=$var2
+export WTR=$2
 exec /usr/local/share/homura/Data/Misc.hma
 }
 
