@@ -6,13 +6,13 @@
   <img src="https://img.shields.io/github/v/release/the-homura-project/homura?style=flat-square&logo=appveyor"> <img src="https://img.shields.io/discord/618845118060953600?style=flat-square&logo=appveyor">
 </p>
 <p align="center">
-	<a href="https://github.com/the-homura-project/homura-docs/blob/master/STATUS.md">Status</a>&nbsp;&nbsp;&nbsp;
-	<a href="https://github.com/the-homura-project/homura-docs/blob/master/TWEAKS.md">Tweaks</a>&nbsp;&nbsp;&nbsp;
-	<a href="https://github.com/the-homura-project/homura-docs/blob/master/BORKED.md">Borked</a>&nbsp;&nbsp;&nbsp;
-	<a href="https://github.com/the-homura-project/homura-docs/blob/master/RECOMMENDATIONS.md">Recommendations</a>&nbsp;&nbsp;&nbsp;
-	<a href="https://github.com/the-homura-project/homura-docs/blob/master/Handbook.md">Handbook</a>&nbsp;&nbsp;&nbsp;
-	<a href="https://github.com/the-homura-project/homura-docs/blob/master/HINTS.md">Hints</a>&nbsp;&nbsp;&nbsp;
-	<a href="https://github.com/the-homura-project/homura-docs/blob/master/CONTRIBUTING.md">Contributing</a>
+	<a href="https://github.com/the-homura-project/homura/wiki/Status">Status</a>&nbsp;&nbsp;&nbsp;
+	<a href="https://github.com/the-homura-project/homura/wiki/Tweaks">Tweaks</a>&nbsp;&nbsp;&nbsp;
+	<a href="https://github.com/the-homura-project/homura/wiki/Borked">Borked</a>&nbsp;&nbsp;&nbsp;
+	<a href="https://github.com/the-homura-project/homura/wiki/recomendations.md">Recommendations</a>&nbsp;&nbsp;&nbsp;
+	<a href="https://github.com/the-homura-project/homura/wiki/Handbook">Handbook</a>&nbsp;&nbsp;&nbsp;
+	<a href="https://github.com/the-homura-project/homura/wiki/Hints">Hints</a>&nbsp;&nbsp;&nbsp;
+	<a href="https://github.com/the-homura-project/homura/wiki/Contributing">Contributing</a>
 </p>
 
 # Introduction :microphone:
