@@ -81,7 +81,7 @@ if [ ! -d "/usr/home/$USER/.local/share/Homura/Games/Steam/drive_c/Program Files
 zenity --info --window-icon=$ICO --width=300 --title="$NAME $VER - $AAF" --text="Please install the game first."
 else
 cd "/usr/home/$USER/.local/share/Homura/Games/Steam/drive_c/Program Files/Steam/steamapps/common/Anno 1404"
-fetch https://raw.githubusercontent.com/the-homura-project/homura-database/master/Anno%201404/Engine.ini
+fetch https://raw.githubusercontent.com/the-homura-project/homura/master/Gameconfigs/Anno%201404/Engine.ini
 fi
 fi
 
