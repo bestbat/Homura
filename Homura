@@ -60,31 +60,6 @@ if [[ $GPU == *"VMware, Inc."* ]]; then
 zenity --info --width=420 --window-icon=$ICO --title="$NAME $VER" --text="$NAME have detected that you are using the fallback drivers, please check your gpu driver installation. If you should run $NAME in a virtual machine or you have enabled software rendering then you can ignore this message."
 fi
 
-Install() {
-export INST=$2
-bash /usr/local/share/homura/Data/Checks.hma
-exec /usr/local/share/homura/Data/Setups.hma
-}
-
-Launch() {
-export LNCH=$2
-bash /usr/local/share/homura/Data/Checks.hma
-exec /usr/local/share/homura/Data/Setups.hma
-}
-
-Uninstall() {
-export UNST=$2
-bash /usr/local/share/homura/Data/Checks.hma
-exec /usr/local/share/homura/Data/Setups.hma
-}
-
-Winetricks() {
-export WTR=$2
-exec /usr/local/share/homura/Data/Misc.hma
-}
-
-"$@"
-
 function download {
                zenity --notification --window-icon=$ICO --text "Downloading $INST $UPDE"
                fetch --retry $1
@@ -101,6 +76,31 @@ function installer-message {
 export -f download
 export -f prefix-message
 export -f installer-message
+
+Install() {
+export INST=$1
+bash /usr/local/share/homura/Data/Checks.hma
+exec /usr/local/share/homura/Data/Setups.hma
+}
+
+Launch() {
+export LNCH=$1
+bash /usr/local/share/homura/Data/Checks.hma
+exec /usr/local/share/homura/Data/Setups.hma
+}
+
+Uninstall() {
+export UNST=$1
+bash /usr/local/share/homura/Data/Checks.hma
+exec /usr/local/share/homura/Data/Setups.hma
+}
+
+Winetricks() {
+export WTR=$1
+exec /usr/local/share/homura/Data/Misc.hma
+}
+
+"$@"
 
 echo -e "\e[32m$COPYRIGHT All rights reserved."
 echo -e "\e[93mWelcome to $NAME $VER have fun!"
