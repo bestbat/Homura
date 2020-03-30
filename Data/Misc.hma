@@ -352,6 +352,7 @@ fi
 unset WTR
 unset RAEP
 unset UPDE
+unset AAF
 unset OTR
 unset CS
 exec $NAME
