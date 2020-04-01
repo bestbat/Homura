@@ -99,7 +99,7 @@ SteamCMD | :heavy_multiplication_x:
 
 # Known issues :disappointed:
 
-- Teamspeak dont get set automatically to windows 10 because it creates a folder under games that have to be deleted and the windows version have to be changed manually. Is fixed in 3.6
+No known isseus currently.
 
 # Limitations :x:
 
