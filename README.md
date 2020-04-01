@@ -99,7 +99,7 @@ SteamCMD | :heavy_multiplication_x:
 
 # Known issues :disappointed:
 
-No known isseus currently.
+No known issues currently.
 
 # Limitations :x:
 
