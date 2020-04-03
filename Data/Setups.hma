@@ -67,7 +67,7 @@ rm $DDIR/UplayInstaller.exe
 fi
 
 if [[ $INST == *"Teamspeak"* ]]; then
-TSVER=3.5.1
+TSVER=3.5.2
 download https://files.teamspeak-services.com/releases/client/$TSVER/TeamSpeak3-Client-win32-$TSVER.exe
 prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
