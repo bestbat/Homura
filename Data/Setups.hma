@@ -21,6 +21,7 @@ echo -e "\e[40;38;5;32mApplying audio fixes for several games\e[30;48;5;82m\e[0m
 WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\AppDefaults\LifeIsStrange.exe" /v "Version" /t "REG_SZ" /d "winxp" /f
 WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\AppDefaults\helldivers.exe" /v "Version" /t "REG_SZ" /d "winxp" /f
 WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\AppDefaults\VanHelsing_x86.exe" /v "Version" /t "REG_SZ" /d "winxp" /f
+WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\AppDefaults\Ember.exe" /v "Version" /t "REG_SZ" /d "winxp" /f
 installer-message
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/SteamSetup.exe
 echo -e "\e[40;38;5;32mReplacing the shortcut with one that contains the required tweaks\e[30;48;5;82m\e[0m"
