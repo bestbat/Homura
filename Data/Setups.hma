@@ -46,14 +46,15 @@ rm $DDIR/Battle.net-Setup-enUS.exe
 fi
 
 if [[ $INST == *"Origin"* ]]; then
-download https://origin-a.akamaihd.net/Origin-Client-Download/origin/legacy/OriginThinSetup.exe
+download https://origin-a.akamaihd.net/Origin-Client-Download/origin/live/OriginThinSetup.exe
 prefix-message
-echo -e "\e[40;38;5;32mSet prefix to Windows xp because origin dont work with newer versions\e[30;48;5;82m\e[0m"
-WINEPREFIX=$NDIR/Games/Origin winetricks winxp
+echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
+WINEPREFIX=$NDIR/Games/Origin winetricks win10
 installer-message
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - Origin" --text="Dont forget to disable the Origin in-game overlay or you are unable to start a game."
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/OriginThinSetup.exe
 rm $DDIR/OriginThinSetup.exe
+chmod -R 777 $NDIR/Games/Origin
 fi
 
 if [[ $INST == *"Uplay"* ]]; then
