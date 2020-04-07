@@ -105,7 +105,7 @@ prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10
 installer-message
-WINEPREFIX="$NDIR/Games/Drakensang Online" wine $DDIR/dro_setup.exe
+WINEPREFIX="$NDIR/Games/$INST" wine $DDIR/dro_setup.exe
 rm $DDIR/dro_setup.exe
 fi
 
