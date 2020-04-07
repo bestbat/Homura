@@ -87,9 +87,9 @@ cd "$NDIR/Games/$INST"
 download http://dl.clonehero.net/clonehero-v.23.2.2/clonehero-win32.7z
 prefix-message
 echo -e "\e[40;38;5;32mInstalling arial fonts to fix missing fonts in the controls menu and ingame\e[30;48;5;82m\e[0m"
-"WINEPREFIX="$NDIR/Games/$INST" winetricks arial
+WINEPREFIX=$NDIR/Games/$INST winetricks arial
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
-WINEPREFIX=$NDIR/Games/$INST" winetricks win10
+WINEPREFIX=$NDIR/Games/$INST winetricks win10
 installer-message
 7z x clonehero-win32.7z
 rm clonehero-win32.7z
