@@ -97,10 +97,6 @@ Enable/Disable DXVK | :heavy_multiplication_x:
 Sandboxing | :heavy_multiplication_x:
 SteamCMD | :heavy_multiplication_x:
 
-# Known issues :disappointed:
-
-No known issues currently.
-
 # Limitations :x:
 
 - Only 32-Bit Games and Applications working currently. You may want to see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=242625
@@ -121,6 +117,8 @@ No fear we don't bite ;)
 - [MagZu](https://github.com/magzu)          - Hosting the mirror's (alt.magzu.net) & (homura.magzu.net)
 - [You](https://github.com/the-homura-project/homura-docs/blob/master/CONTRIBUTING.md)? - ?
 - [Contributors](https://github.com/the-homura-project/homura/graphs/contributors)     - for contributing
+
+Also special thanks to the port maintainers of i386-wine-devel and wine-devel.
 
 # Screenshots
 
