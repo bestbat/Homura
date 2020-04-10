@@ -122,6 +122,8 @@ Also special thanks to the port maintainers of i386-wine-devel and wine-devel.
 
 ![](https://raw.githubusercontent.com/the-homura-project/homura/master/Media/Screenshot.png "Screenshot")
 
+![](https://raw.githubusercontent.com/the-homura-project/homura/master/Media/Screenshot4.png "Screenshot")
+
 <img src="https://raw.githubusercontent.com/the-homura-project/homura/master/Media/Screenshot2.png" alt="Monitor" height="500" width="700"> 
 
 <img src="https://raw.githubusercontent.com/the-homura-project/homura/master/Media/Screenshot3.png" alt="Monitor" height="500" width="700"> 
