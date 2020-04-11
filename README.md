@@ -93,7 +93,7 @@ Shortcut creation | :heavy_check_mark:
 Delete & reset everything | :heavy_check_mark:
 Enable/Disable DXVK | :heavy_multiplication_x:
 Sandboxing | :heavy_multiplication_x:
-SteamCMD | :heavy_check_mark:
+SteamCMD (steam-console-client) | :heavy_check_mark:
 
 # Limitations :x:
 
