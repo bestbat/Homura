@@ -220,6 +220,7 @@ mkdir -p $NDIR/Programs/$INST
 mkdir -p $NDIR/Programs/$INST/SteamCMD
 cd $NDIR/Programs/$INST/SteamCMD
 download https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip
+installer-message
 tar -xf steamcmd.zip
 rm steamcmd.zip
 fi
