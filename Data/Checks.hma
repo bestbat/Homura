@@ -4,7 +4,7 @@
 
 CCKGPDIR=$NDIR/Games/$LNCH
 
-if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/SteamCMD"* ]] ; then
+if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/steam-console-client"* ]] ; then
 if [ ! -d "$NDIR/Programs/$LNCH" ]; then
 zenity --info --width=200 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="$LNCH is not installed."
 echo -e "\e[40;38;5;82m$LNCH is not installed.\e[30;48;5;82m\e[0m"
@@ -26,7 +26,7 @@ fi
 
 CCKGPDIR=$NDIR/Games/$UNST
 
-if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/SteamCMD"* ]] ; then
+if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/steam-console-client"* ]] ; then
 if [ ! -d "$NDIR/Programs/$UNST" ]; then
 zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
 echo -e "\e[40;38;5;82mYou can not uninstall something that you dont have installed :)\e[30;48;5;82m\e[0m"
@@ -49,7 +49,7 @@ fi
 
 CCKGPDIR=$NDIR/Games/$CS
 
-if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/SteamCMD"* ]] ; then
+if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/steam-console-client"* ]] ; then
 if [ ! -d "$NDIR/Programs/$CS" ]; then
 zenity --info --width=200 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="$LNCH is not installed."
 exec $NAME

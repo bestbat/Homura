@@ -215,7 +215,7 @@ tar -xf Discord.tar
 rm Discord.tar
 fi
 
-if [[ $INST == *"SteamCMD"* ]]; then
+if [[ $INST == *"steam-console-client"* ]]; then
 mkdir -p $NDIR/Programs/$INST
 mkdir -p $NDIR/Programs/$INST/SteamCMD
 cd $NDIR/Programs/$INST/SteamCMD
@@ -309,7 +309,7 @@ if [[ $LNCH == *"Discord"* ]]; then
 WINEPREFIX=$NDIR/Programs/$LNCH wine $NDIR/Programs/$LNCH/Discord/app-0.0.305/Discord.exe
 fi
 
-if [[ $LNCH == *"SteamCMD"* ]]; then
+if [[ $LNCH == *"steam-console-client"* ]]; then
 WINEPREFIX=$NDIR/Programs/$LNCH WINEDEBUG=-all wineconsole $NDIR/Programs/$LNCH/SteamCMD/steamcmd.exe
 fi
 
@@ -330,7 +330,7 @@ fi
 fi
 
 if [[ -v UNST ]]; then 
-if [[ $UNST == *"Teamspeak"* ]] || [[ $UNST == *"Discord"* ]] || [[ $UNST == *"SteamCMD"* ]] ; then
+if [[ $UNST == *"Teamspeak"* ]] || [[ $UNST == *"Discord"* ]] || [[ $UNST == *"steam-console-client"* ]] ; then
 echo Y | WINEPREFIX=$NDIR/Programs/$UNST winetricks annihilate
 else
 if [[ $UNST == *"Custom-Prefix"* ]]; then
