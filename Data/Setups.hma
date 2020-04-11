@@ -215,6 +215,15 @@ tar -xf Discord.tar
 rm Discord.tar
 fi
 
+if [[ $INST == *"SteamCMD"* ]]; then
+mkdir -p $NDIR/Programs/$INST
+mkdir -p $NDIR/Programs/$INST/SteamCMD
+cd $NDIR/Programs/$INST/SteamCMD
+download https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip
+tar -xf steamcmd.zip
+rm steamcmd.zip
+fi
+
 if [[ $INST == *"Custom-Prefix"* ]]; then
 PREFIXNAME=$(zenity --window-icon=$ICO --title="Create a custom prefix" --text "How your prefix should be called?" --entry --width=260) 
 if [ ! -d "$NDIR/Custom Prefixes" ]; then
@@ -295,6 +304,14 @@ if [[ $LNCH == *"Arc"* ]]; then
 WINEPREFIX=$NDIR/Games/$LNCH wine "$NDIR/Games/$LNCH/drive_c/Program Files/Arc/ArcLauncher.exe"
 fi
 
+if [[ $LNCH == *"Discord"* ]]; then
+WINEPREFIX=$NDIR/Programs/$LNCH wine $NDIR/Programs/$LNCH/Discord/app-0.0.305/Discord.exe
+fi
+
+if [[ $LNCH == *"SteamCMD"* ]]; then
+WINEPREFIX=$NDIR/Programs/$LNCH wineconsole $NDIR/Programs/$LNCH/SteamCMD/steamcmd.exe
+fi
+
 if [[ $LNCH == *"Custom-Prefix"* ]]; then
 if [ ! "$(ls -A "/usr/home/$USER/.local/share/$NAME/Custom Prefixes")" ]
 then
@@ -312,7 +329,7 @@ fi
 fi
 
 if [[ -v UNST ]]; then 
-if [[ $UNST == *"Teamspeak"* ]] || [[ $UNST == *"Discord"* ]] ; then
+if [[ $UNST == *"Teamspeak"* ]] || [[ $UNST == *"Discord"* ]] || [[ $UNST == *"SteamCMD"* ]] ; then
 echo Y | WINEPREFIX=$NDIR/Programs/$UNST winetricks annihilate
 else
 if [[ $UNST == *"Custom-Prefix"* ]]; then

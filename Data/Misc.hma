@@ -1,7 +1,7 @@
 #!/usr/local/bin/bash
 
 if [[ -v WTR ]]; then 
-if [[ $WTR == *"Teamspeak"* ]] || [[ $WTR == *"Discord"* ]] ; then
+if [[ $WTR == *"Teamspeak"* ]] || [[ $WTR == *"Discord"* ]] || [[ $WTR == *"SteamCMD"* ]] ; then
 WINEPREFIX=$NDIR/Programs/$UNST winetricks
 else
 if [[ $WTR == *"Custom-Prefix"* ]]; then
@@ -21,7 +21,7 @@ fi
 
 if [[ -v RAEP ]]; then
 EXECUTABLE="$(zenity --file-selection --title="Choose your executable")" 
-if [[ $RAEP == *"Teamspeak"* ]] || [[ $RAEP == *"Discord"* ]] ; then
+if [[ $RAEP == *"Teamspeak"* ]] || [[ $RAEP == *"Discord"* ]] || [[ $WTR == *"SteamCMD"* ]] ; then
 WINEPREFIX=$NDIR/Programs/$RAEP wine "$EXECUTABLE"
 else
 if [[ $RAEP == *"Custom-Prefix"* ]]; then
