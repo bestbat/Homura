@@ -310,7 +310,7 @@ WINEPREFIX=$NDIR/Programs/$LNCH wine $NDIR/Programs/$LNCH/Discord/app-0.0.305/Di
 fi
 
 if [[ $LNCH == *"SteamCMD"* ]]; then
-WINEPREFIX=$NDIR/Programs/$LNCH wineconsole $NDIR/Programs/$LNCH/SteamCMD/steamcmd.exe
+WINEPREFIX=$NDIR/Programs/$LNCH WINEDEBUG=-all wineconsole $NDIR/Programs/$LNCH/SteamCMD/steamcmd.exe
 fi
 
 if [[ $LNCH == *"Custom-Prefix"* ]]; then
