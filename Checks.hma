@@ -1,0 +1,65 @@
+#!/usr/local/bin/bash
+
+# Checks for the launcher
+
+CCKGPDIR=$NDIR/Games/$LNCH
+
+if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/SteamCMD"* ]] ; then
+if [ ! -d "$NDIR/Programs/$LNCH" ]; then
+zenity --info --width=200 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="$LNCH is not installed."
+echo -e "\e[40;38;5;82m$LNCH is not installed.\e[30;48;5;82m\e[0m"
+unset LNCH
+exec $NAME
+fi
+fi
+
+if [[ $CCKGPDIR == *"$NDIR/Games/Steam"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Blizzard"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Origin"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Uplay"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Clone-Hero"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Drakensang-Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/itch"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Anarchy-Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/GOG-Galaxy"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/League-of-Legends"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming-Game-Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming-Game-Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Growtopia"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Bethesda-Launcher"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming-Game-Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Arc"* ]] ; then
+if [ ! -d "$NDIR/Games/$LNCH" ]; then
+zenity --info --width=200 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="$LNCH is not installed."
+echo -e "\e[40;38;5;82m$LNCH is not installed.\e[30;48;5;82m\e[0m"
+unset LNCH
+exec $NAME
+fi
+fi
+
+# Checks for the uninstalller
+
+CCKGPDIR=$NDIR/Games/$UNST
+
+if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/SteamCMD"* ]] ; then
+if [ ! -d "$NDIR/Programs/$UNST" ]; then
+zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
+echo -e "\e[40;38;5;82mYou can not uninstall something that you dont have installed :)\e[30;48;5;82m\e[0m"
+unset UNST
+exec $NAME
+fi
+fi
+
+if [[ $CCKGPDIR == *"$NDIR/Games/Steam"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Blizzard"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Origin"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Uplay"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Clone-Hero"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Drakensang-Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/itch"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Anarchy-Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/GOG-Galaxy"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/League-of-Legends"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming-Game-Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming-Game-Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Growtopia"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Bethesda-Launcher"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming-Game-Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Arc"* ]] ; then
+if [ ! -d "$NDIR/Games/$UNST" ]; then
+zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="You can not uninstall something that you dont have installed :)"
+echo -e "\e[40;38;5;82mYou can not uninstall something that you dont have installed :)\e[30;48;5;82m\e[0m"
+unset UNST
+exec $NAME
+exit
+fi
+fi
+
+# Checks for the shortcut creator
+
+CCKGPDIR=$NDIR/Games/$CS
+
+if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/SteamCMD"* ]] ; then
+if [ ! -d "$NDIR/Programs/$CS" ]; then
+zenity --info --width=200 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="$LNCH is not installed."
+exec $NAME
+exit
+fi
+fi
+
+if [[ $CCKGPDIR == *"$NDIR/Games/Steam"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Blizzard"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Origin"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Uplay"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Clone-Hero"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Drakensang-Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/itch"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Anarchy-Online"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/GOG-Galaxy"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/League-of-Legends"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming-Game-Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming-Game-Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Growtopia"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Bethesda-Launcher"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Wargaming-Game-Center"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Arc"* ]] ; then
+if [ ! -d "$NDIR/Games/$CS" ]; then
+zenity --info --width=200 --window-icon=$ICO --title="$NAME $VER - $OTR" --text="$CS is not installed."
+exec $NAME
+fi
+fi
