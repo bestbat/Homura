@@ -42,7 +42,7 @@ Software:
 - [x11/zenity](https://www.freshports.org/x11/zenity)
 - [devel/xdg-utils](https://www.freshports.org/devel/xdg-utils)
 - [x11-fonts/webfonts](https://www.freshports.org/x11-fonts/webfonts)
-- [audio/mixertui](https://www.freshports.org/audio/mixertui) ([Optional](https://github.com/the-homura-project/homura-docs/blob/master/HINTS.md#if-you-are-new-to-freebsd-wink))
+- [audio/mixertui](https://www.freshports.org/audio/mixertui) ([Optional](https://github.com/the-homura-project/homura/wiki/Hints#if-you-are-new-to-freebsd-wink))
 - [emulators/winetricks](https://www.freshports.org/emulators/winetricks)
 - [devel/vulkan-tools](https://www.freshports.org/devel/vulkan-tools)
 - [graphics/mesa-demos](https://www.freshports.org/graphics/mesa-demos)
