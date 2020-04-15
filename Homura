@@ -72,10 +72,20 @@ function prefix-message {
 function installer-message {
                zenity --notification --window-icon=$ICO --text "Starting installation"
            }
+
+function warn {
+               zenity --warning --width=200 --window-icon=$ICO --text "$1"
+           }
            
+function info {
+               zenity --info --width=200 --window-icon=$ICO --text "$1"
+           }
+
 export -f download
 export -f prefix-message
 export -f installer-message
+export -f warn
+export -f info
 
 Install() {
 export INST=$1
