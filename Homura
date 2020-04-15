@@ -184,7 +184,7 @@ exec /usr/local/share/homura/Data/Misc.hma
 fi
 
 if [[ $TODO == *"About"* ]]; then
-zenity --info --window-icon=$ICO --width=390 --title="$NAME $VER - About" --text="Inspired by Lutris.
+info "Inspired by Lutris.
 $NAME is a launcher that makes it easy to run Windows games/launcher easily on FreeBSD by providing the required fixes and workarounds. 
 The Windows emulation is provided by Wine.
 $NAME is licensed under the BSD 2-Clause License.
