@@ -9,7 +9,7 @@ cd "$NDIR/Custom Prefixes"
 PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/Custom Prefixes/")
 if [ -z "$PREFIXNAME" ]
 then
-zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - $TODO" --text="There was no custom prefix selected."
+info "There was no custom prefix selected."
 else
 WINEPREFIX="$PREFIXNAME" winetricks
 fi
@@ -29,7 +29,7 @@ cd "$NDIR/Custom Prefixes"
 PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/Custom Prefixes/")
 if [ -z "$PREFIXNAME" ]
 then
-zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - $TODO" --text="There was no custom prefix selected."
+info "There was no custom prefix selected."
 else
 WINEPREFIX="$PREFIXNAME" wine "$EXECUTABLE"
 fi
@@ -41,7 +41,7 @@ fi
 
 if [[ $UPDE == *"Teamspeak"* ]]; then
 if [ ! -d "$NDIR/Programs/$UPDE" ]; then
-zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UPDE" --text="You can not update something what is not installed :)"
+info "You can not update something what is not installed :)"
 else
 WINEPREFIX=$NDIR/Programs/$UPDE wine "$NDIR/Programs/$UPDE/drive_c/Program Files/TeamSpeak 3 Client/update.exe"
 kill ts3client_win32.exe
@@ -50,7 +50,7 @@ fi
 
 if [[ $UPDE == *"Growtopia"* ]]; then
 if [ ! -d "$NDIR/Games/$UPDE" ]; then
-zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UPDE" --text="You can not update something what is not installed :)"
+info "You can not update something what is not installed :)"
 else
 cd $DDIR
 fetch https://growtopiagame.com/Growtopia-Installer.exe
@@ -78,7 +78,7 @@ fi
 
 if [[ $AAF == *"Fix of blackscreen in Anno 1404 (Steam)"* ]]; then
 if [ ! -d "/usr/home/$USER/.local/share/Homura/Games/Steam/drive_c/Program Files/Steam/steamapps/common/Anno 1404" ]; then
-zenity --info --window-icon=$ICO --width=300 --title="$NAME $VER - $AAF" --text="Please install the game first."
+info "Please install the game first."
 else
 cd "/usr/home/$USER/.local/share/Homura/Games/Steam/drive_c/Program Files/Steam/steamapps/common/Anno 1404"
 fetch https://raw.githubusercontent.com/the-homura-project/homura/master/Gameconfigs/Anno%201404/Engine.ini
@@ -209,7 +209,7 @@ Icon=DA0A_icon" >> "/usr/home/$USER/.local/share/applications/wine/Programs/$CS/
 fi
 
 if [[ $CS == *"Anarchy-Online"* ]]; then
-zenity --info --width=350 --window-icon=$ICO --title="$NAME $VER - $CS" --text="We have told you to check/use the shortcut that the installer offer, sorry but no new shortcut for you!"
+info "We have told you to check/use the shortcut that the installer offer, sorry but no new shortcut for you!"
 exec $NAME
 fi
 

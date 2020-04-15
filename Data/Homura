@@ -1,0 +1,200 @@
+#!/usr/local/bin/bash
+export NAME=Homura
+export VER=3.7
+export ALH=500
+export WTH=1000
+GPU=$(glxinfo | grep "OpenGL vendor string")
+OSN=$(uname)
+export NDIR=/usr/home/$USER/.local/share/$NAME
+export DDIR=$NDIR/Data
+export ICO=$DDIR/$NAME.png
+DATE=$(date)
+WINEVER=$(wine --version)
+COPYRIGHT=$(cat "/usr/local/share/licenses/homura-$VER/BSD2CLAUSE" | grep Copyright)
+APPS=$(cat '/usr/local/share/homura/Data/Apps.hma')
+
+if [[ $USER == *"root"* ]]; then
+zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER" --text="$NAME can not be executed as root."
+exit
+fi
+
+if [ ! -d "$NDIR" ]; then
+mkdir -p $NDIR
+zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - Welcome" --text="Welcome to $NAME. If you have a problem, suggestion, questions or similar, do not hesitate to open an issue on GitHub. Have Fun!"
+SC=$(zenity --question --window-icon=$ICO --width 300 --title "$NAME $VER - One time question" --text "Do you want a shortcut of $NAME in your application menu?"; echo $?)
+if [[ $SC == *"0"* ]]; then
+if [ ! -d "/usr/home/$USER/.local/share/applications" ]; then
+mkdir /usr/home/$USER/.local/share/applications
+fi
+echo "[Desktop Entry]
+Comment=
+Exec=bash /usr/local/bin/$NAME
+Icon=$DDIR/$NAME.png
+Categories=Game;
+Name=$NAME
+StartupNotify=false
+Terminal=false
+TerminalOptions=
+Type=Application
+" >> /usr/home/$USER/.local/share/applications/$NAME.desktop 
+if [[ $SC == *"1"* ]]; then 
+echo "Shortcut will be not created"
+fi
+if [[ $OSN != "FreeBSD" ]]; then
+zenity --info --width=360 --window-icon=$ICO --title="$NAME $VER" --text="You are about to use $NAME on an unsupported system. Please be aware that unexpected errors may occur and that your bug reports can be marked as invaild."
+fi
+fi
+fi
+
+if [ ! -d "$DDIR" ]; then
+mkdir $NDIR/Data
+fi
+
+if [ ! -f "$ICO" ]; then
+cd $DDIR
+fetch https://vignette.wikia.nocookie.net/madoka/images/7/72/Homura_magical_outfit_1.png/revision/latest/top-crop/width/320/height/320?cb=20160821012353
+mv 320?cb=20160821012353 $DDIR/$NAME.png
+fi
+
+if [[ $GPU == *"VMware, Inc."* ]]; then
+zenity --info --width=420 --window-icon=$ICO --title="$NAME $VER" --text="$NAME have detected that you are using the fallback drivers, please check your gpu driver installation. If you should run $NAME in a virtual machine or you have enabled software rendering then you can ignore this message."
+fi
+
+function download {
+               zenity --notification --window-icon=$ICO --text "Downloading $INST $UPDE"
+               fetch --retry $1
+           }
+
+function prefix-message {
+               zenity --notification --window-icon=$ICO --text "Setup prefix"
+           }
+
+function installer-message {
+               zenity --notification --window-icon=$ICO --text "Starting installation"
+           }
+
+function warn {
+               zenity --warning --width=200 --window-icon=$ICO --text "$1"
+           }
+           
+function info {
+               zenity --info --width=200 --window-icon=$ICO --text "$1"
+           }
+
+export -f download
+export -f prefix-message
+export -f installer-message
+export -f warn
+export -f info
+
+Install() {
+export INST=$1
+bash /usr/local/share/homura/Data/Checks.hma
+exec /usr/local/share/homura/Data/Setups.hma
+}
+
+Launch() {
+export LNCH=$1
+bash /usr/local/share/homura/Data/Checks.hma
+exec /usr/local/share/homura/Data/Setups.hma
+}
+
+Uninstall() {
+export UNST=$1
+bash /usr/local/share/homura/Data/Checks.hma
+exec /usr/local/share/homura/Data/Setups.hma
+}
+
+Winetricks() {
+export WTR=$1
+exec /usr/local/share/homura/Data/Misc.hma
+}
+
+"$@"
+
+echo -e "\e[32m$COPYRIGHT All rights reserved."
+echo -e "\e[93mWelcome to $NAME $VER have fun!"
+echo -e "\e[3;5;0;92mRunning on $OSN $(uname -r)"
+echo -e "\e[3;5;0;36mWine Version: $WINEVER\e[30;48;5;82m\e[0m"
+echo -e "\e[3;5;0;31mGPU Info OpenGL:\e[30;48;5;82m\e[0m" && glxinfo | grep OpenGL
+echo -e "\e[3;5;0;31mGPU Info Vulkan:\e[30;48;5;82m\e[0m" && vulkaninfo | grep -m 1 "GPU id"
+
+TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=420 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Applying a fix" FALSE "Open Homura folder" FALSE "Enable logging" FALSE "Other" FALSE "About" FALSE "Exit")
+
+
+if [[ $TODO == *"Installation"* ]]; then
+export INST=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to install?" --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
+exec /usr/local/share/homura/Data/Setups.hma
+fi
+
+if [[ $TODO == *"Launcher"* ]]; then
+export LNCH=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to launch?" --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
+bash /usr/local/share/homura/Data/Checks.hma
+exec /usr/local/share/homura/Data/Setups.hma
+fi
+
+if [[ $TODO == *"Uninstallation"* ]]; then
+export UNST=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to uninstall?" --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
+if [[ -z "$UNST" ]]; then
+zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="Nothing was selected for uninstallation"
+exec $NAME
+else
+bash /usr/local/share/homura/Data/Checks.hma
+exec /usr/local/share/homura/Data/Setups.hma
+fi
+fi
+
+if [[ $TODO == *"Winetricks"* ]]; then
+export WTR=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "In what prefix do do you want to open winetricks?" --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
+exec /usr/local/share/homura/Data/Misc.hma
+fi
+
+
+if [[ $TODO == *"Run a executable in prefix"* ]]; then
+export RAEP=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "In what prefix do do you want to open your executable?" --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
+exec /usr/local/share/homura/Data/Misc.hma
+fi
+
+if [[ $TODO == *"Update"* ]]; then
+export UPDE=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to update?" --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
+exec /usr/local/share/homura/Data/Misc.hma
+fi
+
+
+if [[ $TODO == *"Applying a fix"* ]]; then
+export AAF=$(zenity --list --radiolist --window-icon=$ICO  --height=200 --width 350 --title="$NAME $VER" --text "What fix do you want to apply?" --hide-header --column "$NAME" --column "Item" FALSE "Fix of blackscreen in Anno 1404 (Steam)")
+exec /usr/local/share/homura/Data/Misc.hma
+fi
+
+if [[ $TODO == *"Open Homura folder"* ]]; then
+xdg-open $NDIR
+fi
+
+if [[ $TODO == *"Enable logging"* ]]; then
+mkdir -p $NDIR/Logs
+cd $NDIR/Logs
+zenity --info --window-icon=$ICO --width=300 --title="$NAME $VER - About" --text="Logging for this session has been enabled, you will later find the log file in the log folder."
+bash $NAME >> "$DATE.log" 2>&1
+notify-send "The logging have been quit."
+fi
+
+if [[ $TODO == *"Other"* ]]; then
+export OTR=$(zenity --list --radiolist --window-icon=$ICO --height=250 --width 250 --title="$NAME $VER - $TODO" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Use software rendering" FALSE "Delete & reset everything" FALSE "Create a shortcut" FALSE "GitHub page")
+exec /usr/local/share/homura/Data/Misc.hma
+fi
+
+if [[ $TODO == *"About"* ]]; then
+zenity --info --window-icon=$ICO --width=390 --title="$NAME $VER - About" --text="Inspired by Lutris.
+$NAME is a launcher that makes it easy to run Windows games/launcher easily on FreeBSD by providing the required fixes and workarounds. 
+The Windows emulation is provided by Wine.
+$NAME is licensed under the BSD 2-Clause License.
+$COPYRIGHT
+All rights reserved."
+fi
+
+if [[ $TODO == *"Exit"* ]]; then
+zenity --notification --window-icon=$ICO --text "Thanks for using $NAME and have a great day!"
+exit
+fi
+zenity --notification --window-icon=$ICO --text "Task completed or application closed!"
+exec $NAME

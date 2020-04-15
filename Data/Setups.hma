@@ -51,7 +51,7 @@ prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/Origin winetricks win10
 installer-message
-zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - Origin" --text="Dont forget to disable the Origin in-game overlay or you are unable to start a game."
+warn "Dont forget to disable the Origin in-game overlay or you are unable to start a game."
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/OriginThinSetup.exe
 rm $DDIR/OriginThinSetup.exe
 chmod -R 777 $NDIR/Games/Origin
@@ -63,7 +63,7 @@ prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10
 installer-message
-zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of $INST" --text="If the $INST setup crashes, please make sure that the package x11-fonts/noto-extra is not installed. After installation of $INST you can install it again."
+warn "If the $INST setup crashes, please make sure that the package x11-fonts/noto-extra is not installed. After installation of $INST you can install it again."
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/UplayInstaller.exe
 rm $DDIR/UplayInstaller.exe
 fi
@@ -75,8 +75,8 @@ prefix-message
 echo -e "\e[40;38;5;32mSet prefix to Windows 10\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Programs/$INST winetricks win10
 installer-message
-zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of $INST" --text="To get Playback and Capture working set both mods to Direct Sound."
-zenity --info --width=260 --window-icon=$ICO --title="$NAME $VER - Installation of $INST" --text="If the $INST setup crashes, please make sure that the package x11-fonts/noto-extra is installed. After installation of $INST you can remove it again."
+info "To get Playback and Capture working set both mods to Direct Sound."
+info "If the $INST setup crashes, please make sure that the package x11-fonts/noto-extra is installed. After installation of $INST you can remove it again."
 WINEPREFIX=$NDIR/Programs/$INST wine $DDIR/TeamSpeak3-Client-win32-$TSVER.exe
 rm $DDIR/TeamSpeak3-Client-win32-$TSVER.exe
 fi
@@ -96,7 +96,7 @@ rm clonehero-win32.7z
 echo -e "\e[40;38;5;32mApplying a fix to prevent game from crashing at start\e[30;48;5;82m\e[0m"
 cd clonehero-win32
 fetch https://raw.githubusercontent.com/the-homura-project/homura/master/Gameconfigs/Clone%20Hero/settings.ini
-zenity --info --width=500 --window-icon=$ICO --title="$NAME $VER - Clone-Hero" --text="If you own a guitar hero controller, you may want to check out the tutorial how to get this controller working: https://forums.freebsd.org/threads/setting-up-guitar-hero-guitars-for-clone-hero-etc-on-freebsd.72953/"
+info "If you own a guitar hero controller, you may want to check out the tutorial how to get this controller working: https://forums.freebsd.org/threads/setting-up-guitar-hero-guitars-for-clone-hero-etc-on-freebsd.72953/"
 fi
 
 if [[ $INST == *"Drakensang-Online"* ]]; then
@@ -114,7 +114,7 @@ download http://update.anarchy-online.com/download/AO/AnarchyOnline_EP1.exe
 prefix-message
 WINEPREFIX="$NDIR/Games/$INST" winetricks winxp
 installer-message
-zenity --info --width=260 --title="$NAME $VER - Installation of Anarchy Online" --text="Please let the installer create an shortcut or you will unable to start the launcher later."
+warn "Please let the installer create an shortcut or you will unable to start the launcher later."
 WINEPREFIX="$NDIR/Games/$INST" wine $DDIR/AnarchyOnline_EP1.exe
 rm $DDIR/AnarchyOnline_EP1.exe
 fi
@@ -232,11 +232,11 @@ mkdir "$NDIR/Custom Prefixes"
 fi
 if [ -z "$PREFIXNAME" ]
 then
-zenity --info --width=310 --window-icon=$ICO --title="Create a custom prefix" --text="No name was given, the creation will be aborted now."
+info "No name was given, the creation will be aborted now."
 else
 mkdir -p "$NDIR/Custom Prefixes/$PREFIXNAME"
 cd "$NDIR/Custom Prefixes/$PREFIXNAME"
-zenity --info --width=260 --title="Create a custom prefix" --text="Now you need to select the executable that do you want to use in this prefix."
+info "Now you need to select the executable that do you want to use in this prefix."
 EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
 ENV=$(zenity --title="Environment variable" --text "Do you need an environment variable for your executable? (for example DXVK_HUD=1) if not leave it blank." --entry --window-icon=$ICO --width=260) 
 SPM=$(zenity --title="Startparameter" --text "Do you need an startparameter for your executable? (for example -console) if not leave it blank." --entry --window-icon=$ICO --width=260) 
@@ -316,13 +316,13 @@ fi
 if [[ $LNCH == *"Custom-Prefix"* ]]; then
 if [ ! "$(ls -A "/usr/home/$USER/.local/share/$NAME/Custom Prefixes")" ]
 then
-zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - $LNCH" --text="There is no custom prefix installed"
+info "There is no custom prefix installed"
 else
 cd "$NDIR/Custom Prefixes"
 PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/Custom Prefixes/")
 if [ -z "$PREFIXNAME" ]
 then
-zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - $TODO" --text="There was no custom prefix selected."
+info "There was no custom prefix selected."
 else
 bash "$PREFIXNAME/start.sh"
 fi
@@ -338,7 +338,7 @@ cd "$NDIR/Custom Prefixes"
 PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/Custom Prefixes/")
 if [ -z "$PREFIXNAME" ]
 then
-zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - $TODO" --text="There was no custom prefix selected."
+info "There was no custom prefix selected."
 else
 rm -r -d "$PREFIXNAME"
 fi
