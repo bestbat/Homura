@@ -2,7 +2,7 @@
 
 if [[ -v WTR ]]; then 
 if [[ $WTR == *"Teamspeak"* ]] || [[ $WTR == *"Discord"* ]] || [[ $WTR == *"steam-console-client"* ]] ; then
-WINEPREFIX=$NDIR/Programs/$UNST winetricks
+WINEPREFIX=$NDIR/Programs/$WTR winetricks
 else
 if [[ $WTR == *"Custom-Prefix"* ]]; then
 cd "$NDIR/Custom Prefixes"
