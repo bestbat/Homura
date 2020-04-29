@@ -130,7 +130,6 @@ fi
 if [[ $TODO == *"Launcher"* ]]; then
 export LNCH=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to launch?" --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
 bash /usr/local/share/homura/Data/Checks.hma
-exec /usr/local/share/homura/Data/Setups.hma
 fi
 
 if [[ $TODO == *"Uninstallation"* ]]; then
@@ -140,7 +139,6 @@ zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text
 exec $NAME
 else
 bash /usr/local/share/homura/Data/Checks.hma
-exec /usr/local/share/homura/Data/Setups.hma
 fi
 fi
 
