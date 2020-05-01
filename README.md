@@ -94,6 +94,7 @@ Delete & reset everything | :heavy_check_mark:
 Enable/Disable DXVK | :heavy_multiplication_x:
 Sandboxing | :heavy_multiplication_x:
 SteamCMD (steam-console-client) | :heavy_check_mark:
+Changing between wine versions | :heavy_multiplication_x:
 
 # Limitations :x:
 
