@@ -2,6 +2,10 @@
 
 # Checks for the launcher
 
+if [[ $LNCH == *"Custom-Prefix"* ]] ; then
+exec /usr/local/share/homura/Data/Setups.hma
+fi
+
 CCKGPDIR=$NDIR/Games/$LNCH
 
 if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/steam-console-client"* ]] ; then
