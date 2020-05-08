@@ -121,7 +121,7 @@ TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=420 --width 300 --
 
 if [[ $TODO == *"Installation"* ]]; then
 export INST=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to install?" --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
-exec /usr/local/share/homura/Data/Setups.hma
+bash /usr/local/share/homura/Data/Setups.hma
 fi
 
 if [[ $TODO == *"Launcher"* ]]; then
