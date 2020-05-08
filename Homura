@@ -191,5 +191,4 @@ if [[ $TODO == *"Exit"* ]]; then
 zenity --notification --window-icon=$ICO --text "Thanks for using $NAME and have a great day!"
 exit
 fi
-zenity --notification --window-icon=$ICO --text "Task completed or application closed!"
 exec $NAME
