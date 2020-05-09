@@ -348,7 +348,4 @@ fi
 fi
 fi
 
-unset INST
-unset LNCH
-unset UNST
 zenity --notification --window-icon=$ICO --text "Task completed!"
