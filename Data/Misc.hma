@@ -110,7 +110,7 @@ fi
 fi
 
 if [[ $OTR == *"Create a shortcut"* ]]; then
-CS=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $OTR" --text "What shortcut do you want to create?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone-Hero" FALSE "Drakensang-Online" FALSE "Anarchy-Online" FALSE "itch" FALSE "GOG-Galaxy" FALSE "League-of-Legends" FALSE "Wargaming-Game-Center" FALSE "Growtopia" FALSE "Bethesda-Launcher" FALSE "Arc" FALSE "Discord" FALSE "Left-4-Gore" FALSE "Custom-Prefix")
+CS=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $OTR" --text "What shortcut do you want to create?" --hide-header --column "$NAME $VER" --column "Item" FALSE "Steam" FALSE "Blizzard" FALSE "Origin" FALSE "Uplay" FALSE "Teamspeak" FALSE "Clone-Hero" FALSE "Drakensang-Online" FALSE "Anarchy-Online" FALSE "itch" FALSE "GOG-Galaxy" FALSE "League-of-Legends" FALSE "Wargaming-Game-Center" FALSE "Growtopia" FALSE "Bethesda-Launcher" FALSE "Arc" FALSE "Discord" FALSE "Custom-Prefix")
 
 if [ ! -d "/usr/home/$USER/.local/share/applications/Homura" ]; then
 mkdir /usr/home/$USER/.local/share/applications/Homura

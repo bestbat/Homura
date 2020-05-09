@@ -225,6 +225,21 @@ tar -xf steamcmd.zip
 rm steamcmd.zip
 fi
 
+if [[ $INST == *"Diablo-II-with-LoD"* ]]; then
+download "https://eu.battle.net/download/getLegacy?product=D2DV&locale=enUS&os=WIN"
+download "https://eu.battle.net/download/getLegacy?product=D2XP&locale=enUS&os=WIN"
+mv "getLegacy?product=D2DV&locale=enUS&os=WIN" "Diablo II enUS"
+mv "getLegacy?product=D2XP&locale=enUS&os=WIN" "Diablo II LoD enUS"
+prefix-message
+WINEPREFIX=$NDIR/Games/$INST winetricks win10
+installer-message
+warn "Please select for downloading "My Computer/C:/ProgramData" and for installing "My Computer/C:/Program Files" and you should lower the volume a bit because the installer have loud sounds"
+WINEPREFIX=$NDIR/Games/$INST wine "$DDIR/Diablo II enUS"
+WINEPREFIX=$NDIR/Games/$INST wine "$DDIR/Diablo II LoD enUS"
+rm "$DDIR/Diablo II enUS"
+rm "$DDIR/Diablo II LoD enUS"
+fi
+
 if [[ $INST == *"Custom-Prefix"* ]]; then
 PREFIXNAME=$(zenity --window-icon=$ICO --title="Create a custom prefix" --text "How your prefix should be called?" --entry --width=260) 
 if [ ! -d "$NDIR/Custom Prefixes" ]; then
@@ -311,6 +326,10 @@ fi
 
 if [[ $LNCH == *"steam-console-client"* ]]; then
 WINEPREFIX=$NDIR/Programs/$LNCH WINEDEBUG=-all wineconsole $NDIR/Programs/$LNCH/SteamCMD/steamcmd.exe
+fi
+
+if [[ $LNCH == *"Diablo-II-with-LoD"* ]]; then
+WINEPREFIX=$NDIR/Games/$LNCH wine "$NDIR/Games/$LNCH/drive_c/Program Files/Diablo II/Diablo II.exe" -w
 fi
 
 if [[ $LNCH == *"Custom-Prefix"* ]]; then
