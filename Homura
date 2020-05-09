@@ -122,20 +122,24 @@ TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=420 --width 300 --
 if [[ $TODO == *"Installation"* ]]; then
 export INST=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to install?" --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
 bash /usr/local/share/homura/Data/Setups.hma
+unset INST
 fi
 
 if [[ $TODO == *"Launcher"* ]]; then
 export LNCH=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to launch?" --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
 bash /usr/local/share/homura/Data/Checks.hma
+unset LNCH
 fi
 
 if [[ $TODO == *"Uninstallation"* ]]; then
 export UNST=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to uninstall?" --height=$ALH --width=$WTH --column="Application" --column="Description" $APPS)
 if [[ -z "$UNST" ]]; then
 zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text="Nothing was selected for uninstallation"
+unset UNST
 exec $NAME
 else
 bash /usr/local/share/homura/Data/Checks.hma
+unset UNST
 fi
 fi
 
