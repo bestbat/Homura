@@ -233,7 +233,7 @@ mv "getLegacy?product=D2XP&locale=enUS&os=WIN" "Diablo II LoD enUS"
 prefix-message
 WINEPREFIX=$NDIR/Games/$INST winetricks win10
 installer-message
-warn "Please select for downloading My Computer -> C: -> ProgramData and for installing My Computer ->C: -> Program Files, you should also lower the volume a bit because the installer have loud sounds. Please know that the next installer starts only if you have closed all security certificate warnings, the best way to do this is holding enter :D"
+warn "Please select for downloading 'My Computer/C:/ProgramData' and for installing 'My Computer/C:/Program Files' and you should lower the volume a bit because the installer have loud sounds. Please know that the next installer starts only if you have closed all security certificate warnings, the best way to do this is holding enter :D"
 WINEPREFIX=$NDIR/Games/$INST wine "$DDIR/Diablo II enUS"
 WINEPREFIX=$NDIR/Games/$INST wine "$DDIR/Diablo II LoD enUS"
 rm "$DDIR/Diablo II enUS"
