@@ -317,6 +317,18 @@ StartupNotify=true
 Icon=NDIR/Programs/$CS/$CS/app.ico" >> /usr/home/$USER/.local/share/applications/$CS.desktop
 fi
 
+if [[ $CS == *"Diablo-II-with-LoD"* ]]; then
+if [ -f "/usr/home/$USER/.local/share/applications/$CS.desktop" ]; then
+rm /usr/home/$USER/.local/share/applications/$CS.desktop
+fi
+echo "[Desktop Entry]
+Name=$CS
+Exec=$NAME Launch $CS
+Type=Application
+StartupNotify=true
+Icon=
+fi
+
 if [[ $CS == *"Custom-Prefix"* ]]; then
 if [ ! "$(ls -A "/usr/home/$USER/.local/share/$NAME/Custom Prefixes")" ]
 then
