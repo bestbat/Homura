@@ -14,7 +14,7 @@ if [[ $INST == *"Steam"* ]]; then
 download https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
 prefix-message
 echo -e "\e[40;38;5;32mInstalling dotnet40 & arial fonts to fix crashes and missing fonts in several games\e[30;48;5;82m\e[0m"
-WINEPREFIX=$NDIR/Games/$INST winetricks dotnet40 arial vcrun2015
+WINEPREFIX=$NDIR/Games/$INST winetricks dotnet40 arial vcrun2015 xna40
 echo -e "\e[40;38;5;32mSet prefix to Windows 10 and prevent that the wm decorates the window\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10 windowmanagerdecorated=n
 echo -e "\e[40;38;5;32mApplying audio fixes for several games\e[30;48;5;82m\e[0m"
