@@ -326,7 +326,7 @@ Name=$CS
 Exec=$NAME Launch $CS
 Type=Application
 StartupNotify=true
-Icon=CFF8_Diablo II.0
+Icon=CFF8_Diablo II.0" >> /usr/home/$USER/.local/share/applications/$CS.desktop
 fi
 
 if [[ $CS == *"Custom-Prefix"* ]]; then
