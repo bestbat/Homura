@@ -22,8 +22,6 @@ WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\A
 WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\AppDefaults\helldivers.exe" /v "Version" /t "REG_SZ" /d "winxp" /f
 WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\AppDefaults\VanHelsing_x86.exe" /v "Version" /t "REG_SZ" /d "winxp" /f
 WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\AppDefaults\Ember.exe" /v "Version" /t "REG_SZ" /d "winxp" /f
-WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\AppDefaults\Terraria.exe" /v "Version" /t "REG_SZ" /d "winxp" /f
-WINEPREFIX=$NDIR/Games/$INST wine reg.exe ADD "HKEY_CURRENT_USER\Software\Wine\AppDefaults\Stardew Valley.exe" /v "Version" /t "REG_SZ" /d "winxp" /f
 installer-message
 WINEPREFIX=$NDIR/Games/$INST wine $DDIR/SteamSetup.exe
 echo -e "\e[40;38;5;32mReplacing the shortcut with one that contains the required tweaks\e[30;48;5;82m\e[0m"
@@ -252,6 +250,15 @@ WINEPREFIX=$NDIR/Games/$INST wine "$DDIR/RuneScape-Setup.exe"
 rm "$DDIR/RuneScape-Setup.exe"
 fi
 
+if [[ $INST == *"Subway-Surfers"* ]]; then
+download https://homura.magzu.net/games/Subway_Surfers.tar.gz
+mkdir -p $NDIR/Games/$INST
+cd $NDIR/Games/$INST
+installer-message
+tar -xf $DDIR/Subway_Surfers.tar.gz
+rm $DDIR/Subway_Surfers.tar.gz
+fi
+
 if [[ $INST == *"Custom-Prefix"* ]]; then
 PREFIXNAME=$(zenity --window-icon=$ICO --title="Create a custom prefix" --text "How your prefix should be called?" --entry --width=260) 
 if [ ! -d "$NDIR/Custom Prefixes" ]; then
@@ -346,6 +353,10 @@ fi
 
 if [[ $LNCH == *"RuneScape"* ]]; then
 WINEPREFIX=$NDIR/Games/$LNCH wine "$NDIR/Games/$LNCH/drive_c/Program Files/Jagex/RuneScape Launcher/RuneScape.exe"
+fi
+
+if [[ $LNCH == *"Subway-Surfers"* ]]; then
+WINEPREFIX=$NDIR/Games/$LNCH wine "$NDIR/Games/$LNCH/Subway Surfers/Subway_Surfers.exe"
 fi
 
 if [[ $LNCH == *"Custom-Prefix"* ]]; then
