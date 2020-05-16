@@ -240,6 +240,16 @@ rm "$DDIR/Diablo II enUS"
 rm "$DDIR/Diablo II LoD enUS"
 fi
 
+if [[ $INST == *"RuneScape"* ]]; then
+download https://content.runescape.com/downloads/windows/RuneScape-Setup.exe
+prefix-message
+WINEPREFIX=$NDIR/Games/$INST winetricks win10
+installer-message
+warn "If you are on the point where you need to install DirectX 9.0c then cancel this setup or you cannot proceed to install RuneScape."
+WINEPREFIX=$NDIR/Games/$INST wine "$DDIR/RuneScape-Setup.exe"
+rm "$DDIR/RuneScape-Setup.exe"
+fi
+
 if [[ $INST == *"Custom-Prefix"* ]]; then
 PREFIXNAME=$(zenity --window-icon=$ICO --title="Create a custom prefix" --text "How your prefix should be called?" --entry --width=260) 
 if [ ! -d "$NDIR/Custom Prefixes" ]; then
@@ -330,6 +340,10 @@ fi
 
 if [[ $LNCH == *"Diablo-II-with-LoD"* ]]; then
 WINEPREFIX=$NDIR/Games/$LNCH wine "$NDIR/Games/$LNCH/drive_c/Program Files/Diablo II/Diablo II.exe" -w
+fi
+
+if [[ $LNCH == *"RuneScape"* ]]; then
+WINEPREFIX=$NDIR/Games/$LNCH wine "$NDIR/Games/$LNCH/drive_c/Program Files/Jagex/RuneScape Launcher/RuneScape.exe"
 fi
 
 if [[ $LNCH == *"Custom-Prefix"* ]]; then
