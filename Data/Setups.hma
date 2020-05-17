@@ -14,7 +14,7 @@ if [[ $INST == *"Steam"* ]]; then
 download https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
 prefix-message
 echo -e "\e[40;38;5;32mInstalling dotnet40 & arial fonts to fix crashes and missing fonts in several games\e[30;48;5;82m\e[0m"
-WINEPREFIX=$NDIR/Games/$INST winetricks dotnet40 arial vcrun2015 xna40
+WINEPREFIX=$NDIR/Games/$INST winetricks dotnet40 arial vcrun2015
 echo -e "\e[40;38;5;32mSet prefix to Windows 10 and prevent that the wm decorates the window\e[30;48;5;82m\e[0m"
 WINEPREFIX=$NDIR/Games/$INST winetricks win10 windowmanagerdecorated=n
 echo -e "\e[40;38;5;32mApplying audio fixes for several games\e[30;48;5;82m\e[0m"
@@ -261,6 +261,13 @@ tar -xf $DDIR/Subway_Surfers.tar.gz
 rm $DDIR/Subway_Surfers.tar.gz
 fi
 
+if [[ $INST == *"Tropix2"* ]]; then
+download http://tropixgame.com/Tropix2Installer.exe
+installer-message
+WINEPREFIX=$NDIR/Games/$INST wine "$DDIR/Tropix2Installer.exe"
+rm $DDIR/Tropix2Installer.exe
+fi
+
 if [[ $INST == *"Custom-Prefix"* ]]; then
 PREFIXNAME=$(zenity --window-icon=$ICO --title="Create a custom prefix" --text "How your prefix should be called?" --entry --width=260) 
 if [ ! -d "$NDIR/Custom Prefixes" ]; then
@@ -361,6 +368,10 @@ if [[ $LNCH == *"Subway-Surfers"* ]]; then
 WINEPREFIX=$NDIR/Games/$LNCH wine "$NDIR/Games/$LNCH/Subway Surfers/Subway_Surfers.exe"
 fi
 
+if [[ $LNCH == *"Tropix2"* ]]; then
+WINEPREFIX=$NDIR/Games/$LNCH wine "$NDIR/Games/$LNCH/drive_c/Program Files/Tropix2/tpx2.exe"
+fi
+
 if [[ $LNCH == *"Custom-Prefix"* ]]; then
 if [ ! "$(ls -A "/usr/home/$USER/.local/share/$NAME/Custom Prefixes")" ]
 then
@@ -372,7 +383,7 @@ if [ -z "$PREFIXNAME" ]
 then
 info "There was no custom prefix selected."
 else
-bash "$PREFIXNAME/start.sh"
+sh "$PREFIXNAME/start.sh"
 fi
 fi
 fi
