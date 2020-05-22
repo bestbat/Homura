@@ -52,8 +52,8 @@ fi
 
 if [ ! -f "$ICO" ]; then
 cd $DDIR
-fetch https://vignette.wikia.nocookie.net/madoka/images/7/72/Homura_magical_outfit_1.png/revision/latest/top-crop/width/320/height/320?cb=20160821012353
-mv 320?cb=20160821012353 $DDIR/$NAME.png
+fetch https://eyeforaneyepiece.files.wordpress.com/2013/12/homura_akemi_vector_by_hombre0-d4ccjbw.png
+mv homura_akemi_vector_by_hombre0-d4ccjbw.png $DDIR/$NAME.png
 fi
 
 if [[ $GPU == *"VMware, Inc."* ]]; then
