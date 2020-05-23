@@ -52,7 +52,7 @@ fi
 
 if [ ! -f "$ICO" ]; then
 cd $DDIR
-fetch https://eyeforaneyepiece.files.wordpress.com/2013/12/homura_akemi_vector_by_hombre0-d4ccjbw.png
+fetch http://alt.magzu.net/damn/dl/Homura.png
 mv homura_akemi_vector_by_hombre0-d4ccjbw.png $DDIR/$NAME.png
 fi
 
