@@ -32,6 +32,10 @@ fi
 
 # Checks for the uninstalller
 
+if [[ $UNST == *"Custom-Prefix"* ]] ; then
+exec /usr/local/share/homura/Data/Setups.hma
+fi
+
 CCKGPDIR=$NDIR/Games/$UNST
 
 if [[ $CCKGPDIR == *"$NDIR/Games/Teamspeak"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/Discord"* ]] || [[ $CCKGPDIR == *"$NDIR/Games/steam-console-client"* ]] ; then
