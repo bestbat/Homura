@@ -268,6 +268,16 @@ WINEPREFIX=$NDIR/Games/$INST wine "$DDIR/Tropix2Installer.exe"
 rm $DDIR/Tropix2Installer.exe
 fi
 
+if [[ $INST == *"PokeMMO"* ]]; then
+download https://dl.pokemmo.eu/download/pokemmo-installer-windows-x32.exe
+prefix-message
+WINEPREFIX=$NDIR/Games/$INST winetricks win10
+installer-message
+WINEPREFIX=$NDIR/Games/$INST wine "$DDIR/pokemmo-installer-windows-x32.exe"
+info "PokeMMO needs at least a black/white rom to run, you must have the legal right to use that rom. We will not supply you with the roms, or help you find them as they are copyrighted."
+rm $DDIR/pokemmo-installer-windows-x32.exe
+fi
+
 if [[ $INST == *"Custom-Prefix"* ]]; then
 PREFIXNAME=$(zenity --window-icon=$ICO --title="Create a custom prefix" --text "How your prefix should be called?" --entry --width=260) 
 if [ ! -d "$NDIR/Custom Prefixes" ]; then
@@ -370,6 +380,10 @@ fi
 
 if [[ $LNCH == *"Tropix2"* ]]; then
 WINEPREFIX=$NDIR/Games/$LNCH wine "$NDIR/Games/$LNCH/drive_c/Program Files/Tropix2/tpx2.exe"
+fi
+
+if [[ $LNCH == *"PokeMMO"* ]]; then
+WINEPREFIX=$NDIR/Games/$LNCH wine "$NDIR/Games/$LNCH/drive_c/Program Files/PokeMMO/PokeMMO.exe"
 fi
 
 if [[ $LNCH == *"Custom-Prefix"* ]]; then
