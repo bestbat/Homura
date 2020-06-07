@@ -73,11 +73,11 @@ function installer-message {
            }
 
 function warn {
-               zenity --warning --width=200 --window-icon=$ICO --text "$1"
+               zenity --warning --width=400 --window-icon=$ICO --text "$1"
            }
            
 function info {
-               zenity --info --width=200 --window-icon=$ICO --text "$1"
+               zenity --info --width=400 --window-icon=$ICO --text "$1"
            }
 
 export -f download
