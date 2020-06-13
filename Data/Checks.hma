@@ -3,7 +3,19 @@
 # Checks for the launcher
 
 if [[ $LNCH == *"Custom-Prefix"* ]] ; then
-exec /usr/local/share/homura/Data/Setups.hma
+if [ ! "$(ls -A "/usr/home/$USER/.local/share/$NAME/Custom Prefixes")" ]
+then
+info "There is no custom prefix installed"
+else
+cd "$NDIR/Custom Prefixes"
+PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/Custom Prefixes/")
+if [ -z "$PREFIXNAME" ]
+then
+info "There was no custom prefix selected."
+else
+sh "$PREFIXNAME/start.sh"
+fi
+fi
 fi
 
 CCKGPDIR=$NDIR/Games/$LNCH
@@ -15,7 +27,7 @@ echo -e "\e[40;38;5;82m$LNCH is not installed.\e[30;48;5;82m\e[0m"
 unset LNCH
 unset TODO
 else
-exec $NDIR/Games/$LNCH/start.sh
+exec $LDIR/$LNCH
 fi
 fi
 
@@ -26,7 +38,7 @@ echo -e "\e[40;38;5;82m$LNCH is not installed.\e[30;48;5;82m\e[0m"
 unset LNCH
 unset TODO
 else
-exec $NDIR/Games/$LNCH/start.sh
+exec $LDIR/$LNCH
 fi
 fi
 
