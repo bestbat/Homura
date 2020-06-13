@@ -12,7 +12,6 @@ export ICO=$DDIR/$NAME.png
 DATE=$(date)
 WINEVER=$(wine --version)
 COPYRIGHT=$(cat "/usr/local/share/licenses/homura-$VER/BSD2CLAUSE" | grep Copyright)
-APPS=$(cat /usr/home/$USER/.local/share/Homura/Library/Apps.hma)
 
 if [[ $USER == *"root"* ]]; then
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER" --text="$NAME can not be executed as root."
@@ -29,13 +28,13 @@ mkdir $NDIR/Programs
 fi
 mkdir -p $LDIR
 cd $LDIR
-git clone https://github.com/the-homura-project/homura-library
-mv $LDIR/homura-library/* $LDIR
+fetch https://github.com/the-homura-project/homura-library/archive/master.zip
+unzip master.zip
+mv $LDIR/homura-library-master/* $LDIR
 cd $LDIR/
 chmod +x *
-cd $LDIR/homura-library
-git clean -d -x -f
-rm -r -d $LIDR/homura-library
+rm -r -d $LDIR/homura-library-master
+rm master.zip
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - Welcome" --text="Welcome to $NAME. If you have a problem, suggestion, questions or similar, do not hesitate to open an issue on GitHub. Have Fun!"
 if [[ $OSN != "FreeBSD" ]]; then
 zenity --info --width=360 --window-icon=$ICO --title="$NAME $VER" --text="You are about to use $NAME on an unsupported system ($OSN). Please be aware that unexpected errors may occur and that your bug reports can be marked as invaild."
@@ -61,6 +60,8 @@ echo "Shortcut will be not created"
 fi
 fi
 fi
+
+APPS=$(cat /usr/home/$USER/.local/share/Homura/Library/Apps.hma)
 
 if [ ! -d "$DDIR" ]; then
 mkdir $NDIR/Data
