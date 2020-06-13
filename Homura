@@ -12,7 +12,7 @@ export ICO=$DDIR/$NAME.png
 DATE=$(date)
 WINEVER=$(wine --version)
 COPYRIGHT=$(cat "/usr/local/share/licenses/homura-$VER/BSD2CLAUSE" | grep Copyright)
-APPS=$(cat '/usr/home/$USER/.local/share/Homura/Library/Apps.hma')
+APPS=$(cat /usr/home/$USER/.local/share/Homura/Library/Apps.hma)
 
 if [[ $USER == *"root"* ]]; then
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER" --text="$NAME can not be executed as root."
@@ -31,9 +31,11 @@ mkdir -p $LDIR
 cd $LDIR
 git clone https://github.com/the-homura-project/homura-library
 mv $LDIR/homura-library/* $LDIR
-cd $LDIR
+cd $LDIR/
 chmod +x *
-rm -r -d $LDIR/homura-library
+cd $LDIR/homura-library
+git clean -d -x -f
+rm -r -d $LIDR/homura-library
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - Welcome" --text="Welcome to $NAME. If you have a problem, suggestion, questions or similar, do not hesitate to open an issue on GitHub. Have Fun!"
 if [[ $OSN != "FreeBSD" ]]; then
 zenity --info --width=360 --window-icon=$ICO --title="$NAME $VER" --text="You are about to use $NAME on an unsupported system ($OSN). Please be aware that unexpected errors may occur and that your bug reports can be marked as invaild."
@@ -134,7 +136,8 @@ TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=420 --width 300 --
 
 if [[ $TODO == *"Installation"* ]]; then
 export INST=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to install?" --height=$ALH --width=$WTH --column="Application" --column="Description" --column="Works?" $APPS)
-exec $LDIR/$INST
+cd $DDIR
+bash $LDIR/$INST
 fi
 
 if [[ $TODO == *"Launcher"* ]]; then
@@ -208,3 +211,5 @@ zenity --notification --window-icon=$ICO --text "Thanks for using $NAME and have
 exit
 fi
 exec $NAME
+
+zenity --notification --window-icon=$ICO --text "Task completed!"
