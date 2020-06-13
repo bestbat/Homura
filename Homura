@@ -61,7 +61,7 @@ fi
 fi
 fi
 
-APPS=$(ls -p | grep -v /)
+APPS=$(cd $LDIR && ls -p | grep -v /)
 
 if [ ! -d "$DDIR" ]; then
 mkdir $NDIR/Data
