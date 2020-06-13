@@ -60,7 +60,7 @@ Note: Packages can lag behind ports. If you want the latest version you may want
 
 ### Build & installing the port ⚙️
 
-Is [here](https://github.com/Alexander88207/Alexports/tree/master/games/homura)
+`cd /usr/ports/games/homura/ && make install clean`
 
 ### Uninstallation
 
