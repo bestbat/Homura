@@ -12,7 +12,7 @@ export ICO=$DDIR/$NAME.png
 DATE=$(date)
 WINEVER=$(wine --version)
 COPYRIGHT=$(cat "/usr/local/share/licenses/homura-$VER/BSD2CLAUSE" | grep Copyright)
-APPS=$(cat '/usr/local/share/homura/Data/Apps.hma')
+APPS=$(cat '$LDIR/homura-library/Apps.hma')
 
 if [[ $USER == *"root"* ]]; then
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER" --text="$NAME can not be executed as root."
@@ -28,6 +28,7 @@ if [ ! -d "$NDIR/Programs" ]; then
 mkdir $NDIR/Programs
 fi
 mkdir -p $LDIR
+cd $LDIR
 git clone https://github.com/the-homura-project/homura-library
 mv $LDIR/homura-library/* $LDIR
 cd $LDIR
