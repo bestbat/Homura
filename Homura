@@ -30,12 +30,12 @@ mkdir -p $LDIR
 cd $LDIR
 fetch https://github.com/the-homura-project/homura-library/archive/master.zip
 unzip master.zip
-rm LICENSE
 mv $LDIR/homura-library-master/* $LDIR
 cd $LDIR/
 chmod +x *
 rm -r -d $LDIR/homura-library-master
 rm master.zip
+rm LICENSE
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - Welcome" --text="Welcome to $NAME. If you have a problem, suggestion, questions or similar, do not hesitate to open an issue on GitHub. Have Fun!"
 if [[ $OSN != "FreeBSD" ]]; then
 zenity --info --width=360 --window-icon=$ICO --title="$NAME $VER" --text="You are about to use $NAME on an unsupported system ($OSN). Please be aware that unexpected errors may occur and that your bug reports can be marked as invaild."
@@ -62,7 +62,7 @@ fi
 fi
 fi
 
-APPS=$(cd $LDIR && ls -p | grep -v /)
+APPS=$(cd $LDIR && ls -p | grep -v / | grep -v shortcuts)
 
 if [ ! -d "$DDIR" ]; then
 mkdir $NDIR/Data
@@ -195,7 +195,7 @@ notify-send "The logging have been quit."
 fi
 
 if [[ $TODO == *"Other"* ]]; then
-export OTR=$(zenity --list --radiolist --window-icon=$ICO --height=250 --width 250 --title="$NAME $VER - $TODO" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Use software rendering" FALSE "Delete & reset everything" FALSE "Create a shortcut" FALSE "GitHub page")
+export OTR=$(zenity --list --radiolist --window-icon=$ICO --height=250 --width 250 --title="$NAME $VER - $TODO" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Use software rendering" FALSE "Delete & reset everything" FALSE "Create a shortcut" FALSE "GitHub page" FALSE "Update library")
 exec /usr/local/share/homura/Data/Misc.hma
 fi
 
