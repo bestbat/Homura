@@ -30,6 +30,7 @@ mkdir -p $LDIR
 cd $LDIR
 fetch https://github.com/the-homura-project/homura-library/archive/master.zip
 unzip master.zip
+rm LICENSE
 mv $LDIR/homura-library-master/* $LDIR
 cd $LDIR/
 chmod +x *
