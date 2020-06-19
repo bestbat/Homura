@@ -106,17 +106,17 @@ export -f info
 
 Install() {
 export INST=$1
-exec /usr/local/share/homura/Data/Setups.hma
+exec $LDIR/$INST
 }
 
 Launch() {
 export LNCH=$1
-bash /usr/local/share/homura/Data/Checks.hma
+bash $LDIR/checks
 }
 
 Uninstall() {
 export UNST=$1
-bash /usr/local/share/homura/Data/Checks.hma
+bash $LDIR/checks
 }
 
 Winetricks() {
