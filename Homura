@@ -62,7 +62,7 @@ fi
 fi
 fi
 
-APPS=$(cd $LDIR && ls -p | grep -v / | grep -v shortcuts)
+APPS=$(cd $LDIR && ls -p | grep -v / | grep -v shortcuts | grep -v checks)
 
 if [ ! -d "$DDIR" ]; then
 mkdir $NDIR/Data
