@@ -144,7 +144,7 @@ fi
 
 if [[ $TODO == *"Launcher"* ]]; then
 export LNCH=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to launch?" --height=$ALH --width=$WTH --column="Application" $APPS)
-bash /usr/local/share/homura/Data/Checks.hma
+bash $LDIR/checks
 unset LNCH
 fi
 
@@ -155,7 +155,7 @@ zenity --info --width=400 --window-icon=$ICO --title="$NAME $VER - $UNST" --text
 unset UNST
 exec $NAME
 else
-bash /usr/local/share/homura/Data/Checks.hma
+bash $LDIR/checks
 unset UNST
 fi
 fi
