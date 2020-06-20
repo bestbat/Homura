@@ -113,7 +113,7 @@ No fear we don't bite ;)
 # Credits :star:
 
 - [Alexander88207](https://github.com/Alexander88207) - Lead programmer & Maintainer
-- [MagZu](https://github.com/magzu)          - Hosting the mirror's (alt.magzu.net) & (homura.magzu.net)
+- [MagZu](https://github.com/magzu)          - Hosting the mirror (homura.magzu.net)
 - [You](https://github.com/the-homura-project/homura-docs/blob/master/CONTRIBUTING.md)? - ?
 - [Contributors](https://github.com/the-homura-project/homura/graphs/contributors)     - for contributing
 
