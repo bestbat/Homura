@@ -165,7 +165,6 @@ export WTR=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --tex
 exec /usr/local/share/homura/Data/Misc.hma
 fi
 
-
 if [[ $TODO == *"Run a executable in prefix"* ]]; then
 export RAEP=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "In what prefix do do you want to open your executable?" --height=$ALH --width=$WTH --column="Application" $APPS)
 exec /usr/local/share/homura/Data/Misc.hma
@@ -173,9 +172,8 @@ fi
 
 if [[ $TODO == *"Update"* ]]; then
 export UPDE=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to update?" --height=$ALH --width=$WTH --column="Application" $APPS)
-exec /usr/local/share/homura/Data/Misc.hma
+bash $LDIR/$UPDE
 fi
-
 
 if [[ $TODO == *"Applying a fix"* ]]; then
 export AAF=$(zenity --list --radiolist --window-icon=$ICO  --height=200 --width 350 --title="$NAME $VER" --text "What fix do you want to apply?" --hide-header --column "$NAME" --column "Item" FALSE "Fix of blackscreen in Anno 1404 (Steam)")
