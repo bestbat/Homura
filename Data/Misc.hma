@@ -39,13 +39,6 @@ fi
 fi
 fi
 
-if [ -z "$UPDE" ]
-then
-# skip
-else
-bash $LDIR/$UPDE
-fi
-
 if [[ $AAF == *"Fix of blackscreen in Anno 1404 (Steam)"* ]]; then
 if [ ! -d "/usr/home/$USER/.local/share/Homura/Games/Steam/drive_c/Program Files/Steam/steamapps/common/Anno 1404" ]; then
 info "Please install the game first."
@@ -109,7 +102,6 @@ fi
 
 unset WTR
 unset RAEP
-unset UPDE
 unset AAF
 unset OTR
 unset CS
