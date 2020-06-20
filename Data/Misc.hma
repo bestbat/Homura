@@ -39,41 +39,11 @@ fi
 fi
 fi
 
-if [[ $UPDE == *"Teamspeak"* ]]; then
-if [ ! -d "$NDIR/Programs/$UPDE" ]; then
-info "You can not update something what is not installed :)"
-else
-WINEPREFIX=$NDIR/Programs/$UPDE wine "$NDIR/Programs/$UPDE/drive_c/Program Files/TeamSpeak 3 Client/update.exe"
-kill ts3client_win32.exe
-fi
-fi
-
-if [[ $UPDE == *"Growtopia"* ]]; then
-if [ ! -d "$NDIR/Games/$UPDE" ]; then
-info "You can not update something what is not installed :)"
-else
-cd $DDIR
-fetch https://growtopiagame.com/Growtopia-Installer.exe
-echo -e "\e[40;38;5;82mStarting installer\e[30;48;5;82m\e[0m"
-WINEPREFIX=$NDIR/Games/$UPDE wine $DDIR/Growtopia-Installer.exe
-rm $DDIR/Growtopia-Installer.exe
-fi
-fi
-
-if [[ $UPDE == *"Custom-Prefix"* ]]; then
-cd "$NDIR/Custom Prefixes"
-PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/Custom Prefixes/")
-if [ -z "$PREFIXNAME" ]
+if [ -z "$UPDE" ]
 then
-zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - $TODO" --text="There was no custom prefix selected."
+# skip
 else
-EXECUTABLE="$(zenity --file-selection --title="Choose your executable")"
-ENV=$(zenity --title="Environment variable" --text "Do you need an environment variable for your executable? (for example DXVK_HUD=1) if not leave it blank." --entry --window-icon=$ICO --width=260)
-SPM=$(zenity --title="Startparameter" --text "Do you need an startparameter for your executable? (for example -console) if not leave it blank." --entry --window-icon=$ICO --width=260) 
-cd "$PREFIXNAME"
-rm start.sh
-echo "$ENV WINEPREFIX='$PREFIXNAME' wine '$EXECUTABLE' $SPM" >> start.sh
-fi
+bash $LDIR/$UPDE
 fi
 
 if [[ $AAF == *"Fix of blackscreen in Anno 1404 (Steam)"* ]]; then
