@@ -62,8 +62,8 @@ fi
 fi
 fi
 
-APPLIST=$(cd $LDIR && ls | grep -v shortcuts | grep -v checks)
-APPEXISTCHECK=$(cd "$NDIR/Games" && ls && cd "$NDIR/Programs" && ls && cd "$NDIR" && ls | grep "Custom-Prefixes" )
+export APPLIST=$(cd $LDIR && ls | grep -v shortcuts | grep -v checks)
+export APPEXISTCHECK=$(cd "$NDIR/Games" && ls && cd "$NDIR/Programs" && ls && cd "$NDIR" && ls | grep "Custom-Prefixes" )
 
 if [ ! -d "$DDIR" ]; then
 mkdir $NDIR/Data
@@ -140,7 +140,7 @@ export TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=420 --width
 if [[ $TODO == *"Installation"* ]]; then
 export INST=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to install?" --height=$ALH --width=$WTH --column="Application" $APPLIST)
 if [[ -z "$INST" ]]; then
-info "Nothing was selected for installation :("
+info "Nothing was selected for installation ／人◕ ‿‿ ◕人＼"
 unset INST
 exec $NAME
 else
