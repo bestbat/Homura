@@ -152,24 +152,9 @@ fi
 
 if [[ $TODO == *"Launcher"* ]]; then
 export LNCH=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to launch?" --height=$ALH --width=$WTH --column="Application" $APPEXISTCHECK)
-if [[ $LNCH == *"Custom-Prefixes"* ]]; then
-if [ ! "$(ls -A "/usr/home/$USER/.local/share/$NAME/Custom-Prefixes")" ]
-then
-info "There is no custom prefix installed"
-else
-cd "$NDIR/Custom Prefixes"
-PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/Custom-Prefixes/")
-if [ -z "$PREFIXNAME" ]
-then
-info "There was no custom prefix selected."
-else
-bash "$PREFIXNAME/start.sh"
-fi
-fi
-fi
 if [[ -z "$LNCH" ]]; then
 info "Nothing was selected to launch :("
-unset INST
+unset LNCH
 exec $NAME
 else
 bash $LDIR/$LNCH
@@ -179,24 +164,6 @@ fi
 
 if [[ $TODO == *"Uninstallation"* ]]; then
 export UNST=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to uninstall?" --height=$ALH --width=$WTH --column="Application" $APPEXISTCHECK)
-if [[ $UNST == *"Custom-Prefixes"* ]]; then
-if [ ! "$(ls -A "/usr/home/$USER/.local/share/$NAME/Custom-Prefixes")" ]
-then
-info "There is no custom prefix installed"
-exec $NAME
-else
-cd "$NDIR/Custom-Prefixes"
-PREFIXNAME=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/Custom-Prefixes/")
-if [ -z "$PREFIXNAME" ]
-then
-info "There was no custom prefix selected :("
-unset $UNST
-exec $NAME
-else
-rm -r -d "$PREFIXNAME"
-fi
-fi
-fi
 if [[ -z "$UNST" ]]; then
 info "Nothing was selected for uninstallation :("
 unset UNST
