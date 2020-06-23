@@ -146,6 +146,7 @@ exec $NAME
 else
 cd $DDIR
 bash $LDIR/$INST
+zenity --notification --window-icon=$ICO --text "Task completed!"
 unset INST
 fi
 fi
@@ -158,6 +159,7 @@ unset LNCH
 exec $NAME
 else
 bash $LDIR/$LNCH
+zenity --notification --window-icon=$ICO --text "Task completed!"
 unset LNCH
 fi
 fi
@@ -170,6 +172,7 @@ unset UNST
 exec $NAME
 else
 bash $LDIR/$UNST
+zenity --notification --window-icon=$ICO --text "Task completed!"
 unset UNST
 fi
 fi
