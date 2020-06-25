@@ -26,6 +26,7 @@ fi
 if [ ! -d "$NDIR/Programs" ]; then
 mkdir $NDIR/Programs
 fi
+if [ ! -d "$NDIR/$LDIR" ]; then
 mkdir -p $LDIR
 cd $LDIR
 fetch https://github.com/the-homura-project/homura-library/archive/master.zip
@@ -36,6 +37,8 @@ chmod +x *
 rm -r -d $LDIR/homura-library-master
 rm master.zip
 rm LICENSE
+fi
+
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - Welcome" --text="Welcome to $NAME. If you have a problem, suggestion, questions or similar, do not hesitate to open an issue on GitHub. Have Fun!"
 if [[ $OSN != "FreeBSD" ]]; then
 zenity --info --width=360 --window-icon=$ICO --title="$NAME $VER" --text="You are about to use $NAME on an unsupported system ($OSN). Please be aware that unexpected errors may occur and that your bug reports can be marked as invaild."
@@ -134,7 +137,7 @@ echo -e "\e[3;5;0;36mWine Version: $WINEVER\e[30;48;5;82m\e[0m"
 echo -e "\e[3;5;0;31mGPU Info OpenGL:\e[30;48;5;82m\e[0m" && glxinfo | grep OpenGL
 echo -e "\e[3;5;0;31mGPU Info Vulkan:\e[30;48;5;82m\e[0m" && vulkaninfo | grep -m 1 "GPU id"
 
-export TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=420 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Applying a fix" FALSE "Open Homura folder" FALSE "Enable logging" FALSE "Other" FALSE "About" FALSE "Exit")
+export TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=450 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Applying a fix" FALSE "Open Homura folder" FALSE "Enable logging" FALSE "Other" FALSE "About" FALSE "Exit")
 
 
 if [[ $TODO == *"Installation"* ]]; then
