@@ -18,15 +18,15 @@ zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER" --text="$NAME 
 exit
 fi
 
-if [ ! -d "$NDIR" ]; then
-mkdir -p $NDIR
 if [ ! -d "$NDIR/Games" ]; then
 mkdir $NDIR/Games
 fi
+
 if [ ! -d "$NDIR/Programs" ]; then
 mkdir $NDIR/Programs
 fi
-if [ ! -d "$NDIR/$LDIR" ]; then
+
+if [ ! -d "$LDIR" ]; then
 mkdir -p $LDIR
 cd $LDIR
 fetch https://github.com/the-homura-project/homura-library/archive/master.zip
@@ -39,6 +39,8 @@ rm master.zip
 rm LICENSE
 fi
 
+if [ ! -d "$NDIR" ]; then
+mkdir -p $NDIR
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - Welcome" --text="Welcome to $NAME. If you have a problem, suggestion, questions or similar, do not hesitate to open an issue on GitHub. Have Fun!"
 if [[ $OSN != "FreeBSD" ]]; then
 zenity --info --width=360 --window-icon=$ICO --title="$NAME $VER" --text="You are about to use $NAME on an unsupported system ($OSN). Please be aware that unexpected errors may occur and that your bug reports can be marked as invaild."
