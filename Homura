@@ -18,27 +18,6 @@ zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER" --text="$NAME 
 exit
 fi
 
-if [ ! -d "$NDIR/Games" ]; then
-mkdir $NDIR/Games
-fi
-
-if [ ! -d "$NDIR/Programs" ]; then
-mkdir $NDIR/Programs
-fi
-
-if [ ! -d "$LDIR" ]; then
-mkdir -p $LDIR
-cd $LDIR
-fetch https://github.com/the-homura-project/homura-library/archive/master.zip
-unzip master.zip
-mv $LDIR/homura-library-master/* $LDIR
-cd $LDIR/
-chmod +x *
-rm -r -d $LDIR/homura-library-master
-rm master.zip
-rm LICENSE
-fi
-
 if [ ! -d "$NDIR" ]; then
 mkdir -p $NDIR
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - Welcome" --text="Welcome to $NAME. If you have a problem, suggestion, questions or similar, do not hesitate to open an issue on GitHub. Have Fun!"
@@ -66,6 +45,28 @@ echo "Shortcut will be not created"
 fi
 fi
 fi
+
+if [ ! -d "$NDIR/Games" ]; then
+mkdir $NDIR/Games
+fi
+
+if [ ! -d "$NDIR/Programs" ]; then
+mkdir $NDIR/Programs
+fi
+
+if [ ! -d "$LDIR" ]; then
+mkdir -p $LDIR
+cd $LDIR
+fetch https://github.com/the-homura-project/homura-library/archive/master.zip
+unzip master.zip
+mv $LDIR/homura-library-master/* $LDIR
+cd $LDIR/
+chmod +x *
+rm -r -d $LDIR/homura-library-master
+rm master.zip
+rm LICENSE
+fi
+
 
 export APPLIST=$(cd $LDIR && ls | grep -v shortcuts | grep -v checks)
 export APPEXISTCHECK=$(cd "$NDIR/Games" && ls && cd "$NDIR/Programs" && ls && cd "$NDIR" && ls | grep "Custom-Prefixes" )
