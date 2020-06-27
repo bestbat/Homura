@@ -57,13 +57,13 @@ fi
 if [ ! -d "$LDIR" ]; then
 mkdir -p $LDIR
 cd $LDIR
-fetch https://github.com/the-homura-project/homura-library/archive/master.zip
-unzip master.zip
-mv $LDIR/homura-library-master/* $LDIR
+fetch https://github.com/the-homura-project/homura/archive/library.zip
+unzip library.zip
+mv $LDIR/homura-library/* $LDIR
 cd $LDIR/
 chmod +x *
-rm -r -d $LDIR/homura-library-master
-rm master.zip
+rm -r -d $LDIR/homura-library
+rm library.zip
 rm LICENSE
 fi
 
