@@ -117,16 +117,19 @@ export -f info
 
 Install() {
 export INST=$1
+export TODO=Installation
 bash $LDIR/$1
 }
 
 Launch() {
 export LNCH=$1
+export TODO=Launcher
 bash $LDIR/$1
 }
 
 Uninstall() {
 export UNST=$1
+export TODO=Uninstallation
 bash $LDIR/$1
 }
 
