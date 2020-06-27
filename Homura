@@ -184,13 +184,17 @@ fi
 fi
 
 if [[ $TODO == *"Winetricks"* ]]; then
-export WTR=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "In what prefix do do you want to open winetricks?" --height=$ALH --width=$WTH --column="Application" $APPEXISTCHECK)
-exec /usr/local/share/homura/Data/Misc.hma
+cd $NDIR
+PREFIX=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/")
+WINEPREFIX=$PREFIX
 fi
 
 if [[ $TODO == *"Run a executable in prefix"* ]]; then
-export RAEP=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "In what prefix do do you want to open your executable?" --height=$ALH --width=$WTH --column="Application" $APPEXISTCHECK)
-exec /usr/local/share/homura/Data/Misc.hma
+cd $NDIR
+PREFIX=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/")
+WINEPREFIX=$PREFIX
+EXECUTABLE="$(zenity --file-selection --title="Choose your executable")" 
+WINEPREFIX=$PREFIX $EXECUTABLE
 fi
 
 if [[ $TODO == *"Update"* ]]; then
@@ -200,7 +204,7 @@ fi
 
 if [[ $TODO == *"Applying a fix"* ]]; then
 export AAF=$(zenity --list --radiolist --window-icon=$ICO  --height=200 --width 350 --title="$NAME $VER" --text "What fix do you want to apply?" --hide-header --column "$NAME" --column "Item" FALSE "Fix of blackscreen in Anno 1404 (Steam)")
-exec /usr/local/share/homura/Data/Misc.hma
+bash $LDIR/fixes
 fi
 
 if [[ $TODO == *"Open Homura folder"* ]]; then
@@ -216,8 +220,31 @@ notify-send "The logging have been quit."
 fi
 
 if [[ $TODO == *"Other"* ]]; then
-export OTR=$(zenity --list --radiolist --window-icon=$ICO --height=250 --width 250 --title="$NAME $VER - $TODO" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Use software rendering" FALSE "Delete & reset everything" FALSE "Create a shortcut" FALSE "GitHub page" FALSE "Update library")
-exec /usr/local/share/homura/Data/Misc.hma
+OTR=$(zenity --list --radiolist --window-icon=$ICO --height=250 --width 250 --title="$NAME $VER - $TODO" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Use software rendering" FALSE "Delete & reset everything" FALSE "Create a shortcut" FALSE "GitHub page" FALSE "Update library")
+
+if [[ $OTR == *"Use software rendering"* ]]; then
+LIBGL_ALWAYS_SOFTWARE=1 $NAME
+zenity --notification --window-icon=$ICO --text "You are using now hardware rendering again."
+fi
+
+if [[ $OTR == *"Delete & reset everything"* ]]; then
+DRQ=$(zenity --question --window-icon=$ICO --width 300 --title "$NAME $VER - $OTR" --text "Do you really want to delete and reset everything?"; echo $?)
+if [[ $DRQ == *"0"* ]]; then
+rm -r -d $NDIR
+if [ -f "/usr/home/$USER/.local/share/applications/$NAME.desktop" ]; then
+rm "/usr/home/$USER/.local/share/applications/$NAME.desktop"
+else 
+echo -e "\e[40;38;5;32mNo shortcut was created\e[30;48;5;82m\e[0m"
+fi
+if [ -d "/usr/home/$USER/.local/share/applications/$NAME" ]; then
+rm -r -d "/usr/home/$USER/.local/share/applications/$NAME"
+else 
+echo -e "\e[40;38;5;32mNo shortcut from $NAME was created\e[30;48;5;82m\e[0m"
+fi
+zenity --info --window-icon=$ICO --width=200 --title="$NAME $VER - $OTR" --text="All files of $NAME have been deleted, we hope you had a good time."
+exit
+fi
+fi
 fi
 
 if [[ $TODO == *"About"* ]]; then
