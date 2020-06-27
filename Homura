@@ -84,6 +84,10 @@ if [[ $GPU == *"VMware, Inc."* ]]; then
 zenity --info --width=420 --window-icon=$ICO --title="$NAME $VER" --text="$NAME have detected that you are using the fallback drivers, please check your gpu driver installation. If you should run $NAME in a virtual machine or you have enabled software rendering then you can ignore this message."
 fi
 
+if [[ $GPU == *"Mesa Project"* ]]; then
+zenity --info --width=420 --window-icon=$ICO --title="$NAME $VER" --text="$NAME have detected that you are using the fallback drivers, please check your gpu driver installation. If you should run $NAME in a virtual machine or you have enabled software rendering then you can ignore this message."
+fi
+
 function download {
                zenity --notification --window-icon=$ICO --text "Downloading $INST $UPDE"
                fetch --retry $1
@@ -186,7 +190,7 @@ fi
 if [[ $TODO == *"Winetricks"* ]]; then
 cd $NDIR
 PREFIX=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/")
-WINEPREFIX=$PREFIX
+WINEPREFIX=$PREFIX winetricks
 fi
 
 if [[ $TODO == *"Run a executable in prefix"* ]]; then
@@ -194,7 +198,7 @@ cd $NDIR
 PREFIX=$(zenity --file-selection --directory --title="Choose your prefix" --filename="/usr/home/$USER/.local/share/$NAME/")
 WINEPREFIX=$PREFIX
 EXECUTABLE="$(zenity --file-selection --title="Choose your executable")" 
-WINEPREFIX=$PREFIX $EXECUTABLE
+WINEPREFIX=$PREFIX wine $EXECUTABLE
 fi
 
 if [[ $TODO == *"Update"* ]]; then
