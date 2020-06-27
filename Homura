@@ -247,6 +247,19 @@ fi
 fi
 fi
 
+if [[ $OTR == *"Create a shortcut"* ]]; then
+export CS=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $OTR" --text "What shortcut do you want to create?" --hide-header --column "$NAME $VER - $OTR" --column "Application" $APPEXISTCHECK)
+bash $LDIR/$CS
+fi
+
+if [[ $OTR == *"GitHub page"* ]]; then
+xdg-open https://github.com/the-homura-project/homura
+fi
+
+if [[ $OTR == *"Update library"* ]]; then
+rm -r -d $LDIR
+fi
+
 if [[ $TODO == *"About"* ]]; then
 info "Inspired by Lutris.
 $NAME is a launcher that makes it easy to run Windows games/launcher easily on FreeBSD by providing the required fixes and workarounds. 
