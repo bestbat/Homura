@@ -68,7 +68,7 @@ rm LICENSE
 fi
 
 
-export APPLIST=$(cd $LDIR && ls | grep -v shortcuts | grep -v checks)
+export APPLIST=$(cd $LDIR && ls | grep -v fixes)
 export APPEXISTCHECK=$(cd "$NDIR/Games" && ls && cd "$NDIR/Programs" && ls && cd "$NDIR" && ls | grep "Custom-Prefixes" )
 
 if [ ! -d "$DDIR" ]; then
