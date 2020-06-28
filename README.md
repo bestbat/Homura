@@ -103,12 +103,9 @@ Developer Mode | :heavy_multiplication_x:
 
 # Chat :speech_balloon:
 
-You need help, want to help or just want to talk?
+You need help, want to help or just want to talk ／人◕ ‿‿ ◕人＼  ?
 
-No fear we don't bite ;)
-
-- Discord: https://discord.gg/JBKcdNt
-- Steam: https://steamcommunity.com/id/Alexander88207/
+Join our [Discord](https://discord.gg/JBKcdNt) or contact me on [Steam](https://steamcommunity.com/id/Alexander88207)
 
 # Credits :star:
 
