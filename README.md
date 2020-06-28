@@ -114,8 +114,7 @@ No fear we don't bite ;)
 
 - [Alexander88207](https://github.com/Alexander88207) - Lead programmer & Maintainer
 - [MagZu](https://github.com/magzu)          - Hosting the mirror (homura.magzu.net)
-- [You](https://github.com/the-homura-project/homura-docs/blob/master/CONTRIBUTING.md)? - ?
-- [Contributors](https://github.com/the-homura-project/homura/graphs/contributors)     - for contributing
+- [You?](https://github.com/the-homura-project/homura/wiki/Contributing)
 
 Also special thanks to the port maintainers of i386-wine-devel and wine-devel.
 
