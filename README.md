@@ -81,7 +81,6 @@ Examples:
 - To install something use `Homura Install  Steam`
 - To launch something use `Homura Launch Steam`
 - To uninstall something use `Homura Uninstall Steam`
-- To open winetricks in a prefix use `Homura Winetricks Steam`
 
 # Feature / To-Do list
 
@@ -95,6 +94,7 @@ Enable/Disable DXVK | :heavy_multiplication_x:
 Sandboxing | :heavy_multiplication_x:
 SteamCMD (steam-console-client) | :heavy_check_mark:
 Changing between wine versions | :heavy_multiplication_x:
+Developer Mode | :heavy_multiplication_x:
 
 # Limitations :x:
 
