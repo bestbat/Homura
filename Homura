@@ -65,6 +65,7 @@ chmod +x *
 rm -r -d $LDIR/homura-library
 rm library.zip
 rm LICENSE
+ln -s $LDIR/Custom-Prefix $LDIR/Custom-Prefixes
 fi
 
 
