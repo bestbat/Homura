@@ -251,7 +251,11 @@ fi
 fi
 
 if [[ $OTR == *"Create a shortcut"* ]]; then
-export CS=$(zenity --list --radiolist --window-icon=$ICO --height=$ALH --width 300 --title="$NAME $VER - $OTR" --text "What shortcut do you want to create?" --hide-header --column "$NAME $VER - $OTR" --column "Application" $APPEXISTCHECK)
+export CS=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "Of what application do you want to create a shortcut?" --height=$ALH --width=$WTH --column="Application" $APPEXISTCHECK)
+if [[ -z "$CS" ]]; then
+info "Nothing was selected :/"
+exec $NAME
+fi
 bash $LDIR/$CS
 fi
 
