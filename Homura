@@ -154,6 +154,8 @@ echo -e "\e[3;5;0;31mGPU Info OpenGL:\e[30;48;5;82m\e[0m" && glxinfo | grep Open
 echo -e "\e[3;5;0;31mGPU Info Vulkan:\e[30;48;5;82m\e[0m" && vulkaninfo | grep -m 1 "GPU id"
 
 # Initial menu
+if [ -z "$CLI" ]
+then
 export TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=450 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Applying a fix" FALSE "Open Homura folder" FALSE "Enable logging" FALSE "Other" FALSE "About" FALSE "Exit")
 
 if [[ $TODO == *"Installation"* ]]; then
@@ -288,6 +290,7 @@ fi
 if [[ $TODO == *"Exit"* ]]; then
 zenity --notification --window-icon=$ICO --text "Thanks for using $NAME and have a great day!"
 exit
+fi
 fi
 
 if [ -z "$CLI" ]
