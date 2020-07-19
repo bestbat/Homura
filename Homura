@@ -13,11 +13,13 @@ DATE=$(date)
 WINEVER=$(wine --version)
 COPYRIGHT=$(cat "/usr/local/share/licenses/homura-$VER/BSD2CLAUSE" | grep Copyright)
 
+# Running Homura as root is not recommended. If you still want to run Homura as root, remove these 4 lines and also ensure that NDIR is proper then.
 if [[ $USER == *"root"* ]]; then
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER" --text="$NAME can not be executed as root."
 exit
 fi
 
+# When Homura is first started.
 if [ ! -d "$NDIR" ]; then
 mkdir -p $NDIR
 zenity --info --width=310 --window-icon=$ICO --title="$NAME $VER - Welcome" --text="Welcome to $NAME. If you have a problem, suggestion, questions or similar, do not hesitate to open an issue on GitHub. Have Fun!"
@@ -46,12 +48,22 @@ fi
 fi
 fi
 
+# Creating the subfolders
 if [ ! -d "$NDIR/Games" ]; then
 mkdir $NDIR/Games
 fi
 
 if [ ! -d "$NDIR/Programs" ]; then
 mkdir $NDIR/Programs
+fi
+
+if [ ! -d "$DDIR" ]; then
+mkdir $NDIR/Data
+fi
+
+if [ ! -f "$ICO" ]; then
+cd $DDIR
+fetch http://alt.magzu.net/damn/dl/Homura.png
 fi
 
 if [ ! -d "$LDIR" ]; then
@@ -68,19 +80,11 @@ rm LICENSE
 ln -s $LDIR/Custom-Prefix $LDIR/Custom-Prefixes
 fi
 
-
+# The Applists
 export APPLIST=$(cd $LDIR && ls | grep -v fixes)
 export APPEXISTCHECK=$(cd "$NDIR/Games" && ls && cd "$NDIR/Programs" && ls && cd "$NDIR" && ls | grep "Custom-Prefixes" )
 
-if [ ! -d "$DDIR" ]; then
-mkdir $NDIR/Data
-fi
-
-if [ ! -f "$ICO" ]; then
-cd $DDIR
-fetch http://alt.magzu.net/damn/dl/Homura.png
-fi
-
+# Small checks to ensure that the user knows that no correct drivers are running.
 if [[ $GPU == *"VMware, Inc."* ]]; then
 zenity --info --width=420 --window-icon=$ICO --title="$NAME $VER" --text="$NAME have detected that you are using the fallback drivers, please check your gpu driver installation. If you should run $NAME in a virtual machine or you have enabled software rendering then you can ignore this message."
 fi
@@ -89,6 +93,7 @@ if [[ $GPU == *"Mesa Project"* ]]; then
 zenity --info --width=420 --window-icon=$ICO --title="$NAME $VER" --text="$NAME have detected that you are using the fallback drivers, please check your gpu driver installation. If you should run $NAME in a virtual machine or you have enabled software rendering then you can ignore this message."
 fi
 
+# Functions :)
 function download {
                zenity --notification --window-icon=$ICO --text "Downloading $INST $UPDE"
                fetch --retry $1
@@ -116,19 +121,23 @@ export -f installer-message
 export -f warn
 export -f info
 
+# CLI
 Install() {
+CLI=1
 export INST=$1
 export TODO=Installation
 bash $LDIR/$1
 }
 
 Launch() {
+CLI=1
 export LNCH=$1
 export TODO=Launcher
 bash $LDIR/$1
 }
 
 Uninstall() {
+CLI=1
 export UNST=$1
 export TODO=Uninstallation
 bash $LDIR/$1
@@ -136,6 +145,7 @@ bash $LDIR/$1
 
 "$@"
 
+# Small informations in the terminal
 echo -e "\e[32m$COPYRIGHT All rights reserved."
 echo -e "\e[93mWelcome to $NAME $VER have fun!"
 echo -e "\e[3;5;0;92mRunning on $OSN $(uname -r)"
@@ -143,8 +153,8 @@ echo -e "\e[3;5;0;36mWine Version: $WINEVER\e[30;48;5;82m\e[0m"
 echo -e "\e[3;5;0;31mGPU Info OpenGL:\e[30;48;5;82m\e[0m" && glxinfo | grep OpenGL
 echo -e "\e[3;5;0;31mGPU Info Vulkan:\e[30;48;5;82m\e[0m" && vulkaninfo | grep -m 1 "GPU id"
 
+# Initial menu
 export TODO=$(zenity --list --radiolist --window-icon=$ICO  --height=450 --width 300 --title="$NAME $VER" --text "What do you want to do?" --hide-header --column "$NAME" --column "Item" FALSE "Installation" FALSE "Launcher" FALSE "Uninstallation" FALSE "Winetricks" FALSE "Run a executable in prefix" FALSE "Update" FALSE "Applying a fix" FALSE "Open Homura folder" FALSE "Enable logging" FALSE "Other" FALSE "About" FALSE "Exit")
-
 
 if [[ $TODO == *"Installation"* ]]; then
 export INST=$(zenity --list --title="$NAME $VER - $TODO" --window-icon=$ICO --text "What do you want to install?" --height=$ALH --width=$WTH --column="Application" $APPLIST)
@@ -279,6 +289,10 @@ if [[ $TODO == *"Exit"* ]]; then
 zenity --notification --window-icon=$ICO --text "Thanks for using $NAME and have a great day!"
 exit
 fi
+
+if [ -z "$CLI" ]
+then
 exec $NAME
+fi
 
 zenity --notification --window-icon=$ICO --text "Task completed!"
