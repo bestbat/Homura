@@ -7,6 +7,7 @@
 </p>
 <p align="center">
 	<a href="https://github.com/the-homura-project/homura/wiki/Status">Status</a>&nbsp;&nbsp;&nbsp;
+	<a href="https://github.com/the-homura-project/homura/tree/library">Library</a>&nbsp;&nbsp;&nbsp;
 	<a href="https://github.com/the-homura-project/homura/wiki/Tweaks">Tweaks</a>&nbsp;&nbsp;&nbsp;
 	<a href="https://github.com/the-homura-project/homura/wiki/Borked">Borked</a>&nbsp;&nbsp;&nbsp;
 	<a href="https://github.com/the-homura-project/homura/wiki/Working-Games">Working Games</a>&nbsp;&nbsp;&nbsp;
