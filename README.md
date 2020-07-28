@@ -18,7 +18,9 @@
 
 # Introduction :microphone:
 
-Inspired by [Lutris](https://github.com/lutris/lutris), we would like to provide a game launcher to play Windows games on FreeBSD.
+Inspired by [Lutris](https://github.com/lutris/lutris), we would like to provide a game launcher to play Windows games on FreeBSD. 
+
+Its also possible now to run much steam games with the linuxulator by using the [linux-steam-utils](https://www.freshports.org/games/linux-steam-utils).
 
 # Description &#x1F4D8;
 
