@@ -1,3 +1,7 @@
+# The original project moved to GitLab:
+
+https://gitlab.com/Alexander88207/Homura
+
 <p align="center">
   <img src="https://github.com/the-homura-project/homura/raw/master/Media/Banner.jpeg">
 </p>
